@@ -16,7 +16,7 @@ class CreateFoodsTable extends Migration
         Schema::create('foods', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('food_type_id');
+            $table->foreignId('type_id');
             $table->string('name', 100);
             $table->float('price', 5,2);
             $table->text('description');
