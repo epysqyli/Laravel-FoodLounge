@@ -27,5 +27,4 @@ class TypeSeeder extends Seeder
             $newType->save();
         }
     }
-
 }

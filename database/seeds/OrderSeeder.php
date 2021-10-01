@@ -18,7 +18,8 @@ class OrderSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             $order = new Order();
-            $order->user_id = rand(1,10);
+            
+            $order->user_id = rand(1, 10);
             $order->amount = $faker->randomFloat(2, 1, 999);
             $order->customer_name = $faker->firstname();
             $order->customer_surname = $faker->unique()->lastname();
@@ -26,8 +27,8 @@ class OrderSeeder extends Seeder
             $order->customer_email = $faker->email();
             $order->phone_number = $faker->phonenumber();
             $order->transaction_id = $faker->iban();
-            $order->transaction_status = ["Rejected", "Accepted"][rand(0,1)];
-            
+            $order->transaction_status = ["Rejected", "Accepted"][rand(0, 1)];
+
             $order->save();
         }
     }
