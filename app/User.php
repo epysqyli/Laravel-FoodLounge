@@ -29,4 +29,8 @@ class User extends Authenticatable
     public function foods() {
         $this->hasMany(Food::class);
     }
+
+    public function categories() {
+        $this->belongsTo(Category::class);
+    }
 }
