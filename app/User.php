@@ -23,14 +23,14 @@ class User extends Authenticatable
     ];
 
     public function orders() {
-        $this->hasMany(Order::class);
+        return $this->hasMany(Order::class);
     }
 
     public function foods() {
-        $this->hasMany(Food::class);
+        return $this->hasMany(Food::class);
     }
 
-    public function categories() {
-        $this->belongsToMany(Category::class);
+    public function category() {
+        return $this->hasOne(Category::class);
     }
 }

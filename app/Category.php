@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     public function users() {
-        $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class);
     }
 }
