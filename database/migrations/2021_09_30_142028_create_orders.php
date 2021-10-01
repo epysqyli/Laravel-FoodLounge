@@ -16,7 +16,6 @@ class CreateOrders extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            // $table->string('status',50); Maybe 
             $table->float('amount', 6,2);
             $table->string('customer_name');
             $table->string('customer_surname');
