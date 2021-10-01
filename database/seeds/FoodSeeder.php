@@ -7,11 +7,7 @@ use Faker\Factory;
 
 class FoodSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+
     public function run()
     {
         $faker = Factory::create();
@@ -20,7 +16,7 @@ class FoodSeeder extends Seeder
             $food = new Food();
 
             $food->user_id = rand(1, 10);
-            $food->food_type_id = rand(1, 100);
+            $food->type_id = rand(1, 100);
             $food->name = $faker->words(3, true);
             $food->price = $faker->randomFloat(2, 1, 99);
             $food->description = $faker->paragraph();
