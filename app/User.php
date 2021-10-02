@@ -11,7 +11,15 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'address',
+        'description',
+        'vat',
+        'slug',
+        'profile_image',
+        'cover_image'
     ];
 
     protected $hidden = [
@@ -22,15 +30,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function orders() {
+    public function orders()
+    {
         return $this->hasMany(Order::class);
     }
 
-    public function foods() {
+    public function foods()
+    {
         return $this->hasMany(Food::class);
     }
 
-    public function category() {
+    public function category()
+    {
         return $this->hasOne(Category::class);
     }
 }
