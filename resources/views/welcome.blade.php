@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Guest Landing Page
+                    Landing Page
                 </div>
             </div>
         </div>
