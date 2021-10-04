@@ -10,17 +10,17 @@
         <a class="nav-link active text-uppercase" aria-current="true" href="#">{{Auth::user()->name}}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-uppercase" href="#">Foods</a>
+        <a class="nav-link text-uppercase" href="{{route('admin.foods.index', Auth::user()->id)}}">Foods</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled text-uppercase">Orders</a>
+        <a class="nav-link text-uppercase" href="{{route('admin.orders.show', Auth::user()->id)}}">Orders</a>
       </li>
     </ul>
   </div>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">{{Auth::user()->vat}}</h5>
+    <p class="card-text">{{Auth::user()->description}}</p>
+    <img src="{{Auth::user()->cover_image}}" alt="">
   </div>
 </div>
 </div>

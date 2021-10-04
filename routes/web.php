@@ -22,6 +22,9 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::middleware('auth')->namespace('Admin')->name('admin.')->group(function () {
     Route::get("/home", "HomeController@index")->name('home');
     Route::resource('/foods','FoodController');
+    Route::resource('/orders','OrderController');
+   
 });
+
 
 Route::get('/{any}','HomeController@index')->where('any','.*');

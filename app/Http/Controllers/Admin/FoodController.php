@@ -61,8 +61,11 @@ class FoodController extends Controller
      */
     public function show(Food $foods)
     {
+
         return view('admin.foods.show', compact('foods'));
     }
+
+  
 
     /**
      * Show the form for editing the specified resource.

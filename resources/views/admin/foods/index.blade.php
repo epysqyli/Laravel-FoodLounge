@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="containerindex">
+       <h1>Foods</h1>
        
-             <h1>Edoardo</h1>
 
     </div>    
 @endsection
