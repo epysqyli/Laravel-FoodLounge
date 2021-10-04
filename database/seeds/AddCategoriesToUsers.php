@@ -1,16 +1,19 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Category;
+use App\User;
 
 class AddCategoriesToUsers extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+
     public function run()
     {
-        //
+        $categories = Category::all();
+        $users = User::all();
+
+        foreach ($categories as $key => $category) {
+            $category->users()->attach($users[$key]);
+        }
     }
 }

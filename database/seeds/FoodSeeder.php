@@ -23,7 +23,7 @@ class FoodSeeder extends Seeder
             $food->ingredients = $faker->paragraph();
             $food->visible = [true, false][rand(0, 1)];
             $food->image = "https://picsum.photos/300/300";
-            $food->additional_details = $faker->paragraph();
+            $food->additional_details = $faker->paragraph(1, true);
 
             $food->save();
         }
