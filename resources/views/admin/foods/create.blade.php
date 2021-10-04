@@ -1,10 +1,10 @@
-{{-- @extends('layouts.app')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">        
        
-
-        <form action="{{ route('admin.foods.store') }}" method="food" enctype="multipart/form-data">
+<h2>new plates</h2>
+        <!-- <form action="{{ route('admin.foods.store') }}" method="food" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="titolo" class="form-label">Titolo</label>
@@ -68,7 +68,7 @@
                     
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        
+         -->
     </div>
     
-@endsection --}}
+@endsection 
