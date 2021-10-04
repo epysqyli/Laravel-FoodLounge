@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             $user->name = $faker->unique()->company();
             $user->address = $faker->unique()->address();
             $user->description = $faker->paragraphs(3, true);
-            $user->vat = rand(11111111111, 99999999999);
+            $user->vat = rand(intval(11111111111),intval(99999999999));
             $user->slug = Str::slug($user->name);
             $user->profile_image = "https://picsum.photos/300/300";
             $user->cover_image = "https://picsum.photos/1200/600";
