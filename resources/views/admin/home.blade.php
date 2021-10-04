@@ -1,27 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-header">option 1</div>
-
-                <div class="card-body">
-                    <p>Manage foods</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-header">option 2</div>
-
-                <div class="card-body">
-                    <p>Check orders</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="containerhome">
+    <h1 class="text-uppercase text-success pl-5">Your restaurants</h1>
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="true" href="#">{{$user->name}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Manage</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">Statistics</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
 </div>
 @endsection

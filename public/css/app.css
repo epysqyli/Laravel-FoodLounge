@@ -10942,3 +10942,9 @@ a.text-dark:focus {
   }
 }
 
+main {
+  background-color: #706080;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+

@@ -23,7 +23,7 @@ class FoodController extends Controller
 
         // All pages
         $foods = Food::all();
-        return view('admin.foods.index', compact('food'));
+        return view('admin.foods.index', compact('foods'));
     }
 
     /**
@@ -31,10 +31,10 @@ class FoodController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Food $food)
+    public function create(Food $foods)
     {
         $types = Type::all();
-        return view('admin.foods.create', compact('food','types'));
+        return view('admin.foods.create', compact('foods','types'));
     }
 
     /**
@@ -59,9 +59,9 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Food $food)
+    public function show(Food $foods)
     {
-        return view('admin.foods.show', compact('food'));
+        return view('admin.foods.show', compact('foods'));
     }
 
     /**
@@ -70,11 +70,11 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Food $food)
+    public function edit(Food $foods)
     {
         $types = Type::all();
         
-         return view('admin.foods.edit', compact('food', 'types'));
+         return view('admin.foods.edit', compact('foods', 'types'));
     }
 
     /**
@@ -99,7 +99,7 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Food $food)
+    public function destroy(Food $foods)
     {
         $food->delete();
         $food->tags()->detach();
