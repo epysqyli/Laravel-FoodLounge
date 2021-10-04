@@ -74,8 +74,8 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="address" type="text" class="form-control"
-                                        name="address" required autocomplete="address">
+                                    <input id="address" type="text" class="form-control" name="address" required
+                                        autocomplete="address">
                                 </div>
                             </div>
 
@@ -84,18 +84,32 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="description" type="text" class="form-control"
-                                        name="description" required autocomplete="description">
+                                    <input id="description" type="text" class="form-control" name="description" required
+                                        autocomplete="description">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="vat"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Vat') }}</label>
+                                <label for="category"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Category') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="vat" type="text" class="form-control"
-                                        name="vat" required autocomplete="vat">
+                                    <select id="category" class="form-control" name="category" required
+                                        autocomplete="category">
+                                        <option value="">Choose your category</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('Vat') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="vat" type="text" class="form-control" name="vat" required
+                                        autocomplete="vat">
                                 </div>
                             </div>
 
@@ -104,8 +118,8 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('profile_image') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="profile_image" type="text" class="form-control"
-                                        name="profile_image" required autocomplete="profile_image">
+                                    <input id="profile_image" type="text" class="form-control" name="profile_image"
+                                        required autocomplete="profile_image">
                                 </div>
                             </div>
 
@@ -114,8 +128,8 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('cover_image') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="cover_image" type="text" class="form-control"
-                                        name="cover_image" required autocomplete="cover_image">
+                                    <input id="cover_image" type="text" class="form-control" name="cover_image" required
+                                        autocomplete="cover_image">
                                 </div>
                             </div>
 
