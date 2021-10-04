@@ -46,16 +46,22 @@ class RegisterController extends Controller
     {
         $slug = Str::slug($data['name']);
 
-        return User::create([
-            'name' => $data['name'],
-            'slug' => makeUniqueSlug($slug),
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'address' => $data['address'],
-            'description' => $data['description'],
-            'vat' => $data['vat'],
-            'profile_image' => $data['profile_image'],
-            'cover_image' => $data['cover_image'],
-        ]);
+        $user = new User();
+
+        $user->name = $data['name'];
+        $user->slug = makeUniqueSlug($slug);
+        $user->email = $data['email'];
+        $user->password = Hash::make($data['password']);
+        $user->address = $data['address'];
+        $user->description = $data['description'];
+        $user->vat = $data['vat'];
+        $user->profile_image = $data['profile_image'];
+        $user->cover_image = $data['cover_image'];
+
+        $user->save();
+
+        $user->category()->attach($data['category']);
+
+        return $user;
     }
 }
