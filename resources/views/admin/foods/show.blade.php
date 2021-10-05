@@ -21,7 +21,7 @@
                     <tr>
                         <th>Food type
                         <th>
-                        <td>{{ $food->type->name }}</td>
+                        <td>{{ $food->type ? $food->type->name : 'not assigned to a category' }}</td>
                     </tr>
                     <tr>
                         <th>Price
