@@ -78,6 +78,11 @@
                                         class="form-control @error('address') is-invalid
                                     @enderror"
                                         name="address" autocomplete="address">
+                                    @error('address')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -85,10 +90,16 @@
                                 <label for="description" class="col-md-4 col-form-label text-md-right">Descrizione</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="description" type="text" class="form-control @error('description') is-invalid
-                                    @enderror" name="description"
-                                        autocomplete="description">
-                                                                                                            </textarea>
+                                    <textarea id="description" type="text"
+                                        class="form-control @error('description') is-invalid
+                                    @enderror"
+                                        name="description" autocomplete="description">
+                                                                                                                                    </textarea>
+                                    @error('description')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -97,13 +108,20 @@
                                     Ristorante</label>
 
                                 <div class="col-md-6">
-                                    <select id="category" class="form-control @error('category') is-invalid
-                                    @enderror" name="category" autocomplete="category">
+                                    <select id="category"
+                                        class="form-control @error('category') is-invalid
+                                    @enderror"
+                                        name="category" autocomplete="category">
                                         <option value="">Scegli la tua categoria</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
                                     </select>
+                                    @error('category')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -111,8 +129,15 @@
                                 <label for="vat" class="col-md-4 col-form-label text-md-right">Partita IVA</label>
 
                                 <div class="col-md-6">
-                                    <input id="vat" type="text" class="form-control @error('vat') is-invalid
-                                    @enderror" name="vat" autocomplete="vat">
+                                    <input id="vat" type="text"
+                                        class="form-control @error('vat') is-invalid
+                                    @enderror"
+                                        name="vat" autocomplete="vat">
+                                    @error('vat')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -121,9 +146,15 @@
                                     Profilo</label>
 
                                 <div class="col-md-6">
-                                    <input id="profile_image" type="text" class="form-control @error('profile_image') is-invalid
-                                    @enderror" name="profile_image"
-                                        autocomplete="profile_image">
+                                    <input id="profile_image" type="text"
+                                        class="form-control @error('profile_image') is-invalid
+                                    @enderror"
+                                        name="profile_image" autocomplete="profile_image">
+                                    @error('profile_image')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -132,9 +163,15 @@
                                     Copertina</label>
 
                                 <div class="col-md-6">
-                                    <input id="cover_image" type="text" class="form-control @error('cover_image') is-invalid
-                                    @enderror" name="cover_image"
-                                        autocomplete="cover_image">
+                                    <input id="cover_image" type="text"
+                                        class="form-control @error('cover_image') is-invalid
+                                    @enderror"
+                                        name="cover_image" autocomplete="cover_image">
+                                    @error('cover_image')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
