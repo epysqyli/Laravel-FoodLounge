@@ -10942,10 +10942,11 @@ a.text-dark:focus {
   }
 }
 
-main {
-  background-color: #706080;
-  background-size: cover;
-  background-repeat: no-repeat;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #228540;
 }
 
 .cardrestaurant .card {
@@ -10986,7 +10987,7 @@ main {
 }
 
 .cardrestaurant img {
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 

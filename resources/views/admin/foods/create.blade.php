@@ -1,74 +1,118 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">        
-       
-<h2>new plates</h2>
-        <!-- <form action="{{ route('admin.foods.store') }}" method="food" enctype="multipart/form-data">
-            @csrf
-            <div class="mb-3">
-                <label for="titolo" class="form-label">Titolo</label>
-                <input type="text" class="form-control
-                @error('title')
-                    is-invalid                    
-                @enderror" id="titolo" name="title" value="{{ old('title')}}">
-                @error('title')
-                    <div class="alert alert-danger">{{ $message }} </div>                    
-                @enderror                                             
-            </div>
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header text-uppercase ">Add New Plate</div>
 
-            <div class="mb-3">
-                <label for="titolo" class="form-label">Categoria</label>
-                <select name="category_id" id="category">
-                    <option value="">-- Seleziona una categoria --</option>
-                    @foreach ($categories as $category)
-                        <option value="{{ $category->id }}"
-                            @if ($category->id == old('$category_id'))
-                                selected
-                            @endif
-                            > {{ $category->name }}</option>
-                    @endforeach
-                </select>                                                           
-            </div>
-            <div class="mb-3">
-                <label for="img" class="form-label">Immagine</label>
-                <input id="img" type="file" name="image" class="form-control-file
-                @error('image')
-                    is-invalid                                       
-                @enderror">
-                @error('image')
-                    <div class="alert alert-danger">{{ $message }} </div>                    
-                @enderror
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                            @csrf
 
+                            <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
+                                        name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="ingredients" class="col-md-4 col-form-label text-md-right">Ingredients</label>
+
+                                <div class="col-md-6">
+                                    <input id="ingredients" type="ingredients" class="form-control @error('ingredients') is-invalid @enderror"
+                                        name="ingredients" value="{{ old('ingredients') }}" autocomplete="ingredients">
+
+                                    @error('ingredients')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="price"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="price" type="price"
+                                        class="form-control @error('price') is-invalid @enderror" name="price"
+                                        autocomplete="new-price">
+
+                                    @error('price')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            
+
+                           
+
+                            <div class="form-group row">
+                                <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
+
+                                <div class="col-md-6">
+                                    <textarea id="description" type="text" value="{{ old('description') }}"
+                                        class="form-control @error('description') is-invalid
+                                    @enderror"
+                                        name="description" autocomplete="description" rows="6">{{ old('description') }}
+                                    </textarea>
+
+                                    @error('description')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+                           
+                            <div class="form-group row">
+                                <label for="image" class="col-md-4 col-form-label text-md-right">Image
+                                    Food</label>
+
+                                <div class="col-md-6">
+                                    <input id="image" type="file"
+                                        class="form-control @error('image') is-invalid
+                                    @enderror"
+                                        name="image" autocomplete="image">
+                                    @error('image')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="form-group row mb-0">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Registrati!
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="desc" class="form-label">Descrizione</label>
-                <textarea class="form-control
-                @error('content')
-                    is-invalid                    
-                @enderror" name="content" id="desc" cols="30" rows="10">{{ old('content')}}</textarea>
-                @error('content')
-                    <div class="alert alert-danger">{{ $message }} </div>                    
-                @enderror
-            </div>   
-            
-            <div>
-                <h4>Tag</h4>
-                    @foreach ($tags as $tag)
-                        <div class="d-inline-block  mx-1">
-                            <input id="tag{{ $loop->iteration }}" type="checkbox" value="{{ $tag->id }}" 
-                                @if (in_array($tag->id, old('tags', [])))
-                                    checked
-                                @endif
-                            name="tags[]">
-                            <label for="tag{{ $loop->iteration }}" class="form-label">{{ $tag->name }}</label>
-                        </div>                            
-                    @endforeach
-            </div>
-                    
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-         -->
+        </div>
     </div>
     
 @endsection 
