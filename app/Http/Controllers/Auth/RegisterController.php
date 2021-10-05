@@ -34,7 +34,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'address' => ['required', 'string', 'min:10'],
+            'address' => ['required', 'string', 'min:5'],
             'description' => ['required'],
             'vat' => ['required', 'size:11'],
             'profile_image' => ['required'],

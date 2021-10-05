@@ -12,7 +12,7 @@
                             @csrf
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">Nome attivit&agrave;</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
@@ -28,7 +28,7 @@
 
                             <div class="form-group row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">Indirizzo Email</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
@@ -61,7 +61,7 @@
 
                             <div class="form-group row">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">Conferma Password</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
@@ -71,7 +71,7 @@
 
                             <div class="form-group row">
                                 <label for="address"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">Indirizzo</label>
 
                                 <div class="col-md-6">
                                     <input id="address" type="text" class="form-control" name="address" required
@@ -81,22 +81,23 @@
 
                             <div class="form-group row">
                                 <label for="description"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">Descrizione</label>
 
                                 <div class="col-md-6">
-                                    <input id="description" type="text" class="form-control" name="description" required
+                                    <textarea id="description" type="text" class="form-control" name="description" required
                                         autocomplete="description">
+                                    </textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="category"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Category') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">Categoria Ristorante</label>
 
                                 <div class="col-md-6">
                                     <select id="category" class="form-control" name="category" required
                                         autocomplete="category">
-                                        <option value="">Choose your category</option>
+                                        <option value="">Scegli la tua categoria</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
@@ -105,7 +106,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('Vat') }}</label>
+                                <label for="vat" class="col-md-4 col-form-label text-md-right">Partita IVA</label>
 
                                 <div class="col-md-6">
                                     <input id="vat" type="text" class="form-control" name="vat" required
@@ -115,7 +116,7 @@
 
                             <div class="form-group row">
                                 <label for="profile_image"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('profile_image') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">Immagine Profilo</label>
 
                                 <div class="col-md-6">
                                     <input id="profile_image" type="text" class="form-control" name="profile_image"
@@ -125,7 +126,7 @@
 
                             <div class="form-group row">
                                 <label for="cover_image"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('cover_image') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">Immagine di Copertina</label>
 
                                 <div class="col-md-6">
                                     <input id="cover_image" type="text" class="form-control" name="cover_image" required
@@ -136,7 +137,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+                                        Registrati!
                                     </button>
                                 </div>
                             </div>
