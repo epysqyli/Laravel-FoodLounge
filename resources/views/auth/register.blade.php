@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-{{-- @dd($errors); --}}
-
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -94,7 +92,7 @@
                                         class="form-control @error('description') is-invalid
                                     @enderror"
                                         name="description" autocomplete="description">
-                                                                                                                                    </textarea>
+                                                                                                                                                    </textarea>
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -114,7 +112,9 @@
                                         name="category" autocomplete="category">
                                         <option value="">Scegli la tua categoria</option>
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            <option value={{ $category->id }} @if ($category->id == old('category'))
+                                                selected
+                                        @endif>{{ $category->name }}</option>
                                         @endforeach
                                     </select>
                                     @error('category')
