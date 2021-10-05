@@ -2258,11 +2258,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
   data: function data() {
     return {
-      api: 'localhost:8000/api/categories',
+      api: 'http://127.0.0.1:8000/api/categories',
       categories: []
     };
   },
@@ -2274,8 +2289,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get(this.api).then(function (resp) {
-        //console.log(resp.data.results);
-        _this.posts = resp.category;
+        _this.categories = resp.data.categories; //console.log(resp);
       });
     }
   }
@@ -38015,17 +38029,54 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "content" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.categories, function(category) {
+          return _c(
+            "div",
+            { key: category.id, staticClass: "col-xs-12 col-md-6 col-lg-4" },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "card mb-3 mx-auto border-white",
+                  staticStyle: { width: "18rem" }
+                },
+                [
+                  _c("img", {
+                    staticClass: "card-img-top",
+                    attrs: { src: category.img, alt: category.name }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body text-center" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v(_vm._s(category.name))
+                    ])
+                  ])
+                ]
+              )
+            ]
+          )
+        }),
+        0
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-xs-12" }, [
-          _c("h2", [_vm._v("dahshdaudahudashudais")])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-xs-12" }, [
+        _c("h2", { staticClass: "text-center" }, [
+          _vm._v("Scegli quello che vuoi: te lo portiamo a casa noi")
         ])
       ])
     ])
