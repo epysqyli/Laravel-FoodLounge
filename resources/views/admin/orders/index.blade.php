@@ -1,40 +1,31 @@
 @extends('layouts.app')
 
+{{-- @dd($orders); --}}
+
 @section('content')
-    <div class="containerindex">
-       <h1 class="text-uppercase pl-5">Orders</h1>
-       <table class="table table-success table-striped">
-   
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Orders</th>
-      <th scope="col">Foods</th>
-      <th scope="col">Units</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
+    <div class="container-md">
+        <h1 class="text-uppercase pl-5">Orders</h1>
+        <table class="table table-light table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Order Id</th>
+                    <th scope="col">Order Value</th>
+                    <th scope="col">Order Time</th>
+                    <th scope="col">Address</th>
+                </tr>
+            </thead>
 
-</table>
-       
-
-    </div>    
+            <tbody>
+                @foreach ($orders as $order)
+                    <tr>
+                        <td>{{ $order->id }}</td>
+                        <td>{{ $order->amount }} &euro;</td>
+                        <td>{{ $order->created_at }}</td>
+                        <td>{{ $order->customer_address }}</td>
+                        <td><a href="{{ route('admin.orders.show', $order->id) }}">Check Details</a></td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 @endsection
