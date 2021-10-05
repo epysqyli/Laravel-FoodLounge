@@ -14,14 +14,14 @@
             <div class="col-8">
                 <table class="table table-light table-striped">
                     <tr>
-                        <th>Price
+                        <th>Food Id
                         <th>
                         <td>{{ $food->id }}</td>
                     </tr>
                     <tr>
                         <th>Food type
                         <th>
-                        <td>{{ $food->type->name }}</td>
+                        <td>{{ $food->type ? $food->type->name : 'not assigned to any category' }}</td>
                     </tr>
                     <tr>
                         <th>Price
