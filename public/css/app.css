@@ -10946,7 +10946,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #228540;
+  background-color: #003566;
 }
 
 .cardrestaurant .card {
@@ -10987,7 +10987,7 @@ body {
 }
 
 .cardrestaurant img {
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 

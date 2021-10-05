@@ -11,47 +11,47 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #228540;
+    background-color: #003566;
 }
 
-.cardrestaurant .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 500px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-}
+.cardrestaurant {
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        width: 500px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+    }
 
-.cardrestaurant .title {
-    color: grey;
-    font-size: 18px;
-}
+    .title {
+        color: grey;
+        font-size: 18px;
+    }
 
-.cardrestaurant button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
+    button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
 
-.cardrestaurant a {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
-}
+    a {
+        text-decoration: none;
+        font-size: 22px;
+        color: black;
+    }
 
-.cardrestaurant button:hover,
-.cardrestaurant a:hover {
-    opacity: 0.7;
-}
-
-.cardrestaurant img {
-    -o-object-fit: cover;
-    object-fit: cover;
+    button:hover,
+    a:hover {
+        opacity: 0.7;
+    }
+    img {
+        object-fit: fill;
+    }
 }
