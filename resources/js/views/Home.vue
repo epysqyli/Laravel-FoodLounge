@@ -18,7 +18,7 @@ export default {
         }
     },
     created(){
-        this.Category();
+        this.getCategory();
     },
     methods: {
         getCategory(){
