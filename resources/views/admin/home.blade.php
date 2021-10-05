@@ -13,7 +13,7 @@
         <a class="nav-link text-uppercase" href="{{route('admin.foods.index', Auth::user()->id)}}">Foods</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-uppercase" href="{{route('admin.orders.show', Auth::user()->id)}}">Orders</a>
+        <a class="nav-link text-uppercase" href="{{route('admin.orders.index', Auth::user()->id)}}">Orders</a>
       </li>
     </ul>
   </div>

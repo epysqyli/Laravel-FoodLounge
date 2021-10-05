@@ -13,9 +13,9 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Order $order)
     {
-        //
+        return view('admin.orders.show', compact('orders'));
     }
 
     /**
@@ -45,9 +45,9 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $orders)
+    public function show()
     {
-        return view('admin.orders.show', compact('orders'));
+
     }
 
     /**
