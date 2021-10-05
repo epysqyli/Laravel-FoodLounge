@@ -4,15 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Deliveboo</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{{asset('css/app.css')}}"> 
+
         <!-- Styles -->
         <style>
             html, body {
-                background-color: yellow;
+                /* background-color: red; */
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -20,14 +23,15 @@
                 margin: 0;
             }
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
+            /* .flex-center {
                 align-items: center;
                 display: flex;
                 justify-content: center;
+            } */
+
+            .login{
+                background-color: red;
+                height: 80px;
             }
 
             .position-ref {
@@ -38,14 +42,6 @@
                 position: absolute;
                 right: 10px;
                 top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
             }
 
             .links > a {
@@ -61,29 +57,42 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .card {
+                border-radius: 20px;
+            }
+
+            footer{
+                background-color: red;
+                height: 80px;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        <div class="flex-center position-ref">
+            <div class="login">
+                @if (Route::has('login'))
+                    <div class="top-right links">
+                        @auth
+                            <a href="{{ url('/home') }}">Home</a>
+                        @else
+                            <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Landing Page
-                </div>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}">Sei un ristorante?  Registrati!</a>
+                            @endif
+                        @endauth
+                    </div>
+                @endif
             </div>
-        </div>
+
+            <!-- start container -->
+            <div class="container" id="root">
+                <!-- <p>CIAOOOOOO</p> -->
+            <!-- end container -->
+            </div>
+            <script src="{{ asset ('js/front.js')}}"> </script>
     </body>
+
+    
 </html>
