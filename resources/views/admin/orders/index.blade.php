@@ -22,7 +22,7 @@
                         <td>{{ $order->amount }} &euro;</td>
                         <td>{{ $order->created_at }}</td>
                         <td>{{ $order->customer_address }}</td>
-                        <td>check details</td>
+                        <td><a href="{{ route('admin.orders.show', $order->id) }}">Check Details</a></td>
                     </tr>
                 @endforeach
             </tbody>
