@@ -79,7 +79,28 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="form-group row">
+                            <label class="file">
+                                <input type="file" id="file" aria-label="File browser example">
+                                <span class="file-custom"></span>
+                            </label>
+                            </div>
+                            <style>
+                                .form-group,
+                                .form-group:before,
+                                .form-group:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
+.file {
+  margin: 0;
+  padding: 2rem 1.5rem;
+  font: 1rem/1.5 "PT Sans", Arial, sans-serif;
+  color: #5a5a5a;
+}
+                            </style>
 
                            
                             <div class="form-group row">
