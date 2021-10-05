@@ -5,10 +5,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
+                    <div class="card-header">Registrati come ristoratore</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">
@@ -91,8 +91,9 @@
                                     <textarea id="description" type="text" value="{{ old('description') }}"
                                         class="form-control @error('description') is-invalid
                                     @enderror"
-                                        name="description" autocomplete="description">
-                                                                                                                                                    </textarea>
+                                        name="description" autocomplete="description" rows="6">{{ old('description') }}
+                                    </textarea>
+
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -146,7 +147,7 @@
                                     Profilo</label>
 
                                 <div class="col-md-6">
-                                    <input id="profile_image" type="text"
+                                    <input id="profile_image" type="file"
                                         class="form-control @error('profile_image') is-invalid
                                     @enderror"
                                         name="profile_image" autocomplete="profile_image">
@@ -163,7 +164,7 @@
                                     Copertina</label>
 
                                 <div class="col-md-6">
-                                    <input id="cover_image" type="text"
+                                    <input id="cover_image" type="file"
                                         class="form-control @error('cover_image') is-invalid
                                     @enderror"
                                         name="cover_image" autocomplete="cover_image">

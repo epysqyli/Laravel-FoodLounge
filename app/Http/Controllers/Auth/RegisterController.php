@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Category;
 
@@ -56,8 +57,8 @@ class RegisterController extends Controller
         $user->address = $data['address'];
         $user->description = $data['description'];
         $user->vat = $data['vat'];
-        $user->profile_image = $data['profile_image'];
-        $user->cover_image = $data['cover_image'];
+        $user->profile_image = Storage::put('uploads', $data['profile_image']);
+        $user->cover_image = Storage::put('uploads', $data['cover_image']);
 
         $user->save();
 
