@@ -2256,11 +2256,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
   data: function data() {
     return {
-      api: 'localhost:8000/api/categories',
+      api: 'http://127.0.0.1:8000/api/categories',
       categories: []
     };
   },
@@ -2272,8 +2283,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get(this.api).then(function (resp) {
-        //console.log(resp.data.results);
-        _this.posts = resp.category;
+        console.log(resp); //console.log(resp.data.results);
+
+        _this.categories = resp.data.categories; // console.log(resp);
       });
     }
   }
@@ -38013,20 +38025,35 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._l(_vm.categories, function(category) {
+          return _c("div", { key: category.id, staticClass: "col-sm-6" }, [
+            _c("div", { staticClass: "card mt-3" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("h5", { staticClass: "card-title" }, [
+                  _vm._v(_vm._s(category.name))
+                ])
+              ])
+            ])
+          ])
+        })
+      ],
+      2
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c("p", [_vm._v("shuhsaushuash")])
-        ])
-      ])
-    ])
+    return _c("div", { staticClass: "col-12" }, [_c("p", [_vm._v("edo")])])
   }
 ]
 render._withStripped = true
@@ -53594,9 +53621,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _views_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/Home */ "./resources/js/views/Home.vue");
 
+ // Importation page of Vue.Router
+
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
-
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
   routes: [{
