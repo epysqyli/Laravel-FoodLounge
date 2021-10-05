@@ -28,7 +28,7 @@ class RegisterController extends Controller
         return view('auth.register', compact('categories'));
     }
 
-    protected function validator(array $data)
+    public function validator(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
@@ -42,7 +42,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function create(array $data)
+    public function create(array $data)
     {
         $slug = Str::slug($data['name']);
 

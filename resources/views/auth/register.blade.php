@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+{{-- @dd($errors); --}}
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -16,7 +18,7 @@
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -27,12 +29,11 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">Indirizzo Email</label>
+                                <label for="email" class="col-md-4 col-form-label text-md-right">Indirizzo Email</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                        name="email" value="{{ old('email') }}" required autocomplete="email">
+                                        name="email" value="{{ old('email') }}" autocomplete="email">
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -49,7 +50,7 @@
                                 <div class="col-md-6">
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="new-password">
+                                        autocomplete="new-password">
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -60,43 +61,44 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">Conferma Password</label>
+                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Conferma
+                                    Password</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" required autocomplete="new-password">
+                                        name="password_confirmation" autocomplete="new-password">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="address"
-                                    class="col-md-4 col-form-label text-md-right">Indirizzo</label>
+                                <label for="address" class="col-md-4 col-form-label text-md-right">Indirizzo</label>
 
                                 <div class="col-md-6">
-                                    <input id="address" type="text" class="form-control" name="address" required
-                                        autocomplete="address">
+                                    <input id="address" type="text"
+                                        class="form-control @error('address') is-invalid
+                                    @enderror"
+                                        name="address" autocomplete="address">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="description"
-                                    class="col-md-4 col-form-label text-md-right">Descrizione</label>
+                                <label for="description" class="col-md-4 col-form-label text-md-right">Descrizione</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="description" type="text" class="form-control" name="description" required
+                                    <textarea id="description" type="text" class="form-control @error('description') is-invalid
+                                    @enderror" name="description"
                                         autocomplete="description">
-                                    </textarea>
+                                                                                                            </textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="category"
-                                    class="col-md-4 col-form-label text-md-right">Categoria Ristorante</label>
+                                <label for="category" class="col-md-4 col-form-label text-md-right">Categoria
+                                    Ristorante</label>
 
                                 <div class="col-md-6">
-                                    <select id="category" class="form-control" name="category" required
-                                        autocomplete="category">
+                                    <select id="category" class="form-control @error('category') is-invalid
+                                    @enderror" name="category" autocomplete="category">
                                         <option value="">Scegli la tua categoria</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -109,27 +111,29 @@
                                 <label for="vat" class="col-md-4 col-form-label text-md-right">Partita IVA</label>
 
                                 <div class="col-md-6">
-                                    <input id="vat" type="text" class="form-control" name="vat" required
-                                        autocomplete="vat">
+                                    <input id="vat" type="text" class="form-control @error('vat') is-invalid
+                                    @enderror" name="vat" autocomplete="vat">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="profile_image"
-                                    class="col-md-4 col-form-label text-md-right">Immagine Profilo</label>
+                                <label for="profile_image" class="col-md-4 col-form-label text-md-right">Immagine
+                                    Profilo</label>
 
                                 <div class="col-md-6">
-                                    <input id="profile_image" type="text" class="form-control" name="profile_image"
-                                        required autocomplete="profile_image">
+                                    <input id="profile_image" type="text" class="form-control @error('profile_image') is-invalid
+                                    @enderror" name="profile_image"
+                                        autocomplete="profile_image">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="cover_image"
-                                    class="col-md-4 col-form-label text-md-right">Immagine di Copertina</label>
+                                <label for="cover_image" class="col-md-4 col-form-label text-md-right">Immagine di
+                                    Copertina</label>
 
                                 <div class="col-md-6">
-                                    <input id="cover_image" type="text" class="form-control" name="cover_image" required
+                                    <input id="cover_image" type="text" class="form-control @error('cover_image') is-invalid
+                                    @enderror" name="cover_image"
                                         autocomplete="cover_image">
                                 </div>
                             </div>
