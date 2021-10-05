@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-{{-- @dd($food); --}}
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -21,9 +19,9 @@
                         <td>{{ $food->id }}</td>
                     </tr>
                     <tr>
-                        <th>Type ID
+                        <th>Food type
                         <th>
-                        <td>{{ $food->type_id }}</td>
+                        <td>{{ $food->type->name }}</td>
                     </tr>
                     <tr>
                         <th>Price

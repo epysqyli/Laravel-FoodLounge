@@ -17,7 +17,7 @@ class FoodController extends Controller
 
     public function show(Food $food)
     {
-
+        $food = Food::find($food->id)->with('type')->first();
         return view('admin.foods.show', compact('food'));
     }
 
