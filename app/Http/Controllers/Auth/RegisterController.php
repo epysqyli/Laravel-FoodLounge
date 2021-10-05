@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Category;
 
@@ -28,21 +29,22 @@ class RegisterController extends Controller
         return view('auth.register', compact('categories'));
     }
 
-    protected function validator(array $data)
+    public function validator(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'address' => ['required', 'string', 'min:10'],
+            'address' => ['required', 'string', 'min:5'],
             'description' => ['required'],
+            'category' => ['required'],
             'vat' => ['required', 'size:11'],
             'profile_image' => ['required'],
             'cover_image' => ['required'],
         ]);
     }
 
-    protected function create(array $data)
+    public function create(array $data)
     {
         $slug = Str::slug($data['name']);
 
@@ -55,8 +57,8 @@ class RegisterController extends Controller
         $user->address = $data['address'];
         $user->description = $data['description'];
         $user->vat = $data['vat'];
-        $user->profile_image = $data['profile_image'];
-        $user->cover_image = $data['cover_image'];
+        $user->profile_image = Storage::put('uploads', $data['profile_image']);
+        $user->cover_image = Storage::put('uploads', $data['cover_image']);
 
         $user->save();
 
