@@ -74,6 +74,7 @@
     <body>
         <div class="flex-center position-ref">
             <div class="login">
+            <!-- <h1>DELIVEBOO</h1> -->
                 @if (Route::has('login'))
                     <div class="top-right links">
                         @auth
