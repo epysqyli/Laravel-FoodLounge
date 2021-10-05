@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container-md">
-        <h1 class="text-uppercase pl-5">Orders</h1>
+        <h1>Orders</h1>
         <table class="table table-light table-striped">
             <thead>
                 <tr>

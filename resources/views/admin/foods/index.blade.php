@@ -1,22 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="containerindex">
-        <div class="text-center">
-            <h1 class="text-uppercase ">Foods</h1>
-        </div>
-        <div class="row">
-            <div class="col-12 text-center">
-                <div class="d-grid ">
-                <a href="{{ route('admin.foods.create')}}" > <button class="btn btn-primary block box-shadow" style="width:80%" type="button">Add Food</button></a>
-                   
-                   
-                </div>
-            </div>
-        </div>
-      
-      
-       
+    <div class="container">
+        <h1>All foods</h1>
+        <table class="table table-light table-striped">
+            <thead>
+                <tr>
+                    <th>Food ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Visible</th>
+                    <th>Details</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
 
-    </div>    
+            <tbody>
+                @foreach ($foods as $food)
+                    <tr>
+                        <td>{{ $food->id }}</td>
+                        <td>{{ $food->name }}</td>
+                        <td>{{ $food->price }} &euro;</td>
+                        <td>{{ $food->visible ? 'Visible' : 'Not Visible' }}</td>
+                        <td><a href="{{ route('admin.foods.show', $food->id) }}">Check Details</a></td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 @endsection
