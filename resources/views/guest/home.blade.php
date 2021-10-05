@@ -88,7 +88,7 @@
 
             <!-- start container -->
             <div class="container" id="root">
-                <!-- <p>CIAOOOOOO</p> -->
+                
             <!-- end container -->
             </div>
             <script src="{{ asset ('js/app.js')}}"> </script>

@@ -1,11 +1,13 @@
 <template>
-  <div class="container">
+    <div class="container">
         <div class="row">
-            <div class="col-12">
-                <p>shuhsaushuash</p>
+            <div class="col-xs-12">
+                <h2>dahshdaudahudashudais</h2>
             </div>
         </div>
-  </div>
+
+        
+    </div>
 </template>
 
 <script>
