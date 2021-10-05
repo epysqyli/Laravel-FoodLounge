@@ -74,7 +74,7 @@
                                 <label for="address" class="col-md-4 col-form-label text-md-right">Indirizzo</label>
 
                                 <div class="col-md-6">
-                                    <input id="address" type="text"
+                                    <input id="address" type="text" value="{{ old('address') }}"
                                         class="form-control @error('address') is-invalid
                                     @enderror"
                                         name="address" autocomplete="address">
@@ -90,7 +90,7 @@
                                 <label for="description" class="col-md-4 col-form-label text-md-right">Descrizione</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="description" type="text"
+                                    <textarea id="description" type="text" value="{{ old('description') }}"
                                         class="form-control @error('description') is-invalid
                                     @enderror"
                                         name="description" autocomplete="description">
@@ -129,7 +129,7 @@
                                 <label for="vat" class="col-md-4 col-form-label text-md-right">Partita IVA</label>
 
                                 <div class="col-md-6">
-                                    <input id="vat" type="text"
+                                    <input id="vat" type="text" value="{{ old('vat') }}"
                                         class="form-control @error('vat') is-invalid
                                     @enderror"
                                         name="vat" autocomplete="vat">
