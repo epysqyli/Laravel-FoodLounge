@@ -11,6 +11,7 @@
                     <th><strong>Food Name</strong></th>
                     <th><strong>Food Units</strong></th>
                     <th><strong>Food Id</strong></th>
+                    <th><strong></strong></th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +20,7 @@
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->pivot->food_units }}</td>
                         <td>{{ $item->id }}</td>
+                        <td><u>Add link to food page</u></td>
                     </tr>
                 @endforeach
             </tbody>
