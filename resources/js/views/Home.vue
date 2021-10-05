@@ -2,7 +2,7 @@
   <div class="container">
         <div class="row">
             <div class="col-12">
-                <p>edo</p>
+                
 
                 
             </div>
@@ -37,11 +37,7 @@ export default {
             axios.get(this.api)
         
             .then(resp =>{
-        
-                console.log(resp)
-                //console.log(resp.data.results);
                 this.categories = resp.data.categories;
-                // console.log(resp);
             })
            
         }

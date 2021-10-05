@@ -1,27 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="containerhome">
-    <h1 class="text-uppercase text-success pl-5">{{Auth::user()->name}}</h1>
-<div class="card text-center">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-        <a class="nav-link active text-uppercase" aria-current="true" href="#">{{Auth::user()->name}}</a>
-      </li>
-      <li class="nav-item">
+<div class="cardrestaurant d-flex justify-content-center">
+    <div class="card">
+        <img src="{{URL::asset('/image/backend.jpg')}}" alt="John" style="width:100%">
+        <h1>Nome Ristorante</h1>
+        <p class="title">{{Auth::user()->name}}</p>
+        
+        <div style="margin: 24px 0;">
         <a class="nav-link text-uppercase" href="{{route('admin.foods.index', Auth::user()->id)}}">Foods</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-uppercase" href="{{route('admin.orders.index', Auth::user()->id)}}">Orders</a>
-      </li>
-    </ul>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">{{Auth::user()->vat}}</h5>
-    <p class="card-text">{{Auth::user()->description}}</p>
-    <img src="{{Auth::user()->cover_image}}" alt="">
-  </div>
+        <p class="card-text"><a class="nav-link text-uppercase" href="{{route('admin.orders.index', Auth::user()->id)}}">Orders</a></p> 
+          <a href="#"><i class="fa fa-linkedin"></i></a>  
+          <a href="#"><i class="fa fa-facebook"></i></a> 
+        </div>
+        <p><button>Contact</button></p>
+    </div>   
 </div>
-</div>
+
+
 @endsection

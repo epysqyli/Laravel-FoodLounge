@@ -2283,9 +2283,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get(this.api).then(function (resp) {
-        console.log(resp); //console.log(resp.data.results);
-
-        _this.categories = resp.data.categories; // console.log(resp);
+        _this.categories = resp.data.categories;
       });
     }
   }
@@ -38030,7 +38028,7 @@ var render = function() {
       "div",
       { staticClass: "row" },
       [
-        _vm._m(0),
+        _c("div", { staticClass: "col-12" }),
         _vm._v(" "),
         _vm._l(_vm.categories, function(category) {
           return _c("div", { key: category.id, staticClass: "col-sm-6" }, [
@@ -38048,14 +38046,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12" }, [_c("p", [_vm._v("edo")])])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
