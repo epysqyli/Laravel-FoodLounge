@@ -15,6 +15,12 @@ class FoodController extends Controller
         return view('admin.foods.index', compact('foods'));
     }
 
+    public function show(Food $food)
+    {
+
+        return view('admin.foods.show', compact('food'));
+    }
+
     public function create(Food $foods)
     {
         $types = Type::all();
@@ -23,7 +29,6 @@ class FoodController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
             'name' => 'required|max:255',
             'description' => 'required'
@@ -31,11 +36,6 @@ class FoodController extends Controller
         return redirect()->route('admin.foods.index');
     }
 
-    public function show(Food $foods)
-    {
-
-        return view('admin.foods.show', compact('foods'));
-    }
 
     public function edit(Food $foods)
     {

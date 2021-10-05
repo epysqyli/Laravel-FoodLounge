@@ -20,7 +20,7 @@
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->pivot->food_units }}</td>
                         <td>{{ $item->id }}</td>
-                        <td><u>Add link to food page</u></td>
+                        <td><a href="{{ route('admin.foods.show', $item->id) }}">Go to food page</a></td>
                     </tr>
                 @endforeach
             </tbody>
