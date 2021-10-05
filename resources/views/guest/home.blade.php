@@ -15,12 +15,13 @@
         <!-- Styles -->
         <style>
             html, body {
-                /* background-color: red; */
+                background-color: #003566;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+                /* position: relative; */
             }
 
             /* .flex-center {
@@ -30,8 +31,10 @@
             } */
 
             .login{
-                background-color: red;
+                background-color: #ffc300;
                 height: 80px;
+                /* position: fixed; */
+                /* z-index: 10; */
             }
 
             .position-ref {
@@ -45,7 +48,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #000814;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
