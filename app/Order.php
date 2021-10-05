@@ -11,6 +11,6 @@ class Order extends Model
     }
 
     public function foods() {
-        return $this->hasManyThrough(Food::class, FoodOrder::class);
+        return $this->belongsToMany(Food::class)->withPivot('food_units');
     }
 }
