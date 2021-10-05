@@ -7,11 +7,13 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
-main {
-    background-color: rgb(112, 96, 128);
-    background-size: cover;
-    background-repeat: no-repeat;
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(34, 133, 64);
 }
+
 .cardrestaurant {
     .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -50,6 +52,6 @@ main {
         opacity: 0.7;
     }
     img {
-        object-fit: fill;
+        object-fit: cover;
     }
 }

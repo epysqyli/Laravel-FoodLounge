@@ -8,6 +8,7 @@ use App\Food;
 use App\User;
 use App\Type;
 use App\Order;
+use App\Category;
 
 class FoodController extends Controller
 {
@@ -31,10 +32,10 @@ class FoodController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Food $foods)
+    public function create(Food $foods, Category $categories)
     {
         $types = Type::all();
-        return view('admin.foods.create', compact('foods','types'));
+        return view('admin.foods.create', compact('foods','types', 'categories'));
     }
 
     /**
