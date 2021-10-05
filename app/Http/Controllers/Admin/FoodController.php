@@ -11,10 +11,6 @@ class FoodController extends Controller
 {
     public function index()
     {
-        // Just 4 Foods through link() method on index.blade.php
-        // $foods = Food::paginate(4);
-
-        // All pages
         $foods = Food::all();
         return view('admin.foods.index', compact('foods'));
     }
@@ -22,17 +18,17 @@ class FoodController extends Controller
     public function create(Food $foods)
     {
         $types = Type::all();
-        return view('admin.foods.create', compact('foods','types'));
+        return view('admin.foods.create', compact('foods', 'types'));
     }
 
     public function store(Request $request)
     {
-        // Validation Data
-            $request->validate([
-                'name'=> 'required|max:255',
-                'description'=> 'required'
-            ]);
-            return redirect()->route('admin.foods.index');
+
+        $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required'
+        ]);
+        return redirect()->route('admin.foods.index');
     }
 
     public function show(Food $foods)
@@ -44,17 +40,17 @@ class FoodController extends Controller
     public function edit(Food $foods)
     {
         $types = Type::all();
-        
-         return view('admin.foods.edit', compact('foods', 'types'));
+
+        return view('admin.foods.edit', compact('foods', 'types'));
     }
 
-    public function update(Request $request,Food $food)
+    public function update(Request $request, Food $food)
     {
         $request->validate([
-            'name'=>'requires|max:255',
-            'description'=>'required' 
+            'name' => 'requires|max:255',
+            'description' => 'required'
         ]);
-        return redirect()->route('admin.foods.index')->with('updated', 'Update Element:'.' '. $food->id); 
+        return redirect()->route('admin.foods.index')->with('updated', 'Update Element:' . ' ' . $food->id);
     }
 
     // public function destroy(Food $foods)
