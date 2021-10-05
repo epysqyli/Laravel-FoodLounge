@@ -2278,7 +2278,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get(this.api).then(function (resp) {
-        _this.categories = resp.data.categories;
+        console.log(resp); //console.log(resp.data.results);
+
+        _this.categories = resp.data.categories; // console.log(resp);
       });
     }
   }
