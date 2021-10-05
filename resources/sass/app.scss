@@ -7,10 +7,14 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 main {
     background-color: rgb(112, 96, 128);
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 .cardrestaurant {
     .card {
