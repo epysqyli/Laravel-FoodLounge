@@ -5,15 +5,18 @@
         <div class="row mx-1 rounded shadow">
             <div class="col-4">
                 <div class="row">
-                    <a class="col my-2 mx-3 pt-2 pb-1 shadow"
-                        href="{{ route('admin.foods.index') }}">
-                        <h3 class="text-center">Manage Foods</h3>
+                    <div class="col-8 offset-2">
+                        <img class="img-fluid w-100 mt-1 mb-2 rounded-circle shadow-sm" src={{ asset('storage/' . Auth::user()->profile_image) }} alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <a class="col my-2 mx-3 pt-2 pb-1 shadow" href="{{ route('admin.foods.index') }}">
+                        <h4 class="text-center">Manage Foods</h4>
                     </a>
                 </div>
                 <div class="row">
-                    <a class="col mt-3 mx-3 pt-2 pb-1 shadow"
-                        href="{{ route('admin.orders.index') }}">
-                        <h3 class="text-center">Check Orders</h3>
+                    <a class="col mt-3 mx-3 pt-2 pb-1 shadow" href="{{ route('admin.orders.index') }}">
+                        <h4 class="text-center">Check Orders</h4>
                     </a>
                 </div>
             </div>

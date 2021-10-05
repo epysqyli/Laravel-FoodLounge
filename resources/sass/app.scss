@@ -1,5 +1,6 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 // Variables
 @import "variables";
@@ -11,6 +12,7 @@ body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
     // background-color: #228540;
 }
 
