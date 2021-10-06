@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-
-
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -10,17 +8,19 @@
                     <div class="card-header text-uppercase ">Add New Plate</div>
 
                     <div class="card-body">
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    <form method="post" action="{{ route('admin.foods.store', Auth::user()->id) }}" enctype="multipart/form-data">
-                     @csrf
+                        {{-- @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif --}}
+
+                        <form method="post" action="{{ route('admin.foods.store', Auth::user()->id) }}"
+                            enctype="multipart/form-data">
+                            @csrf
 
                             <input type="hidden" id='user_id' name='user_id' value={{ Auth::user()->id }}>
 
@@ -38,32 +38,26 @@
                                     @enderror
                                 </div>
                             </div>
-                          
+
                             <div class="form-group row">
-                           
                                 <div class="col-md-6 col-form-label text-md-right">
-                               <div>
-                                  
-                                        <input type="radio" id="visible" name="visible" value="1" > 
-                                        <label for="visible" >Visible</label><br>
-                               </div>
-                                <div>
-                                        <input type="radio" id="nonvisible" name="visible" value="0" >
-                                        <label for="nonvisible" >Non visible</label><br>
-                                </div>
-                                       
-                                      
-                                    
+                                    <div>
+                                        <input type="radio" id="visible" name="visible" value="1">
+                                        <label for="visible">Visible</label><br>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="nonvisible" name="visible" value="0">
+                                        <label for="nonvisible">Non visible</label><br>
+                                    </div>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-
                                 </div>
                             </div>
-              
+
 
                             <div class="form-group row">
                                 <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
@@ -71,7 +65,7 @@
                                 <div class="col-md-6">
                                     <input id="price" type="number" step="0.01"
                                         class="form-control @error('price') is-invalid @enderror" name="price"
-                                        autocomplete="price">
+                                        autocomplete="price" value="{{ old('price') }}">
 
                                     @error('price')
                                         <span class="invalid-feedback" role="alert">
@@ -128,7 +122,7 @@
                                         class="form-control @error('description') is-invalid
                                     @enderror"
                                         name="description" autocomplete="description" rows="6">{{ old('description') }}
-                                                                </textarea>
+                                                                            </textarea>
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -139,12 +133,11 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="image" class="col-md-4 col-form-label text-md-right">Image
-                                    Food</label>
+                                <label for="image" class="col-md-4 col-form-label text-md-right">Image Food</label>
 
                                 <div class="col-md-6">
                                     <input id="image" type="file"
-                                        class="form-control @error('image') is-invalid
+                                        class="d-block form-control @error('image') is-invalid
                                     @enderror"
                                         name="image" autocomplete="image">
                                     @error('image')
@@ -163,10 +156,9 @@
                                     <textarea id="additional_details" type="text" value="{{ old('additional_details') }}"
                                         class="form-control" name="additional_details" autocomplete="additional_details"
                                         rows="3">{{ old('additional_details') }}
-                                                                </textarea>
+                                    </textarea>
                                 </div>
                             </div>
-
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
