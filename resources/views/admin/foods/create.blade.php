@@ -8,7 +8,7 @@
                     <div class="card-header text-uppercase ">Add New Plate</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('admin.foods.store') }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('admin.foods.store') }}" enctype="multipart/form-data">
                             @csrf
 
                             <input type="hidden" id='user_id' name='user_id' value={{ Auth::user()->id }}>

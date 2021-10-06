@@ -18,27 +18,27 @@ class FoodController extends Controller
 
     public function show(Food $food)
     {
-        $food = $food->with('type')->where('type_id', $food->type_id)->first();
+        // $food = $food->with('type')->where('type_id', $food->type_id)->first();
         return view('admin.foods.show', compact('food'));
     }
 
-    public function create()
+    public function create(Food $food)
     {
         $types = Type::all();
-        return view('admin.foods.create', compact('types'));
+        return view('admin.foods.create', compact('types', 'food'));
     }
 
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'user_id' => 'required',
-            'type_id' => 'required',
+            
+            
             'name' => 'required|max:255',
             'price' => 'required',
             'description' => 'required',
             'ingredients' => 'required',
             'visible' => 'required',
-            'image' => 'required'
+            'additional_details' => 'required'
         ]);
 
         $validatedData = $request->all();
