@@ -21,42 +21,40 @@ class FoodController extends Controller
         return view('admin.foods.show', compact('food'));
     }
 
-    // public function create(Food $foods)
-    // {
-    //     $types = Type::all();
-    //     return view('admin.foods.create', compact('foods', 'types'));
-    // }
+    public function create()
+    {
+        $types = Type::all();
+        return view('admin.foods.create', compact('types'));
+    }
 
-    // public function store(Request $request)
-    // {
-    //     $request->validate([
-    //         'name' => 'required|max:255',
-    //         'description' => 'required'
-    //     ]);
-    //     return redirect()->route('admin.foods.index');
-    // }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required'
+        ]);
+        return redirect()->route('admin.foods.index');
+    }
 
+    public function edit(Food $food)
+    {
+        $types = Type::all();
+        return view('admin.foods.edit', compact('food', 'types'));
+    }
 
-    // public function edit(Food $foods)
-    // {
-    //     $types = Type::all();
+    public function update(Request $request, Food $food)
+    {
+        $request->validate([
+            'name' => 'requires|max:255',
+            'description' => 'required'
+        ]);
+        return redirect()->route('admin.foods.index')->with('updated', 'Update Element:' . ' ' . $food->id);
+    }
 
-    //     return view('admin.foods.edit', compact('foods', 'types'));
-    // }
-
-    // public function update(Request $request, Food $food)
-    // {
-    //     $request->validate([
-    //         'name' => 'requires|max:255',
-    //         'description' => 'required'
-    //     ]);
-    //     return redirect()->route('admin.foods.index')->with('updated', 'Update Element:' . ' ' . $food->id);
-    // }
-
-    // public function destroy(Food $foods)
-    // {
-    //     $food->delete();
-    //     $food->tags()->detach();
-    //     return redirect()->route('admin.foods.index')->with('delete', 'Delete Element'. ' '  . $food->id);
-    // }
+    public function destroy(Food $food)
+    {
+        $food->delete();
+        $food->tags()->detach();
+        return redirect()->route('admin.foods.index')->with('delete', 'Delete Element' . ' '  . $food->id);
+    }
 }
