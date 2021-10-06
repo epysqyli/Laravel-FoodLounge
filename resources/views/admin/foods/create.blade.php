@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-{{-- add radio buttons: visible - not visible --}}
+
 
 @section('content')
     <div class="container">
@@ -10,9 +10,17 @@
                     <div class="card-header text-uppercase ">Add New Plate</div>
 
                     <div class="card-body">
-                        <form method="post" action="{{ route('admin.foods.store', Auth::user()->id) }}"
-                            enctype="multipart/form-data">
-                            @csrf
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form method="post" action="{{ route('admin.foods.store', Auth::user()->id) }}" enctype="multipart/form-data">
+                     @csrf
 
                             <input type="hidden" id='user_id' name='user_id' value={{ Auth::user()->id }}>
 
@@ -32,25 +40,30 @@
                             </div>
                           
                             <div class="form-group row">
-                               
-
-                                <div class="col-md-6">
-                               
+                           
+                                <div class="col-md-6 col-form-label text-md-right">
+                               <div>
                                   
-                                        <input type="radio" id="visible" name="visible" value="1">
-                                          <label for="visible">Visible</label><br>
-                                          <input type="radio" id="nonvisible" name="visible" value="0">
-                                          <label for="nonvisible">Non visible</label><br>
-                                                                            
-                                  
+                                        <input type="radio" id="visible" name="visible" value="1" > 
+                                        <label for="visible" >Visible</label><br>
+                               </div>
+                                <div>
+                                        <input type="radio" id="nonvisible" name="visible" value="0" >
+                                        <label for="nonvisible" >Non visible</label><br>
+                                </div>
+                                       
+                                      
+                                    
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+
                                 </div>
                             </div>
+              
 
                             <div class="form-group row">
                                 <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
@@ -92,7 +105,7 @@
                                         class="form-control @error('type') is-invalid
                                     @enderror"
                                         name="type_id" autocomplete="type_id">
-                                        <option value="">Scegli la tua categoria</option>
+                                        <option value="">Choose your types</option>
                                         @foreach ($types as $type)
                                             <option value={{ $type->id }} @if ($type->id == old('type'))
                                                 selected
@@ -158,7 +171,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Aggiungi piatto
+                                        Add plates
                                     </button>
                                 </div>
                             </div>
