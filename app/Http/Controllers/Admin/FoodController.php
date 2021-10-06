@@ -40,13 +40,14 @@ class FoodController extends Controller
             'price' => 'required',
             'description' => 'required',
             'ingredients' => 'required',
-            'visible'=> 'required',
-            'image'=>'nullable|image',
+            'visible' => 'required',
+            'image' => 'nullable|image',
         ]);
 
         $validatedData = $request->all();
 
         $food = new Food();
+
         if (!array_key_exists('visible', $validatedData)) {
             $food->visible = 0;
         }
