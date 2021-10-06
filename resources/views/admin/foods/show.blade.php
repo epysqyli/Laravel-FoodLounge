@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@dd($food->image);
+
 @section('content')
     <div class="container">
         <div class="row">

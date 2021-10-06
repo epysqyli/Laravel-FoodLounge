@@ -30,6 +30,7 @@ class FoodController extends Controller
 
     // add validation
     // update for radio buttons
+    // update image upload
     public function store(Request $request)
     {
         $data = $request->all();
