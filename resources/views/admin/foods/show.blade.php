@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@dd($food->image);
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -11,7 +9,8 @@
         </div>
         <div class="row">
             <div class="col-4">
-                <img class="rounded" src={{ $food->image }} alt="">
+                <img class="rounded w-100"
+                    src={{ $food->image[0] == 'h' ? $food->image : asset('storage/' . $food->image) }} alt="">
             </div>
             <div class="col-8">
                 <table class="table table-light table-striped">

@@ -10,8 +10,9 @@
                     <div class="card-header text-uppercase ">Add New Plate</div>
 
                     <div class="card-body">
-                        <form method="post" action="{{ route('admin.foods.store',Auth::user()->id) }}" enctype="multipart/form-data">
-                            @csrf   
+                        <form method="post" action="{{ route('admin.foods.store', Auth::user()->id) }}"
+                            enctype="multipart/form-data">
+                            @csrf
                             <input type="hidden" id='user_id' name='user_id' value={{ Auth::user()->id }}>
 
                             <div class="form-group row">
@@ -33,11 +34,12 @@
 
                                 <div class="col-md-6">
 
-                                  
-                                        <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="visible" value="1" name="visible" checked>
-                                                <label class="form-check-label" for="visible">Visibile</label>
-                                        </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="visible" value="1"
+                                            name="visible" checked>
+                                        <label class="form-check-label" for="visible">Visibile</label>
+                                    </div>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -110,7 +112,7 @@
                                         class="form-control @error('description') is-invalid
                                     @enderror"
                                         name="description" autocomplete="description" rows="6">{{ old('description') }}
-                                                            </textarea>
+                                                                </textarea>
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -145,7 +147,7 @@
                                     <textarea id="additional_details" type="text" value="{{ old('additional_details') }}"
                                         class="form-control" name="additional_details" autocomplete="additional_details"
                                         rows="3">{{ old('additional_details') }}
-                                                            </textarea>
+                                                                </textarea>
                                 </div>
                             </div>
 

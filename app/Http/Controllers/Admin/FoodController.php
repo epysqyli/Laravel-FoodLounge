@@ -29,8 +29,7 @@ class FoodController extends Controller
         return view('admin.foods.create', compact('types', 'food'));
     }
 
-    // add validation
-    // update for radio buttons
+    // update for radio or check buttons ('visible')
     // update image upload
     public function store(Request $request)
     {
