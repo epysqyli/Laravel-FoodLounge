@@ -31,19 +31,21 @@ class FoodController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            
-            
+            'user_id'=> 'required',
+            'type_id'=> 'required',
             'name' => 'required|max:255',
             'price' => 'required',
             'description' => 'required',
             'ingredients' => 'required',
-            'visible' => 'required',
             'additional_details' => 'required'
         ]);
 
         $validatedData = $request->all();
 
         $food = new Food();
+        if (!array_key_exists('visible', $validatedData)) {
+            $food->visible = 0;
+        }
         $food->fill($validatedData);
         $food->save();
 
