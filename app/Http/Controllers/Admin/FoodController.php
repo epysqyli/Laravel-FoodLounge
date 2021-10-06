@@ -6,12 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Food;
 use App\Type;
+use Illuminate\Support\Facades\Auth;
 
 class FoodController extends Controller
 {
     public function index()
     {
-        $foods = Food::all();
+        $foods = Auth::user()->foods;
         return view('admin.foods.index', compact('foods'));
     }
 
@@ -29,7 +30,7 @@ class FoodController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'user_id' => 'required',
             'type_id' => 'required',
             'name' => 'required|max:255',
@@ -40,7 +41,11 @@ class FoodController extends Controller
             'image' => 'required'
         ]);
 
+        $validatedData = $request->all();
 
+        $food = new Food();
+        $food->fill($validatedData);
+        $food->save();
 
         return redirect()->route('admin.foods.index');
     }

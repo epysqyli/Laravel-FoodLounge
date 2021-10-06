@@ -8,7 +8,7 @@
                     <div class="card-header text-uppercase ">Add New Plate</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('admin.foods.store') }}" enctype="multipart/form-data">
                             @csrf
 
                             <input type="hidden" id='user_id' name='user_id' value={{ Auth::user()->id }}>
@@ -140,7 +140,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Registrati!
+                                        Aggiungi piatto
                                     </button>
                                 </div>
                             </div>

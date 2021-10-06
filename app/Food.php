@@ -16,6 +16,7 @@ class Food extends Model
         'visible',
         'image'
     ];
+
     protected $table = 'foods';
 
     public function user()
