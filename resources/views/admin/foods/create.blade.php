@@ -40,7 +40,8 @@
                             </div>
 
                             <div class="form-group row">
-                                <div class="col-md-6 col-form-label text-md-right">
+                                <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Disponibilit&agrave;</label>
+                                <div class="col-md-4 col-form-label">
                                     <div>
                                         <input type="radio" id="visible" name="visible" value="1">
                                         <label for="visible">Visible</label><br>
