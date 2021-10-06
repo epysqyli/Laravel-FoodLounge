@@ -42,6 +42,16 @@
   object-fit: cover;
 }
 
+.newplate .img {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.newplate .img img {
+  width: 20px;
+  height: 20px;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

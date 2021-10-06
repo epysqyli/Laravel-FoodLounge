@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container newplate">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header text-uppercase ">Add New Plate</div>
-
+                    <div class="card-header text-uppercase alert-dark text-center">   Add New Plate <div class="img"> <img src="{{url('image/food.png')}}" alt=""></div></div>
+                   
                     <div class="card-body">
                         {{-- @if ($errors->any())
                             <div class="alert alert-danger">
@@ -41,15 +41,15 @@
 
                             <div class="form-group row">
                                 <label class="col-md-3 offset-md-1 text-md-right pt-md-1"
-                                    for="visible">Disponibilit&agrave;</label>
+                                    for="visible">Availability</label>
                                 <div class="col-md-4 col-form-label">
                                     <div>
                                         <input type="radio" id="visible" name="visible" value="1">
-                                        <label for="visible">Visible</label><br>
+                                        <label for="visible">Accessible</label><br>
                                     </div>
                                     <div>
                                         <input type="radio" id="nonvisible" name="visible" value="0">
-                                        <label for="nonvisible">Non visible</label><br>
+                                        <label for="nonvisible">Inaccessible</label><br>
                                     </div>
 
                                     @error('name')
@@ -93,7 +93,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="type_id" class="col-md-4 col-form-label text-md-right">Categoria Piatto</label>
+                                <label for="type_id" class="col-md-4 col-form-label text-md-right">Type</label>
 
                                 <div class="col-md-6">
                                     <select id="type"
@@ -138,7 +138,7 @@
 
                                 <div class="col-md-6">
                                     <input id="image" type="file"
-                                        class="d-block form-control @error('image') is-invalid
+                                        class="d-block form-control-file @error('image') is-invalid
                                     @enderror"
                                         name="image" autocomplete="image">
                                     @error('image')
