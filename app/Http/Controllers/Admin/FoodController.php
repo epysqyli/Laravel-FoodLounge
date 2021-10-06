@@ -30,24 +30,20 @@ class FoodController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'user_id' => 'required',
-            'type_id' => 'required',
-            'name' => 'required|max:255',
-            'price' => 'required',
-            'description' => 'required',
-            'ingredients' => 'required',
-            'visible' => 'required',
-            'image' => 'required'
-        ]);
-
-        $validatedData = $request->all();
+        $data = $request->all();
 
         $food = new Food();
-        $food->fill($validatedData);
+        $food->fill($data);
+
+        $type = Type::find($data['type']);
+
+        $food->visible = 1;
+
+        $food->user()->associate(Auth::user());
+        $food->type()->associate($type);
         $food->save();
 
-        return redirect()->route('admin.foods.index');
+        return view('admin.foods.index');
     }
 
     public function edit(Food $food)

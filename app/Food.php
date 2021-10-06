@@ -7,14 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Food extends Model
 {
     protected $fillable = [
-        'user_id',
-        'type_id',
         'name',
         'price',
         'description',
         'ingredients',
         'visible',
-        'image'
+        'image',
+        'additional_details'
     ];
 
     protected $table = 'foods';
