@@ -13,6 +13,7 @@
                         <form method="post" action="{{ route('admin.foods.store', Auth::user()->id) }}"
                             enctype="multipart/form-data">
                             @csrf
+
                             <input type="hidden" id='user_id' name='user_id' value={{ Auth::user()->id }}>
 
                             <div class="form-group row">
@@ -29,17 +30,19 @@
                                     @enderror
                                 </div>
                             </div>
+                          
                             <div class="form-group row">
-                                <label for="visible" class="col-md-4 col-form-label text-md-right">Name</label>
+                               
 
                                 <div class="col-md-6">
-
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="visible" value="1"
-                                            name="visible" checked>
-                                        <label class="form-check-label" for="visible">Visibile</label>
-                                    </div>
+                               
+                                  
+                                        <input type="radio" id="visible" name="visible" value="1">
+                                          <label for="visible">Visible</label><br>
+                                          <input type="radio" id="nonvisible" name="visible" value="0">
+                                          <label for="nonvisible">Non visible</label><br>
+                                                                            
+                                  
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
