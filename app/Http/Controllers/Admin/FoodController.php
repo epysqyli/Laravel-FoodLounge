@@ -42,7 +42,6 @@ class FoodController extends Controller
             'ingredients' => 'required',
             'visible'=> 'required',
             'image'=>'nullable|image',
-            'additional_details' => 'required'
         ]);
 
         $validatedData = $request->all();
@@ -53,8 +52,7 @@ class FoodController extends Controller
         }
 
         if (array_key_exists('image', $validatedData)) {
-            $food_image = Storage::put('uploads', $validatedData['image']);
-            $validatedData['image'] = $food_image;
+            $validatedData['image'] = Storage::put('uploads', $validatedData['image']);;
         }
 
         $food->fill($validatedData);

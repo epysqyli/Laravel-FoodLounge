@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@dd($types);
+@dd(Auth::user());
 
 @section('content')
     <div class="container">
