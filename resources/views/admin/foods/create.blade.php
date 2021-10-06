@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-{{-- @dd(Auth::user()->foods); --}}
+{{-- add radio buttons: visible - not visible --}}
 
 @section('content')
     <div class="container">
@@ -91,7 +91,7 @@
                                         class="form-control @error('description') is-invalid
                                     @enderror"
                                         name="description" autocomplete="description" rows="6">{{ old('description') }}
-                                            </textarea>
+                                                            </textarea>
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -126,7 +126,7 @@
                                     <textarea id="additional_details" type="text" value="{{ old('additional_details') }}"
                                         class="form-control" name="additional_details" autocomplete="additional_details"
                                         rows="3">{{ old('additional_details') }}
-                                            </textarea>
+                                                            </textarea>
                                 </div>
                             </div>
 

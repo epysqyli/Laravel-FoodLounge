@@ -28,6 +28,8 @@ class FoodController extends Controller
         return view('admin.foods.create', compact('types'));
     }
 
+    // add validation
+    // update for radio buttons
     public function store(Request $request)
     {
         $data = $request->all();
