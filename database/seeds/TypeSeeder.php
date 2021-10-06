@@ -5,11 +5,6 @@ use App\Type;
 
 class TypeSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $types = [
@@ -22,6 +17,8 @@ class TypeSeeder extends Seeder
         foreach ($types as $type) {
             $newType = new Type();
 
+            // can be assigned to other users as well
+            $newType->user_id = 1;
             $newType->name = $type;
 
             $newType->save();
