@@ -11,6 +11,8 @@
                         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                             @csrf
 
+                            <input type="hidden" id='user_id' name='user_id' value={{ Auth::user()->id }}>
+
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
