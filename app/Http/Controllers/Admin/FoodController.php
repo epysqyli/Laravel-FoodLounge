@@ -46,6 +46,12 @@ class FoodController extends Controller
         if (!array_key_exists('visible', $validatedData)) {
             $food->visible = 0;
         }
+
+        // da cambiare
+        // if (array_key_exists('cover', $validatedData)) {
+        //     $post->cover = Storage::put('covers', $validatedData['cover']);
+        // }
+
         $food->fill($validatedData);
         $food->save();
 
