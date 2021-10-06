@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container backend">
         <div class="row mx-1 pt-4 rounded border bg-light">
             <div class="col-4">
                 <div class="row">
@@ -10,12 +10,12 @@
                     </div>
                 </div>
                 <div class="row">
-                    <a class="col-7 mx-auto my-2 pt-2 pb-1 border rounded shadow bg-info text-white" href="{{ route('admin.foods.index') }}">
+                    <a class="col-7 mx-auto my-2 pt-2 pb-1 border rounded shadow bg-info text-white" href="{{ route('admin.foods.index', Auth::user()->id) }}">
                         <h4 class="text-center">Manage Foods</h4>
                     </a>
                 </div>
                 <div class="row">
-                    <a class="col-7 mx-auto mt-3 pt-2 pb-1 border rounded shadow bg-info text-white" href="{{ route('admin.orders.index') }}">
+                    <a class="col-7 mx-auto mt-3 pt-2 pb-1 border rounded shadow bg-info text-white" href="{{ route('admin.orders.index', Auth::user()->id) }}">
                         <h4 class="text-center">Check Orders</h4>
                     </a>
                 </div>

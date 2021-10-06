@@ -19,14 +19,14 @@ class FoodController extends Controller
 
     public function show(Food $food)
     {
-        $food = $food->with('type')->where('type_id', $food->type_id)->first();
+        // $food = $food->with('type')->where('type_id', $food->type_id)->first();
         return view('admin.foods.show', compact('food'));
     }
 
-    public function create()
+    public function create(Food $food)
     {
         $types = Type::all();
-        return view('admin.foods.create', compact('types'));
+        return view('admin.foods.create', compact('types', 'food'));
     }
 
     // add validation
@@ -34,22 +34,29 @@ class FoodController extends Controller
     // update image upload
     public function store(Request $request)
     {
-        $data = $request->all();
+        $validatedData = $request->validate([
+            'user_id' => 'required',
+            'type_id' => 'required',
+            'name' => 'required|max:255',
+            'price' => 'required',
+            'description' => 'required',
+            'ingredients' => 'required',
+            'additional_details' => 'required'
+        ]);
+
+        $validatedData = $request->all();
 
         $food = new Food();
-        $food->fill($data);
-
-        $type = Type::find($data['type']);
-
-        $food->visible = 1;
-
-        $food->user()->associate(Auth::user());
-        $food->type()->associate($type);
-
-        if ($data['image']) {
-            $food->image = Storage::put('food_images', $data['image']);
+        if (!array_key_exists('visible', $validatedData)) {
+            $food->visible = 0;
         }
 
+        // da cambiare
+        // if (array_key_exists('cover', $validatedData)) {
+        //     $post->cover = Storage::put('covers', $validatedData['cover']);
+        // }
+
+        $food->fill($validatedData);
         $food->save();
 
         return view('admin.foods.index');
