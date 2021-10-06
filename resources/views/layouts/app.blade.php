@@ -52,7 +52,10 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item">
+                                <a class="navbar-brand border rounded px-1 bg-light" href="{{ route('logout') }}">Logout</a>
+                            </li>
+                            {{-- <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -69,7 +72,7 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
+                            </li> --}}
                         @endguest
                     </ul>
                 </div>
