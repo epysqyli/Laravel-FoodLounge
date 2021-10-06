@@ -2,16 +2,11 @@
 
 use Illuminate\Database\Seeder;
 use App\Order;
+use App\Food;
 use Faker\Factory;
-
 
 class OrderSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $faker = Factory::create();
@@ -30,6 +25,9 @@ class OrderSeeder extends Seeder
             $order->transaction_status = ["Rejected", "Accepted"][rand(0, 1)];
 
             $order->save();
+
+            $food = Food::find(rand(1, 10));
+            $order->foods()->attach([$food->id => ['food_units' => rand(1, 5)]]);
         }
     }
 }
