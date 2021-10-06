@@ -3,14 +3,10 @@
 use Illuminate\Database\Seeder;
 
 use App\Category;
+use Illuminate\Support\Facades\Storage;
 
 class CategorySeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $categories = [
@@ -23,16 +19,16 @@ class CategorySeeder extends Seeder
             'Thailandese',
             'Italiano',
             'Greco',
-            'Pasticceria'
+            'Pasticceria',
         ];
 
-        foreach ($categories as $cat_name) {
+
+        foreach ($categories as  $cat_name) {
             $category = new Category();
-
             $category->name = $cat_name;
-            $category->img = "https://picsum.photos/700/500";
-
+            $category->img = 'https://picsum.photos/200/300';
             $category->save();
-        }
+        };
+        
     }
 }

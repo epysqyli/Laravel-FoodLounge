@@ -40,15 +40,16 @@ class FoodController extends Controller
             'price' => 'required',
             'description' => 'required',
             'ingredients' => 'required',
+            'visible'=> 'required',
             'additional_details' => 'required'
         ]);
 
         $validatedData = $request->all();
 
         $food = new Food();
-        if (!array_key_exists('visible', $validatedData)) {
-            $food->visible = 0;
-        }
+        // if (!array_key_exists('visible', $validatedData)) {
+        //     $food->visible = 0;
+        // }
 
         // da cambiare
         // if (array_key_exists('cover', $validatedData)) {
@@ -58,7 +59,7 @@ class FoodController extends Controller
         $food->fill($validatedData);
         $food->save();
 
-        return view('admin.foods.index');
+        return redirect()->route('admin.foods.index');
     }
 
     public function edit(Food $food)
