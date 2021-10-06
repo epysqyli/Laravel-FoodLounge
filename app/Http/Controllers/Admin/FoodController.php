@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Food;
 use App\Type;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class FoodController extends Controller
 {
@@ -44,6 +45,11 @@ class FoodController extends Controller
 
         $food->user()->associate(Auth::user());
         $food->type()->associate($type);
+
+        if ($data['image']) {
+            $food->image = Storage::put('food_images', $data['image']);
+        }
+
         $food->save();
 
         return view('admin.foods.index');
