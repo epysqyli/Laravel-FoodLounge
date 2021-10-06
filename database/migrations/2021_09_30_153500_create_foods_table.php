@@ -17,7 +17,7 @@ class CreateFoodsTable extends Migration
             $table->text('description');
             $table->text('ingredients');
             $table->boolean('visible');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('additional_details')->nullable();
             $table->timestamps();
         });
