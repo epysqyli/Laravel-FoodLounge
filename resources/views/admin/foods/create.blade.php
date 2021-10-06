@@ -116,6 +116,23 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <label for="additional_details" class="col-md-4 col-form-label text-md-right">Additional Details</label>
+
+                                <div class="col-md-6">
+                                    <textarea id="additional_details" type="text" value="{{ old('additional_details') }}"
+                                        class="form-control @error('additional_details') is-invalid
+                                    @enderror"
+                                        name="additional_details" autocomplete="additional_details" rows="3">{{ old('additional_details') }}
+                                    </textarea>
+
+                                    @error('additional_details')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
                             
 
                             <div class="form-group row mb-0">

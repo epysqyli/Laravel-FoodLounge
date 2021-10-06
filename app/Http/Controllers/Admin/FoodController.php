@@ -30,9 +30,18 @@ class FoodController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'user_id' => 'required',
+            'type_id' => 'required',
             'name' => 'required|max:255',
-            'description' => 'required'
+            'price' => 'required',
+            'description' => 'required',
+            'ingredients' => 'required',
+            'visible' => 'required',
+            'image' => 'required'
         ]);
+
+
+
         return redirect()->route('admin.foods.index');
     }
 
