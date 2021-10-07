@@ -18,6 +18,11 @@ const router = new VueRouter({
             path: "/category/:id",
             name: "category",
             component: Category
+        },
+        {
+            path: "/test",
+            name: "test",
+            component: () => import("./views/Test")
         }
     ]
 });
