@@ -12,12 +12,12 @@
           <!-- start cards -->
           <div class="row d-flex justify-content-center">
               <div class="col-xs-12 col-md-6 col-lg-4" v-for="category in categories" :key="category.id">
-                  <div class="card mb-4 mx-auto" style="width: 22rem;">
+                  <router-link :to="{name:'category', params:{id:category.id}}" class="card mb-4 mx-auto" style="width: 22rem;">
                       <img class="card-img-top" :src="category.img" :alt="category.name">
                       <div class="card-body text-center">
                           <h5 class="card-title">{{category.name}}</h5>
                       </div>
-                  </div>
+                  </router-link>
               </div>
           </div>
           <!-- end cards --> 
