@@ -32,6 +32,13 @@
                                 <td>{{ $food->visible ? 'Visible' : 'Not Visible' }}</td>
                                 <td><a href="{{ route('admin.foods.show', $food->id) }}">Check Details</a></td>
                                 <td><a href="{{ route('admin.foods.edit', $food->id) }}">Change</a></td>
+                                <td>
+                                    <form action="{{ route('admin.foods.destroy', $food->id) }}" method="post" class="d-inline-block delete-post-form">
+                                        @csrf
+                                        @method('DELETE')                                        
+                                        <input type="submit" value="x" class="btn btn-danger rounded-circle">                                
+                                    </form>
+                                </td>                        
                             </tr>
                         @endforeach
                     </tbody>
