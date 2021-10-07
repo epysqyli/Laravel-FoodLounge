@@ -18,7 +18,8 @@
                             <th>Name</th>
                             <th>Price</th>
                             <th>Visible</th>
-                            <th>Action</th>
+                            <th>Details</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
 
@@ -30,6 +31,7 @@
                                 <td>{{ $food->price }} &euro;</td>
                                 <td>{{ $food->visible ? 'Visible' : 'Not Visible' }}</td>
                                 <td><a href="{{ route('admin.foods.show', $food->id) }}">Check Details</a></td>
+                                <td><a href="{{ route('admin.foods.edit', $food->id) }}">Change</a></td>
                             </tr>
                         @endforeach
                     </tbody>
