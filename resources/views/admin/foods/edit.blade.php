@@ -6,20 +6,11 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header text-uppercase alert-dark text-center"> Change Plate <div class="img">
-                            <img src="{{ url('image/food.png') }}" alt=""></div>
+                            <img src="{{ url('image/food.png') }}" alt="">
+                        </div>
                     </div>
 
                     <div class="card-body">
-                        {{-- @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif --}}
-
                         <form method="post" action="{{ route('admin.foods.update', Auth::user()->id) }}"
                             enctype="multipart/form-data">
                             @csrf
@@ -32,7 +23,7 @@
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="name" value="{{ old('name',$food->name) }}" autocomplete="name" autofocus>
+                                        name="name" value="{{ old('name', $food->name) }}" autocomplete="name" autofocus>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -46,11 +37,11 @@
                                 <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Availability</label>
                                 <div class="col-md-4 col-form-label">
                                     <div>
-                                        <input type="radio" id="visible" name="visible" value="{{$food->true}}" >
+                                        <input type="radio" id="visible" name="visible" value="{{ $food->true }}">
                                         <label for="visible">Accessible</label><br>
                                     </div>
                                     <div>
-                                        <input type="radio" id="nonvisible" name="visible" value="{{$food->false}}" >
+                                        <input type="radio" id="nonvisible" name="visible" value="{{ $food->false }}">
                                         <label for="nonvisible">Inaccessible</label><br>
                                     </div>
 
@@ -68,7 +59,7 @@
                                 <div class="col-md-6">
                                     <input id="price" type="number" step="0.01"
                                         class="form-control @error('price') is-invalid @enderror" name="price"
-                                        autocomplete="price" value="{{ old('price',$food->price) }}">
+                                        autocomplete="price" value="{{ old('price', $food->price) }}">
 
                                     @error('price')
                                         <span class="invalid-feedback" role="alert">
@@ -84,7 +75,7 @@
                                 <div class="col-md-6">
                                     <input id="ingredients" type="text"
                                         class="form-control @error('ingredients') is-invalid @enderror" name="ingredients"
-                                        value="{{ old('ingredients',$food->ingredients) }}" autocomplete="ingredients">
+                                        value="{{ old('ingredients', $food->ingredients) }}" autocomplete="ingredients">
 
                                     @error('ingredients')
                                         <span class="invalid-feedback" role="alert">
@@ -121,11 +112,11 @@
                                 <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="description" type="text" value="{{ old('description',$food->description) }}"
+                                    <textarea id="description" type="text"
                                         class="form-control text-left @error('description') is-invalid
                                     @enderror"
-                                        name="description" autocomplete="description" rows="6">{{ old('description') }}
-                                                                                    </textarea>
+                                        name="description" autocomplete="description"
+                                        rows="6">{{old('description', $food->description)}}</textarea>
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -142,7 +133,7 @@
                                     <input id="image" type="file"
                                         class="d-block form-control-file @error('image') is-invalid
                                     @enderror"
-                                        name="image" autocomplete="image" value="{{old('image',$food->image)}}">
+                                        name="image" autocomplete="image" value="{{ old('image', $food->image) }}">
                                     @error('image')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -156,10 +147,9 @@
                                     Details</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="additional_details" type="text" value="{{ old('additional_details',$food->additional_details) }}"
+                                    <textarea id="additional_details" type="text"
                                         class="form-control" name="additional_details" autocomplete="additional_details"
-                                        rows="3">{{ old('additional_details') }}
-                                            </textarea>
+                                        rows="3">{{ old('additional_details', $food->additional_details) }}</textarea>
                                 </div>
                             </div>
 
