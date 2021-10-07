@@ -39,6 +39,13 @@
                         <th>
                         <td>{{ $food->visible ? 'Yes' : 'No' }}</td>
                     </tr>
+                    @if ($food->additional_details)
+                        <tr>
+                            <th>Additional Details
+                            <th>
+                            <td>{{ $food->additional_details }}</td>
+                        </tr>
+                    @endif
                 </table>
             </div>
         </div>
