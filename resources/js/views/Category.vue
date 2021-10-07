@@ -46,4 +46,14 @@ h2 {
   color: #ffd60a;
 }
 
+.card {
+  border: none;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px #ffd60a;
+}
+  
+
+
 </style>

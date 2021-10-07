@@ -70,7 +70,7 @@ h2 {
 .card {
   width: calc(100% / 5);
   border: none;
-  background-color: transparent;
+  // background-color: transparent;
 }
 
 .card img {
@@ -83,7 +83,7 @@ h2 {
 }
 
 .card:hover {
-  border: 3px solid #ffc300;
+  box-shadow: 0 0 10px rgb(255, 214, 10);
 }
 
 .card:hover img {
