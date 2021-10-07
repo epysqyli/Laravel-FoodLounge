@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header alert-dark text-center">Add up to three categories<div class="img">
+                    <div class="card-header alert-dark text-center">Add food categories<div class="img">
                         </div>
                     </div>
 
@@ -14,49 +14,25 @@
                             enctype="multipart/form-data">
                             @csrf
 
-                            <input type="hidden" id='user_id' name='user_id' value={{ Auth::user()->id }}>
+                            @for ($i = 0; $i < $available_categories; $i++)
 
-                            <div class="form-group row">
-                                <label for="name-1" class="col-md-4 col-form-label text-md-right">Type 1</label>
-                                <div class="col-md-6">
-                                    <input id="name-1" type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="types[]" value="{{ old('name') }}" autocomplete="name" autofocus>
+                                <div class="form-group row">
+                                    <label for={{ 'type' . $i }} class="col-md-4 col-form-label text-md-right">Food Type
+                                        {{ $i + 1 }}</label>
+                                    <div class="col-md-6">
+                                        <input id={{ 'type' . $i }} type="text"
+                                            class="form-control @error('name') is-invalid @enderror" name="types[]"
+                                            value="{{ old('name') }}" autocomplete="name" autofocus>
 
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label for="name-2" class="col-md-4 col-form-label text-md-right">Type 2</label>
-                                <div class="col-md-6">
-                                    <input id="name-2" type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="types[]" value="{{ old('name') }}" autocomplete="name" autofocus>
-
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="name-3" class="col-md-4 col-form-label text-md-right">Type 3</label>
-                                <div class="col-md-6">
-                                    <input id="name-3" type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="types[]" value="{{ old('name') }}" autocomplete="name" autofocus>
-
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+                            @endfor
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
