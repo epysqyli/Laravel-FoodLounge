@@ -51,8 +51,9 @@ class TypeController extends Controller
         return redirect()->route('admin.types.index');
     }
 
-    public function destroy($id)
+    public function destroy(Type $type)
     {
-        //
+        $type->delete();
+        return redirect()->route('admin.types.index');
     }
 }
