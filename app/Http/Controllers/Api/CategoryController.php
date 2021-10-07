@@ -12,4 +12,9 @@ class CategoryController extends Controller
         $categories = Category::all();
         return response()->json(compact('categories'));
     }
+
+    public function category($id) {
+        $data = Category::find($id)->users;
+        return response()->json($data);
+    }
 }
