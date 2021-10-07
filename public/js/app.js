@@ -6779,7 +6779,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-6480121d] {\n  font-size: 40px;\n  color: #ffd60a;\n}", ""]);
+exports.push([module.i, "h2[data-v-6480121d] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-6480121d] {\n  border: none;\n}\n.card[data-v-6480121d]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}", ""]);
 
 // exports
 
@@ -6798,7 +6798,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-63cd6604] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-63cd6604] {\n  width: 20%;\n  border: none;\n  background-color: transparent;\n}\n.card img[data-v-63cd6604] {\n  border-top-left-radius: 16px;\n  border-top-right-radius: 16px;\n}\n.card-body[data-v-63cd6604] {\n  color: #ffd60a;\n}\n.card[data-v-63cd6604]:hover {\n  border: 3px solid #ffc300;\n}\n.card:hover img[data-v-63cd6604] {\n  filter: opacity(80%);\n}", ""]);
+exports.push([module.i, "h2[data-v-63cd6604] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-63cd6604] {\n  width: 20%;\n  border: none;\n}\n.card img[data-v-63cd6604] {\n  border-top-left-radius: 16px;\n  border-top-right-radius: 16px;\n}\n.card-body[data-v-63cd6604] {\n  color: #ffd60a;\n}\n.card[data-v-63cd6604]:hover {\n  box-shadow: 0 0 10px #ffd60a;\n}\n.card:hover img[data-v-63cd6604] {\n  filter: opacity(80%);\n}", ""]);
 
 // exports
 
