@@ -11,8 +11,9 @@
 
             <!-- start cards -->
             <div class="row d-flex flex-wrap justify-content-center">
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2" v-for="category in categories" :key="category.id">
-                    <router-link :to="{name:'category', params:{id:category.id}}" class="card mb-4" style="width: 10rem;">
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2" v-for="category in categories" :key="category.id">
+                    <router-link :to="{name:'category', params:{id:category.id}}" class="card mb-4 mx-auto" style="width: 11rem;">
+                        
                         <img class="card-img-top" :src="category.img" :alt="category.name">
                         <div class="card-body text-center">
                           <h5 class="card-title">{{category.name}}</h5>
@@ -59,7 +60,7 @@ h2{
 }
 
 .card{
-    // width: calc(100% / 5);
+    width: calc(100% / 5);
     border: none;
     background-color: transparent;
 }
