@@ -52,7 +52,11 @@ class TypeController extends Controller
     }
 
     public function destroy(Type $type)
-    {
+    {   
+        foreach ($type->foods as $food) {
+            $food->delete();
+        }
+
         $type->delete();
         return redirect()->route('admin.types.index');
     }
