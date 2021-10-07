@@ -18,7 +18,7 @@
                 <div class="card my-3">
                     <div class="card-header" id="{{ $type->name . 'heading' }}">
                         <div class="mb-0 d-flex justify-content-between">
-                            <button class="btn btn-link" data-toggle="collapse"
+                            <button class="btn btn-link"
                                 data-target="#{{ $type->name . 'collapse' }}" aria-expanded="true"
                                 aria-controls="{{ $type->name . 'collapse' }}">
                                 {{ $type->name }}
