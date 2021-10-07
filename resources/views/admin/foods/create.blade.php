@@ -5,8 +5,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header text-uppercase alert-dark text-center">   Add New Plate <div class="img"> <img src="{{url('image/food.png')}}" alt=""></div></div>
-                   
+                    <div class="card-header text-uppercase alert-dark text-center"> Add New Plate <div class="img">
+                            <img src="{{ url('image/food.png') }}" alt=""></div>
+                    </div>
+
                     <div class="card-body">
                         {{-- @if ($errors->any())
                             <div class="alert alert-danger">
@@ -40,8 +42,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-md-3 offset-md-1 text-md-right pt-md-1"
-                                    for="visible">Availability</label>
+                                <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Availability</label>
                                 <div class="col-md-4 col-form-label">
                                     <div>
                                         <input type="radio" id="visible" name="visible" value="1">
@@ -123,7 +124,7 @@
                                         class="form-control @error('description') is-invalid
                                     @enderror"
                                         name="description" autocomplete="description" rows="6">{{ old('description') }}
-                                                                                </textarea>
+                                                                                    </textarea>
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -157,7 +158,7 @@
                                     <textarea id="additional_details" type="text" value="{{ old('additional_details') }}"
                                         class="form-control" name="additional_details" autocomplete="additional_details"
                                         rows="3">{{ old('additional_details') }}
-                                        </textarea>
+                                            </textarea>
                                 </div>
                             </div>
 
