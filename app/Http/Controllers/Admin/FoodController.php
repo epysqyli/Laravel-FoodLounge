@@ -78,7 +78,7 @@ class FoodController extends Controller
 
     public function destroy(Food $food)
     {
-        Storage::delete($food->foods);
+        Storage::delete($food->image);
         
         $food->delete();
         return redirect()->route('admin.foods.index')->with('delete', 'Delete Element' . ' '  . $food->id);

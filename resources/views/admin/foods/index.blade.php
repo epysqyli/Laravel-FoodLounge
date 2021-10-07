@@ -7,8 +7,8 @@
                 <h1>All foods</h1>
                 <div class="row">
                     <div class="col-12">
-                        <a class="btn btn-outline-dark mt-2 mb-5 d-block mx-auto w-25" href="{{ route('admin.foods.create', Auth::user()->id) }}"
-                            class="link-dark">ADD FOOD</a>
+                        <a class="btn btn-outline-dark mt-2 mb-5 d-block mx-auto w-25"
+                            href="{{ route('admin.foods.create', Auth::user()->id) }}" class="link-dark">ADD FOOD</a>
                     </div>
                 </div>
                 <table class="table table-light table-striped">
@@ -33,12 +33,12 @@
                                 <td><a href="{{ route('admin.foods.show', $food->id) }}">Check Details</a></td>
                                 <td><a href="{{ route('admin.foods.edit', $food->id) }}">Change</a></td>
                                 <td>
-                                    <form action="{{ route('admin.foods.destroy', $food->id) }}" method="post" class="d-inline-block delete-post-form">
+                                    <form action="{{ route('admin.foods.destroy', $food->id) }}" method="post">
                                         @csrf
-                                        @method('DELETE')                                        
-                                        <input type="submit" value="x" class="btn btn-danger rounded-circle">                                
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
-                                </td>                        
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
