@@ -1,10 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-// Importation page of Vue.Router
-import Home from "./pages/Home";
-import Category from "./pages/Category";
+// Import page of Vue.Router
 Vue.use(VueRouter);
+import Home from "./views/Home";
+import Category from "./views/Category";
 
 const router = new VueRouter({
     mode: "history",
