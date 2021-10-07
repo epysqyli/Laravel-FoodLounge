@@ -92,7 +92,7 @@
                                         class="form-control @error('description') is-invalid
                                     @enderror"
                                         name="description" autocomplete="description" rows="6">{{ old('description') }}
-                                    </textarea>
+                                                    </textarea>
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -103,26 +103,17 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="category" class="col-md-4 col-form-label text-md-right">Categoria
+                                <label for="categories" class="col-md-4 col-form-label text-md-right">Categorie
                                     Ristorante</label>
 
-                                <div class="col-md-6">
-                                    <select id="category"
-                                        class="form-control @error('category') is-invalid
-                                    @enderror"
-                                        name="category" autocomplete="category">
-                                        <option value="">Scegli la tua categoria</option>
-                                        @foreach ($categories as $category)
-                                            <option value={{ $category->id }} @if ($category->id == old('category'))
-                                                selected
-                                        @endif>{{ $category->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('category')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                <div class="col-md-6" id="categories">
+                                    @foreach ($categories as $category)
+                                        <input type="checkbox" id={{ $category->name }} name="categories[]"
+                                            value={{ $category->id }} @if (old('categories'))
+                                        {{ in_array($category->id, old('categories')) ? 'checked' : '' }}
+                                    @endif >
+                                    <label for="">{{ $category->name }}</label>
+                                    @endforeach
                                 </div>
                             </div>
 

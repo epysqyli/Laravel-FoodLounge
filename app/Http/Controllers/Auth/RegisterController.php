@@ -37,8 +37,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'address' => ['required', 'string', 'min:5'],
             'description' => ['required'],
-            'category' => ['required'],
-            'vat' => ['required', 'size:11', 'unique'],
+            'vat' => ['required', 'size:11'],
             'profile_image' => ['required'],
             'cover_image' => ['required'],
         ]);
@@ -62,7 +61,7 @@ class RegisterController extends Controller
 
         $user->save();
 
-        $user->category()->attach($data['category']);
+        $user->categories()->sync($data['categories']);
 
         return $user;
     }
