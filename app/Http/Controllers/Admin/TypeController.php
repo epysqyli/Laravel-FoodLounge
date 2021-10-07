@@ -39,14 +39,16 @@ class TypeController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit(Type $type)
     {
-        //
+        return view('admin.types.edit', compact('type'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Type $type)
     {
-        //
+        $type->name = $request->types[0];
+        $type->save();
+        return redirect()->route('admin.types.index');
     }
 
     public function destroy($id)

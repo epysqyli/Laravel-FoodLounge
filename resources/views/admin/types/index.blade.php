@@ -1,25 +1,33 @@
 @extends('layouts.app')
 
+{{-- @dd($request->types[0]); --}}
+
 @section('content')
-    <div class="row">
-        <div class="col-12">
-            <a class="btn btn-outline-dark mt-2 mb-4 d-block mx-auto w-25"
-                href="{{ route('admin.types.create') }}" class="link-dark">Add Types</a>
+
+    @if (count(Auth::user()->types) < 3)
+        <div class="row">
+            <div class="col-12">
+                <a class="btn btn-outline-dark mt-2 mb-4 d-block mx-auto w-25" href="{{ route('admin.types.create') }}"
+                    class="link-dark">Add Types</a>
+            </div>
         </div>
-    </div>
+    @endif
+
     <div class="container">
         <div id="accordion">
             @foreach ($types as $type)
 
-                <div class="card">
+                <div class="card my-3">
                     <div class="card-header" id="{{ $type->name . 'heading' }}">
-                        <h5 class="mb-0">
+                        <div class="mb-0 d-flex justify-content-between">
                             <button class="btn btn-link" data-toggle="collapse"
                                 data-target="#{{ $type->name . 'collapse' }}" aria-expanded="true"
                                 aria-controls="{{ $type->name . 'collapse' }}">
                                 {{ $type->name }}
                             </button>
-                        </h5>
+                            <a class="btn btn-outline-dark d-block w-25"
+                                href="{{ route('admin.types.edit', $type->id) }}" class="link-dark">Edit Type</a>
+                        </div>
                     </div>
 
                     <div id="{{ $type->name . 'collapse' }}" class="collapse show"
