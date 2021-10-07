@@ -38,7 +38,7 @@ class RegisterController extends Controller
             'address' => ['required', 'string', 'min:5'],
             'description' => ['required'],
             'category' => ['required'],
-            'vat' => ['required', 'size:11'],
+            'vat' => ['required', 'size:11', 'unique'],
             'profile_image' => ['required'],
             'cover_image' => ['required'],
         ]);
