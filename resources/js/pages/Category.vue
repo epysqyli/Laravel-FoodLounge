@@ -1,13 +1,13 @@
 <template>
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <p>Categoria</p>
-                </div>
-            </div>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p>Categoria</p>
+        </div>
+      </div>
 
-            <!-- <div class="row">
+      <!-- <div class="row">
                 <div class="col-6" v-for="post in posts" :key="post.id">
                     <div class="card mb-3">                   
                         <div class="card-body">
@@ -17,17 +17,15 @@
                     </div>
                 </div>
             </div> -->
-
-        </div>
-    </main>
+    </div>
+  </main>
 </template>
 
 <script>
 export default {
-    name: "Category",
-}
+  name: "Category",
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>
