@@ -21,6 +21,7 @@ export default {};
     width: 100%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    transition: filter ease-in-out 200ms;
   }
 
   .category-name {
@@ -39,6 +40,15 @@ export default {};
   &:hover {
     box-shadow: 6px 10px 8px -5px black;
     cursor: pointer;
+
+    img {
+      filter: contrast(110%);
+      filter: saturate(175%);
+    }
+
+    .category-name {
+      color: #FFC300;
+    }
     
     // .category-name {
     //   padding-top: 1vh;
