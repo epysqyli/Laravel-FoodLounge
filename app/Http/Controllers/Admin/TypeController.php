@@ -22,7 +22,16 @@ class TypeController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        foreach ($data['types'] as $entry) {
+            $type = new Type();
+
+            $type->name = $entry;
+            $type->user_id = Auth::user()->id;
+
+            $type->save();
+        }
+        return redirect()->route('admin.types.index');
     }
 
     public function show($id)
