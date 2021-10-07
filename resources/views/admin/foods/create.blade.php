@@ -10,16 +10,6 @@
                     </div>
 
                     <div class="card-body">
-                        {{-- @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif --}}
-
                         <form method="post" action="{{ route('admin.foods.store', Auth::user()->id) }}"
                             enctype="multipart/form-data">
                             @csrf
@@ -93,6 +83,7 @@
                                 </div>
                             </div>
 
+                            @if (count(Auth::user()->types) != 0)
                             <div class="form-group row">
                                 <label for="type_id" class="col-md-4 col-form-label text-md-right">Type</label>
 
@@ -114,7 +105,12 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
+                            </div>                                
+                            @else
+                                <div class="form-group row">
+                                    <a class="col-md-6 offset-md-4 d-block border border-danger btn btn-outline-danger " href={{ route('admin.types.create') }}>Add food types before creating foods</a>
+                                </div>
+                            @endif
 
                             <div class="form-group row">
                                 <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>

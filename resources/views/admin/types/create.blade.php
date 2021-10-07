@@ -22,7 +22,7 @@
                                     <div class="col-md-6">
                                         <input id={{ 'type' . $i }} type="text"
                                             class="form-control @error('name') is-invalid @enderror" name="types[]"
-                                            value="{{ old('name') }}" autocomplete="name" autofocus>
+                                            value="{{ old('name') }}" autocomplete="name" required autofocus>
 
                                         @error('name')
                                             <span class="invalid-feedback" role="alert">
