@@ -17,8 +17,7 @@
                             @for ($i = 0; $i < $available_categories; $i++)
 
                                 <div class="form-group row">
-                                    <label for={{ 'type' . $i }} class="col-md-4 col-form-label text-md-right">Food Type
-                                        {{ $i + 1 }}</label>
+                                    <label for={{ 'type' . $i }} class="col-md-4 col-form-label text-md-right">Food Type Name</label>
                                     <div class="col-md-6">
                                         <input id={{ 'type' . $i }} type="text"
                                             class="form-control @error('name') is-invalid @enderror" name="types[]"
