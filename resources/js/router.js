@@ -5,6 +5,7 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 import Home from "./views/Home";
 import Category from "./views/Category";
+import Restaurant from "./views/Restaurant";
 
 const router = new VueRouter({
     mode: "history",
@@ -18,6 +19,11 @@ const router = new VueRouter({
             path: "/category/:id",
             name: "category",
             component: Category
+        },
+        {
+            path: "/restaurant/:slug",
+            name: "restaurant",
+            component: Restaurant
         }
     ]
 });
