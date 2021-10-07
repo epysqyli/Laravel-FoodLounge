@@ -2287,6 +2287,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
   data: function data() {
@@ -6787,7 +6788,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-b3c5cf30] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-b3c5cf30] {\n  border: none;\n  background-color: transparent;\n}\n.card img[data-v-b3c5cf30] {\n  border-top-left-radius: 16px;\n  border-top-right-radius: 16px;\n}\n.card-body[data-v-b3c5cf30] {\n  color: #ffd60a;\n}\n.card[data-v-b3c5cf30]:hover {\n  border: 3px solid #ffc300;\n}\n.card:hover img[data-v-b3c5cf30] {\n  filter: opacity(80%);\n}", ""]);
+exports.push([module.i, "h2[data-v-b3c5cf30] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-b3c5cf30] {\n  width: 20%;\n  border: none;\n  background-color: transparent;\n}\n.card img[data-v-b3c5cf30] {\n  border-top-left-radius: 16px;\n  border-top-right-radius: 16px;\n}\n.card-body[data-v-b3c5cf30] {\n  color: #ffd60a;\n}\n.card[data-v-b3c5cf30]:hover {\n  border: 3px solid #ffc300;\n}\n.card:hover img[data-v-b3c5cf30] {\n  filter: opacity(80%);\n}", ""]);
 
 // exports
 
@@ -38729,17 +38730,20 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "row d-flex justify-content-center" },
+        { staticClass: "row d-flex flex-wrap justify-content-center" },
         _vm._l(_vm.categories, function(category) {
           return _c(
             "div",
-            { key: category.id, staticClass: "col-xs-12 col-md-6 col-lg-4" },
+            {
+              key: category.id,
+              staticClass: "col-xs-6 col-sm-6 col-md-4 col-lg-2"
+            },
             [
               _c(
                 "router-link",
                 {
                   staticClass: "card mb-4 mx-auto",
-                  staticStyle: { width: "22rem" },
+                  staticStyle: { width: "11rem" },
                   attrs: {
                     to: { name: "category", params: { id: category.id } }
                   }
