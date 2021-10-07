@@ -38729,17 +38729,20 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "row d-flex justify-content-center" },
+        { staticClass: "row d-flex flex-wrap justify-content-center" },
         _vm._l(_vm.categories, function(category) {
           return _c(
             "div",
-            { key: category.id, staticClass: "col-xs-12 col-md-6 col-lg-4" },
+            {
+              key: category.id,
+              staticClass: "col-xs-12 col-sm-12 col-md-6 col-lg-2"
+            },
             [
               _c(
                 "router-link",
                 {
-                  staticClass: "card mb-4 mx-auto",
-                  staticStyle: { width: "22rem" },
+                  staticClass: "card mb-4",
+                  staticStyle: { width: "10rem" },
                   attrs: {
                     to: { name: "category", params: { id: category.id } }
                   }
