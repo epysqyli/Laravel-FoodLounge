@@ -17,7 +17,10 @@ class TypeController extends Controller
 
     public function create()
     {
-        return view('admin.types.create');
+        $max_categories = 3;
+        $current_categories = count(Auth::user()->types);
+        $available_categories = $max_categories - $current_categories;
+        return view('admin.types.create', compact('available_categories'));
     }
 
     public function store(Request $request)
@@ -52,7 +55,7 @@ class TypeController extends Controller
     }
 
     public function destroy(Type $type)
-    {   
+    {
         foreach ($type->foods as $food) {
             $food->delete();
         }
