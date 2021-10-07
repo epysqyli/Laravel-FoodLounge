@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-12">
             <a class="btn btn-outline-dark mt-2 mb-4 d-block mx-auto w-25"
-                href="{{ route('admin.types.create') }}" class="link-dark">ADD TYPES</a>
+                href="{{ route('admin.types.create') }}" class="link-dark">Add Types</a>
         </div>
     </div>
     <div class="container">
