@@ -6878,7 +6878,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".category[data-v-de18dd6a] {\n  border-radius: 10px;\n  box-shadow: 3px 6px 5px -6px black;\n  background-color: blanchedalmond;\n}\n.category img[data-v-de18dd6a] {\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.category .name[data-v-de18dd6a] {\n  font-size: 1.2rem;\n  color: black;\n  text-decoration: none;\n}\n.category[data-v-de18dd6a]:hover {\n  box-shadow: 5px 8px 10px -6px black;\n}", ""]);
+exports.push([module.i, ".category[data-v-de18dd6a] {\n  border-radius: 10px;\n  box-shadow: 3px 6px 5px -6px black;\n  background-color: whitesmoke;\n}\n.category img[data-v-de18dd6a] {\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.category .name[data-v-de18dd6a] {\n  font-size: 1.2rem;\n  color: black;\n  text-decoration: none;\n}\n.category[data-v-de18dd6a]:hover {\n  box-shadow: 5px 8px 10px -6px black;\n}", ""]);
 
 // exports
 

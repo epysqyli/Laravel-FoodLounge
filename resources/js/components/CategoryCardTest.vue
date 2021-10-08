@@ -19,7 +19,7 @@ export default {
 .category {
   border-radius: 10px;
   box-shadow: 3px 6px 5px -6px black;
-  background-color: blanchedalmond;
+  background-color: whitesmoke;
 
   img {
     border-top-left-radius: 10px;
