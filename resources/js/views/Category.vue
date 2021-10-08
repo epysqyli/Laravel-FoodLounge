@@ -7,15 +7,19 @@
           
 
             <div class="flip-box">
-              <h1>{{restaurant.name}} </h1>
+            
               <div class="flip-box-inner">
                 <div class="flip-box-front">
                   <img v-bind:src="restaurant.profile_image" class="car-img-top" alt="...">
+                    <div class="text-block">
+                      <h4>Nature</h4>
+                      <p>What a beautiful sunrise</p>
+                    </div>
                 </div>
                 <div class="flip-box-back">
                   <p>{{restaurant.address}}</p>
                             
-                    <p class="car-text">{{restaurant.description}}</p>
+                 
                   
                 </div>
               </div>
@@ -82,11 +86,20 @@ h2 {
   font-size: 40px;
   color: #ffd60a;
 }
-
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .car {
-   height:300px;
-  width:200px;
+  height:300px;
+  max-width:200px;
   border: none;
+  position:relative;
  
   img{
     height: 100%;

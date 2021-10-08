@@ -2286,6 +2286,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Category",
   data: function data() {
@@ -6887,7 +6891,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-6480121d] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.car[data-v-6480121d] {\n  height: 300px;\n  width: 200px;\n  border: none;\n}\n.car img[data-v-6480121d] {\n  height: 100%;\n  width: 100%;\n}\n.car[data-v-6480121d]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}\n\n/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */\n.flip-box[data-v-6480121d] {\n  width: 200px;\n  height: 300px;\n  background-color: white;\n  perspective: 1000px;\n  /* Remove this if you don't want the 3D effect */\n}\n\n/* This container is needed to position the front and back side */\n.flip-box-inner[data-v-6480121d] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: transform 0.5s;\n  transform-style: preserve-3d;\n}\n\n/* Do an horizontal flip when you move the mouse over the flip box container */\n.flip-box:hover .flip-box-inner[data-v-6480121d] {\n  transform: rotateY(180deg);\n}\n\n/* Position the front and back side */\n.flip-box-front[data-v-6480121d], .flip-box-back[data-v-6480121d] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\n/* Style the front side (fallback if image is missing) */\n.flip-box-front[data-v-6480121d] {\n  background-color: red;\n  color: black;\n}\n\n/* Style the back side */\n.flip-box-back[data-v-6480121d] {\n  background-color: grey;\n  color: #050505;\n  transform: rotateY(180deg);\n}", ""]);
+exports.push([module.i, "h2[data-v-6480121d] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.text-block[data-v-6480121d] {\n  position: absolute;\n  bottom: 20px;\n  right: 20px;\n  background-color: black;\n  color: white;\n  padding-left: 20px;\n  padding-right: 20px;\n}\n.car[data-v-6480121d] {\n  height: 300px;\n  max-width: 200px;\n  border: none;\n  position: relative;\n}\n.car img[data-v-6480121d] {\n  height: 100%;\n  width: 100%;\n}\n.car[data-v-6480121d]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}\n\n/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */\n.flip-box[data-v-6480121d] {\n  width: 200px;\n  height: 300px;\n  background-color: white;\n  perspective: 1000px;\n  /* Remove this if you don't want the 3D effect */\n}\n\n/* This container is needed to position the front and back side */\n.flip-box-inner[data-v-6480121d] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: transform 0.5s;\n  transform-style: preserve-3d;\n}\n\n/* Do an horizontal flip when you move the mouse over the flip box container */\n.flip-box:hover .flip-box-inner[data-v-6480121d] {\n  transform: rotateY(180deg);\n}\n\n/* Position the front and back side */\n.flip-box-front[data-v-6480121d], .flip-box-back[data-v-6480121d] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\n/* Style the front side (fallback if image is missing) */\n.flip-box-front[data-v-6480121d] {\n  background-color: red;\n  color: black;\n}\n\n/* Style the back side */\n.flip-box-back[data-v-6480121d] {\n  background-color: grey;\n  color: #050505;\n  transform: rotateY(180deg);\n}", ""]);
 
 // exports
 
@@ -38916,22 +38920,18 @@ var render = function() {
             [
               _c("div", { staticClass: "car" }, [
                 _c("div", { staticClass: "flip-box" }, [
-                  _c("h1", [_vm._v(_vm._s(restaurant.name) + " ")]),
-                  _vm._v(" "),
                   _c("div", { staticClass: "flip-box-inner" }, [
                     _c("div", { staticClass: "flip-box-front" }, [
                       _c("img", {
                         staticClass: "car-img-top",
                         attrs: { src: restaurant.profile_image, alt: "..." }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _vm._m(0, true)
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "flip-box-back" }, [
-                      _c("p", [_vm._v(_vm._s(restaurant.address))]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "car-text" }, [
-                        _vm._v(_vm._s(restaurant.description))
-                      ])
+                      _c("p", [_vm._v(_vm._s(restaurant.address))])
                     ])
                   ])
                 ])
@@ -38944,7 +38944,18 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-block" }, [
+      _c("h4", [_vm._v("Nature")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("What a beautiful sunrise")])
+    ])
+  }
+]
 render._withStripped = true
 
 
