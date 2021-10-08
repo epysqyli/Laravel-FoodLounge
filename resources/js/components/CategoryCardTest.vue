@@ -1,7 +1,9 @@
 <template>
   <div class="category-card">
-    <img :src="category.img" :alt="category.name" />
-    <!-- <p class="category-name">{{ category.name }}</p> -->
+    <router-link :to="{ name: 'category', params: { slug: category.slug } }">
+      <img :src="category.img" :alt="category.name" />
+      <p class="category-name">{{ category.name }}</p>
+    </router-link>
   </div>
 </template>
 
