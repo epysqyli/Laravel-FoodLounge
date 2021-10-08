@@ -2227,7 +2227,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'CategoryCard',
+  name: "CategoryCard",
   props: {
     category: Object
   }
@@ -2265,7 +2265,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -2392,6 +2391,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -6903,7 +6903,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-6480121d] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-6480121d] {\n  border: none;\n}\n.card[data-v-6480121d]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}\n\n/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */\n.flip-box[data-v-6480121d] {\n  background-color: white;\n  perspective: 1000px;\n  /* Remove this if you don't want the 3D effect */\n}\n\n/* This container is needed to position the front and back side */\n.flip-box-inner[data-v-6480121d] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: transform 0.5s;\n  transform-style: preserve-3d;\n}\n\n/* Do an horizontal flip when you move the mouse over the flip box container */\n.flip-box:hover .flip-box-inner[data-v-6480121d] {\n  transform: rotateY(180deg);\n}\n\n/* Position the front and back side */\n.flip-box-front[data-v-6480121d], .flip-box-back[data-v-6480121d] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\n/* Style the front side (fallback if image is missing) */\n.flip-box-front[data-v-6480121d] {\n  background-color: #bbb;\n  color: black;\n}\n\n/* Style the back side */\n.flip-box-back[data-v-6480121d] {\n  background-color: #4982bb;\n  color: #050505;\n  transform: rotateY(180deg);\n}", ""]);
+exports.push([module.i, "h2[data-v-6480121d] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-6480121d] {\n  border: none;\n}\n.card[data-v-6480121d]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}\n\n/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */\n.flip-box[data-v-6480121d] {\n  background-color: white;\n  perspective: 1000px;\n  /* Remove this if you don't want the 3D effect */\n}\n\n/* This container is needed to position the front and back side */\n.flip-box-inner[data-v-6480121d] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: transform 0.5s;\n  transform-style: preserve-3d;\n}\n\n/* Do an horizontal flip when you move the mouse over the flip box container */\n.flip-box:hover .flip-box-inner[data-v-6480121d] {\n  transform: rotateY(180deg);\n}\n\n/* Position the front and back side */\n.flip-box-front[data-v-6480121d],\n.flip-box-back[data-v-6480121d] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\n/* Style the front side (fallback if image is missing) */\n.flip-box-front[data-v-6480121d] {\n  background-color: #bbb;\n  color: black;\n}\n\n/* Style the back side */\n.flip-box-back[data-v-6480121d] {\n  background-color: #4982bb;\n  color: #050505;\n  transform: rotateY(180deg);\n}", ""]);
 
 // exports
 
@@ -38968,7 +38968,10 @@ var render = function() {
                       _c("img", {
                         staticClass: "card-img-top",
                         attrs: {
-                          src: restaurant.profile_image,
+                          src:
+                            restaurant.profile_image ||
+                            "http://localhost:8000/storage/" +
+                              restaurant.profile_image,
                           alt: "restaurant.name"
                         }
                       })
@@ -39085,11 +39088,7 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "card text-center" }, [
       _c("div", { staticClass: "card-header" }, [
-        _vm._v(
-          "\n                    " +
-            _vm._s(_vm.restaurant.name) +
-            "\n                "
-        )
+        _vm._v("\n      " + _vm._s(_vm.restaurant.name) + "\n    ")
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [

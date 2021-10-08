@@ -8,7 +8,7 @@
           class="card m-5" style="max-width: 900px;">
             <div class="row g-0">
               <div class="col-md-4">
-                <img v-bind:src="restaurant.profile_image" class="card-img-top" alt="restaurant.name">
+                <img v-bind:src="restaurant.profile_image || `http://localhost:8000/storage/${restaurant.profile_image}`" class="card-img-top" alt="restaurant.name">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -27,35 +27,34 @@
   </main>
 </template>
 
-
 <script>
 export default {
   name: "Category",
-        data() {
-            return {
-              apiUrl: "http://127.0.0.1:8000/api/categories/",
-                restaurants: []
-            }
-        },
-        created(){
-        this.getRestaurant();
-         },
-        methods:{
-          getRestaurant() {
-            axios.get(this.apiUrl + this.$route.params.slug)  
-                .then( response => {
-                  console.log(response);
-                     this.restaurants = response.data;
-                     console.log(this.restaurants)
-                })
-                .catch();
-            }
-        }
-    }
+  data() {
+    return {
+      apiUrl: "http://127.0.0.1:8000/api/categories/",
+      restaurants: [],
+    };
+  },
+  created() {
+    this.getRestaurant();
+  },
+  methods: {
+    getRestaurant() {
+      axios
+        .get(this.apiUrl + this.$route.params.slug)
+        .then((response) => {
+          console.log(response);
+          this.restaurants = response.data;
+          console.log(this.restaurants);
+        })
+        .catch();
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 h2 {
   font-size: 40px;
   color: #ffd60a;
@@ -67,9 +66,9 @@ h2 {
 .card:hover {
   box-shadow: 0 0 20px #ffd60a;
 }
- /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-box {
-  background-color:white;    
+  background-color: white;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 /* This container is needed to position the front and back side */
@@ -86,11 +85,12 @@ h2 {
   transform: rotateY(180deg);
 }
 /* Position the front and back side */
-.flip-box-front, .flip-box-back {
+.flip-box-front,
+.flip-box-back {
   position: absolute;
   width: 100%;
-  height: 100%;  
-  backface-visibility:hidden;
+  height: 100%;
+  backface-visibility: hidden;
 }
 /* Style the front side (fallback if image is missing) */
 .flip-box-front {
@@ -102,5 +102,5 @@ h2 {
   background-color: rgb(73, 130, 187);
   color: rgb(5, 5, 5);
   transform: rotateY(180deg);
-} 
+}
 </style>
