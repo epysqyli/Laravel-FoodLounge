@@ -2344,6 +2344,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
@@ -6876,7 +6878,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".category-card[data-v-de18dd6a] {\n  padding: 0;\n  box-shadow: 3px 5px 5px -5px black;\n  transition: box-shadow ease-in-out 200ms;\n}\n.category-card img[data-v-de18dd6a] {\n  width: 100%;\n  transition: filter ease-in-out 200ms;\n}\n.category-card .category-name[data-v-de18dd6a] {\n  color: white;\n  padding: 0;\n  margin: 0;\n  font-weight: 600;\n  font-size: 1.5rem;\n  text-align: center;\n  background-color: #004f99;\n}\n.category-card[data-v-de18dd6a]:hover {\n  box-shadow: 6px 10px 8px -5px black;\n  cursor: pointer;\n}\n.category-card:hover img[data-v-de18dd6a] {\n  filter: contrast(110%);\n  filter: saturate(175%);\n}\n.category-card:hover .category-name[data-v-de18dd6a] {\n  color: #ffc300;\n}", ""]);
+exports.push([module.i, ".category[data-v-de18dd6a] {\n  border-radius: 10px;\n  box-shadow: 3px 6px 5px -6px black;\n  background-color: blanchedalmond;\n}\n.category img[data-v-de18dd6a] {\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.category .name[data-v-de18dd6a] {\n  font-size: 1.2rem;\n  color: black;\n  text-decoration: none;\n}\n.category[data-v-de18dd6a]:hover {\n  box-shadow: 5px 8px 10px -6px black;\n}", ""]);
 
 // exports
 
@@ -38856,7 +38858,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("router-view")], 1)
+  return _c("div", [_c("Header"), _vm._v(" "), _c("router-view")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38881,28 +38883,22 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
-    { staticClass: "category-card" },
+    "router-link",
+    {
+      attrs: { to: { name: "category", params: { slug: _vm.category.slug } } }
+    },
     [
-      _c(
-        "router-link",
-        {
-          attrs: {
-            to: { name: "category", params: { slug: _vm.category.slug } }
-          }
-        },
-        [
-          _c("img", {
-            attrs: { src: _vm.category.img, alt: _vm.category.name }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "category-name" }, [
-            _vm._v(_vm._s(_vm.category.name))
-          ])
-        ]
-      )
-    ],
-    1
+      _c("div", { staticClass: "category d-flex align-items-center" }, [
+        _c("img", {
+          staticClass: "d-block w-25",
+          attrs: { src: _vm.category.img, alt: "" }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "name w-100 text-center" }, [
+          _vm._v(_vm._s(_vm.category.name))
+        ])
+      ])
+    ]
   )
 }
 var staticRenderFns = []
@@ -39045,17 +39041,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
-    _c("div", { staticClass: "content" }, [
-      _vm._m(0),
-      _vm._v(" "),
+  return _c("div", { staticClass: "container mx-auto" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "container" }, [
       _c(
         "div",
-        { staticClass: "row " },
+        { staticClass: "row" },
         _vm._l(_vm.categories, function(category) {
           return _c(
             "div",
-            { key: category.id, staticClass: "col-6 border" },
+            {
+              key: category.id,
+              staticClass: "col-12 col-sm-6 col-md-4 col-lg-3 my-2"
+            },
             [_c("CategoryCardTest", { attrs: { category: category } })],
             1
           )
@@ -39070,12 +39069,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12 text-center p-5" }, [
-        _c("h2", { staticClass: "text-center mx-auto" }, [
-          _vm._v(
-            "\n          Scegli il cibo che vuoi, te lo portiamo a casa noi!\n        "
-          )
+    return _c("div", { staticClass: "content" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12 text-center p-5" }, [
+          _c("h2", { staticClass: "text-center mx-auto" }, [
+            _vm._v(
+              "\n          Scegli il cibo che vuoi, te lo portiamo a casa noi!\n        "
+            )
+          ])
         ])
       ])
     ])

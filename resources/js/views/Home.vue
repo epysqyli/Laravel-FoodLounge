@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container mx-auto">
     <div class="content">
       <div class="row">
         <div class="col-12 text-center p-5">
@@ -8,10 +8,12 @@
           </h2>
         </div>
       </div>
+    </div>
 
-      <div class="row ">
+    <div class="container">
+      <div class="row">
         <div
-          class="col-6 border"
+          class="col-12 col-sm-6 col-md-4 col-lg-3 my-2"
           v-for="category in categories"
           :key="category.id"
         >
