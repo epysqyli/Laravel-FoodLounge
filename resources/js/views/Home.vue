@@ -16,19 +16,19 @@
         v-for="category in categories"
         :key="category.id"
       >
-        <CategoryCardTest :category="category" />
+        <CategoryCard :category="category" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import CategoryCardTest from "../components/CategoryCardTest.vue";
+import CategoryCard from "../components/CategoryCard.vue";
 
 export default {
   name: "Home",
   components: {
-    CategoryCardTest,
+    CategoryCard,
   },
 
   data() {
