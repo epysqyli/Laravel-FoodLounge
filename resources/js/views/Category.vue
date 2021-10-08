@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center p-5">
-          <h2 class="text-center mx-auto">Categoria ristorante scelto</h2>
+          <h2 class="text-center mx-auto"></h2>
         </div>
       </div>
 
@@ -17,7 +17,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title"></h5>
                   <p class="card-text">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
@@ -40,11 +40,19 @@
 <script>
 export default {
   name: "Category",
-  created() {
-    const param = this.$route.params.slug;
-    console.log(param);
-  },
-};
+        data() {
+            return {
+                category: []
+            }
+        },
+        mounted() {
+            axios.get('/Api/categories/' + this.$route.params.slug)
+                .then( response => {
+                    this.category = response.data.results;
+                    console.log(this.category)
+                });
+        }
+    }
 </script>
 
 <style lang="scss" scoped>
