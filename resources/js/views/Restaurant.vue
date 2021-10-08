@@ -1,33 +1,51 @@
 <template>
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-12 text-center p-5">
-        <h2 class="mx-auto">Nome ristorante</h2>
-      </div>
+    <div class="container">
+        <div class="card text-center">
+                    <div class="card-header">
+                        {{restaurant.name}}
+                    </div>
+                    <div class="card-body"><p class="card-text">{{restaurant.description}}</p>
+                    </div>
+                    </div>
     </div>
-
-    <div class="row">
-      <div class="col-12 text-center p-5">
-        <h4 class="mx-auto">Menù</h4>
-      </div>
-    </div>
-  </div>
+    
 </template>
-
 <script>
 export default {
-  name: "Restaurant",
-};
-</script>
+  name: "Category",
+        data() {
+            return {
+              apiUrl: "http://127.0.0.1:8000/api/restaurants/",
+                restaurant: []
+            }
+        },
+        created(){
+        this.getRestaurant();
+         },
+        methods:{
+          getRestaurant() {
 
+            axios.get(this.apiUrl + this.$route.params.slug)  
+
+                .then( response => {
+                  console.log(response);
+                     this.restaurant = response.data;
+                     console.log(this.restaurant)
+                })
+                .catch();
+            }
+        }
+    }
+</script>
 <style lang="scss" scoped>
 h2 {
   font-size: 40px;
   color: #ffd60a;
 }
-
-h4 {
-  font-size: 25px;
-  color: #ffd60a;
+.card {
+  border: none;
 }
-</style>    
+.card:hover {
+  box-shadow: 0 0 20px #ffd60a;
+}
+</style>
