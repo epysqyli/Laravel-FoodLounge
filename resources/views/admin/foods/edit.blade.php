@@ -16,7 +16,7 @@
                             @csrf
                             @method('PATCH')
 
-                            <input type="hidden" id='user_id' name='user_id' value={{ Auth::user()->id }}>
+                            <input type="hidden" id='user_id' name='user_id' value="{{ old('user_id', $food->user_id) }}">
 
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
@@ -53,7 +53,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
+                             <div class="form-group row">
                                 <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
 
                                 <div class="col-md-6">
@@ -67,7 +67,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> 
 
                             <div class="form-group row">
                                 <label for="ingredients" class="col-md-4 col-form-label text-md-right">Ingredients</label>
@@ -95,7 +95,7 @@
                                         name="type_id" autocomplete="type_id">
                                         <option value="">Choose your types</option>
                                         @foreach ($types as $type)
-                                            <option value={{ $type->id }} @if ($type->id == old('type'))
+                                            <option value="{{ $type->id }} @if ($type->id == old('type'))"
                                                 selected
                                         @endif>{{ $type->name }}</option>
                                         @endforeach
