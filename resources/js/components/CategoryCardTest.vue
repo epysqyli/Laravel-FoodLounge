@@ -1,7 +1,7 @@
 <template>
   <router-link :to="{ name: 'category', params: { slug: category.slug } }">
     <div class="category d-flex align-items-center">
-      <img :src="category.img" alt="" class="d-block w-25" />
+      <img :src="category.img" :alt="category.name" class="d-block w-25" />
       <div class="name w-100 text-center">{{ category.name }}</div>
     </div>
   </router-link>

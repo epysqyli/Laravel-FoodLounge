@@ -38840,7 +38840,7 @@ var render = function() {
       _c("div", { staticClass: "category d-flex align-items-center" }, [
         _c("img", {
           staticClass: "d-block w-25",
-          attrs: { src: _vm.category.img, alt: "" }
+          attrs: { src: _vm.category.img, alt: _vm.category.name }
         }),
         _vm._v(" "),
         _c("div", { staticClass: "name w-100 text-center" }, [
