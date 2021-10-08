@@ -2363,20 +2363,44 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Category",
   data: function data() {
     return {
-      category: []
+      apiUrl: "http://127.0.0.1:8000/api/categories/",
+      restaurants: []
     };
   },
-  mounted: function mounted() {
-    var _this = this;
+  created: function created() {
+    this.getRestaurant();
+  },
+  methods: {
+    getRestaurant: function getRestaurant() {
+      var _this = this;
 
-    axios.get('/Api/categories/' + this.$route.params.slug).then(function (response) {
-      _this.category = response.data.results;
-      console.log(_this.category);
-    });
+      axios.get(this.apiUrl + this.$route.params.slug).then(function (response) {
+        console.log(response);
+        _this.restaurants = response.data;
+        console.log(_this.restaurants);
+      })["catch"]();
+    }
   }
 });
 
@@ -38911,64 +38935,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("main", [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-12 text-center p-5" }, [
-            _c("h2", { staticClass: "text-center mx-auto" })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-xs-12 mx-auto" }, [
-            _c(
-              "div",
-              {
-                staticClass: "card mb-3",
-                staticStyle: { "max-width": "800px" }
-              },
-              [
-                _c("div", { staticClass: "row g-0" }, [
-                  _c("div", { staticClass: "col-md-4" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-8" }, [
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("h5", { staticClass: "card-title" }),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text" }, [
-                        _vm._v(
-                          "\n                  This is a wider card with supporting text below as a natural\n                  lead-in to additional content. This content is a little bit\n                  longer.\n                "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text" }, [
-                        _c("small", { staticClass: "text-muted" }, [
-                          _vm._v("Last updated 3 mins ago")
-                        ])
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
+var render = function () {}
+var staticRenderFns = []
 
 
 

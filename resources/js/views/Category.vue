@@ -17,7 +17,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title"></h5>
+                  <h5 class="card-title">{{ category.name }}</h5>
                   <p class="card-text">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
@@ -27,6 +27,23 @@
                     <small class="text-muted">Last updated 3 mins ago</small>
                   </p>
                 </div>
+
+
+                   <div class="col-sm-6" v-for="restaurant in restaurants" :key="restaurant.id">
+
+                              <div class="card mt-3">
+
+                                <div class="card-body">
+
+                                  <h5 class="card-title">{{restaurant.name}}</h5>
+
+              <!-- <p>{{restaurant.created_at}}</p>
+              <p class="card-text">{{resta.content}}</p>
+              <router-link :to="{ name: 'post-detail', params:{slug: post.slug}}" class="btn btn-primary">Details</router-link>
+            </div> -->
+          </div>
+          
+        </div>
               </div>
             </div>
           </div>
@@ -42,15 +59,25 @@ export default {
   name: "Category",
         data() {
             return {
-                category: []
+              apiUrl: "http://127.0.0.1:8000/api/categories/",
+                restaurants: []
             }
         },
-        mounted() {
-            axios.get('/Api/categories/' + this.$route.params.slug)
+        created(){
+        this.getRestaurant();
+         },
+        methods:{
+          getRestaurant() {
+            
+            axios.get(this.apiUrl + this.$route.params.slug)  
+
                 .then( response => {
-                    this.category = response.data.results;
-                    console.log(this.category)
-                });
+                  console.log(response);
+                     this.restaurants = response.data;
+                     console.log(this.restaurants)
+                })
+                .catch();
+            }
         }
     }
 </script>
