@@ -40,19 +40,27 @@
 </template>
 
 <script>
+import CategoryCardTest from "../components/CategoryCardTest.vue";
+
 export default {
   name: "Home",
+  components: {
+    CategoryCardTest,
+  },
+
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/categories",
       categories: [],
     };
   },
+
   created() {
-    this.getCategory();
+    this.getCategories();
   },
+
   methods: {
-    getCategory() {
+    getCategories() {
       axios.get(this.apiUrl).then((resp) => {
         this.categories = resp.data.categories;
       });
@@ -62,20 +70,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container-fluid {
-  background-color: teal;
-}
-
-h2 {
-  font-size: 40px;
-  color: #ffd60a;
-}
-
-.card:hover {
-  box-shadow: 0 0 10px rgb(255, 214, 10);
-}
-
-.card:hover img {
-  filter: opacity(80%);
+* {
+  margin: 0;
+  padding: 0;
 }
 </style>    
