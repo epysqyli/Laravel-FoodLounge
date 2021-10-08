@@ -4,7 +4,7 @@
       <div class="row row-cols-1 row-cols-md-2 g-4 ">
            <div class="col" v-for="restaurant in restaurants" :key="restaurant.id">
                <div class="card">
-                  <img src="" class="card-img-top" alt="...">
+                  <img v-bind:src="restaurant.profile_image" class="card-img-top" alt="...">
                        <div class="card-body">
                           <h5 class="card-title">{{restaurant.name}}</h5>
                           <p>{{restaurant.address}}</p>
