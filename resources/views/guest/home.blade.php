@@ -13,30 +13,12 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body>
-    {{-- <div class="flex-center position-ref">
-        <div class="login">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Sei un ristorante? Registrati!</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </div> --}}
-
-        <div class="container" id="root">
-        </div>
-        <script src="{{ asset('js/app.js') }}"> </script>
+    <div class="container" id="root"></div>
 </body>
-
 
 </html>
