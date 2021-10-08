@@ -15,7 +15,8 @@ class GuestController extends Controller
     }
 
     public function category($slug) {
-        $data = Category::where('slug', $slug)->first();
+        $category = Category::where('slug', $slug)->first();
+        $data = $category->users;
         return response()->json($data);
     }
 

@@ -19,7 +19,7 @@
           :key="category.id"
         >
           <router-link
-            :to="{ name: 'category', params: { id: category.id } }"
+            :to="{ name: 'category', params: { slug: category.slug } }"
             class="card mb-4 mx-auto"
             style="width: 11rem"
           >
