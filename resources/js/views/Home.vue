@@ -90,5 +90,3 @@ h2 {
   filter: opacity(80%);
 }
 </style>    
-
-

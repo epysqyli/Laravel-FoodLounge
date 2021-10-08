@@ -2360,8 +2360,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Category"
+  name: "Category",
+  created: function created() {
+    var param = this.$route.params.slug;
+    console.log(param);
+  }
 });
 
 /***/ }),
@@ -2449,8 +2456,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -38913,7 +38918,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-12 text-center p-5" }, [
             _c("h2", { staticClass: "text-center mx-auto" }, [
-              _vm._v("\n            Categoria ristorante scelto\n          ")
+              _vm._v("Categoria ristorante scelto")
             ])
           ])
         ]),
@@ -38938,7 +38943,7 @@ var staticRenderFns = [
                       _vm._v(" "),
                       _c("p", { staticClass: "card-text" }, [
                         _vm._v(
-                          "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+                          "\n                  This is a wider card with supporting text below as a natural\n                  lead-in to additional content. This content is a little bit\n                  longer.\n                "
                         )
                       ]),
                       _vm._v(" "),
