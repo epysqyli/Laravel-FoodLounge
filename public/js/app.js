@@ -2223,6 +2223,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     category: Object
@@ -38834,6 +38837,7 @@ var render = function() {
   return _c(
     "router-link",
     {
+      staticStyle: { "text-decoration": "none", color: "inherit" },
       attrs: { to: { name: "category", params: { slug: _vm.category.slug } } }
     },
     [
