@@ -22,10 +22,10 @@ class FoodController extends Controller
         return view('admin.foods.show', compact('food'));
     }
 
-    public function create(Food $food)
+    public function create()
     {
         $types = Auth::user()->types;
-        return view('admin.foods.create', compact('types', 'food'));
+        return view('admin.foods.create', compact('types'));
     }
 
     // update for radio or check buttons ('visible')
@@ -63,7 +63,7 @@ class FoodController extends Controller
 
     public function edit(Food $food)
     {
-        $types = Type::all();
+        $types = Auth::user()->types;
         return view('admin.foods.edit', compact('food', 'types'));
     }
 
@@ -81,15 +81,6 @@ class FoodController extends Controller
 
         ]);
         $validatedData = $request->all();
-     
-        // if (!array_key_exists('visible', $validatedData)) {
-        //     $food->visible = 0;
-        // }
-
-        // if (array_key_exists('image', $validatedData)) {
-        //     $validatedData['image'] = Storage::put('uploads', $validatedData['image']);;
-        // }
-
         $food->update($validatedData);
   
         return redirect()->route('admin.foods.index')->with('updated', 'Update Element:' . ' ' . $food->id);

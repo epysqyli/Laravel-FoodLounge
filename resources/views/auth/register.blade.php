@@ -89,10 +89,9 @@
 
                                 <div class="col-md-6">
                                     <textarea id="description" type="text" value="{{ old('description') }}"
-                                        class="form-control @error('description') is-invalid
+                                        class="form-control  @error('description') is-invalid
                                     @enderror"
-                                        name="description" autocomplete="description" rows="6">{{ old('description') }}
-                                                    </textarea>
+                                        name="description" autocomplete="description" rows="6">{{ old('description') }}</textarea>
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -139,7 +138,7 @@
 
                                 <div class="col-md-6">
                                     <input id="profile_image" type="file"
-                                        class="form-control @error('profile_image') is-invalid
+                                        class="form-control-file @error('profile_image') is-invalid
                                     @enderror"
                                         name="profile_image" autocomplete="profile_image">
                                     @error('profile_image')
@@ -156,7 +155,7 @@
 
                                 <div class="col-md-6">
                                     <input id="cover_image" type="file"
-                                        class="form-control @error('cover_image') is-invalid
+                                        class="form-control-file @error('cover_image') is-invalid
                                     @enderror"
                                         name="cover_image" autocomplete="cover_image">
                                     @error('cover_image')

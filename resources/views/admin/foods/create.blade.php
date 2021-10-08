@@ -129,8 +129,7 @@
                                         class="form-control @error('description') is-invalid
                                     @enderror"
                                         name="description" autocomplete="description" rows="6"
-                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}>{{ old('description') }}
-                                                                                                    </textarea>
+                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}>{{ old('description') }}</textarea>
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -164,8 +163,7 @@
                                 <div class="col-md-6">
                                     <textarea id="additional_details" type="text" value="{{ old('additional_details') }}"
                                         class="form-control" name="additional_details" autocomplete="additional_details"
-                                        rows="3" {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}>{{ old('additional_details') }}
-                                                            </textarea>
+                                        rows="3" {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}>{{ old('additional_details') }}</textarea>
                                 </div>
                             </div>
 
