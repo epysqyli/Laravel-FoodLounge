@@ -11,12 +11,12 @@
                     </div>
 
                     <div class="card-body">
-                        <form method="post" action="{{ route('admin.foods.update', Auth::user()->id) }}"
+                        <form method="post" action="{{ route('admin.foods.update', $food->id ) }}"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
 
-                            <input type="hidden" id='user_id' name='user_id' value="{{ old('user_id', $food->user_id) }}">
+                            
 
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
@@ -37,11 +37,11 @@
                                 <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Availability</label>
                                 <div class="col-md-4 col-form-label">
                                     <div>
-                                        <input type="radio" id="visible" name="visible" value="{{ $food->true }}">
+                                        <input type="radio" id="visible" name="visible" value="1">
                                         <label for="visible">Accessible</label><br>
                                     </div>
                                     <div>
-                                        <input type="radio" id="nonvisible" name="visible" value="{{ $food->false }}">
+                                        <input type="radio" id="nonvisible" name="visible" value="0">
                                         <label for="nonvisible">Inaccessible</label><br>
                                     </div>
 
@@ -95,7 +95,7 @@
                                         name="type_id" autocomplete="type_id">
                                         <option value="">Choose your types</option>
                                         @foreach ($types as $type)
-                                            <option value="{{ $type->id }} @if ($type->id == old('type'))"
+                                            <option value={{ $type->id }} @if ($type->id == old('type'))
                                                 selected
                                         @endif>{{ $type->name }}</option>
                                         @endforeach

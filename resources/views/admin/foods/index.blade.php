@@ -2,6 +2,19 @@
 
 @section('content')
     <div class="container">
+    <p>
+    @if (session('updated'))
+    <div class="alert alert-success">
+      {{session('updated')}}
+    </div>
+      
+    @endif
+    @if (session('delete'))
+    <div class="alert alert-success">
+      {{session('delete')}}
+    </div>
+    @endif
+  </p>
         <div class="row">
             <div class="col">
                 <h1>All foods</h1>

@@ -69,10 +69,29 @@ class FoodController extends Controller
 
     public function update(Request $request, Food $food)
     {
-        $request->validate([
-            'name' => 'requires|max:255',
-            'description' => 'required'
+         $request->validate([
+            
+            'type_id' => 'required',
+            'name' => 'required|max:255',
+            'price' => 'required',
+            'description' => 'required',
+            'ingredients' => 'required',
+            'visible' => 'required',
+            'image' => 'nullable|image',
+
         ]);
+        $validatedData = $request->all();
+        $food = new Food();
+        // if (!array_key_exists('visible', $validatedData)) {
+        //     $food->visible = 0;
+        // }
+
+        // if (array_key_exists('image', $validatedData)) {
+        //     $validatedData['image'] = Storage::put('uploads', $validatedData['image']);;
+        // }
+
+        $food->update($validatedData);
+  
         return redirect()->route('admin.foods.index')->with('updated', 'Update Element:' . ' ' . $food->id);
     }
 
