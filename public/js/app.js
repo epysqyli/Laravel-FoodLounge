@@ -2271,6 +2271,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Category",
   data: function data() {
@@ -6872,7 +6885,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-6480121d] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-6480121d] {\n  border: none;\n}\n.card[data-v-6480121d]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}", ""]);
+exports.push([module.i, "h2[data-v-6480121d] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-6480121d] {\n  border: none;\n}\n.card[data-v-6480121d]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}\n\n/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */\n.flip-box[data-v-6480121d] {\n  background-color: white;\n  perspective: 1000px;\n  /* Remove this if you don't want the 3D effect */\n}\n\n/* This container is needed to position the front and back side */\n.flip-box-inner[data-v-6480121d] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: transform 0.5s;\n  transform-style: preserve-3d;\n}\n\n/* Do an horizontal flip when you move the mouse over the flip box container */\n.flip-box:hover .flip-box-inner[data-v-6480121d] {\n  transform: rotateY(180deg);\n}\n\n/* Position the front and back side */\n.flip-box-front[data-v-6480121d], .flip-box-back[data-v-6480121d] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\n/* Style the front side (fallback if image is missing) */\n.flip-box-front[data-v-6480121d] {\n  background-color: #bbb;\n  color: black;\n}\n\n/* Style the back side */\n.flip-box-back[data-v-6480121d] {\n  background-color: #4982bb;\n  color: #050505;\n  transform: rotateY(180deg);\n}", ""]);
 
 // exports
 
@@ -38890,28 +38903,41 @@ var render = function() {
     _c("div", { staticClass: "container" }, [
       _c(
         "div",
-        { staticClass: "row row-cols-8 row-cols-md-2 g-4 " },
+        { staticClass: "row" },
         _vm._l(_vm.restaurants, function(restaurant) {
-          return _c("div", { key: restaurant.id, staticClass: "col" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("img", {
-                staticClass: "card-img-top",
-                attrs: { src: restaurant.profile_image, alt: "..." }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
+          return _c(
+            "div",
+            {
+              key: restaurant.id,
+              staticClass: "col-xs-6 col-sm-6 col-md-4 col-lg-3 g-2"
+            },
+            [
+              _c("div", {}, [
                 _c("h5", { staticClass: "card-title" }, [
                   _vm._v(_vm._s(restaurant.name))
                 ]),
                 _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(restaurant.address))]),
-                _vm._v(" "),
                 _c("p", { staticClass: "card-text" }, [
                   _vm._v(_vm._s(restaurant.description))
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flip-box" }, [
+                  _c("div", { staticClass: "flip-box-inner" }, [
+                    _c("div", { staticClass: "flip-box-front" }, [
+                      _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: { src: restaurant.profile_image, alt: "..." }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "flip-box-back" }, [
+                      _c("p", [_vm._v(_vm._s(restaurant.address))])
+                    ])
+                  ])
                 ])
               ])
-            ])
-          ])
+            ]
+          )
         }),
         0
       )
