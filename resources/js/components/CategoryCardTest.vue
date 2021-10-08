@@ -20,6 +20,7 @@ export default {
   border-radius: 10px;
   box-shadow: 3px 6px 5px -6px black;
   background-color: whitesmoke;
+  transition: all 250ms ease-out;
 
   img {
     border-top-left-radius: 10px;
@@ -34,6 +35,7 @@ export default {
 
   &:hover {
     box-shadow: 5px 8px 10px -6px black;
+    background-color: hsl(10%, 10%, 80%);
   }
 }
 </style>
