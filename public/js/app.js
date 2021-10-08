@@ -38969,9 +38969,10 @@ var render = function() {
                         staticClass: "card-img-top",
                         attrs: {
                           src:
-                            restaurant.profile_image ||
-                            "http://localhost:8000/storage/" +
-                              restaurant.profile_image,
+                            restaurant.profile_image[0] == "h"
+                              ? restaurant.profile_image
+                              : "http://localhost:8000/storage/" +
+                                restaurant.profile_image,
                           alt: "restaurant.name"
                         }
                       })

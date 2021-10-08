@@ -8,7 +8,7 @@
           class="card m-5" style="max-width: 900px;">
             <div class="row g-0">
               <div class="col-md-4">
-                <img v-bind:src="restaurant.profile_image || `http://localhost:8000/storage/${restaurant.profile_image}`" class="card-img-top" alt="restaurant.name">
+                <img v-bind:src="restaurant.profile_image[0] == 'h' ? restaurant.profile_image : `http://localhost:8000/storage/${restaurant.profile_image}`" class="card-img-top" alt="restaurant.name">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
