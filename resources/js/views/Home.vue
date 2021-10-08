@@ -9,13 +9,14 @@
         </div>
       </div>
 
-      <div class="row">
-        <CategoryCardTest
-          class="col-xs-6 col-sm-6 col-md-4 col-lg-3"
+      <div class="row ">
+        <div
+          class="col-6 border"
           v-for="category in categories"
           :key="category.id"
-          :category="category"
-        />
+        >
+          <CategoryCardTest :category="category" />
+        </div>
       </div>
     </div>
   </div>
