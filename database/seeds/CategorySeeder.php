@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 
 use App\Category;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class CategorySeeder extends Seeder
 {
@@ -26,6 +26,8 @@ class CategorySeeder extends Seeder
         foreach ($categories as  $cat_name) {
             $category = new Category();
             $category->name = $cat_name;
+            $slug = Str::slug($cat_name);
+            $category->slug = makeUniqueSlug($slug);
             $category->img = 'https://picsum.photos/200/300';
             $category->save();
         };
