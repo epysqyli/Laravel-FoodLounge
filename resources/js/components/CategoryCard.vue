@@ -21,14 +21,14 @@ export default {
 
 <style lang="scss" scoped>
 .category {
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 3px 6px 5px -6px black;
   background-color: whitesmoke;
   transition: all 250ms ease-out;
 
   img {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
   }
 
   .name {

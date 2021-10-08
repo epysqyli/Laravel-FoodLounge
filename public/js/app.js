@@ -2171,10 +2171,10 @@ module.exports = {
 /*!*****************************************!*\
   !*** ./node_modules/axios/package.json ***!
   \*****************************************/
-/*! exports provided: _args, _development, _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _spec, _where, author, browser, bugs, bundlesize, dependencies, description, devDependencies, homepage, jsdelivr, keywords, license, main, name, repository, scripts, typings, unpkg, version, default */
+/*! exports provided: name, version, description, main, scripts, repository, keywords, author, license, bugs, homepage, devDependencies, browser, jsdelivr, unpkg, typings, dependencies, bundlesize, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"_args\":[[\"axios@0.21.4\",\"C:\\\\Users\\\\edora\\\\Corso#36\\\\Laravel-FoodLounge\"]],\"_development\":true,\"_from\":\"axios@0.21.4\",\"_id\":\"axios@0.21.4\",\"_inBundle\":false,\"_integrity\":\"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==\",\"_location\":\"/axios\",\"_phantomChildren\":{},\"_requested\":{\"type\":\"version\",\"registry\":true,\"raw\":\"axios@0.21.4\",\"name\":\"axios\",\"escapedName\":\"axios\",\"rawSpec\":\"0.21.4\",\"saveSpec\":null,\"fetchSpec\":\"0.21.4\"},\"_requiredBy\":[\"#DEV:/\"],\"_resolved\":\"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz\",\"_spec\":\"0.21.4\",\"_where\":\"C:\\\\Users\\\\edora\\\\Corso#36\\\\Laravel-FoodLounge\",\"author\":{\"name\":\"Matt Zabriskie\"},\"browser\":{\"./lib/adapters/http.js\":\"./lib/adapters/xhr.js\"},\"bugs\":{\"url\":\"https://github.com/axios/axios/issues\"},\"bundlesize\":[{\"path\":\"./dist/axios.min.js\",\"threshold\":\"5kB\"}],\"dependencies\":{\"follow-redirects\":\"^1.14.0\"},\"description\":\"Promise based HTTP client for the browser and node.js\",\"devDependencies\":{\"coveralls\":\"^3.0.0\",\"es6-promise\":\"^4.2.4\",\"grunt\":\"^1.3.0\",\"grunt-banner\":\"^0.6.0\",\"grunt-cli\":\"^1.2.0\",\"grunt-contrib-clean\":\"^1.1.0\",\"grunt-contrib-watch\":\"^1.0.0\",\"grunt-eslint\":\"^23.0.0\",\"grunt-karma\":\"^4.0.0\",\"grunt-mocha-test\":\"^0.13.3\",\"grunt-ts\":\"^6.0.0-beta.19\",\"grunt-webpack\":\"^4.0.2\",\"istanbul-instrumenter-loader\":\"^1.0.0\",\"jasmine-core\":\"^2.4.1\",\"karma\":\"^6.3.2\",\"karma-chrome-launcher\":\"^3.1.0\",\"karma-firefox-launcher\":\"^2.1.0\",\"karma-jasmine\":\"^1.1.1\",\"karma-jasmine-ajax\":\"^0.1.13\",\"karma-safari-launcher\":\"^1.0.0\",\"karma-sauce-launcher\":\"^4.3.6\",\"karma-sinon\":\"^1.0.5\",\"karma-sourcemap-loader\":\"^0.3.8\",\"karma-webpack\":\"^4.0.2\",\"load-grunt-tasks\":\"^3.5.2\",\"minimist\":\"^1.2.0\",\"mocha\":\"^8.2.1\",\"sinon\":\"^4.5.0\",\"terser-webpack-plugin\":\"^4.2.3\",\"typescript\":\"^4.0.5\",\"url-search-params\":\"^0.10.0\",\"webpack\":\"^4.44.2\",\"webpack-dev-server\":\"^3.11.0\"},\"homepage\":\"https://axios-http.com\",\"jsdelivr\":\"dist/axios.min.js\",\"keywords\":[\"xhr\",\"http\",\"ajax\",\"promise\",\"node\"],\"license\":\"MIT\",\"main\":\"index.js\",\"name\":\"axios\",\"repository\":{\"type\":\"git\",\"url\":\"git+https://github.com/axios/axios.git\"},\"scripts\":{\"build\":\"NODE_ENV=production grunt build\",\"coveralls\":\"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js\",\"examples\":\"node ./examples/server.js\",\"fix\":\"eslint --fix lib/**/*.js\",\"postversion\":\"git push && git push --tags\",\"preversion\":\"npm test\",\"start\":\"node ./sandbox/server.js\",\"test\":\"grunt test\",\"version\":\"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json\"},\"typings\":\"./index.d.ts\",\"unpkg\":\"dist/axios.min.js\",\"version\":\"0.21.4\"}");
+module.exports = JSON.parse("{\"name\":\"axios\",\"version\":\"0.21.4\",\"description\":\"Promise based HTTP client for the browser and node.js\",\"main\":\"index.js\",\"scripts\":{\"test\":\"grunt test\",\"start\":\"node ./sandbox/server.js\",\"build\":\"NODE_ENV=production grunt build\",\"preversion\":\"npm test\",\"version\":\"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json\",\"postversion\":\"git push && git push --tags\",\"examples\":\"node ./examples/server.js\",\"coveralls\":\"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js\",\"fix\":\"eslint --fix lib/**/*.js\"},\"repository\":{\"type\":\"git\",\"url\":\"https://github.com/axios/axios.git\"},\"keywords\":[\"xhr\",\"http\",\"ajax\",\"promise\",\"node\"],\"author\":\"Matt Zabriskie\",\"license\":\"MIT\",\"bugs\":{\"url\":\"https://github.com/axios/axios/issues\"},\"homepage\":\"https://axios-http.com\",\"devDependencies\":{\"coveralls\":\"^3.0.0\",\"es6-promise\":\"^4.2.4\",\"grunt\":\"^1.3.0\",\"grunt-banner\":\"^0.6.0\",\"grunt-cli\":\"^1.2.0\",\"grunt-contrib-clean\":\"^1.1.0\",\"grunt-contrib-watch\":\"^1.0.0\",\"grunt-eslint\":\"^23.0.0\",\"grunt-karma\":\"^4.0.0\",\"grunt-mocha-test\":\"^0.13.3\",\"grunt-ts\":\"^6.0.0-beta.19\",\"grunt-webpack\":\"^4.0.2\",\"istanbul-instrumenter-loader\":\"^1.0.0\",\"jasmine-core\":\"^2.4.1\",\"karma\":\"^6.3.2\",\"karma-chrome-launcher\":\"^3.1.0\",\"karma-firefox-launcher\":\"^2.1.0\",\"karma-jasmine\":\"^1.1.1\",\"karma-jasmine-ajax\":\"^0.1.13\",\"karma-safari-launcher\":\"^1.0.0\",\"karma-sauce-launcher\":\"^4.3.6\",\"karma-sinon\":\"^1.0.5\",\"karma-sourcemap-loader\":\"^0.3.8\",\"karma-webpack\":\"^4.0.2\",\"load-grunt-tasks\":\"^3.5.2\",\"minimist\":\"^1.2.0\",\"mocha\":\"^8.2.1\",\"sinon\":\"^4.5.0\",\"terser-webpack-plugin\":\"^4.2.3\",\"typescript\":\"^4.0.5\",\"url-search-params\":\"^0.10.0\",\"webpack\":\"^4.44.2\",\"webpack-dev-server\":\"^3.11.0\"},\"browser\":{\"./lib/adapters/http.js\":\"./lib/adapters/xhr.js\"},\"jsdelivr\":\"dist/axios.min.js\",\"unpkg\":\"dist/axios.min.js\",\"typings\":\"./index.d.ts\",\"dependencies\":{\"follow-redirects\":\"^1.14.0\"},\"bundlesize\":[{\"path\":\"./dist/axios.min.js\",\"threshold\":\"5kB\"}]}");
 
 /***/ }),
 
@@ -2265,33 +2265,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -6911,11 +6884,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, "h2[data-v-6480121d] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.text-block[data-v-6480121d] {\n  position: absolute;\n  bottom: 20px;\n  right: 20px;\n  background-color: black;\n  color: white;\n  padding-left: 20px;\n  padding-right: 20px;\n}\n.car[data-v-6480121d] {\n  height: 300px;\n  max-width: 200px;\n  border: none;\n  position: relative;\n}\n.car img[data-v-6480121d] {\n  height: 100%;\n  width: 100%;\n}\n.car[data-v-6480121d]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}\n\n/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */\n.flip-box[data-v-6480121d] {\n  width: 200px;\n  height: 300px;\n  background-color: white;\n  perspective: 1000px;\n  /* Remove this if you don't want the 3D effect */\n}\n\n/* This container is needed to position the front and back side */\n.flip-box-inner[data-v-6480121d] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: transform 0.5s;\n  transform-style: preserve-3d;\n}\n\n/* Do an horizontal flip when you move the mouse over the flip box container */\n.flip-box:hover .flip-box-inner[data-v-6480121d] {\n  transform: rotateY(180deg);\n}\n\n/* Position the front and back side */\n.flip-box-front[data-v-6480121d], .flip-box-back[data-v-6480121d] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\n/* Style the front side (fallback if image is missing) */\n.flip-box-front[data-v-6480121d] {\n  background-color: red;\n  color: black;\n}\n\n/* Style the back side */\n.flip-box-back[data-v-6480121d] {\n  background-color: grey;\n  color: #050505;\n  transform: rotateY(180deg);\n}", ""]);
-=======
-exports.push([module.i, ".category[data-v-a6d5abce] {\n  border-radius: 10px;\n  box-shadow: 3px 6px 5px -6px black;\n  background-color: whitesmoke;\n  transition: all 250ms ease-out;\n}\n.category img[data-v-a6d5abce] {\n  border-top-left-radius: 10px;\n  border-bottom-left-radius: 10px;\n}\n.category .name[data-v-a6d5abce] {\n  font-size: 1.2rem;\n  color: black;\n  text-decoration: none;\n}\n.category[data-v-a6d5abce]:hover {\n  box-shadow: 5px 8px 10px -6px black;\n  background-color: #d1c9c7;\n}", ""]);
->>>>>>> dev
+exports.push([module.i, ".category[data-v-a6d5abce] {\n  border-radius: 5px;\n  box-shadow: 3px 6px 5px -6px black;\n  background-color: whitesmoke;\n  transition: all 250ms ease-out;\n}\n.category img[data-v-a6d5abce] {\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n}\n.category .name[data-v-a6d5abce] {\n  font-size: 1.2rem;\n  color: black;\n  text-decoration: none;\n}\n.category[data-v-a6d5abce]:hover {\n  box-shadow: 5px 8px 10px -6px black;\n  background-color: #d1c9c7;\n}", ""]);
 
 // exports
 
@@ -6934,7 +6903,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-6480121d] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-6480121d] {\n  border: none;\n}\n.card[data-v-6480121d]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}", ""]);
+exports.push([module.i, "h2[data-v-6480121d] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-6480121d] {\n  border: none;\n}\n.card[data-v-6480121d]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}\n\n/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */\n.flip-box[data-v-6480121d] {\n  background-color: white;\n  perspective: 1000px;\n  /* Remove this if you don't want the 3D effect */\n}\n\n/* This container is needed to position the front and back side */\n.flip-box-inner[data-v-6480121d] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: transform 0.5s;\n  transform-style: preserve-3d;\n}\n\n/* Do an horizontal flip when you move the mouse over the flip box container */\n.flip-box:hover .flip-box-inner[data-v-6480121d] {\n  transform: rotateY(180deg);\n}\n\n/* Position the front and back side */\n.flip-box-front[data-v-6480121d], .flip-box-back[data-v-6480121d] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\n/* Style the front side (fallback if image is missing) */\n.flip-box-front[data-v-6480121d] {\n  background-color: #bbb;\n  color: black;\n}\n\n/* Style the back side */\n.flip-box-back[data-v-6480121d] {\n  background-color: #4982bb;\n  color: #050505;\n  transform: rotateY(180deg);\n}", ""]);
 
 // exports
 
@@ -38972,37 +38941,57 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", [
-    _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "container-fluid" }, [
       _c(
         "div",
         { staticClass: "row" },
         _vm._l(_vm.restaurants, function(restaurant) {
           return _c(
             "div",
-            {
-              key: restaurant.id,
-              staticClass: "col-xs-6 col-sm-6 col-md-4 col-lg-3 g-2"
-            },
+            { key: restaurant.id, staticClass: "col-xs-12 mx-auto" },
             [
-              _c("div", { staticClass: "car" }, [
-                _c("div", { staticClass: "flip-box" }, [
-                  _c("div", { staticClass: "flip-box-inner" }, [
-                    _c("div", { staticClass: "flip-box-front" }, [
+              _c(
+                "router-link",
+                {
+                  staticClass: "card m-5",
+                  staticStyle: { "max-width": "900px" },
+                  attrs: {
+                    to: {
+                      name: "restaurant",
+                      params: { slug: restaurant.slug }
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "row g-0" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
                       _c("img", {
-                        staticClass: "car-img-top",
-                        attrs: { src: restaurant.profile_image, alt: "..." }
-                      }),
-                      _vm._v(" "),
-                      _vm._m(0, true)
+                        staticClass: "card-img-top",
+                        attrs: {
+                          src: restaurant.profile_image,
+                          alt: "restaurant.name"
+                        }
+                      })
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "flip-box-back" }, [
-                      _c("p", [_vm._v(_vm._s(restaurant.address))])
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("h5", { staticClass: "card-title" }, [
+                          _vm._v(_vm._s(restaurant.name))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v(_vm._s(restaurant.address))]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _vm._v(_vm._s(restaurant.description))
+                        ])
+                      ])
                     ])
                   ])
-                ])
-              ])
-            ]
+                ]
+              )
+            ],
+            1
           )
         }),
         0
@@ -39010,18 +38999,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-block" }, [
-      _c("h4", [_vm._v("Nature")]),
-      _vm._v(" "),
-      _c("p", [_vm._v("What a beautiful sunrise")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -55085,11 +55063,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\edora\Corso#36\Laravel-FoodLounge\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\edora\Corso#36\Laravel-FoodLounge\resources\js\bootstrap.js */"./resources/js/bootstrap.js");
-__webpack_require__(/*! C:\Users\edora\Corso#36\Laravel-FoodLounge\resources\js\front.js */"./resources/js/front.js");
-__webpack_require__(/*! C:\Users\edora\Corso#36\Laravel-FoodLounge\resources\js\router.js */"./resources/js/router.js");
-module.exports = __webpack_require__(/*! C:\Users\edora\Corso#36\Laravel-FoodLounge\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/elvis/Code/project-boolean/Laravel-FoodLounge/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/elvis/Code/project-boolean/Laravel-FoodLounge/resources/js/bootstrap.js */"./resources/js/bootstrap.js");
+__webpack_require__(/*! /home/elvis/Code/project-boolean/Laravel-FoodLounge/resources/js/front.js */"./resources/js/front.js");
+__webpack_require__(/*! /home/elvis/Code/project-boolean/Laravel-FoodLounge/resources/js/router.js */"./resources/js/router.js");
+module.exports = __webpack_require__(/*! /home/elvis/Code/project-boolean/Laravel-FoodLounge/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
