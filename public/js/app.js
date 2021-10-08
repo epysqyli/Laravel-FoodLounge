@@ -2392,12 +2392,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Restaurant"
+  name: "Category",
+  data: function data() {
+    return {
+      apiUrl: "http://127.0.0.1:8000/api/restaurants/",
+      restaurant: []
+    };
+  },
+  created: function created() {
+    this.getRestaurant();
+  },
+  methods: {
+    getRestaurant: function getRestaurant() {
+      var _this = this;
+
+      axios.get(this.apiUrl + this.$route.params.slug).then(function (response) {
+        console.log(response);
+        _this.restaurant = response.data;
+        console.log(_this.restaurant);
+      })["catch"]();
+    }
+  }
 });
 
 /***/ }),
@@ -6894,7 +6910,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-23ca231c] {\n  font-size: 40px;\n  color: #ffd60a;\n}\nh4[data-v-23ca231c] {\n  font-size: 25px;\n  color: #ffd60a;\n}", ""]);
+exports.push([module.i, "h2[data-v-23ca231c] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-23ca231c] {\n  border: none;\n}\n.card[data-v-23ca231c]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}", ""]);
 
 // exports
 
@@ -39007,28 +39023,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container mt-5" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12 text-center p-5" }, [
-          _c("h2", { staticClass: "mx-auto" }, [_vm._v("Nome ristorante")])
-        ])
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "card text-center" }, [
+      _c("div", { staticClass: "card-header" }, [
+        _vm._v(
+          "\n                    " +
+            _vm._s(_vm.restaurant.name) +
+            "\n                "
+        )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12 text-center p-5" }, [
-          _c("h4", { staticClass: "mx-auto" }, [_vm._v("Menù")])
+      _c("div", { staticClass: "card-body" }, [
+        _c("p", { staticClass: "card-text" }, [
+          _vm._v(_vm._s(_vm.restaurant.description))
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

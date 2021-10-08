@@ -21,7 +21,7 @@ class GuestController extends Controller
     }
 
     public function restaurant($slug) {
-        $data = User::where('slug', $slug)->first();
+        $data = User::where('slug', $slug)->first()->with('foods')->first();
         return response()->json($data);
     }
 }
