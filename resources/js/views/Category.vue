@@ -3,17 +3,19 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 g-2" v-for="restaurant in restaurants" :key="restaurant.id">
-          <div class="">
-            <h5 class="card-title">{{restaurant.name}}</h5>
-            <p class="card-text">{{restaurant.description}}</p>
+          <div class="car">
+          
 
             <div class="flip-box">
+              <h1>{{restaurant.name}} </h1>
               <div class="flip-box-inner">
                 <div class="flip-box-front">
-                  <img v-bind:src="restaurant.profile_image" class="card-img-top" alt="...">
+                  <img v-bind:src="restaurant.profile_image" class="car-img-top" alt="...">
                 </div>
                 <div class="flip-box-back">
                   <p>{{restaurant.address}}</p>
+                            
+                    <p class="car-text">{{restaurant.description}}</p>
                   
                 </div>
               </div>
@@ -81,16 +83,26 @@ h2 {
   color: #ffd60a;
 }
 
-.card {
+.car {
+   height:300px;
+  width:200px;
   border: none;
+ 
+  img{
+    height: 100%;
+    width: 100%;
+    
+  }
 }
 
-.card:hover {
+.car:hover {
   box-shadow: 0 0 20px #ffd60a;
 }
 
  /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-box {
+  width:200px;
+  height: 300px;
   background-color:white;    
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
@@ -120,13 +132,13 @@ h2 {
 
 /* Style the front side (fallback if image is missing) */
 .flip-box-front {
-  background-color: #bbb;
+  background-color: red;
   color: black;
 }
 
 /* Style the back side */
 .flip-box-back {
-  background-color: rgb(73, 130, 187);
+  background-color:grey ;
   color: rgb(5, 5, 5);
   transform: rotateY(180deg);
 } 
