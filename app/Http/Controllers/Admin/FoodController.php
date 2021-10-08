@@ -81,7 +81,7 @@ class FoodController extends Controller
 
         ]);
         $validatedData = $request->all();
-        $food = new Food();
+     
         // if (!array_key_exists('visible', $validatedData)) {
         //     $food->visible = 0;
         // }
