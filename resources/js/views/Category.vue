@@ -1,18 +1,11 @@
-<template>
+<<template>
   <main>
     <div class="container-fluid">
 
       <div class="row">
         <div class="col-xs-12 mx-auto" v-for="restaurant in restaurants" :key="restaurant.id">
-          <!-- <div class="card">
-            <img v-bind:src="restaurant.profile_image" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{restaurant.name}}</h5>
-              <p>{{restaurant.address}}</p>
-              <p class="card-text">{{restaurant.description}}</p>
-            </div>
-          </div> -->
-          <div class="card m-5" style="max-width: 900px;">
+          <router-link :to="{ name: 'restaurant', params: { slug: restaurant.slug } }"
+          class="card m-5" style="max-width: 900px;">
             <div class="row g-0">
               <div class="col-md-4">
                 <img v-bind:src="restaurant.profile_image" class="card-img-top" alt="restaurant.name">
@@ -25,7 +18,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
 
