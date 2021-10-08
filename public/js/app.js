@@ -38923,7 +38923,7 @@ var render = function() {
     _c("div", { staticClass: "container" }, [
       _c(
         "div",
-        { staticClass: "row row-cols-1 row-cols-md-2 g-4 " },
+        { staticClass: "row row-cols-8 row-cols-md-2 g-4 " },
         _vm._l(_vm.restaurants, function(restaurant) {
           return _c("div", { key: restaurant.id, staticClass: "col" }, [
             _c("div", { staticClass: "card" }, [
