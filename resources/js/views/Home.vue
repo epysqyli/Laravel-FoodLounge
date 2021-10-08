@@ -10,15 +10,13 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div
-          class="col-12 col-sm-6 col-md-4 col-lg-3 my-2"
-          v-for="category in categories"
-          :key="category.id"
-        >
-          <CategoryCardTest :category="category" />
-        </div>
+    <div class="row">
+      <div
+        class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
+        v-for="category in categories"
+        :key="category.id"
+      >
+        <CategoryCardTest :category="category" />
       </div>
     </div>
   </div>

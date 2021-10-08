@@ -2344,8 +2344,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
@@ -39044,24 +39042,23 @@ var render = function() {
   return _c("div", { staticClass: "container mx-auto" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "container" }, [
-      _c(
-        "div",
-        { staticClass: "row" },
-        _vm._l(_vm.categories, function(category) {
-          return _c(
-            "div",
-            {
-              key: category.id,
-              staticClass: "col-12 col-sm-6 col-md-4 col-lg-3 my-2"
-            },
-            [_c("CategoryCardTest", { attrs: { category: category } })],
-            1
-          )
-        }),
-        0
-      )
-    ])
+    _c(
+      "div",
+      { staticClass: "row" },
+      _vm._l(_vm.categories, function(category) {
+        return _c(
+          "div",
+          {
+            key: category.id,
+            staticClass:
+              "col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
+          },
+          [_c("CategoryCardTest", { attrs: { category: category } })],
+          1
+        )
+      }),
+      0
+    )
   ])
 }
 var staticRenderFns = [
