@@ -24,11 +24,6 @@ const router = new VueRouter({
             path: "/restaurant/:slug",
             name: "restaurant",
             component: Restaurant
-        },
-        {
-            path: "/test",
-            name: "test",
-            component: () => import("./views/Test")
         }
     ]
 });
