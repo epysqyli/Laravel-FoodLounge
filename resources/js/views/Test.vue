@@ -12,7 +12,6 @@ export default {};
 <style lang="scss" scoped>
 .category-card {
   margin: 2vh 3vw;
-  width: 300px;
   border-radius: 15px;
   box-shadow: 3px 5px 5px -5px black;
   transition: box-shadow ease-in-out 200ms;

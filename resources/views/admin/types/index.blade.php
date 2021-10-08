@@ -18,11 +18,10 @@
                 <div class="card my-3">
                     <div class="card-header" id="{{ $type->name . 'heading' }}">
                         <div class="mb-0 d-flex justify-content-between">
-                            <button class="btn btn-link"
-                                data-target="#{{ $type->name . 'collapse' }}" aria-expanded="true"
+                            <div class="py-2" data-target="#{{ $type->name . 'collapse' }}" aria-expanded="true"
                                 aria-controls="{{ $type->name . 'collapse' }}">
                                 {{ $type->name }}
-                            </button>
+                            </div>
                             <div class="col-4 d-flex justify-content-around">
                                 <a class="btn btn-outline-dark d-block w-50"
                                     href="{{ route('admin.types.edit', $type->id) }}" class="link-dark">Edit Type</a>

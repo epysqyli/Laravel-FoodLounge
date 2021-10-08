@@ -38940,9 +38940,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("header", [
-      _c("a", { attrs: { href: "http://localhost:8000/api/user" } }, [
-        _vm._v("Admin area")
-      ])
+      _c(
+        "a",
+        {
+          staticClass: "d-block btn btn-outline-primary",
+          attrs: { href: "http://localhost:8000/api/user" }
+        },
+        [_vm._v("Admin area")]
+      )
     ])
   }
 ]

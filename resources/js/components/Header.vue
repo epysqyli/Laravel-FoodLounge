@@ -1,6 +1,6 @@
 <template>
   <header>
-    <a href="http://localhost:8000/api/user">Admin area</a>
+    <a class="d-block btn btn-outline-primary" href="http://localhost:8000/api/user">Admin area</a>
   </header>
 </template>
 
@@ -11,4 +11,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 </style>
