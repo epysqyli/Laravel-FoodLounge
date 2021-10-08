@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'CategoryCard',
+  name: "CategoryCard",
   props: {
     category: Object,
   },
