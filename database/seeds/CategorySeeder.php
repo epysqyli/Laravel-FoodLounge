@@ -28,7 +28,7 @@ class CategorySeeder extends Seeder
             $category->name = $cat_name;
             $slug = Str::slug($cat_name);
             $category->slug = makeUniqueSlug($slug);
-            $category->img = 'https://picsum.photos/200/300';
+            $category->img = 'https://picsum.photos/200/200';
             $category->save();
         };
         

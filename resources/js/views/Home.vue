@@ -1,7 +1,6 @@
 <template>
-  <div class="container-fluid">
+  <div class="container mx-auto">
     <div class="content">
-      <!-- start motto -->
       <div class="row">
         <div class="col-12 text-center p-5">
           <h2 class="text-center mx-auto">
@@ -9,50 +8,42 @@
           </h2>
         </div>
       </div>
-      <!-- end motto -->
+    </div>
 
-      <!-- start cards -->
-      <div class="row">
-        <div
-          class="col-xs-6 col-sm-6 col-md-4 col-lg-3"
-          v-for="category in categories"
-          :key="category.id"
-        >
-          <router-link
-            :to="{ name: 'category', params: { slug: category.slug } }"
-            class="card mb-4 mx-auto"
-            style="width: 11rem"
-          >
-            <img
-              class="card-img-top"
-              :src="category.img"
-              :alt="category.name"
-            />
-            <div class="card-body text-center">
-              <h5 class="card-title">{{ category.name }}</h5>
-            </div>
-          </router-link>
-        </div>
+    <div class="row">
+      <div
+        class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
+        v-for="category in categories"
+        :key="category.id"
+      >
+        <CategoryCard :category="category" />
       </div>
-      <!-- end cards -->
     </div>
   </div>
 </template>
 
 <script>
+import CategoryCard from "../components/CategoryCard.vue";
+
 export default {
   name: "Home",
+  components: {
+    CategoryCard,
+  },
+
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/categories",
       categories: [],
     };
   },
+
   created() {
-    this.getCategory();
+    this.getCategories();
   },
+
   methods: {
-    getCategory() {
+    getCategories() {
       axios.get(this.apiUrl).then((resp) => {
         this.categories = resp.data.categories;
       });
@@ -62,20 +53,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container-fluid {
-  background-color: teal;
-}
-
-h2 {
-  font-size: 40px;
-  color: #ffd60a;
-}
-
-.card:hover {
-  box-shadow: 0 0 10px rgb(255, 214, 10);
-}
-
-.card:hover img {
-  filter: opacity(80%);
-}
 </style>    
