@@ -19,8 +19,8 @@ class GuestController extends Controller
         return response()->json($data);
     }
 
-    public function restaurant($id) {
-        $data = User::find($id);
+    public function restaurant($slug) {
+        $data = User::where('slug', $slug)->first();
         return response()->json($data);
     }
 }
