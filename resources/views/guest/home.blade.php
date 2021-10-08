@@ -1,102 +1,42 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Deliveboo</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <title>Deliveboo</title>
 
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="{{asset('css/app.css')}}"> 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #003566;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-                /* position: relative; */
-            }
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-            /* .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            } */
+</head>
 
-            .login{
-                background-color: #ffc300;
-                height: 80px;
-                /* position: fixed; */
-                /* z-index: 10; */
-            }
+<body>
+    {{-- <div class="flex-center position-ref">
+        <div class="login">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
 
-            .position-ref {
-                position: relative;
-            }
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Sei un ristorante? Registrati!</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+        </div> --}}
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+        <div class="container" id="root">
+        </div>
+        <script src="{{ asset('js/app.js') }}"> </script>
+</body>
 
-            .links > a {
-                color: #000814;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-
-            .card {
-                border-radius: 20px;
-            }
-
-            footer{
-                background-color: red;
-                height: 80px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref">
-            <div class="login">
-            <!-- <h1>DELIVEBOO</h1> -->
-                @if (Route::has('login'))
-                    <div class="top-right links">
-                        @auth
-                            <a href="{{ url('/home') }}">Home</a>
-                        @else
-                            <a href="{{ route('login') }}">Login</a>
-
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}">Sei un ristorante?  Registrati!</a>
-                            @endif
-                        @endauth
-                    </div>
-                @endif
-            </div>
-
-            <!-- start container -->
-            <div class="container" id="root">
-                <!-- <p>CIAOOOOOO</p> -->
-            <!-- end container -->
-            </div>
-            <script src="{{ asset ('js/app.js')}}"> </script>
-    </body>
-
-    
 </html>

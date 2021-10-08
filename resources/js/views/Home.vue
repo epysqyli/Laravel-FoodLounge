@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div class="content">
       <!-- start motto -->
       <div class="row">
@@ -12,9 +12,9 @@
       <!-- end motto -->
 
       <!-- start cards -->
-      <div class="row d-flex flex-wrap justify-content-center">
+      <div class="row">
         <div
-          class="col-xs-6 col-sm-6 col-md-4 col-lg-2"
+          class="col-xs-6 col-sm-6 col-md-4 col-lg-3"
           v-for="category in categories"
           :key="category.id"
         >
@@ -62,23 +62,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container-fluid {
+  background-color: teal;
+}
+
 h2 {
   font-size: 40px;
-  color: #ffd60a;
-}
-
-.card {
-  width: calc(100% / 5);
-  border: none;
-  // background-color: transparent;
-}
-
-.card img {
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-}
-
-.card-body {
   color: #ffd60a;
 }
 

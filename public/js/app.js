@@ -2308,6 +2308,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   components: {}
@@ -6951,7 +6954,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-63cd6604] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-63cd6604] {\n  width: 20%;\n  border: none;\n}\n.card img[data-v-63cd6604] {\n  border-top-left-radius: 16px;\n  border-top-right-radius: 16px;\n}\n.card-body[data-v-63cd6604] {\n  color: #ffd60a;\n}\n.card[data-v-63cd6604]:hover {\n  box-shadow: 0 0 10px #ffd60a;\n}\n.card:hover img[data-v-63cd6604] {\n  filter: opacity(80%);\n}", ""]);
+exports.push([module.i, ".container-fluid[data-v-63cd6604] {\n  background-color: teal;\n}\nh2[data-v-63cd6604] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-63cd6604]:hover {\n  box-shadow: 0 0 10px #ffd60a;\n}\n.card:hover img[data-v-63cd6604] {\n  filter: opacity(80%);\n}", ""]);
 
 // exports
 
@@ -38882,9 +38885,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("router-view")], 1)
+  return _c("div", [_vm._m(0), _vm._v(" "), _c("router-view")], 1)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("header", [
+      _c("a", { attrs: { href: "http://localhost:8000/home" } }, [
+        _vm._v("Admin area")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -38984,19 +38998,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "content" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "row d-flex flex-wrap justify-content-center" },
+        { staticClass: "row" },
         _vm._l(_vm.categories, function(category) {
           return _c(
             "div",
             {
               key: category.id,
-              staticClass: "col-xs-6 col-sm-6 col-md-4 col-lg-2"
+              staticClass: "col-xs-6 col-sm-6 col-md-4 col-lg-3"
             },
             [
               _c(
