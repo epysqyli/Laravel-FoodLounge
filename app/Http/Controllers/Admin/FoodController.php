@@ -79,6 +79,13 @@ class FoodController extends Controller
 
         ]);
         $validatedData = $request->all();
+
+       
+
+        if (array_key_exists('image', $validatedData)) {
+            $validatedData['image'] = Storage::put('uploads', $validatedData['image']);;
+        }
+
         $food->update($validatedData);
   
         return redirect()->route('admin.foods.index')->with('updated', 'Update Element:' . ' ' . $food->id);
