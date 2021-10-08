@@ -1,6 +1,7 @@
 <template>
   <main>
     <div class="container">
+
       <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 g-2" v-for="restaurant in restaurants" :key="restaurant.id">
           <div class="car">
@@ -33,6 +34,8 @@
           </div>
         </div> 
       </div>  
+
+
        <!-- <div class="row">
         <div class="col-sm-6" v-for="restaurant in restaurants" :key="restaurant.id">
           <div class="card mt-3">
@@ -43,7 +46,6 @@
                <router-link :to="{ name: 'post-detail', params:{slug: post.slug}}" class="btn btn-primary">Details</router-link> 
             </div>
           </div>
-          
         </div>  -->
     </div>
     
