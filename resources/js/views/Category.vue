@@ -1,6 +1,7 @@
 <template>
   <main>
     <div class="container">
+<<<<<<< HEAD
       <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 g-2" v-for="restaurant in restaurants" :key="restaurant.id">
           <div class="">
@@ -27,6 +28,20 @@
           </div>
         </div> 
       </div>  
+=======
+      <div class="row row-cols-8 row-cols-md-2 g-4 ">
+        <div class="col" v-for="restaurant in restaurants" :key="restaurant.id">
+          <div class="card">
+            <img v-bind:src="restaurant.profile_image" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{restaurant.name}}</h5>
+                <p>{{restaurant.address}}</p>
+                <p class="card-text">{{restaurant.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>  
+>>>>>>> vala
        <!-- <div class="row">
         <div class="col-sm-6" v-for="restaurant in restaurants" :key="restaurant.id">
           <div class="card mt-3">
@@ -37,7 +52,6 @@
                <router-link :to="{ name: 'post-detail', params:{slug: post.slug}}" class="btn btn-primary">Details</router-link> 
             </div>
           </div>
-          
         </div>  -->
     </div>
     
