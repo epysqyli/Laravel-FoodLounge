@@ -41,12 +41,12 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/categories/",
-      userChoices: null,
+      userChoices: [],
       restaurants: []
     };
   },
   mounted: function mounted() {
-    this.userChoices = this.$route.params.userChoices;
+    this.userChoices = this.$route.params.names.split('&');
     this.fillRestaurants();
   },
   methods: {

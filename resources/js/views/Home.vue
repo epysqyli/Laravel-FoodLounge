@@ -25,7 +25,7 @@
       <div class="col-12">
         <router-link
           style="text-decoration: none; color: inherit"
-          :to="{ name: 'categories', params: { userChoices } }"
+          :to="{ name: 'categories', params: { names: queryChoices } }"
         >
           <div class="d-block w-50 btn btn-outline-primary mx-auto mt-5">
             Go
@@ -50,6 +50,7 @@ export default {
       apiUrl: "http://127.0.0.1:8000/api/categories",
       categories: [],
       userChoices: [],
+      queryChoices: "",
     };
   },
 
@@ -82,6 +83,11 @@ export default {
           }
         });
       }
+      this.buildQuery();
+    },
+
+    buildQuery() {
+      this.queryChoices = this.userChoices.join("&");
     },
   },
 };

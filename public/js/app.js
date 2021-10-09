@@ -53667,7 +53667,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./views/Home */ "./resources/js/views/Home.vue"));
     }
   }, {
-    path: "/categories/",
+    path: "/categories/:names",
     name: "categories",
     component: function component() {
       return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./views/Categories */ "./resources/js/views/Categories.vue"));

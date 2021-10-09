@@ -100,7 +100,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       apiUrl: "http://127.0.0.1:8000/api/categories",
       categories: [],
-      userChoices: []
+      userChoices: [],
+      queryChoices: ""
     };
   },
   created: function created() {
@@ -134,6 +135,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         });
       }
+
+      this.buildQuery();
+    },
+    buildQuery: function buildQuery() {
+      this.queryChoices = this.userChoices.join("&");
     }
   }
 });
@@ -289,10 +295,7 @@ var render = function() {
             {
               staticStyle: { "text-decoration": "none", color: "inherit" },
               attrs: {
-                to: {
-                  name: "categories",
-                  params: { userChoices: _vm.userChoices }
-                }
+                to: { name: "categories", params: { names: _vm.queryChoices } }
               }
             },
             [

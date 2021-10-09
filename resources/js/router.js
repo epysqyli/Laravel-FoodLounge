@@ -12,7 +12,7 @@ const router = new VueRouter({
             component: () => import('./views/Home'),
         },
         {
-            path: "/categories/",
+            path: "/categories/:names",
             name: "categories",
             component: () => import("./views/Categories"),
         },

@@ -31,13 +31,13 @@ export default {
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/categories/",
-      userChoices: null,
+      userChoices: [],
       restaurants: [],
     };
   },
 
   mounted() {
-    this.userChoices = this.$route.params.userChoices;
+    this.userChoices = this.$route.params.names.split('&');
     this.fillRestaurants();
   },
 
