@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 mx-auto" v-for="restaurant in restaurants" :key="restaurant.id">
-          <router-link :to="{ name: 'restaurant', params: { slug: restaurant.slug } }"
+          <router-link :to="{ name: 'restaurants', params: { slug: restaurant.slug } }"
           class="card m-5" style="max-width: 900px;">
             <div class="row g-0">
               <div class="col-md-4">

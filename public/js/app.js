@@ -39067,7 +39067,7 @@ var render = function() {
                   staticStyle: { "max-width": "900px" },
                   attrs: {
                     to: {
-                      name: "restaurant",
+                      name: "restaurants",
                       params: { slug: restaurant.slug }
                     }
                   }
