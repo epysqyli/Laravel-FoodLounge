@@ -24,6 +24,7 @@ Route::middleware('auth')->namespace('Admin')->name('admin.')->group(function ()
     Route::resource('/foods','FoodController');
     Route::resource('/orders','OrderController');
     Route::resource('/types','TypeController');
+    Route::resource('/users','UserController');
 });
 
 

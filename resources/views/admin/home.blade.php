@@ -30,7 +30,7 @@
                 </div>
                 <div class="row">
                     <a class="col-7 mx-auto my-2 pt-2 pb-1 border rounded shadow bg-info text-white"
-                        href="{{ route('admin.home', Auth::user()->id) }}">
+                        href="{{ route('admin.users.edit', Auth::user()->id) }}">
                         <h4 class="text-center">Edit Profile</h4>
                     </a>
                 </div>

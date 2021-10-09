@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12 text-center p-5">
         <h2 class="text-center mx-auto">
-          Scegli il cibo che vuoi, te lo portiamo a casa noi!
+          Bee Happy, Bee Healthy! Choose: 
         </h2>
       </div>
     </div>
