@@ -17,7 +17,8 @@ export default {
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/restaurants/",
-      restaurant: [],
+      restaurant: null,
+      foods: null,
     };
   },
   created() {
@@ -29,9 +30,8 @@ export default {
         .get(this.apiUrl + this.$route.params.slug)
 
         .then((response) => {
-          console.log(response);
           this.restaurant = response.data;
-          console.log(this.restaurant);
+          this.foods = this.restaurant.foods;
         })
         .catch();
     },

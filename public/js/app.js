@@ -2436,7 +2436,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/restaurants/",
-      restaurant: []
+      restaurant: null,
+      foods: null
     };
   },
   created: function created() {
@@ -2447,9 +2448,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get(this.apiUrl + this.$route.params.slug).then(function (response) {
-        console.log(response);
         _this.restaurant = response.data;
-        console.log(_this.restaurant);
+        _this.foods = _this.restaurant.foods;
       })["catch"]();
     }
   }
@@ -38977,7 +38977,7 @@ var render = function() {
         _vm._l(_vm.restaurants, function(restaurant) {
           return _c(
             "div",
-            { key: restaurant.id, staticClass: "col-xs-12 mx-auto" },
+            { key: restaurant.id, staticClass: "col-12 mx-auto" },
             [
               _c(
                 "router-link",
