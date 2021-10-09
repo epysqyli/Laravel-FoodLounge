@@ -2408,9 +2408,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         });
       });
     },
-    // should be toggleChoice
-    addChoice: function addChoice(choice) {
-      this.userChoices.push(choice);
+    toggleChoice: function toggleChoice(choice) {
+      if (!this.userChoices.includes(choice)) {
+        this.userChoices.push(choice);
+      } else {
+        this.userChoices.splice(this.userChoices.indexOf(choice), 1);
+      }
     }
   }
 });
@@ -39081,7 +39084,7 @@ var render = function() {
               attrs: { category: category },
               on: {
                 addChoice: function($event) {
-                  return _vm.addChoice(category.slug)
+                  return _vm.toggleChoice(category.slug)
                 }
               }
             })

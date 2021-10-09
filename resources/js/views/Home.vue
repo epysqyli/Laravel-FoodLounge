@@ -18,7 +18,7 @@
       >
         <CategoryCard
           :category="category"
-          @addChoice="addChoice(category.slug)"
+          @addChoice="toggleChoice(category.slug)"
         />
       </div>
     </div>
@@ -68,9 +68,12 @@ export default {
       });
     },
 
-    // should be toggleChoice
-    addChoice(choice) {
-      this.userChoices.push(choice);
+    toggleChoice(choice) {
+      if (!this.userChoices.includes(choice)) {
+        this.userChoices.push(choice);
+      } else {
+        this.userChoices.splice(this.userChoices.indexOf(choice), 1);
+      }
     },
   },
 };
