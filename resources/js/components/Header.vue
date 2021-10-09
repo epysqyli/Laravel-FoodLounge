@@ -2,7 +2,7 @@
   <header class="d-flex justify-content-around">
     <router-link
       style="text-decoration: none; color: inherit; width: 50%; display: block"
-      :to="{ name: 'Home' }"
+      :to="{ name: 'home' }"
     >
       <div class="d-block btn w-100 btn-outline-primary">Home</div>
     </router-link>

@@ -4,7 +4,7 @@ import VueRouter from "vue-router";
 // Import page of Vue.Router
 Vue.use(VueRouter);
 import Home from "./views/Home";
-import Category from "./views/Category";
+import Categories from "./views/Categories";
 import Restaurant from "./views/Restaurant";
 
 const router = new VueRouter({
@@ -12,17 +12,17 @@ const router = new VueRouter({
     routes: [
         {
             path: "/",
-            name: "Home",
+            name: "home",
             component: Home
         },
         {
-            path: "/category/",
-            name: "category",
-            component: Category
+            path: "/categories/",
+            name: "categories",
+            component: Categories
         },
         {
-            path: "/restaurant/:slug",
-            name: "restaurant",
+            path: "/restaurants/:slug",
+            name: "restaurants",
             component: Restaurant
         }
     ]

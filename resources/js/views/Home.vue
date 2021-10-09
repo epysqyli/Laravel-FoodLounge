@@ -25,7 +25,7 @@
       <div class="col-12">
         <router-link
           style="text-decoration: none; color: inherit"
-          :to="{ name: 'category', params: { userChoices } }"
+          :to="{ name: 'categories', params: { userChoices } }"
         >
           <div class="d-block w-50 btn btn-outline-primary mx-auto mt-5">
             Go
