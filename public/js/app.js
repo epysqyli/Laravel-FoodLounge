@@ -2377,7 +2377,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
@@ -39093,7 +39092,6 @@ var render = function() {
           _c(
             "router-link",
             {
-              staticClass: "btn",
               staticStyle: { "text-decoration": "none", color: "inherit" },
               attrs: {
                 to: {
@@ -39102,7 +39100,16 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("\n        Go!\n      ")]
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "d-block w-50 btn btn-outline-primary mx-auto mt-5"
+                },
+                [_vm._v("Go")]
+              )
+            ]
           )
         ],
         1
