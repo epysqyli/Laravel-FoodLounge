@@ -7,7 +7,6 @@ use Faker\Factory;
 
 class FoodSeeder extends Seeder
 {
-
     public function run()
     {
         $faker = Factory::create();

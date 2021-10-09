@@ -2298,21 +2298,32 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/categories/",
+      userChoices: null,
       restaurants: []
     };
   },
-  created: function created() {
-    this.getRestaurant();
+  mounted: function mounted() {
+    this.userChoices = this.$route.params.userChoices;
+    this.fillRestaurants();
   },
   methods: {
-    getRestaurant: function getRestaurant() {
+    getRestaurant: function getRestaurant(choice) {
       var _this = this;
 
-      axios.get(this.apiUrl + this.$route.params.slug).then(function (response) {
-        console.log(response);
-        _this.restaurants = response.data;
-        console.log(_this.restaurants);
-      })["catch"]();
+      axios.get(this.apiUrl + choice).then(function (response) {
+        console.log(response.data);
+
+        _this.restaurants.push(response.data);
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    },
+    fillRestaurants: function fillRestaurants() {
+      var _this2 = this;
+
+      this.userChoices.forEach(function (choice) {
+        return _this2.getRestaurant(choice);
+      });
     }
   }
 });
@@ -2329,6 +2340,21 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_CategoryCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/CategoryCard.vue */ "./resources/js/components/CategoryCard.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2378,7 +2404,6 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     addChoice: function addChoice(choice) {
-      console.log(choice);
       this.userChoices.push(choice);
     }
   }
@@ -6907,7 +6932,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-6480121d] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-6480121d] {\n  border: none;\n}\n.card[data-v-6480121d]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}\n\n/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */\n.flip-box[data-v-6480121d] {\n  background-color: white;\n  perspective: 1000px;\n  /* Remove this if you don't want the 3D effect */\n}\n\n/* This container is needed to position the front and back side */\n.flip-box-inner[data-v-6480121d] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: transform 0.5s;\n  transform-style: preserve-3d;\n}\n\n/* Do an horizontal flip when you move the mouse over the flip box container */\n.flip-box:hover .flip-box-inner[data-v-6480121d] {\n  transform: rotateY(180deg);\n}\n\n/* Position the front and back side */\n.flip-box-front[data-v-6480121d],\n.flip-box-back[data-v-6480121d] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\n/* Style the front side (fallback if image is missing) */\n.flip-box-front[data-v-6480121d] {\n  background-color: #bbb;\n  color: black;\n}\n\n/* Style the back side */\n.flip-box-back[data-v-6480121d] {\n  background-color: #4982bb;\n  color: #050505;\n  transform: rotateY(180deg);\n}", ""]);
+exports.push([module.i, "h2[data-v-6480121d] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-6480121d] {\n  border: none;\n}\n.card[data-v-6480121d]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}", ""]);
 
 // exports
 
@@ -38942,75 +38967,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("main", [
-    _c("div", { staticClass: "container-fluid" }, [
-      _c(
-        "div",
-        { staticClass: "row" },
-        _vm._l(_vm.restaurants, function(restaurant) {
-          return _c(
-            "div",
-            { key: restaurant.id, staticClass: "col-xs-12 mx-auto" },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "card m-5",
-                  staticStyle: { "max-width": "900px" },
-                  attrs: {
-                    to: {
-                      name: "restaurant",
-                      params: { slug: restaurant.slug }
-                    }
-                  }
-                },
-                [
-                  _c("div", { staticClass: "row g-0" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("img", {
-                        staticClass: "card-img-top",
-                        attrs: {
-                          src:
-                            restaurant.profile_image[0] == "h"
-                              ? restaurant.profile_image
-                              : "http://localhost:8000/storage/" +
-                                restaurant.profile_image,
-                          alt: "restaurant.name"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-8" }, [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("h5", { staticClass: "card-title" }, [
-                          _vm._v(_vm._s(restaurant.name))
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v(_vm._s(restaurant.address))]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-text" }, [
-                          _vm._v(_vm._s(restaurant.description))
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            ],
-            1
-          )
-        }),
-        0
-      )
-    ])
-  ])
-}
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
 
 
 
@@ -39059,7 +39017,31 @@ var render = function() {
         )
       }),
       0
-    )
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        { staticClass: "col-12" },
+        [
+          _c(
+            "router-link",
+            {
+              staticClass: "btn",
+              staticStyle: { "text-decoration": "none", color: "inherit" },
+              attrs: {
+                to: {
+                  name: "category",
+                  params: { userChoices: _vm.userChoices }
+                }
+              }
+            },
+            [_vm._v("\n        Go!\n      ")]
+          )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = [
@@ -54804,7 +54786,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: "Home",
     component: _views_Home__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: "/category/:slug",
+    path: "/category/",
     name: "category",
     component: _views_Category__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {

@@ -2,7 +2,7 @@
   <main>
     <div class="container-fluid">
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-xs-12 mx-auto" v-for="restaurant in restaurants" :key="restaurant.id">
           <router-link :to="{ name: 'restaurant', params: { slug: restaurant.slug } }"
           class="card m-5" style="max-width: 900px;">
@@ -21,7 +21,7 @@
           </router-link>
         </div>
       </div>
-    </div>
+    </div> -->
     
   </main>
 </template>
@@ -32,22 +32,29 @@ export default {
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/categories/",
+      userChoices: null,
       restaurants: [],
     };
   },
-  created() {
-    this.getRestaurant();
+
+  mounted() {
+    this.userChoices = this.$route.params.userChoices;
+    this.fillRestaurants();
   },
+
   methods: {
-    getRestaurant() {
+    getRestaurant(choice) {
       axios
-        .get(this.apiUrl + this.$route.params.slug)
+        .get(this.apiUrl + choice)
         .then((response) => {
-          console.log(response);
-          this.restaurants = response.data;
-          console.log(this.restaurants);
+          console.log(response.data);
+          this.restaurants.push(response.data);
         })
-        .catch();
+        .catch((error) => console.log(error));
+    },
+
+    fillRestaurants() {
+      this.userChoices.forEach((choice) => this.getRestaurant(choice));
     },
   },
 };
@@ -62,44 +69,8 @@ h2 {
 .card {
   border: none;
 }
+
 .card:hover {
   box-shadow: 0 0 20px #ffd60a;
-}
-/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-box {
-  background-color: white;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
-/* This container is needed to position the front and back side */
-.flip-box-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-}
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-box:hover .flip-box-inner {
-  transform: rotateY(180deg);
-}
-/* Position the front and back side */
-.flip-box-front,
-.flip-box-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-/* Style the front side (fallback if image is missing) */
-.flip-box-front {
-  background-color: #bbb;
-  color: black;
-}
-/* Style the back side */
-.flip-box-back {
-  background-color: rgb(73, 130, 187);
-  color: rgb(5, 5, 5);
-  transform: rotateY(180deg);
 }
 </style>

@@ -16,7 +16,22 @@
         v-for="category in categories"
         :key="category.id"
       >
-        <CategoryCard :category="category" @addChoice="addChoice(category.slug)"/>
+        <CategoryCard
+          :category="category"
+          @addChoice="addChoice(category.slug)"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <router-link
+          style="text-decoration: none; color: inherit"
+          class="btn"
+          :to="{ name: 'category', params: { userChoices } }"
+        >
+          Go!
+        </router-link>
       </div>
     </div>
   </div>
@@ -50,9 +65,8 @@ export default {
       });
     },
     addChoice(choice) {
-      console.log(choice);
       this.userChoices.push(choice);
-    }
+    },
   },
 };
 </script>

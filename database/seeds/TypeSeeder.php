@@ -8,10 +8,9 @@ class TypeSeeder extends Seeder
     public function run()
     {
         $types = [
-            'Antipasti',
             'Primi piatti',
             'Secondi piatti',
-            'Dessert',
+            'Dessert & Bevande',
         ];
 
         foreach ($types as $type) {
