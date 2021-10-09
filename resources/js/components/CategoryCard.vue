@@ -32,7 +32,7 @@ export default {
   border-radius: 5px;
   box-shadow: 3px 6px 5px -6px black;
   background-color: whitesmoke;
-  transition: box-shadow 250ms ease-out;
+  transition: box-shadow 200ms ease-out;
   // transition: background-color 250ms ease-out;
 
   img {
@@ -47,7 +47,7 @@ export default {
   }
 
   &:hover {
-    box-shadow: 5px 8px 10px -6px black;
+    box-shadow: 5px 10px 8px -6px black;
     background-color: hsl(10%, 10%, 80%);
     cursor: pointer;
   }
