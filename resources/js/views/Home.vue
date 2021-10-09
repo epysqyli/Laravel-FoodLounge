@@ -29,7 +29,9 @@
           style="text-decoration: none; color: inherit"
           :to="{ name: 'category', params: { userChoices } }"
         >
-          <div class="d-block w-50 btn btn-outline-primary mx-auto mt-5">Go</div>
+          <div class="d-block w-50 btn btn-outline-primary mx-auto mt-5">
+            Go
+          </div>
         </router-link>
       </div>
     </div>
@@ -60,9 +62,13 @@ export default {
   methods: {
     getCategories() {
       axios.get(this.apiUrl).then((resp) => {
-        this.categories = resp.data.categories;
+        this.categories = resp.data.categories.map((item) => {
+          return { ...item, selected: false };
+        })
       });
     },
+
+    // should be toggleChoice
     addChoice(choice) {
       this.userChoices.push(choice);
     },
