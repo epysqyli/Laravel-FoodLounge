@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-// Import page of Vue.Router
 Vue.use(VueRouter);
 
 const router = new VueRouter({
