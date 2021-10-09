@@ -1,15 +1,28 @@
 <template>
-  <div class="category d-flex align-items-center" @click="$emit('addChoice')">
+  <div
+    class="category d-flex align-items-center"
+    :class="category.selected ? on : ''"
+    @click="$emit('toggleChoice')"
+  >
     <img :src="category.img" :alt="category.name" class="d-block w-25" />
-    <div class="name w-100 text-center">{{ category.name }}</div>
+    <div class="name w-100 text-center">
+      {{ category.name }}
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "CategoryCard",
+
   props: {
     category: Object,
+  },
+
+  data() {
+    return {
+      on: "selected",
+    };
   },
 };
 </script>
@@ -37,5 +50,9 @@ export default {
     background-color: hsl(10%, 10%, 80%);
     cursor: pointer;
   }
+}
+
+.selected {
+  background-color: hsl(10%, 10%, 80%);
 }
 </style>

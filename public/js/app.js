@@ -2221,10 +2221,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CategoryCard",
   props: {
     category: Object
+  },
+  data: function data() {
+    return {
+      on: "selected"
+    };
   }
 });
 
@@ -2378,8 +2389,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Home",
@@ -2411,8 +2420,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     toggleChoice: function toggleChoice(choice) {
       if (!this.userChoices.includes(choice)) {
         this.userChoices.push(choice);
+        this.categories.forEach(function (item) {
+          if (item.slug == choice) {
+            item.selected = true;
+          }
+        });
       } else {
         this.userChoices.splice(this.userChoices.indexOf(choice), 1);
+        this.categories.forEach(function (item) {
+          if (item.slug == choice) {
+            item.selected = false;
+          }
+        });
       }
     }
   }
@@ -6922,7 +6941,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".category[data-v-a6d5abce] {\n  border-radius: 5px;\n  box-shadow: 3px 6px 5px -6px black;\n  background-color: whitesmoke;\n  transition: all 250ms ease-out;\n}\n.category img[data-v-a6d5abce] {\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n}\n.category .name[data-v-a6d5abce] {\n  font-size: 1.2rem;\n  color: black;\n  text-decoration: none;\n}\n.category[data-v-a6d5abce]:hover {\n  box-shadow: 5px 8px 10px -6px black;\n  background-color: #d1c9c7;\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".category[data-v-a6d5abce] {\n  border-radius: 5px;\n  box-shadow: 3px 6px 5px -6px black;\n  background-color: whitesmoke;\n  transition: all 250ms ease-out;\n}\n.category img[data-v-a6d5abce] {\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n}\n.category .name[data-v-a6d5abce] {\n  font-size: 1.2rem;\n  color: black;\n  text-decoration: none;\n}\n.category[data-v-a6d5abce]:hover {\n  box-shadow: 5px 8px 10px -6px black;\n  background-color: #d1c9c7;\n  cursor: pointer;\n}\n.selected[data-v-a6d5abce] {\n  background-color: #d1c9c7;\n}", ""]);
 
 // exports
 
@@ -38900,9 +38919,10 @@ var render = function() {
     "div",
     {
       staticClass: "category d-flex align-items-center",
+      class: _vm.category.selected ? _vm.on : "",
       on: {
         click: function($event) {
-          return _vm.$emit("addChoice")
+          return _vm.$emit("toggleChoice")
         }
       }
     },
@@ -38913,7 +38933,7 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("div", { staticClass: "name w-100 text-center" }, [
-        _vm._v(_vm._s(_vm.category.name))
+        _vm._v("\n    " + _vm._s(_vm.category.name) + "\n  ")
       ])
     ]
   )
@@ -39083,7 +39103,7 @@ var render = function() {
             _c("CategoryCard", {
               attrs: { category: category },
               on: {
-                addChoice: function($event) {
+                toggleChoice: function($event) {
                   return _vm.toggleChoice(category.slug)
                 }
               }
@@ -39133,14 +39153,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12 text-center p-5" }, [
-          _c("h2", { staticClass: "text-center mx-auto" }, [
-            _vm._v(
-              "\n          Scegli il cibo che vuoi, te lo portiamo a casa noi!\n        "
-            )
-          ])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 text-center p-5" }, [
+        _c("h2", { staticClass: "text-center mx-auto" }, [
+          _vm._v(
+            "\n        Scegli il cibo che vuoi, te lo portiamo a casa noi!\n      "
+          )
         ])
       ])
     ])

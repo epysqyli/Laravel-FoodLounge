@@ -1,12 +1,10 @@
 <template>
   <div class="container mx-auto">
-    <div class="content">
-      <div class="row">
-        <div class="col-12 text-center p-5">
-          <h2 class="text-center mx-auto">
-            Scegli il cibo che vuoi, te lo portiamo a casa noi!
-          </h2>
-        </div>
+    <div class="row">
+      <div class="col-12 text-center p-5">
+        <h2 class="text-center mx-auto">
+          Scegli il cibo che vuoi, te lo portiamo a casa noi!
+        </h2>
       </div>
     </div>
 
@@ -18,7 +16,7 @@
       >
         <CategoryCard
           :category="category"
-          @addChoice="toggleChoice(category.slug)"
+          @toggleChoice="toggleChoice(category.slug)"
         />
       </div>
     </div>
@@ -64,15 +62,25 @@ export default {
       axios.get(this.apiUrl).then((resp) => {
         this.categories = resp.data.categories.map((item) => {
           return { ...item, selected: false };
-        })
+        });
       });
     },
 
     toggleChoice(choice) {
       if (!this.userChoices.includes(choice)) {
         this.userChoices.push(choice);
+        this.categories.forEach((item) => {
+          if (item.slug == choice) {
+            item.selected = true;
+          }
+        });
       } else {
         this.userChoices.splice(this.userChoices.indexOf(choice), 1);
+        this.categories.forEach((item) => {
+          if (item.slug == choice) {
+            item.selected = false;
+          }
+        });
       }
     },
   },
