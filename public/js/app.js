@@ -2256,6 +2256,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Header"
 });
@@ -38984,25 +38994,41 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("header", [
+  return _c(
+    "header",
+    { staticClass: "d-flex justify-content-around" },
+    [
+      _c(
+        "router-link",
+        {
+          staticStyle: {
+            "text-decoration": "none",
+            color: "inherit",
+            width: "50%",
+            display: "block"
+          },
+          attrs: { to: { name: "Home" } }
+        },
+        [
+          _c("div", { staticClass: "d-block btn w-100 btn-outline-primary" }, [
+            _vm._v("Home")
+          ])
+        ]
+      ),
+      _vm._v(" "),
       _c(
         "a",
         {
-          staticClass: "d-block btn btn-outline-primary",
+          staticClass: "d-block btn w-50 btn-outline-primary",
           attrs: { href: "http://localhost:8000/api/user" }
         },
         [_vm._v("Admin area")]
       )
-    ])
-  }
-]
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
