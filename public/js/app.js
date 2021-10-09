@@ -2292,7 +2292,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Category",
   data: function data() {
@@ -2310,10 +2309,10 @@ __webpack_require__.r(__webpack_exports__);
     getRestaurant: function getRestaurant(choice) {
       var _this = this;
 
-      axios.get(this.apiUrl + choice).then(function (response) {
-        console.log(response.data);
-
-        _this.restaurants.push(response.data);
+      axios.get("".concat(this.apiUrl).concat(choice)).then(function (response) {
+        response.data.forEach(function (item) {
+          return _this.restaurants.push(item);
+        });
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -38967,8 +38966,75 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("main", [
+    _c("div", { staticClass: "container-fluid" }, [
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.restaurants, function(restaurant) {
+          return _c(
+            "div",
+            { key: restaurant.id, staticClass: "col-xs-12 mx-auto" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "card m-5",
+                  staticStyle: { "max-width": "900px" },
+                  attrs: {
+                    to: {
+                      name: "restaurant",
+                      params: { slug: restaurant.slug }
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "row g-0" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: {
+                          src:
+                            restaurant.profile_image[0] == "h"
+                              ? restaurant.profile_image
+                              : "http://localhost:8000/storage/" +
+                                restaurant.profile_image,
+                          alt: "restaurant.name"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("h5", { staticClass: "card-title" }, [
+                          _vm._v(_vm._s(restaurant.name))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v(_vm._s(restaurant.address))]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _vm._v(_vm._s(restaurant.description))
+                        ])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ],
+            1
+          )
+        }),
+        0
+      )
+    ])
+  ])
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 

@@ -1,8 +1,7 @@
 <<template>
   <main>
     <div class="container-fluid">
-
-      <!-- <div class="row">
+      <div class="row">
         <div class="col-xs-12 mx-auto" v-for="restaurant in restaurants" :key="restaurant.id">
           <router-link :to="{ name: 'restaurant', params: { slug: restaurant.slug } }"
           class="card m-5" style="max-width: 900px;">
@@ -21,7 +20,7 @@
           </router-link>
         </div>
       </div>
-    </div> -->
+    </div>
     
   </main>
 </template>
@@ -45,10 +44,9 @@ export default {
   methods: {
     getRestaurant(choice) {
       axios
-        .get(this.apiUrl + choice)
+        .get(`${this.apiUrl}${choice}`)
         .then((response) => {
-          console.log(response.data);
-          this.restaurants.push(response.data);
+          response.data.forEach((item) => this.restaurants.push(item));
         })
         .catch((error) => console.log(error));
     },
