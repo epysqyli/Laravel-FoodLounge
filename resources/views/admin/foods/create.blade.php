@@ -30,7 +30,7 @@
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
                                         name="name" value="{{ old('name') }}" autocomplete="name" autofocus
-                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}>
+                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }} required>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -45,7 +45,7 @@
                                 <div class="col-md-4 col-form-label">
                                     <div>
                                         <input type="radio" id="visible" name="visible" value="1"
-                                            {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}>
+                                            {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }} required>
                                         <label for="visible">Accessible</label><br>
                                     </div>
                                     <div>
@@ -70,7 +70,7 @@
                                     <input id="price" type="number" step="0.01"
                                         class="form-control @error('price') is-invalid @enderror" name="price"
                                         autocomplete="price" value="{{ old('price') }}"
-                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}>
+                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }} required>
 
                                     @error('price')
                                         <span class="invalid-feedback" role="alert">
@@ -87,7 +87,7 @@
                                     <input id="ingredients" type="text"
                                         class="form-control @error('ingredients') is-invalid @enderror" name="ingredients"
                                         value="{{ old('ingredients') }}" autocomplete="ingredients"
-                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}>
+                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }} required>
 
                                     @error('ingredients')
                                         <span class="invalid-feedback" role="alert">
@@ -105,7 +105,7 @@
                                         class="form-control @error('type') is-invalid
                                     @enderror"
                                         name="type_id" autocomplete="type_id"
-                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}>
+                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }} required>
                                         <option value="">Choose your types</option>
                                         @foreach ($types as $type)
                                             <option value={{ $type->id }} @if ($type->id == old('type'))
@@ -129,7 +129,8 @@
                                         class="form-control @error('description') is-invalid
                                     @enderror"
                                         name="description" autocomplete="description" rows="6"
-                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}>{{ old('description') }}</textarea>
+                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}
+                                        required>{{ old('description') }}</textarea>
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -147,7 +148,7 @@
                                         class="d-block form-control-file @error('image') is-invalid
                                     @enderror"
                                         name="image" autocomplete="image"
-                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}>
+                                        {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }} required>
                                     @error('image')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

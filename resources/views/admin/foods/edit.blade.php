@@ -16,14 +16,12 @@
                             @csrf
                             @method('PATCH')
 
-                            
-
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="name" value="{{ old('name', $food->name) }}" autocomplete="name" autofocus>
+                                        name="name" value="{{ old('name', $food->name) }}" autocomplete="name" autofocus required>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -37,7 +35,7 @@
                                 <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Availability</label>
                                 <div class="col-md-4 col-form-label">
                                     <div>
-                                        <input type="radio" id="visible" name="visible" value="1">
+                                        <input type="radio" id="visible" name="visible" value="1" required>
                                         <label for="visible">Accessible</label><br>
                                     </div>
                                     <div>
@@ -59,7 +57,7 @@
                                 <div class="col-md-6">
                                     <input id="price" type="number" step="0.01"
                                         class="form-control @error('price') is-invalid @enderror" name="price"
-                                        autocomplete="price" value="{{ old('price', $food->price) }}">
+                                        autocomplete="price" value="{{ old('price', $food->price) }}" required>
 
                                     @error('price')
                                         <span class="invalid-feedback" role="alert">
@@ -75,7 +73,7 @@
                                 <div class="col-md-6">
                                     <input id="ingredients" type="text"
                                         class="form-control @error('ingredients') is-invalid @enderror" name="ingredients"
-                                        value="{{ old('ingredients', $food->ingredients) }}" autocomplete="ingredients">
+                                        value="{{ old('ingredients', $food->ingredients) }}" autocomplete="ingredients" required>
 
                                     @error('ingredients')
                                         <span class="invalid-feedback" role="alert">
@@ -92,7 +90,7 @@
                                     <select id="type"
                                         class="form-control @error('type') is-invalid
                                     @enderror"
-                                        name="type_id" autocomplete="type_id">
+                                        name="type_id" autocomplete="type_id" required>
                                         <option value="">Choose your types</option>
                                         @foreach ($types as $type)
                                             <option value={{ $type->id }} @if ($type->id == old('type'))
@@ -115,7 +113,7 @@
                                     <textarea id="description" type="text"
                                         class="form-control text-left @error('description') is-invalid
                                     @enderror"
-                                        name="description" autocomplete="description"
+                                        name="description" autocomplete="description" required
                                         rows="6">{{old('description', $food->description)}}</textarea>
 
                                     @error('description')
@@ -130,7 +128,7 @@
                                 <label for="image" class="col-md-4 col-form-label text-md-right">Image Food</label>
 
                                 <div class="col-md-6">
-                                    <input id="image" type="file"
+                                    <input id="image" type="file" required
                                         class="d-block form-control-file @error('image') is-invalid
                                     @enderror"
                                         name="image" autocomplete="image" value="{{ old('image', $food->image) }}">
