@@ -8,6 +8,30 @@
         <p class="card-text">{{ restaurant.description }}</p>
       </div>
     </div>
+
+    <div class="row">
+      <div
+        class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
+        v-for="food in foods"
+        :key="food.id"
+      >
+        <div class="card-header">
+          {{ food.name }}
+        </div>
+        <div class="card-body">
+          <div class="card-text">{{ food.description }}</div>
+          <div class="card-text">{{ food.price }} &euro;</div>
+          <img class="w-100"
+            :src="
+              food.image[0] == 'h'
+                ? food.image
+                : `http://localhost:8000/storage/${food.image}`
+            "
+            :alt="food.name"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

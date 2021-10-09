@@ -2461,6 +2461,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Category",
   data: function data() {
@@ -39196,7 +39220,49 @@ var render = function() {
           _vm._v(_vm._s(_vm.restaurant.description))
         ])
       ])
-    ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      _vm._l(_vm.foods, function(food) {
+        return _c(
+          "div",
+          {
+            key: food.id,
+            staticClass:
+              "col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
+          },
+          [
+            _c("div", { staticClass: "card-header" }, [
+              _vm._v("\n        " + _vm._s(food.name) + "\n      ")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("div", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(food.description))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(food.price) + " €")
+              ]),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "w-100",
+                attrs: {
+                  src:
+                    food.image[0] == "h"
+                      ? food.image
+                      : "http://localhost:8000/storage/" + food.image,
+                  alt: food.name
+                }
+              })
+            ])
+          ]
+        )
+      }),
+      0
+    )
   ])
 }
 var staticRenderFns = []
