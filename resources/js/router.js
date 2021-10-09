@@ -3,9 +3,6 @@ import VueRouter from "vue-router";
 
 // Import page of Vue.Router
 Vue.use(VueRouter);
-import Home from "./views/Home";
-import Categories from "./views/Categories";
-import Restaurant from "./views/Restaurant";
 
 const router = new VueRouter({
     mode: "history",
@@ -13,17 +10,17 @@ const router = new VueRouter({
         {
             path: "/",
             name: "home",
-            component: Home
+            component: () => import('./views/Home'),
         },
         {
             path: "/categories/",
             name: "categories",
-            component: Categories
+            component: () => import("./views/Categories"),
         },
         {
             path: "/restaurants/:slug",
             name: "restaurants",
-            component: Restaurant
+            component: () => import("./views/Restaurant"),
         }
     ]
 });
