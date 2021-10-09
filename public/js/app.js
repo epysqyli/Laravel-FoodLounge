@@ -2362,7 +2362,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/categories",
-      categories: []
+      categories: [],
+      userChoices: []
     };
   },
   created: function created() {
@@ -2375,6 +2376,10 @@ __webpack_require__.r(__webpack_exports__);
       axios.get(this.apiUrl).then(function (resp) {
         _this.categories = resp.data.categories;
       });
+    },
+    addChoice: function addChoice(choice) {
+      console.log(choice);
+      this.userChoices.push(choice);
     }
   }
 });
@@ -6883,7 +6888,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".category[data-v-a6d5abce] {\n  border-radius: 5px;\n  box-shadow: 3px 6px 5px -6px black;\n  background-color: whitesmoke;\n  transition: all 250ms ease-out;\n}\n.category img[data-v-a6d5abce] {\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n}\n.category .name[data-v-a6d5abce] {\n  font-size: 1.2rem;\n  color: black;\n  text-decoration: none;\n}\n.category[data-v-a6d5abce]:hover {\n  box-shadow: 5px 8px 10px -6px black;\n  background-color: #d1c9c7;\n}", ""]);
+exports.push([module.i, ".category[data-v-a6d5abce] {\n  border-radius: 5px;\n  box-shadow: 3px 6px 5px -6px black;\n  background-color: whitesmoke;\n  transition: all 250ms ease-out;\n}\n.category img[data-v-a6d5abce] {\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n}\n.category .name[data-v-a6d5abce] {\n  font-size: 1.2rem;\n  color: black;\n  text-decoration: none;\n}\n.category[data-v-a6d5abce]:hover {\n  box-shadow: 5px 8px 10px -6px black;\n  background-color: #d1c9c7;\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -38858,21 +38863,23 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "router-link",
+    "div",
     {
-      staticStyle: { "text-decoration": "none", color: "inherit" },
-      attrs: { to: { name: "category", params: { slug: _vm.category.slug } } }
+      staticClass: "category d-flex align-items-center",
+      on: {
+        click: function($event) {
+          return _vm.$emit("addChoice")
+        }
+      }
     },
     [
-      _c("div", { staticClass: "category d-flex align-items-center" }, [
-        _c("img", {
-          staticClass: "d-block w-25",
-          attrs: { src: _vm.category.img, alt: _vm.category.name }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "name w-100 text-center" }, [
-          _vm._v(_vm._s(_vm.category.name))
-        ])
+      _c("img", {
+        staticClass: "d-block w-25",
+        attrs: { src: _vm.category.img, alt: _vm.category.name }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "name w-100 text-center" }, [
+        _vm._v(_vm._s(_vm.category.name))
       ])
     ]
   )
@@ -39038,7 +39045,16 @@ var render = function() {
             staticClass:
               "col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
           },
-          [_c("CategoryCard", { attrs: { category: category } })],
+          [
+            _c("CategoryCard", {
+              attrs: { category: category },
+              on: {
+                addChoice: function($event) {
+                  return _vm.addChoice(category.slug)
+                }
+              }
+            })
+          ],
           1
         )
       }),

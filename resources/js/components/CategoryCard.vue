@@ -1,13 +1,13 @@
 <template>
-  <router-link
+  <!-- <router-link
     style="text-decoration: none; color: inherit"
     :to="{ name: 'category', params: { slug: category.slug } }"
-  >
-    <div class="category d-flex align-items-center">
+  > -->
+    <div class="category d-flex align-items-center" @click="$emit('addChoice')">
       <img :src="category.img" :alt="category.name" class="d-block w-25" />
       <div class="name w-100 text-center">{{ category.name }}</div>
     </div>
-  </router-link>
+  <!-- </router-link> -->
 </template>
 
 <script>
@@ -40,6 +40,7 @@ export default {
   &:hover {
     box-shadow: 5px 8px 10px -6px black;
     background-color: hsl(10%, 10%, 80%);
+    cursor: pointer;
   }
 }
 </style>

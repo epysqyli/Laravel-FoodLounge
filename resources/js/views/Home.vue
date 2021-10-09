@@ -16,7 +16,7 @@
         v-for="category in categories"
         :key="category.id"
       >
-        <CategoryCard :category="category" />
+        <CategoryCard :category="category" @addChoice="addChoice(category.slug)"/>
       </div>
     </div>
   </div>
@@ -35,6 +35,7 @@ export default {
     return {
       apiUrl: "http://127.0.0.1:8000/api/categories",
       categories: [],
+      userChoices: [],
     };
   },
 
@@ -48,6 +49,10 @@ export default {
         this.categories = resp.data.categories;
       });
     },
+    addChoice(choice) {
+      console.log(choice);
+      this.userChoices.push(choice);
+    }
   },
 };
 </script>
