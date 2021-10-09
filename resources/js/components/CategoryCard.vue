@@ -32,7 +32,8 @@ export default {
   border-radius: 5px;
   box-shadow: 3px 6px 5px -6px black;
   background-color: whitesmoke;
-  transition: all 250ms ease-out;
+  transition: box-shadow 250ms ease-out;
+  // transition: background-color 250ms ease-out;
 
   img {
     border-top-left-radius: 5px;
@@ -49,6 +50,11 @@ export default {
     box-shadow: 5px 8px 10px -6px black;
     background-color: hsl(10%, 10%, 80%);
     cursor: pointer;
+  }
+
+  &:active {
+    box-shadow: 5px 8px 12px -6px black;
+    background-color: hsl(10%, 10%, 50%);
   }
 }
 

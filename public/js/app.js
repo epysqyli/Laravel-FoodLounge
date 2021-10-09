@@ -6941,7 +6941,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".category[data-v-a6d5abce] {\n  border-radius: 5px;\n  box-shadow: 3px 6px 5px -6px black;\n  background-color: whitesmoke;\n  transition: all 250ms ease-out;\n}\n.category img[data-v-a6d5abce] {\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n}\n.category .name[data-v-a6d5abce] {\n  font-size: 1.2rem;\n  color: black;\n  text-decoration: none;\n}\n.category[data-v-a6d5abce]:hover {\n  box-shadow: 5px 8px 10px -6px black;\n  background-color: #d1c9c7;\n  cursor: pointer;\n}\n.selected[data-v-a6d5abce] {\n  background-color: #d1c9c7;\n}", ""]);
+exports.push([module.i, ".category[data-v-a6d5abce] {\n  border-radius: 5px;\n  box-shadow: 3px 6px 5px -6px black;\n  background-color: whitesmoke;\n  transition: box-shadow 250ms ease-out;\n}\n.category img[data-v-a6d5abce] {\n  border-top-left-radius: 5px;\n  border-bottom-left-radius: 5px;\n}\n.category .name[data-v-a6d5abce] {\n  font-size: 1.2rem;\n  color: black;\n  text-decoration: none;\n}\n.category[data-v-a6d5abce]:hover {\n  box-shadow: 5px 8px 10px -6px black;\n  background-color: #d1c9c7;\n  cursor: pointer;\n}\n.category[data-v-a6d5abce]:active {\n  box-shadow: 5px 8px 12px -6px black;\n  background-color: #8c7773;\n}\n.selected[data-v-a6d5abce] {\n  background-color: #d1c9c7;\n}", ""]);
 
 // exports
 
