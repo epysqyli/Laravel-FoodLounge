@@ -1,7 +1,7 @@
 <template>
   <main>
-    <div class="container mx-auto">
-      <div class="row">
+    <div class="container">
+      <div class="row pt-5">
         <div
           class="col-12 mx-auto"
           v-for="restaurant in restaurants"

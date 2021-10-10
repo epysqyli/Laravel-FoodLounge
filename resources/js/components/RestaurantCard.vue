@@ -1,7 +1,7 @@
 <template>
   <router-link
     :to="{ name: 'restaurants', params: { slug: restaurant.slug } }"
-    class="card m-5"
+    class="card m-3"
     style="text-decoration: none; color: inherit"
   >
     <div class="row g-0">
