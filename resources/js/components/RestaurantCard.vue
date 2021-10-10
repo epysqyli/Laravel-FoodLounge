@@ -2,7 +2,7 @@
   <router-link
     :to="{ name: 'restaurants', params: { slug: restaurant.slug } }"
     class="card m-5"
-    style="text-decoration: none; color: inherit;"
+    style="text-decoration: none; color: inherit"
   >
     <div class="row g-0">
       <div class="col-md-4">
@@ -37,4 +37,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h2 {
+  font-size: 40px;
+  color: #ffd60a;
+}
+
+.card {
+  border: none;
+  border-radius: 20px;
+}
+
+.card img {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  // border-radius: 20px;
+}
+.card-body {
+  height: 250px;
+  overflow: auto;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px #ffd60a;
+}
 </style>
