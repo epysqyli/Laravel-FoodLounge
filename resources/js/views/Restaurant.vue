@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-12 mt-3">
         <div class="card text-center border">
           <div class="card-header">
@@ -11,16 +11,23 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="row">
-      <div class="col-10 offset-1 offset-sm-0 col-sm-12">
-        <div class="border my-3" v-for="item in cart" :key="item.id">
-          <div class="border d-flex justify-content-between align-items-center">
+      <div class="col-10 offset-1 offset-sm-0 col-sm-12 my-2">
+        <div class="container-fluid mx-auto border rounded" v-if="cart.items.length != 0">
+          <div
+            class="d-flex justify-content-between align-items-center my-1"
+            v-for="item in cart.items"
+            :key="item.id"
+          >
             <div>{{ item.name }}</div>
-            <div>{{ item.price }}</div>
-            <div class="btn btn-outline-danger" @click="removeFromCart(item)">Remove</div>
+            <div>{{ item.price }} &euro;</div>
+            <div class="btn btn-outline-danger" @click="removeFromCart(item)">
+              Remove
+            </div>
           </div>
+          <div class="text-center mt-3 w-100">Totale: {{ cart.total }} &euro;</div>
         </div>
       </div>
 
@@ -45,7 +52,12 @@
             "
             :alt="food.name"
           />
-          <div class="btn btn-outline-secondary d-block mx-auto w-50 mt-2" @click="addToCart(food)">Add to cart</div>
+          <div
+            class="btn btn-outline-secondary d-block mx-auto w-75 mt-2"
+            @click="addToCart(food)"
+          >
+            Add to cart
+          </div>
         </div>
       </div>
     </div>
@@ -60,12 +72,19 @@ export default {
       apiUrl: "http://127.0.0.1:8000/api/restaurants/",
       restaurant: null,
       foods: null,
-      cart: [],
+      cart: {
+        items: [],
+        total: null,
+      },
     };
   },
 
-  created() {
+  mounted() {
     this.getRestaurant();
+  },
+
+  updated() {
+    if (this.cart.items.length != 0) this.cart.total = this.getTotal();
   },
 
   methods: {
@@ -81,13 +100,18 @@ export default {
     },
 
     addToCart(item) {
-      this.cart.push(item);
+      this.cart.items.push(item);
     },
 
     removeFromCart(item) {
-      this.cart.splice(this.cart.indexOf(item), 1);
-    }
+      this.cart.items.splice(this.cart.items.indexOf(item), 1);
+    },
 
+    getTotal() {
+      let sum = null;
+      this.cart.items.forEach(item => sum += item.price);
+      return sum;
+    },
   },
 };
 </script>
