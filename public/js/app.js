@@ -39156,7 +39156,7 @@ var render = function() {
   return _c(
     "router-link",
     {
-      staticClass: "card m-5",
+      staticClass: "card m-3",
       staticStyle: { "text-decoration": "none", color: "inherit" },
       attrs: {
         to: { name: "restaurants", params: { slug: _vm.restaurant.slug } }
@@ -39218,10 +39218,10 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", [
-    _c("div", { staticClass: "container mx-auto" }, [
+    _c("div", { staticClass: "container" }, [
       _c(
         "div",
-        { staticClass: "row" },
+        { staticClass: "row pt-5" },
         _vm._l(_vm.restaurants, function(restaurant) {
           return _c(
             "div",
@@ -39353,6 +39353,22 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 mt-3" }, [
+        _c("div", { staticClass: "card text-center border" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _vm._v("\n          " + _vm._s(_vm.restaurant.name) + "\n        ")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c("p", { staticClass: "card-text" }, [
+              _vm._v(_vm._s(_vm.restaurant.description))
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
     _c(
       "div",
       { staticClass: "row" },
