@@ -2610,6 +2610,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Restaurant",
   data: function data() {
@@ -39486,125 +39490,128 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row" },
-      [
-        _c(
-          "div",
-          { staticClass: "col-10 offset-1 offset-sm-0 col-sm-12 my-2" },
-          [
-            _vm.cart.items.length != 0
-              ? _c(
-                  "div",
-                  { staticClass: "container-fluid mx-auto border rounded" },
-                  [
-                    _vm._l(_vm.cart.items, function(item) {
-                      return _c(
-                        "div",
-                        {
-                          key: item.id,
-                          staticClass:
-                            "d-flex justify-content-between align-items-center my-1"
-                        },
-                        [
-                          _c("div", [_vm._v(_vm._s(item.name))]),
-                          _vm._v(" "),
-                          _c("div", [_vm._v(_vm._s(item.price) + " €")]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "btn btn-outline-danger",
-                              on: {
-                                click: function($event) {
-                                  return _vm.removeFromCart(item)
-                                }
-                              }
-                            },
-                            [_vm._v("\n            Remove\n          ")]
-                          )
-                        ]
-                      )
-                    }),
-                    _vm._v(" "),
-                    _c(
+    _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "col-10 offset-1 offset-sm-0 col-md-8 mx-auto col-sm-12 my-2"
+        },
+        [
+          _vm.cart.items.length != 0
+            ? _c(
+                "div",
+                { staticClass: "container-fluid mx-auto border rounded" },
+                [
+                  _vm._l(_vm.cart.items, function(item) {
+                    return _c(
                       "div",
                       {
+                        key: item.id,
                         staticClass:
-                          "d-flex justify-content-between align-items-center mt-3 mb-1"
+                          "d-flex justify-content-between align-items-center my-1"
                       },
                       [
-                        _c("div", [
-                          _vm._v("Totale: " + _vm._s(_vm.cart.total) + " €")
-                        ]),
+                        _c("div", [_vm._v(_vm._s(item.name))]),
+                        _vm._v(" "),
+                        _c("div", [_vm._v(_vm._s(item.price) + " €")]),
                         _vm._v(" "),
                         _c(
                           "div",
-                          { staticClass: "btn btn-outline-primary rounded" },
-                          [_vm._v("Checkout")]
+                          {
+                            staticClass: "btn btn-outline-danger",
+                            on: {
+                              click: function($event) {
+                                return _vm.removeFromCart(item)
+                              }
+                            }
+                          },
+                          [_vm._v("\n            Remove\n          ")]
                         )
                       ]
                     )
-                  ],
-                  2
-                )
-              : _vm._e()
-          ]
-        ),
-        _vm._v(" "),
-        _vm._l(_vm.foods, function(food) {
-          return _c(
-            "div",
-            {
-              key: food.id,
-              staticClass:
-                "col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
-            },
-            [
-              _c("div", { staticClass: "card-header border" }, [
-                _vm._v("\n        " + _vm._s(food.name) + "\n      ")
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "d-flex justify-content-between align-items-center mt-3 mb-1"
+                    },
+                    [
+                      _c("div", [
+                        _vm._v("Totale: " + _vm._s(_vm.cart.total) + " €")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "btn btn-outline-primary rounded" },
+                        [_vm._v("Checkout")]
+                      )
+                    ]
+                  )
+                ],
+                2
+              )
+            : _vm._e()
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      _vm._l(_vm.foods, function(food) {
+        return _c(
+          "div",
+          {
+            key: food.id,
+            staticClass:
+              "col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
+          },
+          [
+            _c("div", { staticClass: "card-header border" }, [
+              _vm._v("\n        " + _vm._s(food.name) + "\n      ")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body border" }, [
+              _c("div", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(food.description))
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "card-body border" }, [
-                _c("div", { staticClass: "card-text" }, [
-                  _vm._v(_vm._s(food.description))
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-text" }, [
-                  _vm._v(_vm._s(food.price) + " €")
-                ]),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "w-100",
-                  attrs: {
-                    src:
-                      food.image[0] == "h"
-                        ? food.image
-                        : "http://localhost:8000/storage/" + food.image,
-                    alt: food.name
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "btn btn-outline-secondary d-block mx-auto w-75 mt-2",
-                    on: {
-                      click: function($event) {
-                        return _vm.addToCart(food)
-                      }
+              _c("div", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(food.price) + " €")
+              ]),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "w-100",
+                attrs: {
+                  src:
+                    food.image[0] == "h"
+                      ? food.image
+                      : "http://localhost:8000/storage/" + food.image,
+                  alt: food.name
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "btn btn-outline-secondary d-block mx-auto w-75 mt-2",
+                  on: {
+                    click: function($event) {
+                      return _vm.addToCart(food)
                     }
-                  },
-                  [_vm._v("\n          Add to cart\n        ")]
-                )
-              ])
-            ]
-          )
-        })
-      ],
-      2
+                  }
+                },
+                [_vm._v("\n          Add to cart\n        ")]
+              )
+            ])
+          ]
+        )
+      }),
+      0
     )
   ])
 }
