@@ -2314,6 +2314,11 @@ __webpack_require__.r(__webpack_exports__);
   name: "RestaurantCard",
   props: {
     restaurant: Object
+  },
+  methods: {
+    limitParagraph: function limitParagraph(text) {
+      return "".concat(text.split(' ').slice(0, 30).join(' '), " ...");
+    }
   }
 });
 
@@ -7097,7 +7102,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-272b0098] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-272b0098] {\n  border: none;\n  border-radius: 20px;\n}\n.card img[data-v-272b0098] {\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n}\n.card-body[data-v-272b0098] {\n  height: 250px;\n  overflow: auto;\n}\n.card[data-v-272b0098]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}", ""]);
+exports.push([module.i, "h2[data-v-272b0098] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-272b0098] {\n  border: none;\n  border-radius: 20px;\n  border: 2px solid red;\n}\n.card img[data-v-272b0098] {\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n  border: 2px solid red;\n}", ""]);
 
 // exports
 
@@ -39187,7 +39192,7 @@ var render = function() {
             _c("p", [_vm._v(_vm._s(_vm.restaurant.address))]),
             _vm._v(" "),
             _c("p", { staticClass: "card-text" }, [
-              _vm._v(_vm._s(_vm.restaurant.description))
+              _vm._v(_vm._s(this.limitParagraph(_vm.restaurant.description)))
             ])
           ])
         ])
