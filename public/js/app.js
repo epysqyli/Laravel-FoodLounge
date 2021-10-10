@@ -7054,7 +7054,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-53f0967b] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-53f0967b] {\n  border: none;\n}\n.card-body[data-v-53f0967b] {\n  height: 250px;\n  overflow: auto;\n}\n.card[data-v-53f0967b]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}", ""]);
+exports.push([module.i, "h2[data-v-53f0967b] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-53f0967b] {\n  border: none;\n  border-radius: 20px;\n}\n.card img[data-v-53f0967b] {\n  border-top-left-radius: 20px;\n  border-bottom-left-radius: 20px;\n}\n.card-body[data-v-53f0967b] {\n  height: 250px;\n  overflow: auto;\n}\n.card[data-v-53f0967b]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}", ""]);
 
 // exports
 
@@ -39111,19 +39111,19 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", [
-    _c("div", { staticClass: "container mx-auto" }, [
+    _c("div", { staticClass: "container" }, [
       _c(
         "div",
-        { staticClass: "row" },
+        { staticClass: "row pt-5" },
         _vm._l(_vm.restaurants, function(restaurant) {
           return _c(
             "div",
-            { key: restaurant.id, staticClass: "col-12 mx-auto" },
+            { key: restaurant.id, staticClass: "col-12" },
             [
               _c(
                 "router-link",
                 {
-                  staticClass: "card m-5",
+                  staticClass: "card m-3 mx-auto",
                   staticStyle: { "max-width": "900px" },
                   attrs: {
                     to: {
@@ -39149,7 +39149,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-8" }, [
-                      _c("div", { staticClass: "card-body" }, [
+                      _c("div", { staticClass: "card-body text-center" }, [
                         _c("h5", { staticClass: "card-title" }, [
                           _vm._v(_vm._s(restaurant.name))
                         ]),
