@@ -2,7 +2,6 @@
   <router-link
     :to="{ name: 'restaurants', params: { slug: restaurant.slug } }"
     class="card m-5"
-    style="max-width: 900px"
   >
     <div class="row g-0">
       <div class="col-md-4">
