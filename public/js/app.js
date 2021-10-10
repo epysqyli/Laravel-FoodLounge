@@ -39349,7 +39349,7 @@ var render = function() {
             {
               key: restaurant.id,
               staticClass:
-                "col-10 offset-1 col-sm-6 offset-sm-0 col-md-10 offset-md-1 col-lg-6 ml-0"
+                "col-10 offset-1 col-sm-6 offset-sm-0 col-md-10 offset-md-1 col-lg-6 mx-auto ml-lg-0"
             },
             [_c("RestaurantCard", { attrs: { restaurant: restaurant } })],
             1

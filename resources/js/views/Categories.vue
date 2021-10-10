@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row pt-5">
         <div
-          class="col-10 offset-1 col-sm-6 offset-sm-0 col-md-10 offset-md-1 col-lg-6 ml-0"
+          class="col-10 offset-1 col-sm-6 offset-sm-0 col-md-10 offset-md-1 col-lg-6 mx-auto ml-lg-0"
           v-for="restaurant in restaurants"
           :key="restaurant.id"
         >
