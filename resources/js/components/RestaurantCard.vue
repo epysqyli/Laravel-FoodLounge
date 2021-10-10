@@ -58,6 +58,8 @@ h2 {
 
   img {
     border-radius: 18px;
+    object-fit: cover;
+    height: 200px;
   }
 }
 
