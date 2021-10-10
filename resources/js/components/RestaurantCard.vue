@@ -53,19 +53,18 @@ h2 {
 
 .card {
   border: none;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 20px;
 
   img {
-    border-radius: 18px;
+    border-radius: 20px;
     object-fit: cover;
     height: 200px;
   }
 }
 
 .card:hover{
-  border: 2px solid yellow;
+  // border: 2px solid yellow;
 }
-
 
 </style>
