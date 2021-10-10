@@ -36,7 +36,7 @@ export default {
   },
 
   mounted() {
-    this.userChoices = this.$route.params.names.split('&');
+    this.userChoices = this.$route.params.names.split("&");
     this.fillRestaurants();
   },
 
