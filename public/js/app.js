@@ -39437,14 +39437,16 @@ var render = function() {
               }
             },
             [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "d-block w-50 btn btn-outline-primary mx-auto mt-5"
-                },
-                [_vm._v("\n          Go\n        ")]
-              )
+              _vm.userChoices.length != 0
+                ? _c(
+                    "div",
+                    {
+                      staticClass:
+                        "d-block w-50 btn btn-outline-primary mx-auto mt-5"
+                    },
+                    [_vm._v("\n          Go\n        ")]
+                  )
+                : _vm._e()
             ]
           )
         ],

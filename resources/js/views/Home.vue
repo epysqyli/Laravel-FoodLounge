@@ -27,7 +27,7 @@
           style="text-decoration: none; color: inherit"
           :to="{ name: 'categories', params: { names: queryChoices } }"
         >
-          <div class="d-block w-50 btn btn-outline-primary mx-auto mt-5">
+          <div class="d-block w-50 btn btn-outline-primary mx-auto mt-5" v-if="userChoices.length != 0">
             Go
           </div>
         </router-link>

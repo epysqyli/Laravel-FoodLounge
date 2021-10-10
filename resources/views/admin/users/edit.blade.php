@@ -1,22 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">Registrati come ristoratore</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('admin.users.update', $user->id) }}" enctype="multipart/form-data">
                             @csrf
+                            @method('PATCH')
 
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Nome attivit&agrave;</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="name" value="{{ old('name', $user->name) }}" autocomplete="name" autofocus required>
+                                        name="name" value="{{ old('name', $user->name) }}" autocomplete="name" autofocus
+                                        required>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -31,7 +33,8 @@
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                        name="email" value="{{ old('email', $user->email) }}" autocomplete="email" required>
+                                        name="email" value="{{ old('email', $user->email) }}" autocomplete="email"
+                                        required>
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -91,7 +94,8 @@
                                     <textarea id="description" type="text" value="{{ old('description') }}"
                                         class="form-control  @error('description') is-invalid
                                     @enderror"
-                                        name="description" autocomplete="description" rows="6" required>{{ old('description', $user->description) }}</textarea>
+                                        name="description" autocomplete="description" rows="6"
+                                        required>{{ old('description', $user->description) }}</textarea>
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -107,9 +111,9 @@
 
                                 <div class="col-md-6" id="categories">
                                     @foreach ($categories as $category)
-                                    <label for={{ $category->name }}>{{ $category->name }}</label>
-                                        <input class="mr-3" type="checkbox" id={{ $category->name }} name="categories[]"
-                                            value={{ $category->id }} @if (old('categories', $user->categories))
+                                        <label for={{ $category->name }}>{{ $category->name }}</label>
+                                        <input class="mr-3" type="checkbox" id={{ $category->name }}
+                                            name="categories[]" value={{ $category->id }} @if (old('categories', $user->categories))
                                         {{ in_array($category->id, getCategoriesIds($user->categories)) ? 'checked' : '' }}
                                     @endif>
                                     @endforeach
