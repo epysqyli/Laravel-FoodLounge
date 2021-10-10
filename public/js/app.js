@@ -2619,6 +2619,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Restaurant",
   data: function data() {
@@ -39499,145 +39505,123 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        {
-          staticClass:
-            "col-10 offset-1 offset-sm-0 col-md-8 mx-auto col-sm-12 my-2"
-        },
-        [
-          _vm.cart.items.length != 0
-            ? _c(
-                "div",
-                { staticClass: "container-fluid mx-auto border rounded" },
-                [
-                  _vm._l(_vm.cart.items, function(item) {
-                    return _c(
+    _c("div", { staticClass: "row mt-4" }, [
+      _c("div", { staticClass: "col-lg-7" }, [
+        _c(
+          "div",
+          { staticClass: "row" },
+          _vm._l(_vm.foods, function(food) {
+            return _c("div", { key: food.id, staticClass: "col-lg-5" }, [
+              _c("div", { staticClass: "card-header border" }, [
+                _vm._v("\n            " + _vm._s(food.name) + "\n          ")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body border" }, [
+                _c("div", { staticClass: "card-text" }, [
+                  _vm._v(_vm._s(food.description))
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-text" }, [
+                  _vm._v(_vm._s(food.price) + " €")
+                ]),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "w-100",
+                  attrs: {
+                    src:
+                      food.image[0] == "h"
+                        ? food.image
+                        : "http://localhost:8000/storage/" + food.image,
+                    alt: food.name
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "btn btn-outline-secondary d-block mx-auto w-75 mt-2",
+                    on: {
+                      click: function($event) {
+                        return _vm.addToCart(food)
+                      }
+                    }
+                  },
+                  [_vm._v("\n              Add to cart\n            ")]
+                )
+              ])
+            ])
+          }),
+          0
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-5" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-12 mx-1" }, [
+            _vm.cart.items.length != 0
+              ? _c(
+                  "div",
+                  { staticClass: "container-fluid mx-auto border rounded" },
+                  [
+                    _vm._l(_vm.cart.items, function(item) {
+                      return _c(
+                        "div",
+                        {
+                          key: item.id,
+                          staticClass:
+                            "d-flex justify-content-between align-items-center my-1"
+                        },
+                        [
+                          _c("div", [_vm._v(_vm._s(item.name))]),
+                          _vm._v(" "),
+                          _c("div", [_vm._v(_vm._s(item.price) + " €")]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "btn btn-outline-danger",
+                              on: {
+                                click: function($event) {
+                                  return _vm.removeFromCart(item)
+                                }
+                              }
+                            },
+                            [_vm._v("\n                Remove\n              ")]
+                          )
+                        ]
+                      )
+                    }),
+                    _vm._v(" "),
+                    _c(
                       "div",
                       {
-                        key: item.id,
                         staticClass:
-                          "d-flex justify-content-between align-items-center my-1"
+                          "\n                d-flex\n                justify-content-between\n                align-items-center\n                mt-3\n                mb-1\n              "
                       },
                       [
-                        _c("div", [_vm._v(_vm._s(item.name))]),
-                        _vm._v(" "),
-                        _c("div", [_vm._v(_vm._s(item.price) + " €")]),
+                        _c("div", [
+                          _vm._v("Totale: " + _vm._s(_vm.cart.total) + " €")
+                        ]),
                         _vm._v(" "),
                         _c(
                           "div",
-                          {
-                            staticClass: "btn btn-outline-danger",
-                            on: {
-                              click: function($event) {
-                                return _vm.removeFromCart(item)
-                              }
-                            }
-                          },
-                          [_vm._v("\n            Remove\n          ")]
+                          { staticClass: "btn btn-outline-primary rounded" },
+                          [_vm._v("Checkout")]
                         )
                       ]
                     )
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "d-flex justify-content-between align-items-center mt-3 mb-1"
-                    },
-                    [
-                      _c("div", [
-                        _vm._v("Totale: " + _vm._s(_vm.cart.total) + " €")
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "btn btn-outline-primary rounded" },
-                        [_vm._v("Checkout")]
-                      )
-                    ]
-                  )
-                ],
-                2
-              )
-            : _vm._e()
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row" },
-      _vm._l(_vm.foods, function(food) {
-        return _c(
-          "div",
-          {
-            key: food.id,
-            staticClass:
-              "col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
-          },
-          [
-            _c("div", { staticClass: "card-header border" }, [
-              _vm._v("\n        " + _vm._s(food.name) + "\n      ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body border" }, [
-              _c("div", { staticClass: "card-text" }, [
-                _vm._v(_vm._s(food.description))
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-text" }, [
-                _vm._v(_vm._s(food.price) + " €")
-              ]),
-              _vm._v(" "),
-              _c("img", {
-                staticClass: "w-100",
-                attrs: {
-                  src:
-                    food.image[0] == "h"
-                      ? food.image
-                      : "http://localhost:8000/storage/" + food.image,
-                  alt: food.name
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "btn btn-outline-secondary d-block mx-auto w-75 mt-2",
-                  on: {
-                    click: function($event) {
-                      return _vm.addToCart(food)
-                    }
-                  }
-                },
-                [_vm._v("\n          Add to cart\n        ")]
-              )
-            ])
-          ]
-        )
-      }),
-      0
-    )
+                  ],
+                  2
+                )
+              : _vm._e()
+          ])
+        ])
+      ])
+    ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-9" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-3" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
