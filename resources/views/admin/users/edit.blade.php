@@ -144,10 +144,11 @@
                             </div>
 
                             <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
+                                <div class="col-md-6 offset-md-4 d-flex">
                                     <button type="submit" class="btn btn-primary">
                                         Aggiorna profilo
                                     </button>
+                                    <a class="d-block btn btn-danger w-50 mx-2" href={{ route('password.request') }}>Change password</a>
                                 </div>
                             </div>
                         </form>
