@@ -2664,7 +2664,7 @@ __webpack_require__.r(__webpack_exports__);
       this.cart.items.forEach(function (item) {
         return sum += item.price;
       });
-      return sum;
+      return sum.toFixed(2);
     }
   }
 });

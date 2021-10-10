@@ -132,7 +132,7 @@ export default {
     getTotal() {
       let sum = null;
       this.cart.items.forEach((item) => (sum += item.price));
-      return sum;
+      return sum.toFixed(2);
     },
   },
 };
