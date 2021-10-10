@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-12 mt-3">
         <div class="card text-center border">
           <div class="card-header">
@@ -11,11 +11,11 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="row">
       <div class="col-10 offset-1 offset-sm-0 col-sm-12 my-2">
-        <div class="container-fluid mx-auto border rounded">
+        <div class="container-fluid mx-auto border rounded" v-if="cart.items.length != 0">
           <div
             class="d-flex justify-content-between align-items-center my-1"
             v-for="item in cart.items"
@@ -27,6 +27,7 @@
               Remove
             </div>
           </div>
+          <div class="text-center mt-3 w-100">Totale: {{ cart.total }} &euro;</div>
         </div>
       </div>
 
@@ -82,6 +83,10 @@ export default {
     this.getRestaurant();
   },
 
+  updated() {
+    if (this.cart.items.length != 0) this.cart.total = this.getTotal();
+  },
+
   methods: {
     getRestaurant() {
       axios
@@ -100,6 +105,12 @@ export default {
 
     removeFromCart(item) {
       this.cart.items.splice(this.cart.items.indexOf(item), 1);
+    },
+
+    getTotal() {
+      let sum = null;
+      this.cart.items.forEach(item => sum += item.price);
+      return sum;
     },
   },
 };

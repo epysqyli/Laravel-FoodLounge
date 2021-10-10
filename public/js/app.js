@@ -2528,6 +2528,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Restaurant",
   data: function data() {
@@ -2544,6 +2545,9 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.getRestaurant();
   },
+  updated: function updated() {
+    if (this.cart.items.length != 0) this.cart.total = this.getTotal();
+  },
   methods: {
     getRestaurant: function getRestaurant() {
       var _this = this;
@@ -2558,6 +2562,13 @@ __webpack_require__.r(__webpack_exports__);
     },
     removeFromCart: function removeFromCart(item) {
       this.cart.items.splice(this.cart.items.indexOf(item), 1);
+    },
+    getTotal: function getTotal() {
+      var sum = null;
+      this.cart.items.forEach(function (item) {
+        return sum += item.price;
+      });
+      return sum;
     }
   }
 });
@@ -39274,22 +39285,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12 mt-3" }, [
-        _c("div", { staticClass: "card text-center border" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _vm._v("\n          " + _vm._s(_vm.restaurant.name) + "\n        ")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(_vm._s(_vm.restaurant.description))
-            ])
-          ])
-        ])
-      ])
-    ]),
-    _vm._v(" "),
     _c(
       "div",
       { staticClass: "row" },
@@ -39298,39 +39293,47 @@ var render = function() {
           "div",
           { staticClass: "col-10 offset-1 offset-sm-0 col-sm-12 my-2" },
           [
-            _c(
-              "div",
-              { staticClass: "container-fluid mx-auto border rounded" },
-              _vm._l(_vm.cart.items, function(item) {
-                return _c(
+            _vm.cart.items.length != 0
+              ? _c(
                   "div",
-                  {
-                    key: item.id,
-                    staticClass:
-                      "d-flex justify-content-between align-items-center my-1"
-                  },
+                  { staticClass: "container-fluid mx-auto border rounded" },
                   [
-                    _c("div", [_vm._v(_vm._s(item.name))]),
+                    _vm._l(_vm.cart.items, function(item) {
+                      return _c(
+                        "div",
+                        {
+                          key: item.id,
+                          staticClass:
+                            "d-flex justify-content-between align-items-center my-1"
+                        },
+                        [
+                          _c("div", [_vm._v(_vm._s(item.name))]),
+                          _vm._v(" "),
+                          _c("div", [_vm._v(_vm._s(item.price) + " €")]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "btn btn-outline-danger",
+                              on: {
+                                click: function($event) {
+                                  return _vm.removeFromCart(item)
+                                }
+                              }
+                            },
+                            [_vm._v("\n            Remove\n          ")]
+                          )
+                        ]
+                      )
+                    }),
                     _vm._v(" "),
-                    _c("div", [_vm._v(_vm._s(item.price) + " €")]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "btn btn-outline-danger",
-                        on: {
-                          click: function($event) {
-                            return _vm.removeFromCart(item)
-                          }
-                        }
-                      },
-                      [_vm._v("\n            Remove\n          ")]
-                    )
-                  ]
+                    _c("div", { staticClass: "text-center mt-3 w-100" }, [
+                      _vm._v("Totale: " + _vm._s(_vm.cart.total) + " €")
+                    ])
+                  ],
+                  2
                 )
-              }),
-              0
-            )
+              : _vm._e()
           ]
         ),
         _vm._v(" "),
