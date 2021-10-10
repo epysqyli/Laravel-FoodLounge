@@ -34,55 +34,67 @@
                 :alt="food.name"
               />
               <div
-                class="btn btn-outline-secondary d-block mx-auto w-75 mt-2"
+                class=" d-block mx-auto w-75 mt-2"
                 @click="addToCart(food)"
-              >
-                Add to cart
+              ><b-button class="btn " v-b-toggle.sidebar-right>Add to cart</b-button>
+                
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-5">
-        <div class="row">
-          <!-- make Cart.vue component -->
-          <div class="col-lg-12 mx-1">
-            <div
-              class="container-fluid mx-auto border rounded"
-              v-if="cart.items.length != 0"
-            >
-              <div
-                class="d-flex justify-content-between align-items-center my-1"
-                v-for="item in cart.items"
-                :key="item.id"
-              >
-                <div>{{ item.name }}</div>
-                <div>{{ item.price }} &euro;</div>
-                <div
-                  class="btn btn-outline-danger"
-                  @click="removeFromCart(item)"
-                >
-                  Remove
-                </div>
-              </div>
-              <div
-                class="
-                  d-flex
-                  justify-content-between
-                  align-items-center
-                  mt-3
-                  mb-1
-                "
-              >
-                <div>Totale: {{ cart.total }} &euro;</div>
-                <div class="btn btn-outline-primary rounded">Checkout</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+     
+        <div>
+              
+              <b-sidebar id="sidebar-right" title="Cart" right shadow>
+                
+                    <div class=" overflow-hidden">
+                      <!-- make Cart.vue component -->
+                      <div class=" mx-1 ">
+                        
+                        <div
+                          class="container mx-auto border rounded"
+                          v-if="cart.items.length != 0"
+                        >
+                       <h1><i class="bi bi-cart"></i></h1>
+                          <div
+                            class="d-flex justify-content-between align-items-center my-1"
+                            v-for="item in cart.items"
+                            :key="item.id"
+                          >
+                           
+                            <div>{{ item.name }} </div>
+                           
+                            <div>{{ item.price }} &euro;</div>
+                            <div
+                              class="btn btn-outline-danger"
+                              @click="removeFromCart(item)"
+                            >
+                              Remove
+                            </div>
+                          </div>
+                          <div
+                            class="
+                              d-flex
+                              justify-content-between
+                              align-items-center
+                              mt-3
+                              mb-1
+                            "
+                          >
+                            <div>Totale: {{ cart.total }} &euro;</div>
+                            <div class="btn btn-outline-primary rounded">Checkout</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                
+              </b-sidebar>
+         </div>
     </div>
+  
   </div>
 </template>
 
@@ -139,6 +151,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+
+
 h2 {
   font-size: 40px;
   color: #ffd60a;
