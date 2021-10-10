@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  name: "Category",
+  name: "Restaurant",
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/restaurants/",

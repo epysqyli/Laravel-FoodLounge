@@ -2501,7 +2501,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Category",
+  name: "Restaurant",
   data: function data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/restaurants/",
