@@ -67,6 +67,12 @@ h2 {
   border: none;
 }
 
+.card-body{
+  height: 250px;
+  overflow: auto;
+}
+
+
 .card:hover {
   box-shadow: 0 0 20px #ffd60a;
 }
