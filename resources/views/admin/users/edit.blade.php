@@ -144,7 +144,7 @@
                                     <input id="profile_image" type="file"
                                         class="form-control-file @error('profile_image') is-invalid
                                     @enderror"
-                                        name="profile_image" autocomplete="profile_image" required>
+                                        name="profile_image" autocomplete="profile_image">
                                     @error('profile_image')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -161,7 +161,7 @@
                                     <input id="cover_image" type="file"
                                         class="form-control-file @error('cover_image') is-invalid
                                     @enderror"
-                                        name="cover_image" autocomplete="cover_image" required>
+                                        name="cover_image" autocomplete="cover_image">
                                     @error('cover_image')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

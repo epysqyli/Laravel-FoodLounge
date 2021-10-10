@@ -67,8 +67,7 @@ class FoodController extends Controller
 
     public function update(Request $request, Food $food)
     {
-         $request->validate([
-            
+        $request->validate([
             'type_id' => 'required',
             'name' => 'required|max:255',
             'price' => 'required',
@@ -80,21 +79,19 @@ class FoodController extends Controller
         ]);
         $validatedData = $request->all();
 
-       
-
         if (array_key_exists('image', $validatedData)) {
             $validatedData['image'] = Storage::put('uploads', $validatedData['image']);;
         }
 
         $food->update($validatedData);
-  
+
         return redirect()->route('admin.foods.index')->with('updated', 'Update Element:' . ' ' . $food->id);
     }
 
     public function destroy(Food $food)
     {
         Storage::delete($food->image);
-        
+
         $food->delete();
         return redirect()->route('admin.foods.index')->with('delete', 'Delete Element' . ' '  . $food->id);
     }
