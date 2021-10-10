@@ -16,7 +16,7 @@
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+                                        name="name" value="{{ old('name') }}" autocomplete="name" autofocus required>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                        name="email" value="{{ old('email') }}" autocomplete="email">
+                                        name="email" value="{{ old('email') }}" autocomplete="email" required>
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -48,7 +48,7 @@
                                 <div class="col-md-6">
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
-                                        autocomplete="new-password">
+                                        autocomplete="new-password" required>
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -64,7 +64,7 @@
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" autocomplete="new-password">
+                                        name="password_confirmation" autocomplete="new-password" required>
                                 </div>
                             </div>
 
@@ -74,7 +74,7 @@
                                 <div class="col-md-6">
                                     <input id="address" type="text" value="{{ old('address') }}"
                                         class="form-control @error('address') is-invalid
-                                    @enderror"
+                                    @enderror" required
                                         name="address" autocomplete="address">
                                     @error('address')
                                         <span class="invalid-feedback" role="alert">
@@ -90,7 +90,7 @@
                                 <div class="col-md-6">
                                     <textarea id="description" type="text" value="{{ old('description') }}"
                                         class="form-control  @error('description') is-invalid
-                                    @enderror"
+                                    @enderror" required
                                         name="description" autocomplete="description" rows="6">{{ old('description') }}</textarea>
 
                                     @error('description')
@@ -108,7 +108,7 @@
                                 <div class="col-md-6" id="categories">
                                     @foreach ($categories as $category)
                                     <label for={{ $category->name }}>{{ $category->name }}</label>
-                                        <input class="mr-3" type="checkbox" id={{ $category->name }} name="categories[]"
+                                        <input class="mr-3" type="checkbox" id={{ $category->name }} name="categories[]" required
                                             value={{ $category->id }} @if (old('categories'))
                                         {{ in_array($category->id, old('categories')) ? 'checked' : '' }}
                                     @endif >
@@ -122,7 +122,7 @@
                                 <div class="col-md-6">
                                     <input id="vat" type="text" value="{{ old('vat') }}"
                                         class="form-control @error('vat') is-invalid
-                                    @enderror"
+                                    @enderror" required
                                         name="vat" autocomplete="vat">
                                     @error('vat')
                                         <span class="invalid-feedback" role="alert">
@@ -139,7 +139,7 @@
                                 <div class="col-md-6">
                                     <input id="profile_image" type="file"
                                         class="form-control-file @error('profile_image') is-invalid
-                                    @enderror"
+                                    @enderror" required
                                         name="profile_image" autocomplete="profile_image">
                                     @error('profile_image')
                                         <span class="invalid-feedback" role="alert">
@@ -156,7 +156,7 @@
                                 <div class="col-md-6">
                                     <input id="cover_image" type="file"
                                         class="form-control-file @error('cover_image') is-invalid
-                                    @enderror"
+                                    @enderror" required
                                         name="cover_image" autocomplete="cover_image">
                                     @error('cover_image')
                                         <span class="invalid-feedback" role="alert">
