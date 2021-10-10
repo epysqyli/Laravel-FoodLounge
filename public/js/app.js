@@ -7182,7 +7182,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h2[data-v-23ca231c] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-23ca231c] {\n  border: none;\n}\n.card[data-v-23ca231c]:hover {\n  box-shadow: 0 0 20px #ffd60a;\n}", ""]);
+exports.push([module.i, "h2[data-v-23ca231c] {\n  font-size: 40px;\n  color: #ffd60a;\n}\n.card[data-v-23ca231c] {\n  border: none;\n}", ""]);
 
 // exports
 
