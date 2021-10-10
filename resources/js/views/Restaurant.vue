@@ -15,7 +15,10 @@
 
     <div class="row">
       <div class="col-10 offset-1 offset-sm-0 col-sm-12 my-2">
-        <div class="container-fluid mx-auto border rounded" v-if="cart.items.length != 0">
+        <div
+          class="container-fluid mx-auto border rounded"
+          v-if="cart.items.length != 0"
+        >
           <div
             class="d-flex justify-content-between align-items-center my-1"
             v-for="item in cart.items"
@@ -27,7 +30,10 @@
               Remove
             </div>
           </div>
-          <div class="text-center mt-3 w-100">Totale: {{ cart.total }} &euro;</div>
+          <div class="d-flex justify-content-between align-items-center mt-3 mb-1">
+            <div>Totale: {{ cart.total }} &euro;</div>
+            <div class="btn btn-outline-primary rounded">Checkout</div>
+          </div>
         </div>
       </div>
 
@@ -109,7 +115,7 @@ export default {
 
     getTotal() {
       let sum = null;
-      this.cart.items.forEach(item => sum += item.price);
+      this.cart.items.forEach((item) => (sum += item.price));
       return sum;
     },
   },

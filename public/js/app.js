@@ -2529,6 +2529,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Restaurant",
   data: function data() {
@@ -39327,9 +39333,24 @@ var render = function() {
                       )
                     }),
                     _vm._v(" "),
-                    _c("div", { staticClass: "text-center mt-3 w-100" }, [
-                      _vm._v("Totale: " + _vm._s(_vm.cart.total) + " €")
-                    ])
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "d-flex justify-content-between align-items-center mt-3 mb-1"
+                      },
+                      [
+                        _c("div", [
+                          _vm._v("Totale: " + _vm._s(_vm.cart.total) + " €")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "btn btn-outline-primary rounded" },
+                          [_vm._v("Checkout")]
+                        )
+                      ]
+                    )
                   ],
                   2
                 )
