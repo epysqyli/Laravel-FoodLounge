@@ -108,7 +108,7 @@
                                 <div class="col-md-6" id="categories">
                                     @foreach ($categories as $category)
                                     <label for={{ $category->name }}>{{ $category->name }}</label>
-                                        <input class="mr-3" type="checkbox" id={{ $category->name }} name="categories[]" required
+                                        <input class="mr-3" type="checkbox" id={{ $category->name }} name="categories[]"
                                             value={{ $category->id }} @if (old('categories'))
                                         {{ in_array($category->id, old('categories')) ? 'checked' : '' }}
                                     @endif >

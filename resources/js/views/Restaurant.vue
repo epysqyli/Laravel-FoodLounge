@@ -15,7 +15,7 @@
 
     <div class="row">
       <!-- make Cart.vue component -->
-      <div class="col-10 offset-1 offset-sm-0 col-sm-12 my-2">
+      <div class="col-10 offset-1 offset-sm-0 col-md-8 mx-auto col-sm-12 my-2">
         <div
           class="container-fluid mx-auto border rounded"
           v-if="cart.items.length != 0"
@@ -31,14 +31,18 @@
               Remove
             </div>
           </div>
-          <div class="d-flex justify-content-between align-items-center mt-3 mb-1">
+          <div
+            class="d-flex justify-content-between align-items-center mt-3 mb-1"
+          >
             <div>Totale: {{ cart.total }} &euro;</div>
             <div class="btn btn-outline-primary rounded">Checkout</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- make Food.vue component -->
+    <!-- make Food.vue component -->
+    <div class="row">
       <div
         class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
         v-for="food in foods"
