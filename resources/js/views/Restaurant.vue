@@ -1,27 +1,43 @@
 <template>
   <div class="container">
-    <div class="card text-center">
-      <div class="card-header">
-        {{ restaurant.name }}
-      </div>
-      <div class="card-body">
-        <p class="card-text">{{ restaurant.description }}</p>
+    <div class="row">
+      <div class="col-12 mt-3">
+        <div class="card text-center border">
+          <div class="card-header">
+            {{ restaurant.name }}
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{ restaurant.description }}</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="row">
+      <div class="col-10 offset-1 offset-sm-0 col-sm-12">
+        <div class="border my-3" v-for="item in cart" :key="item.id">
+          <div class="border d-flex justify-content-between align-items-center">
+            <div>{{ item.name }}</div>
+            <div>{{ item.price }}</div>
+            <div class="btn btn-outline-danger" @click="removeFromCart(item)">Remove</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- make Food.vue component -->
       <div
         class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
         v-for="food in foods"
         :key="food.id"
       >
-        <div class="card-header">
+        <div class="card-header border">
           {{ food.name }}
         </div>
-        <div class="card-body">
+        <div class="card-body border">
           <div class="card-text">{{ food.description }}</div>
           <div class="card-text">{{ food.price }} &euro;</div>
-          <img class="w-100"
+          <img
+            class="w-100"
             :src="
               food.image[0] == 'h'
                 ? food.image
@@ -29,6 +45,7 @@
             "
             :alt="food.name"
           />
+          <div class="btn btn-outline-secondary d-block mx-auto w-50 mt-2" @click="addToCart(food)">Add to cart</div>
         </div>
       </div>
     </div>
@@ -43,11 +60,14 @@ export default {
       apiUrl: "http://127.0.0.1:8000/api/restaurants/",
       restaurant: null,
       foods: null,
+      cart: [],
     };
   },
+
   created() {
     this.getRestaurant();
   },
+
   methods: {
     getRestaurant() {
       axios
@@ -59,6 +79,15 @@ export default {
         })
         .catch();
     },
+
+    addToCart(item) {
+      this.cart.push(item);
+    },
+
+    removeFromCart(item) {
+      this.cart.splice(this.cart.indexOf(item), 1);
+    }
+
   },
 };
 </script>
