@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">Registrati come ristoratore</div>
 
@@ -16,7 +16,7 @@
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+                                        name="name" value="{{ old('name', $user->name) }}" autocomplete="name" autofocus required>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                        name="email" value="{{ old('email') }}" autocomplete="email">
+                                        name="email" value="{{ old('email', $user->email) }}" autocomplete="email" required>
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -48,7 +48,7 @@
                                 <div class="col-md-6">
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
-                                        autocomplete="new-password">
+                                        autocomplete="new-password" required>
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -64,7 +64,7 @@
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" autocomplete="new-password">
+                                        name="password_confirmation" autocomplete="new-password" required>
                                 </div>
                             </div>
 
@@ -72,10 +72,10 @@
                                 <label for="address" class="col-md-4 col-form-label text-md-right">Indirizzo</label>
 
                                 <div class="col-md-6">
-                                    <input id="address" type="text" value="{{ old('address') }}"
+                                    <input id="address" type="text" value="{{ old('address', $user->address) }}"
                                         class="form-control @error('address') is-invalid
                                     @enderror"
-                                        name="address" autocomplete="address">
+                                        name="address" autocomplete="address" required>
                                     @error('address')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -91,7 +91,7 @@
                                     <textarea id="description" type="text" value="{{ old('description') }}"
                                         class="form-control  @error('description') is-invalid
                                     @enderror"
-                                        name="description" autocomplete="description" rows="6">{{ old('description') }}</textarea>
+                                        name="description" autocomplete="description" rows="6" required>{{ old('description', $user->description) }}</textarea>
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -109,9 +109,9 @@
                                     @foreach ($categories as $category)
                                     <label for={{ $category->name }}>{{ $category->name }}</label>
                                         <input class="mr-3" type="checkbox" id={{ $category->name }} name="categories[]"
-                                            value={{ $category->id }} @if (old('categories'))
-                                        {{ in_array($category->id, old('categories')) ? 'checked' : '' }}
-                                    @endif >
+                                            value={{ $category->id }} @if (old('categories', $user->categories))
+                                        {{ in_array($category->id, getCategoriesIds($user->categories)) ? 'checked' : '' }}
+                                    @endif>
                                     @endforeach
                                 </div>
                             </div>
@@ -120,10 +120,10 @@
                                 <label for="vat" class="col-md-4 col-form-label text-md-right">Partita IVA</label>
 
                                 <div class="col-md-6">
-                                    <input id="vat" type="text" value="{{ old('vat') }}"
+                                    <input id="vat" type="text" value="{{ old('vat', $user->vat) }}"
                                         class="form-control @error('vat') is-invalid
                                     @enderror"
-                                        name="vat" autocomplete="vat">
+                                        name="vat" autocomplete="vat" required>
                                     @error('vat')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -140,7 +140,7 @@
                                     <input id="profile_image" type="file"
                                         class="form-control-file @error('profile_image') is-invalid
                                     @enderror"
-                                        name="profile_image" autocomplete="profile_image">
+                                        name="profile_image" autocomplete="profile_image" required>
                                     @error('profile_image')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -157,7 +157,7 @@
                                     <input id="cover_image" type="file"
                                         class="form-control-file @error('cover_image') is-invalid
                                     @enderror"
-                                        name="cover_image" autocomplete="cover_image">
+                                        name="cover_image" autocomplete="cover_image" required>
                                     @error('cover_image')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -169,7 +169,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Registrati!
+                                        Aggiorna profilo
                                     </button>
                                 </div>
                             </div>

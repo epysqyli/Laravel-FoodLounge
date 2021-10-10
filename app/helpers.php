@@ -19,3 +19,12 @@ function makeUniqueSlug($slug)
 
   return $slug;
 }
+
+function getCategoriesIds($categoriesCollection)
+{
+  $output = [];
+  foreach ($categoriesCollection as $item) {
+    $output[] = $item->id;
+  }
+  return $output;
+}
