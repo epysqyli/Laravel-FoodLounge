@@ -2578,6 +2578,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Restaurant",
   data: function data() {
@@ -39353,6 +39356,24 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 mt-3" }, [
+        _c("div", { staticClass: "card text-center border" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _vm._v(
+              "\n            " + _vm._s(_vm.restaurant.name) + "\n          "
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c("p", { staticClass: "card-text" }, [
+              _vm._v(_vm._s(_vm.restaurant.description))
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
     _c(
       "div",
       { staticClass: "row" },
@@ -39389,7 +39410,7 @@ var render = function() {
                                 }
                               }
                             },
-                            [_vm._v("\n            Remove\n          ")]
+                            [_vm._v("\n              Remove\n            ")]
                           )
                         ]
                       )
@@ -39430,7 +39451,7 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "card-header border" }, [
-                _vm._v("\n        " + _vm._s(food.name) + "\n      ")
+                _vm._v("\n          " + _vm._s(food.name) + "\n        ")
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "card-body border" }, [
@@ -39464,7 +39485,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("\n          Add to cart\n        ")]
+                  [_vm._v("\n            Add to cart\n          ")]
                 )
               ])
             ]

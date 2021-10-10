@@ -1,6 +1,7 @@
 <template>
+<!-- check errors in console -->
   <div class="container">
-    <!-- <div class="row">
+    <div class="row">
       <div class="col-12 mt-3">
         <div class="card text-center border">
           <div class="card-header">
@@ -11,7 +12,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
     <div class="row">
       <!-- make Cart.vue component -->
@@ -31,7 +32,9 @@
               Remove
             </div>
           </div>
-          <div class="d-flex justify-content-between align-items-center mt-3 mb-1">
+          <div
+            class="d-flex justify-content-between align-items-center mt-3 mb-1"
+          >
             <div>Totale: {{ cart.total }} &euro;</div>
             <div class="btn btn-outline-primary rounded">Checkout</div>
           </div>
