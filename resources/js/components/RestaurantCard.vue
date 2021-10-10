@@ -20,7 +20,9 @@
         <div class="card-body">
           <h5 class="card-title">{{ restaurant.name }}</h5>
           <p>{{ restaurant.address }}</p>
-          <p class="card-text">{{ this.limitParagraph(restaurant.description) }}</p>
+          <p class="card-text">
+            {{ this.limitParagraph(restaurant.description) }}
+          </p>
         </div>
       </div>
     </div>
@@ -37,9 +39,9 @@ export default {
 
   methods: {
     limitParagraph(text) {
-      return `${text.split(' ').slice(0, 30).join(' ')} ...`;
-    }
-  }
+      return `${text.split(" ").slice(0, 30).join(" ")} ...`;
+    },
+  },
 };
 </script>
 
@@ -51,12 +53,9 @@ h2 {
 
 .card {
   border: none;
-  border-radius: 20px;
-  border: 2px solid red;
+  border: 2px solid black;
 
   img {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
     border: 2px solid red;
   }
 }
