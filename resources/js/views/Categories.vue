@@ -72,7 +72,6 @@ h2 {
   overflow: auto;
 }
 
-
 .card:hover {
   box-shadow: 0 0 20px #ffd60a;
 }
