@@ -14,6 +14,7 @@
     </div> -->
 
     <div class="row">
+      <!-- make Cart.vue component -->
       <div class="col-10 offset-1 offset-sm-0 col-sm-12 my-2">
         <div
           class="container-fluid mx-auto border rounded"
