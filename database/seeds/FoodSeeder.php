@@ -28,6 +28,850 @@ class FoodSeeder extends Seeder
         //     $food->save();
         // }
 
+        // cinese categoria 1 id 1
+        $food = new Food();
+        $food->user_id = 1;
+        $food->type_id = 1;
+        $food->name = "Vermicelli Hong Kong Taste";
+        $food->price = "5.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Spaghetti di riso, gamberi e verdure";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9kYjhmMjI1Ny01NjFlLTQ2YTQtYmZiOS0xODlkZjJiZjZjOWEuanBlZw==";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 1;
+        $food->type_id = 2;
+        $food->name = "Gamberi e farina di riso con salsa di soia";
+        $food->price = "6.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Gamberi e farina di riso con salsa di soia";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC84YTdkNDYyNi04NWViLTRmZDUtYTJhMy0wODA5ZDZjYzJmYzUuanBlZw==";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 1;
+        $food->type_id = 2;
+        $food->name = "Cheung Fun al Manzo";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Manzo e farina di riso con salsa di soia";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/305914b3-a007-409d-81f7-979d7cb9a512.jpeg";
+        $food->save();
+
+        // cinese categoria 1 id 2
+        $food = new Food();
+        $food->user_id = 2;
+        $food->type_id = 2;
+        $food->name = "Menu Fisso Hainan";
+        $food->price = "13.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Menù composto da: -Pollo Hainan -Riso marinato con zuppa di pollo -Zuppa di pollo Accompagnato con 3 salse: -Salsa al peperoncino e limone -Salsa di soia al pollo -Olio allo zenzero e scalogno";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/82484ac5-1617-4e24-807d-181c537ef74e.jpeg";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 2;
+        $food->type_id = 2;
+        $food->name = "Menù Fisso di Manzo";
+        $food->price = "15.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Tagliatelle di riso al manzo, polpette di manzo, insalata di verdure, acqua o bibita a scelta";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/f3df89e4-5cb2-4776-add8-8be5017c9e10.jpeg";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 2;
+        $food->type_id = 2;
+        $food->name = "Menù Fisso di Maiale";
+        $food->price = "13.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Cotoletta di maiale al lemongrass, noodle saltato con maiale, insalata di verdure, acqua o bibita a scelta";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/f6e50348-2aa4-48cf-bc81-8cd4bf2e180f.jpeg";
+        $food->save();
+        
+        // cinese categoria 1 id 2
+        $food = new Food();
+        $food->user_id = 2;
+        $food->type_id = 2;
+        $food->name = "Menu Fisso Hainan";
+        $food->price = "13.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Menù composto da: -Pollo Hainan -Riso marinato con zuppa di pollo -Zuppa di pollo Accompagnato con 3 salse: -Salsa al peperoncino e limone -Salsa di soia al pollo -Olio allo zenzero e scalogno";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/82484ac5-1617-4e24-807d-181c537ef74e.jpeg";
+        $food->save();
+
+        // cinese categoria 1 id 3
+        $food = new Food();
+        $food->user_id = 3;
+        $food->type_id = 1;
+        $food->name = "Mini Bao";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "4 pezzi del classico Bao con ripieno di carne in versione mini";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/07483875-be89-4c28-b9df-9ff12ffa92f1.jpeg";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 3;
+        $food->type_id = 2;
+        $food->name = "Bento Pollo Gongbao e Straccetti di Pollo";
+        $food->price = "9.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Bento con pollo in salsa gongbao, straccetti di pollo";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/6543b0c1-64bb-463e-b471-67539f90464c.jpeg";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 3;
+        $food->type_id = 2;
+        $food->name = "Braciola di Maiale al Lemongrass";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Braciola di Maiale al Lemongrass su letto di verdure fresche";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/27ebbb4c-c8bf-45ef-b147-49d152916935.jpeg";
+        $food->save();
+
+        // cinese categoria 1 id 4
+        $food = new Food();
+        $food->user_id = 4;
+        $food->type_id = 2;
+        $food->name = "Polpette di Manzo";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Con salsa verde agli spinaci e wasabi";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/abffe5ee-66a8-418d-b3ec-83c36a986946.jpeg";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 4;
+        $food->type_id = 1;
+        $food->name = "Noodle Saltato con Gamberi";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Noodle, verdure e gamberi";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/867658e6-0840-489a-bda9-f3550ad573f8.jpeg";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 4;
+        $food->type_id = 2;
+        $food->name = "Involtini di Soia con Gamberi Tartufati e Tofu";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Con salsa al tartufo";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/f6758268-5d2d-41aa-abd7-2ab311efe28a.jpeg";
+        $food->save();
+
+        // cinese categoria 1 id 5
+        $food = new Food();
+        $food->user_id = 5;
+        $food->type_id = 1;
+        $food->name = "Riso Saltato con Gamberi";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Riso, verdure e gamberi";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/610aeddf-a08b-4cf5-a3bd-bcd84ba8bafb.jpeg";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 5;
+        $food->type_id = 1;
+        $food->name = "Noodle Saltato con Maiale";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Noodle, verdure e maiale";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/68bcff77-4d94-456c-8509-a34d4712d5d0.jpeg";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 5;
+        $food->type_id = 1;
+        $food->name = "Wanton di gamberi in zuppa";
+        $food->price = "5.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Ravioli in gamberi con zuppa";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/728e4508-417e-4431-9ef3-dbfc3b1a7cf4.jpeg";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 5;
+        $food->type_id = 1;
+        $food->name = "Noodles Saltato con Braciola di Maiale e Formaggio";
+        $food->price = "5.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Noodles saltato in wok con braciola di maiale alla piastra e formaggio";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/deb2ccf9-a3de-42a4-a6a2-5dd18c13b9d9.jpeg";
+        $food->save();
+
+        // giapponese categoria 2 id 6
+        $food = new Food();
+        $food->user_id = 6;
+        $food->type_id = 1;
+        $food->name = "Sushi Misto G";
+        $food->price = "15.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "4 Nigiri Misti, 4 Hosomaki e 6 Uramaki Salmone";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC84N2Q1ZjY4Yy1jMTM1LTQ3YjgtYTI2ZC1lMDcxZDA1ZjFiOTcuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 6;
+        $food->type_id = 1;
+        $food->name = "Sushi misto 60 pezzi";
+        $food->price = "35.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "6 tipi di roll da 8 pezzi e 12 nigiri misto";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC83MGFmZjY3OC1iOTE5LTQ5ZjYtYjNiOC02OTc5MmY0ZjY4NTUuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 6;
+        $food->type_id = 1;
+        $food->name = "Sushi Misto B";
+        $food->price = "10.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "3 Nigiri e 3 Sashimi Salmone";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9lMjNkMzkwNC1iNzA1LTQ4MGItOTMzOS1lOTI5NDk3ZDFiYmYuanBlZw==";
+        $food->save();
+        
+        // giapponese categoria 2 id 7
+        $food = new Food();
+        $food->user_id = 7;
+        $food->type_id = 1;
+        $food->name = "mixed sando";
+        $food->price = "15.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Il Sando è un golosissimo sandwich della gastronomia giapponese";
+        $food->visible = true;
+        $food->image = "https://sushidaily.com/assets/front/images/uploads/dishes/sando-mix.1620147574.web.jpg";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 7;
+        $food->type_id = 1;
+        $food->name = "mixed sandoBowl di tartare e chirashi";
+        $food->price = "15.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Ciotola del nostro delizioso riso all'aceto, ricoperto di tartare di salmone, avocado, menta e coriandolo ";
+        $food->visible = true;
+        $food->image = "https://sushidaily.com/assets/front/images/uploads/dishes/salmon-tartare-w.1544484893.web.jpg";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 7;
+        $food->type_id = 1;
+        $food->name = "Maki california";
+        $food->price = "9.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Maki di riso all'aceto, alga nori, salmone, avocado e sesamo";
+        $food->visible = true;
+        $food->image = "https://sushidaily.com/assets/front/images/uploads/dishes/maki-california-salmon-w-2.1545055893.web.jpg";
+        $food->save();
+
+        // giapponese categoria 2 id 8
+        $food = new Food();
+        $food->user_id = 8;
+        $food->type_id = 1;
+        $food->name = "Uramaki Ebi Tem";
+        $food->price = "15.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Gamberi fritti all'interno e cipolla fritta all'esterno";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC83Y2RlYWVlYS00ZThiLTQ5ZmEtODg3Yi02ODgxZTUzODM2NjUuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 8;
+        $food->type_id = 1;
+        $food->name = "Nighiri di salmone scottati ";
+        $food->price = "15.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Nighiri di salmone scottati";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC80NjJjZmUzNi1mMWJkLTQxZDEtODhlZC04NDIzNjI2OTgzYjUucG5n";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 8;
+        $food->type_id = 1;
+        $food->name = "Gunkan Philadelphia";
+        $food->price = "15.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Gunkan di Philadelphia";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9hOTM5MzQ5ZS05YjgxLTRjZmEtOGU3OS1mMzI1M2QyZjFhZGQucG5n";
+        $food->save();
+
+        // giapponese categoria 2 id 9
+        $food = new Food();
+        $food->user_id = 9;
+        $food->type_id = 1;
+        $food->name = "Uramaki Salmone e Philadelphia";
+        $food->price = "15.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "salmone, philadelphia, sesamo, 8pz";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC8yMjZmMThlZi0yN2MxLTQ3MDgtOWFlMy01MmI3NWIwZDM5NjkuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 9;
+        $food->type_id = 1;
+        $food->name = "Sashimi Misto";
+        $food->price = "25.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Salmone, tonno e ricciola affettati con gambero rosso, vongola artica, 14 pezzi";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9kZjZkNDJjMS1iN2M0LTRlMmUtODE0Yi0zYTlkMGVjNmNjYzkucG5n";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 9;
+        $food->type_id = 1;
+        $food->name = "Sashimi Misto";
+        $food->price = "25.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Salmone, tonno e ricciola affettati con gambero rosso, vongola artica, 14 pezzi";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9kZjZkNDJjMS1iN2M0LTRlMmUtODE0Yi0zYTlkMGVjNmNjYzkucG5n";
+        $food->save();
+        
+        // giapponese categoria 2 id 10
+        $food = new Food();
+        $food->user_id = 10;
+        $food->type_id = 1;
+        $food->name = "Mix gran ravioli";
+        $food->price = "15.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Ravioli di verdure, pollo e gamberi alla piastra";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC80YmUxYzFhOS0wYmZmLTQyNDQtYjg4OC1iNmMxNjZiYjAyODAuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 10;
+        $food->type_id = 2;
+        $food->name = "Polpette di Pollo Fritte";
+        $food->price = "15.00";
+        $food->description = "Carne di pollo fritta e salsa";
+        $food->ingredients = "La nostra descrizione";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/80eff709-d35b-4176-9649-d7d4d1114e98.jpeg";
+        $food->save();
+
+        // pizzeria categoria 3 id 11
+        $food = new Food();
+        $food->user_id = 11;
+        $food->type_id = 2;
+        $food->name = "Pizza salsiccia e parmigiano";
+        $food->price = "5.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Salsiccia di Mora Romagnola, pomodoro, parmigiano reggiano 24 mesi, semi di finocchio";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/3cf0a108-a2a0-427e-9313-1a8aba78a22b.jpeg";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 11;
+        $food->type_id = 2;
+        $food->name = "Pizza napoli";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Acciughe, capperi, fiordilatte, pomodoro e origano";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/193982a1-8e41-4677-b48b-fa428119fbbd.jpeg";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 11;
+        $food->type_id = 2;
+        $food->name = "Pizza salsiccia e parmigiano";
+        $food->price = "8.00";
+        $food->description = "Pizza mediterranea";
+        $food->ingredients = "Olive nere, cipolla rossa saltata, pomodoro e origano";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/206c5619-cf50-49b7-8932-451a3822485d.jpeg";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        // pizzeria categoria 3 id 12
+        $food = new Food();
+        $food->user_id = 12;
+        $food->type_id = 2;
+        $food->name = "Melanzangel";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Sugo di pomodoro e basilico, melanzane a funghetto, pesto alla trapanese, mozzarella di bufala campana, basilico fresco e parmigiano grattugiato fresco";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/c3edddf1-adb1-4a82-bfb5-0821ae6528e8.jpeg";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 12;
+        $food->type_id = 2;
+        $food->name = "Ottanta voglia di 80";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Sugo di pomodoro e basilico, melanzane a funghetto, pesto alla trapanese, mozzarella di bufala campana, basilico fresco e parmigiano grattugiato fresco";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/91f402e6-786e-4f4e-9265-3180a9eb8438.jpeg";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 12;
+        $food->type_id = 2;
+        $food->name = "Salsiccia, Patata e l'Altra";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Pecorino grattugiato, rosmarino, patate arrosto, salsiccia del salumificio Gamba e crema di Parmigiano Reggiano Dop 24 mesi";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/f0e44c81-1402-410e-8c4d-c4f284c1f30d.jpeg";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+        
+        // pizzeria categoria 3 id 13
+        $food = new Food();
+        $food->user_id = 13;
+        $food->type_id = 2;
+        $food->name = "Pizza Diavola";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Pomodoro Roma, Mozzarella, salamino piccante e basilico";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/c15caf1e-6a27-49bd-b127-7a12f2e0b6c9.jpeg";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 13;
+        $food->type_id = 2;
+        $food->name = "Pizza Bianca, Cotto e Funghi";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Mozzarella, fior di panna, funghi champignon, prosciutto cotto Rovagnati e basilico.";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/5d70b242-6da0-4a54-93c4-14649b8b504c.jpeg";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 13;
+        $food->type_id = 2;
+        $food->name = "Pizza Picciosa Vegana";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Pomodoro Roma, mozzariso, funghi champignon, carciofini e olive nere";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/661f82bd-f437-4d8d-b2a4-fd38846e150f.jpeg";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        // pizzeria categoria 3 id 14
+        $food = new Food();
+        $food->user_id = 14;
+        $food->type_id = 2;
+        $food->name = "Pulcinella";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Pomodoro San Marzano condimento Un'Altra Pasta e mozzarella fiordilatte DOP";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/2a677398-5e18-47de-9be8-db25ac74cd50.jpeg";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 14;
+        $food->type_id = 2;
+        $food->name = "Luganega";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Mozzarella fiordilatte DOP, salsiccia luganega, patate e squacquerone di romagna a freddo";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/fe8ca538-7891-4eee-8321-9d5b24e798f4.jpeg";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+        
+        $food = new Food();
+        $food->user_id = 14;
+        $food->type_id = 2;
+        $food->name = "Gorgonduja";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Pomodoro San Marzano condimento Un'Altra Pasta, mozzarella fiordilatte DOP, gorgonzola Novara IGP e nduja di Spilinga medio piccante";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/13b5befd-321a-48da-932f-6565328a640f.jpeg";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        // pizzeria categoria 3 id 15
+        $food = new Food();
+        $food->user_id = 15;
+        $food->type_id = 2;
+        $food->name = "Salsiccia e Peperoni";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Mozzarella, Pomodoro, Salsiccia e Peperoni.";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/5350409c-c074-4779-8c62-451507d3dc27";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 15;
+        $food->type_id = 2;
+        $food->name = "Carletto";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Mozzarella, Pomodoro, Gamberetti e Rucola";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/7aeb8b43-2f4f-45a1-8823-c541defb13a7";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 15;
+        $food->type_id = 2;
+        $food->name = "Funghi Porcini";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Mozzarella, Pomodoro e Funghi Porcini";
+        $food->visible = true;
+        $food->image = "https://d1ralsognjng37.cloudfront.net/623760e1-d2ff-46b5-84ce-178d120cd0af";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        // categoria fast food 4 id 16
+        $food = new Food();
+        $food->user_id = 16;
+        $food->type_id = 2;
+        $food->name = "Deli burger al mercato";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Carne della Macelleria Motta (110gr), pane di patate con semi di sesamo, insalata iceberg, pomodoro, cipolla rossa fritta, salsa speciale";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC85ZWM5MTdlOC1jMTUyLTQ5ZTItOGZiOS1iYmM3N2UyMDczMWUuanBlZw==";
+        $food->additional_details = "dettagli addizionali";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 16;
+        $food->type_id = 2;
+        $food->name = "Original Burger Al Mercato";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Carne della Macelleria Motta (110gr), pane di patate con semi di sesamo, insalata iceberg, pomodoro, cipolla rossa fritta, salsa speciale";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9kMzNkMGE3MC04OTRjLTQ0MzEtYTc2Yy01ZGE5ZjYzYTliOGYuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 16;
+        $food->type_id = 2;
+        $food->name = "Vegan Burger di Heura Meat";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Vegan Heura Burger, pane di patate e sesamo, insalata iceberg, pomodoro, salsa speciale";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9kODMzZjA0Yi0zNjJmLTRiODEtOTE1ZC01ZjQ1N2YxYTU2NTIuanBlZw==";
+        $food->save();
+
+        // categoria fast food 4 id 17
+        $food = new Food();
+        $food->user_id = 17;
+        $food->type_id = 2;
+        $food->name = "Box Meal All Star";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Tutte le star del Colonnello in un unico Box Meal. Contiene un panino Double Krunch, un Tender Crispy, una pannocchia, patatine e bibita a scelta";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC80YWNiNWU0Ni1hYjhiLTQ0MTQtYTM3Ny0zYzU2NzlkYmZkNmIuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 17;
+        $food->type_id = 2;
+        $food->name = "COB OR";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Un bucket con 6 pezzi COB Original Recipe, l'irresistibile COB Original Recipe deve il suo sapore inimitabile alla ricetta del Colonnello Sanders, un mix di 11 erbe e spezie segrete";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC80YWNiNWU0Ni1hYjhiLTQ0MTQtYTM3Ny0zYzU2NzlkYmZkNmIuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 17;
+        $food->type_id = 2;
+        $food->name = "Tender Crispy";
+        $food->price = "6.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Filetti di pollo, croccanti fuori, tenerissimi dentro. Scegli la tua salsa inclusa";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9jYTUxNWJkOC1lYmJjLTQ2ZmQtOTY0OC1lZDVkNzc5MzBjNWEuanBlZw==";
+        $food->save();
+
+        // categoria fast food 4 id 18
+        $food = new Food();
+        $food->user_id = 18;
+        $food->type_id = 2;
+        $food->name = "My Selection Chicken Pepper";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "100% petto di pollo italiano avvolto in una nuova croccante panatura, Pecorino Toscano DOP, insalata, pomodoro, salsa ai tre pepi e pane con semi di sesamo.";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC81OGQyMjQ1Yy1kNTg0LTQ1YTgtOGYwOS05MzA0NjY5NzE2ZTAuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 18;
+        $food->type_id = 2;
+        $food->name = "Gran Crispy McBacon";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Chi ama il Crispy McBacon® ne prenderebbe volentieri un altro e un altro e un altro e un altro ancora. Per questo c’è il Gran Crispy McBacon®: carne 100% bovina da allevamenti italiani, croccante bacon 100% da pancetta italiana, formaggio e l'inconfondibile salsa Crispy. Come il classico, ma ancora più grande.";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9mOThiYjYwNS0yMjU1LTRjMGYtYjNlZi0xZWE2NzEzYmRlN2YuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 18;
+        $food->type_id = 2;
+        $food->name = "Hamburger";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Carne 100% bovina da allevamenti italiani, arricchita con cipolla a dadini, cetriolo, ketchup e senape. L’Hamburger, un panino semplice che non passa mai di moda.";
+        $food->visible = true;
+        $food->image = "aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC8zYzk5ODMyMi04YmZiLTQwNDQtOTNkZC01NTNmNWJlMWRmYjguanBlZw";
+        $food->save();
+
+        // catgoria fast food 4 id 19
+        $food = new Food();
+        $food->user_id = 19;
+        $food->type_id = 2;
+        $food->name = "My Selection Chicken Pepper";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "100% petto di pollo italiano avvolto in una nuova croccante panatura, Pecorino Toscano DOP, insalata, pomodoro, salsa ai tre pepi e pane con semi di sesamo.";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC81OGQyMjQ1Yy1kNTg0LTQ1YTgtOGYwOS05MzA0NjY5NzE2ZTAuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 19;
+        $food->type_id = 2;
+        $food->name = "Gran Crispy McBacon";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Chi ama il Crispy McBacon® ne prenderebbe volentieri un altro e un altro e un altro e un altro ancora. Per questo c’è il Gran Crispy McBacon®: carne 100% bovina da allevamenti italiani, croccante bacon 100% da pancetta italiana, formaggio e l'inconfondibile salsa Crispy. Come il classico, ma ancora più grande..";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9mOThiYjYwNS0yMjU1LTRjMGYtYjNlZi0xZWE2NzEzYmRlN2YuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 19;
+        $food->type_id = 2;
+        $food->name = "Chicken Country";
+        $food->price = "9.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Un panino pensato per chi vuole rimanere leggero, ma non rinuncia al gusto: il petto di pollo alla piastra 100% italiano incontra tutto il gusto del bacon e della cipolla per una combinazione di sapori davvero stuzzicante";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC8wMmM0ZWYyNi1hZTAzLTQ3YjUtOTViNC04MjQ0MmMwZDJlMDkuanBlZw==";
+        $food->save();
+
+        // categoria indiano 5 id 20
+        $food = new Food();
+        $food->user_id = 20;
+        $food->type_id = 2;
+        $food->name = "Chicken Tikka Masala";
+        $food->price = "9.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Bocconcini di Pollo con Cremosa Salsa Speziata";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC84OWVlY2Q2OS0yNTdjLTQ5NmUtOTlmMS00YjdkZWI5YjZiMTI=";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 20;
+        $food->type_id = 2;
+        $food->name = "Dal - Lenticchie";
+        $food->price = "6.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Legumi Indiani Leggermente Speziata";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9jNGIzODI2OS04NjdhLTQzNjctOTI0My0wMjgyNTY1YjJiNzQ=";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 20;
+        $food->type_id = 2;
+        $food->name = "Sabzi Curry";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Misto di Verdure con Curry Leggero";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC8yYzFiNzM2Mi01MDgxLTQyNTUtYjM0My1mZmI0ZjBmNmIzMjE=";
+        $food->save();
+        
+        // categoria indiano 5 id 21
+        $food = new Food();
+        $food->user_id = 21;
+        $food->type_id = 2;
+        $food->name = "Tandoori Misto";
+        $food->price = "9.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Varietà di Carne Marinata, Pollo, Tacchino, Agnello e Maiale, Cotti al Forno";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9lODdkMDFjZS1jMTAxLTQ2ZjYtOTFhMi04ODlkMzg0Mzg3ODk=";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 21;
+        $food->type_id = 2;
+        $food->name = "Antipasti Misti Vegetariani";
+        $food->price = "7.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Misto di Antipasti Vegetariani";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9iNTU4MTUyYS00ODBkLTRkNjEtODU4NS0zYjg4MGZiYTcwMGM=";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 21;
+        $food->type_id = 2;
+        $food->name = "Chicken Roll";
+        $food->price = "9.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Rotolo di Pane alla Piastra con Pollo Delicato Tandoori alla Soia";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC84NjYwM2E4OS0zMTYxLTQyMTgtYWY0NC1hZTI1MTU2MzlkMWQ=";
+        $food->save();
+        
+        // categoria indiano 5 id 22
+        $food = new Food();
+        $food->user_id = 22;
+        $food->type_id = 2;
+        $food->name = "Samosa";
+        $food->price = "5.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Fagottino ripieno di verdure cotte";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9kNTQxYzNmNC00MWRmLTRjNDEtYTNiMS1iOThjMjg0NmEyY2Q=";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 22;
+        $food->type_id = 2;
+        $food->name = "Chicken al Curry";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Bocconcini di Pollo Cotti con Curry e Spezie";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC82YjA4YjhjOS0wMjUyLTQwMjgtYTViYy01NTFkMWQwMmM5Y2Y=";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 22;
+        $food->type_id = 2;
+        $food->name = "Palak Pakora";
+        $food->price = "6.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Morbide Frittelle di Verdure Spinaci Fritto in Pastella di Farina di Ceci, 5 pezzi";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC8xYzRlNGY2Zi04YmI0LTQ1NmUtYmYzNi02MjVhMWUyMTJmN2Q=";
+        $food->save();
+        
+        // categoria indiano 5 id 23
+        $food = new Food();
+        $food->user_id = 23;
+        $food->type_id = 2;
+        $food->name = "Spinaci e Patate";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "spinaci, patate, aglio, olio, zenzero,acqua, pomodori, coriandolo, curcuma, formaggio";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC82MjVlMjBlZC1kZjMwLTRiMDgtYmQ2OC0yNzk5ODIzYzNjMzUuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 23;
+        $food->type_id = 2;
+        $food->name = "Verdure al Curry";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "verdura mista, olio, pomodoro,curcuma";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9kYjA3NmUwOC0wMTMyLTQ3MjItODk0Yy01N2QzMTg5ZDlhZmUuanBlZw==";
+        $food->save();
+
+        $food = new Food();
+        $food->user_id = 23;
+        $food->type_id = 2;
+        $food->name = "Chilli Chicken";
+        $food->price = "10.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Delizioso Curry Indo-Orientale con Gusto Agrodolce-Piccante di Pollo e Cavolo Ottimo sia con Riso o Pane tandooris";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC81ZDZkM2NmMS04MTczLTRkNTMtOThlYS01YTgyYzcwMWVlMGU=";
+        $food->save();
+
+        // categoria indiano 5 id 24
+        $food = new Food();
+        $food->user_id = 24;
+        $food->type_id = 1;
+        $food->name = "Riso Pulao";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Classico Piatto di Riso Basmati al Vapore per Mantenere il suo Tipico Aroma da Accompagnare i Vari Piatti Curry Spezati";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC83OTgxOWViNS04ZGI1LTRkYzUtYjY4Yi02MjI5ZWNhZDEwZjI=";
+
+        $food = new Food();
+        $food->user_id = 24;
+        $food->type_id = 1;
+        $food->name = "Prawn Pulao";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Basmati Cotto Delicatamente con Gamberi";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC8xYzRhYWZhZi0yZDFjLTQ5NjQtOGY4Ni05ZGViZWI4NmRmOTE=";
+
+        $food = new Food();
+        $food->user_id = 24;
+        $food->type_id = 1;
+        $food->name = "Naan";
+        $food->price = "8.00";
+        $food->description = "La nostra descrizione";
+        $food->ingredients = "Pane Soffice con Impasto al Latte";
+        $food->visible = true;
+        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9jNTJjM2M3MC05NTk1LTRmNWMtODBjOC0yMjRjMWM3OTMyNDc=";
+
+
         // messicano_userid25 ok
         $food = new Food();
         $food->user_id = 25;
