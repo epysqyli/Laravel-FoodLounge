@@ -14,6 +14,11 @@
     </div>
 
     <div class="row">
+      <div class="col-lg-9"></div>
+      <div class="col-lg-3"></div>
+    </div>
+
+    <div class="row">
       <!-- make Cart.vue component -->
       <div class="col-10 offset-1 offset-sm-0 col-md-8 mx-auto col-sm-12 my-2">
         <div
