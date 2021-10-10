@@ -37,6 +37,5 @@ class CategorySeeder extends Seeder
             $category->img = $value;
             $category->save();
         };
-        
     }
 }
