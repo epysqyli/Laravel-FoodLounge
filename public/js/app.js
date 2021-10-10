@@ -2309,6 +2309,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantCard",
   props: {
@@ -39103,6 +39104,7 @@ var render = function() {
     "router-link",
     {
       staticClass: "card m-5",
+      staticStyle: { "text-decoration": "none", color: "inherit" },
       attrs: {
         to: { name: "restaurants", params: { slug: _vm.restaurant.slug } }
       }

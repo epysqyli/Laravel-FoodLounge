@@ -2,6 +2,7 @@
   <router-link
     :to="{ name: 'restaurants', params: { slug: restaurant.slug } }"
     class="card m-5"
+    style="text-decoration: none; color: inherit;"
   >
     <div class="row g-0">
       <div class="col-md-4">
