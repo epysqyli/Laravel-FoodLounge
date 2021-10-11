@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <Header></Header>
     <router-view></router-view>
     <Footer></Footer>
@@ -20,4 +20,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.app{
+  position:relative;
+  width: 100vw;
+  height: 100vh;
+}
 </style> 

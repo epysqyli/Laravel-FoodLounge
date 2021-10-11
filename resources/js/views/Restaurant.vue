@@ -1,99 +1,112 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 mt-3">
-        <div class="card text-center border">
-          <div class="card-header">
-            {{ restaurant.name }}
-          </div>
-          <div class="card-body">
-            <p class="card-text">{{ restaurant.description }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mt-4">
-      <div class="col-lg-7">
-        <!-- make Food.vue component -->
-        <div class="row">
-          <div class="col-lg-5" v-for="food in foods" :key="food.id">
-            <div class="card-header border">
-              {{ food.name }}
-            </div>
-            <div class="card-body border">
-              <div class="card-text">{{ food.description }}</div>
-              <div class="card-text">{{ food.price }} &euro;</div>
-              <img
-                class="w-100"
-                :src="
-                  food.image[0] == 'h'
-                    ? food.image
-                    : `http://localhost:8000/storage/${food.image}`
-                "
-                :alt="food.name"
-              />
-              <div
-                class=" d-block mx-auto w-75 mt-2"
-                @click="addToCart(food)"
-              ><b-button class="btn " v-b-toggle.sidebar-right>Add to cart</b-button>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-     
-        <div>
-              
-              <b-sidebar id="sidebar-right" title="Cart" right shadow>
-                
-                    <div class=" overflow-hidden">
-                      <!-- make Cart.vue component -->
-                      <div class=" mx-1 ">
-                        
-                        <div
-                          class="container mx-auto border rounded"
-                          v-if="cart.items.length != 0"
-                        >
-                       <h1><i class="bi bi-cart"></i></h1>
-                          <div
-                            class="d-flex justify-content-between align-items-center my-1"
-                            v-for="item in cart.items"
-                            :key="item.id"
-                          >
-                           
-                            <div>{{ item.name }} </div>
-                           
-                            <div>{{ item.price }} &euro;</div>
-                            <div
-                              class="btn btn-outline-danger"
-                              @click="removeFromCart(item)"
-                            >
-                              Remove
-                            </div>
-                          </div>
-                          <div
-                            class="
-                              d-flex
-                              justify-content-between
-                              align-items-center
-                              mt-3
-                              mb-1
-                            "
-                          >
-                            <div>Totale: {{ cart.total }} &euro;</div>
-                            <div class="btn btn-outline-primary rounded">Checkout</div>
-                          </div>
-                        </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 mt-3">
+                    <div class="card text-center border">
+                      <div class="card-header">
+                        {{ restaurant.name }}
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">{{ restaurant.description }}</p>
                       </div>
                     </div>
-                  
+                  </div>
+                </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Buy</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr v-for="(food,index) in foods" :key="index">
+                  <th scope="row">1</th>
+                  <td> <img
+                            class="w-100"
+                            :src="
+                              food.image[0] == 'h'
+                                ? food.image
+                                : `http://localhost:8000/storage/${food.image}`
+                            "
+                            :alt="food.name"/>
+                    </td>
                 
-              </b-sidebar>
-         </div>
-    </div>
+                  <td>{{food.price}}</td>
+                  <td>{{food.name}}</td>
+                    <td><div
+                            class=" btn btn-success mx-auto w-2 mt-2"
+                            @click="addToCart(food)"
+                          ><h3>Add To Cart</h3>
+                            
+                          </div></td>
+                </tr>
+              </tbody>
+            </table>
+                <div class="row mt-4">
+                  
+
+                
+                    <div>
+                          
+                          <b-sidebar id="sidebar-right" title="Cart" right shadow>
+                            
+                                <div class=" overflow-hidden">
+                              
+                                  <div class=" mx-1 ">
+                                    
+                                    <div
+                                      class="container mx-auto border rounded"
+                                      v-if="cart.items.length != 0"
+                                    >
+                                  <h1><i class="bi bi-cart"></i></h1>
+                                      <div
+                                        class="d-flex justify-content-between align-items-center my-1"
+                                        v-for="item in cart.items"
+                                        :key="item.id"
+                                      >
+                                      
+                                        <div>{{ item.name }} </div>
+                                      
+                                        <div>{{ item.price }} &euro;</div>
+                                        <div
+                                          class="btn btn-outline-danger"
+                                          @click="removeFromCart(item)"
+                                        >
+                                          Remove
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="
+                                          d-flex
+                                          justify-content-between
+                                          align-items-center
+                                          mt-3
+                                          mb-1
+                                        "
+                                      >
+                                        <div>Totale: {{ cart.total }} &euro;</div>
+                                          <router-link
+                                                  style="text-decoration: none; color: inherit; width: 50%; display: block"
+                                                  :to="{ name: 'checkout' }"
+                                                >
+                                                <a class="navbar-brand">  CheckOut
+                   </a>
+
+                </router-link>
+                                      
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              
+                            
+                          </b-sidebar>
+                    </div> 
+                </div> 
   
   </div>
 </template>
@@ -136,6 +149,7 @@ export default {
     addToCart(item) {
       this.cart.items.push(item);
     },
+    
 
     removeFromCart(item) {
       this.cart.items.splice(this.cart.items.indexOf(item), 1);
@@ -152,7 +166,12 @@ export default {
 
 <style lang="scss" scoped>
 
-
+td img{
+  height: 100px;
+  width: 50px;
+    object-fit: cover;
+    vertical-align: middle;
+}
 
 h2 {
   font-size: 40px;
