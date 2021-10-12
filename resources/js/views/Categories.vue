@@ -1,9 +1,19 @@
 <template>
   <main>
     <div class="container">
-      <div class="row py-5">
+      <div class="row">
         <div
-          class="col-10 offset-1 col-sm-6 offset-sm-0 col-md-10 offset-md-1 col-lg-6 mx-auto ml-lg-0"
+          class="
+            col-10
+            offset-1
+            col-sm-6
+            offset-sm-0
+            col-md-10
+            offset-md-1
+            col-lg-6
+            mx-auto
+            ml-lg-0
+          "
           v-for="restaurant in restaurants"
           :key="restaurant.id"
         >
@@ -22,17 +32,15 @@ export default {
     RestaurantCard,
   },
 
+  props: {
+    userChoices: Array,
+  },
+
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/categories/",
-      userChoices: [],
       restaurants: [],
     };
-  },
-
-  mounted() {
-    this.userChoices = this.$route.params.names.split("&");
-    this.fillRestaurants();
   },
 
   methods: {
@@ -46,6 +54,7 @@ export default {
     },
 
     fillRestaurants() {
+      this.restaurants = [];
       this.userChoices.forEach((choice) => this.getRestaurant(choice));
     },
   },
@@ -53,7 +62,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main{
-  background-color: #4FB3E4;
+main {
 }
 </style>

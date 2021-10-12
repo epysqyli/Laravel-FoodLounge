@@ -19,19 +19,21 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-12">
-        <router-link
-          style="text-decoration: none; color: inherit"
-          :to="{ name: 'categories', params: { names: queryChoices } }"
+    <!-- <div class="row">
+      <div class="col-10 offset-1">
+        <div
+          class="d-block w-100 btn btn-outline-primary mx-auto mt-5"
+          :class="userChoices.length != 0 ? visible : hidden"
+          @click='startSearch'
         >
-          <div
-            class="d-block w-50 btn btn-outline-primary mx-auto mt-5"
-            v-if="userChoices.length != 0"
-          >
-            Go
-          </div>
-        </router-link>
+          Go
+        </div>
+      </div>
+    </div> -->
+
+    <div class="row">
+      <div class="col-12 my-5">
+        <Categories :userChoices="userChoices" ref="categories" />
       </div>
     </div>
   </div>
@@ -45,6 +47,7 @@ export default {
   name: "Home",
   components: {
     CategoryCard,
+    Categories,
   },
 
   data() {
@@ -52,7 +55,8 @@ export default {
       apiUrl: "http://127.0.0.1:8000/api/categories",
       categories: [],
       userChoices: [],
-      queryChoices: "",
+      visible: "visible",
+      hidden: "hidden",
     };
   },
 
@@ -85,15 +89,27 @@ export default {
           }
         });
       }
-      this.buildQuery();
+      this.startSearch();
     },
 
-    buildQuery() {
-      this.queryChoices = this.userChoices.join("&");
+    startSearch: function () {
+      this.$refs.categories.fillRestaurants();
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.btn {
+  transition: all 300ms ease-out;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 </style>    
