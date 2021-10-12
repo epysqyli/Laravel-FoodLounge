@@ -46,7 +46,7 @@
                                 <td><a href="{{ route('admin.foods.show', $food->id) }}">Check Details</a></td>
                                 <td><a href="{{ route('admin.foods.edit', $food->id) }}">Change</a></td>
                                 <td>
-                                    <form action="{{ route('admin.foods.destroy', $food->id) }}" method="post">
+                                    <form class="post-delete" action="{{ route('admin.foods.destroy', $food->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
