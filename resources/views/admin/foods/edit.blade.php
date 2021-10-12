@@ -35,19 +35,11 @@
                                 <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Availability</label>
                                 <div class="col-md-4 col-form-label">
                                     <div>
-<<<<<<< HEAD
-                                        <input type="radio" id="visible" name="visible" value="1"  {{ ($food->visible =="1")? "checked" : "" }} >
-                                        <label for="visible">Accessible</label><br>
-                                    </div>
-                                    <div>
-                                        <input type="radio" id="nonvisible" name="visible" value="0" {{ ($food->visible =="0")? "checked" : "" }}>
-=======
                                         <input type="radio" id="visible" name="visible" value="1" {{ ($food->visible=="1")? "checked" : "" }} required>
                                         <label for="visible">Accessible</label><br>
                                     </div>
                                     <div>
                                         <input type="radio" id="nonvisible" name="visible" value="0" {{ ($food->visible=="0")? "checked" : "" }}>
->>>>>>> 20fac7ec9a9431b78b12750d3b095f1300d86a34
                                         <label for="nonvisible">Inaccessible</label><br>
                                     </div>
 
@@ -95,16 +87,15 @@
                                 <label for="type_id" class="col-md-4 col-form-label text-md-right">Type</label>
 
                                 <div class="col-md-6">
-                                    <select id="type"
-                                        class="form-control @error('type') is-invalid
-                                    @enderror"
-                                        name="type_id" autocomplete="type_id" required>
+                                    <select id="type" class="form-control @error('type') is-invalid @enderror"
+                                    name="type_id" autocomplete="type_id" required>
                                         <option value="">Choose your types</option>
                                         @foreach ($types as $type)
-                                            <option value={{ $type->id }} @if ($type->id == old('type'))
-                                                selected
-                                        @endif>{{ $type->name }}</option>
-                                        @endforeach
+                                            <option value={{ $type->id }} 
+                                                @if ($type->id == old('type_id', $food->type_id)) selected                                                    
+                                                @endif> {{ $type->name }}
+                                            </option>
+                                        @endforeach                                        
                                     </select>
                                     @error('type')
                                         <span class="invalid-feedback" role="alert">
