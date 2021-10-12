@@ -35,11 +35,11 @@
                                 <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Availability</label>
                                 <div class="col-md-4 col-form-label">
                                     <div>
-                                        <input type="radio" id="visible" name="visible" value="1" required>
+                                        <input type="radio" id="visible" name="visible" value="1" {{ ($food->visible=="1")? "checked" : "" }} required>
                                         <label for="visible">Accessible</label><br>
                                     </div>
                                     <div>
-                                        <input type="radio" id="nonvisible" name="visible" value="0">
+                                        <input type="radio" id="nonvisible" name="visible" value="0" {{ ($food->visible=="0")? "checked" : "" }}>
                                         <label for="nonvisible">Inaccessible</label><br>
                                     </div>
 
@@ -87,16 +87,15 @@
                                 <label for="type_id" class="col-md-4 col-form-label text-md-right">Type</label>
 
                                 <div class="col-md-6">
-                                    <select id="type"
-                                        class="form-control @error('type') is-invalid
-                                    @enderror"
-                                        name="type_id" autocomplete="type_id" required>
+                                    <select id="type" class="form-control @error('type') is-invalid @enderror"
+                                    name="type_id" autocomplete="type_id" required>
                                         <option value="">Choose your types</option>
                                         @foreach ($types as $type)
-                                            <option value={{ $type->id }} @if ($type->id == old('type'))
-                                                selected
-                                        @endif>{{ $type->name }}</option>
-                                        @endforeach
+                                            <option value={{ $type->id }} 
+                                                @if ($type->id == old('type_id', $food->type_id)) selected                                                    
+                                                @endif> {{ $type->name }}
+                                            </option>
+                                        @endforeach                                        
                                     </select>
                                     @error('type')
                                         <span class="invalid-feedback" role="alert">
@@ -128,7 +127,7 @@
                                 <label for="image" class="col-md-4 col-form-label text-md-right">Image Food</label>
 
                                 <div class="col-md-6">
-                                    <input id="image" type="file" required
+                                    <input id="image" type="file" 
                                         class="d-block form-control-file @error('image') is-invalid
                                     @enderror"
                                         name="image" autocomplete="image" value="{{ old('image', $food->image) }}">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Category;
 use App\User;
+use App\Food;
 
 class GuestController extends Controller
 {
@@ -28,5 +29,10 @@ class GuestController extends Controller
             $query->where('visible', '1');
         }])->first();
         return response()->json($data);
+    }
+    public function checkout(Food $food){
+        $foods = Food::all();
+        return response()->json(compact('foods'));
+
     }
 }

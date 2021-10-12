@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="container">
-      <div class="row pt-5">
+      <div class="row py-5">
         <div
           class="col-10 offset-1 col-sm-6 offset-sm-0 col-md-10 offset-md-1 col-lg-6 mx-auto ml-lg-0"
           v-for="restaurant in restaurants"
@@ -53,5 +53,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+main{
+  background-color: #4FB3E4;
+}
 </style>

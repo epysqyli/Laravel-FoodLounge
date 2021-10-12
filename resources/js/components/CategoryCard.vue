@@ -35,6 +35,7 @@ export default {
   transition: box-shadow 200ms ease-out;
   // transition: background-color 250ms ease-out;
 
+
   img {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;

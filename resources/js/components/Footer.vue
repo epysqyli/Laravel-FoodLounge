@@ -1,6 +1,6 @@
 <template>
-  <footer class="text-center text-white py-5 px-2 mt-3">
-    This is the footer
+  <footer class="text-center">
+    <p class="py-3">This is the footer</p>
   </footer>
 </template>
 
@@ -12,6 +12,11 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  background-color: black;
+  background-color: rgb(238, 108, 94);
+  position:fixed;
+   bottom:0;
+   left: 0;
+   width: 100%;
+   height: 50px;
 }
 </style> 
