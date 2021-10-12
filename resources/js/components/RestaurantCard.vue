@@ -46,15 +46,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h2 {
-  font-size: 40px;
-  color: #ffd60a;
+h5, p {
+  color: #193540;
 }
 
 .card {
   border: none;
-  border: 1px solid black;
+  // border: 1px solid black;
   border-radius: 20px;
+  background-color: whitesmoke;
 
   img {
     border-radius: 20px;
