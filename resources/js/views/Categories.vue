@@ -1,25 +1,25 @@
 <template>
-    <div class="container">
-      <div class="row">
-        <div
-          class="
-            col-10
-            offset-1
-            col-sm-6
-            offset-sm-0
-            col-md-10
-            offset-md-1
-            col-lg-6
-            offset-lg-0
-            ml-lg-0
-          "
-          v-for="restaurant in restaurants"
-          :key="restaurant.id"
-        >
-          <RestaurantCard :restaurant="restaurant" />
-        </div>
+  <div class="container">
+    <div class="row">
+      <div
+        class="
+          col-10
+          offset-1
+          col-sm-6
+          offset-sm-0
+          col-md-10
+          offset-md-1
+          col-lg-6
+          offset-lg-0
+          ml-lg-0
+        "
+        v-for="restaurant in restaurants"
+        :key="restaurant.id"
+      >
+        <RestaurantCard :restaurant="restaurant" :categoryName="getCategoryName(restaurant)" />
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -32,6 +32,7 @@ export default {
 
   props: {
     userChoices: Array,
+    categories: Array,
   },
 
   data() {
@@ -55,6 +56,17 @@ export default {
       this.restaurants = [];
       this.userChoices.forEach((choice) => this.getRestaurant(choice));
     },
+
+    getCategoryName(restaurant) {
+      const catId = restaurant.pivot.category_id;
+      let cat = null;
+      this.categories.forEach(category => {
+        if (category.id == catId) {
+          cat = category;
+        }
+      });
+      return cat.name;
+    }
   },
 };
 </script>

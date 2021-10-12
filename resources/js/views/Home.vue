@@ -6,7 +6,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-5">
       <div
         class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
         v-for="category in categories"
@@ -19,19 +19,7 @@
       </div>
     </div>
 
-    <!-- <div class="row">
-      <div class="col-10 offset-1">
-        <div
-          class="d-block w-100 btn btn-outline-primary mx-auto mt-5"
-          :class="userChoices.length != 0 ? visible : hidden"
-          @click='startSearch'
-        >
-          Go
-        </div>
-      </div>
-    </div> -->
-
-    <Categories :userChoices="userChoices" ref="categories" />
+    <Categories :userChoices="userChoices" ref="categories" :categories='categories' />
   </div>
 </template>
 
@@ -51,8 +39,6 @@ export default {
       apiUrl: "http://127.0.0.1:8000/api/categories",
       categories: [],
       userChoices: [],
-      visible: "visible",
-      hidden: "hidden",
     };
   },
 
@@ -97,19 +83,6 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  min-height: 50vh;
-}
-
-.btn {
-  transition: all 300ms ease-out;
-}
-
-.visible {
-  opacity: 1;
-}
-
-.hidden {
-  opacity: 0;
-  pointer-events: none;
+  min-height: 45vh;
 }
 </style>    

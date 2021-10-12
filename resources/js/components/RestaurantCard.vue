@@ -23,6 +23,7 @@
           <p class="card-text">
             {{ this.limitParagraph(restaurant.description) }}
           </p>
+          <p><strong>Category:</strong> {{ categoryName }}</p>
         </div>
       </div>
     </div>
@@ -35,6 +36,7 @@ export default {
 
   props: {
     restaurant: Object,
+    categoryName: String,
   },
 
   methods: {
