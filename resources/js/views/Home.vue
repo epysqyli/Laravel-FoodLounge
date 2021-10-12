@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container">
     <div class="row">
       <div class="col-12 text-center p-5">
         <h2 class="text-center mx-auto">Bee Happy, Bee Healthy! Choose:</h2>
@@ -31,11 +31,7 @@
       </div>
     </div> -->
 
-    <div class="row">
-      <div class="col-12 my-5">
-        <Categories :userChoices="userChoices" ref="categories" />
-      </div>
-    </div>
+    <Categories :userChoices="userChoices" ref="categories" />
   </div>
 </template>
 
@@ -100,6 +96,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  min-height: 50vh;
+}
+
 .btn {
   transition: all 300ms ease-out;
 }

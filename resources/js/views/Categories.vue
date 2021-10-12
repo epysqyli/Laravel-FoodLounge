@@ -1,5 +1,4 @@
 <template>
-  <main>
     <div class="container">
       <div class="row">
         <div
@@ -11,7 +10,7 @@
             col-md-10
             offset-md-1
             col-lg-6
-            mx-auto
+            offset-lg-0
             ml-lg-0
           "
           v-for="restaurant in restaurants"
@@ -21,7 +20,6 @@
         </div>
       </div>
     </div>
-  </main>
 </template>
 
 <script>
@@ -62,6 +60,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main {
-}
 </style>

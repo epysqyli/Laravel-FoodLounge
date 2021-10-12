@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from './views/Home';
-import Categories from './views/Categories';
 import Restaurant from './views/Restaurant';
 import Checkout from './views/Checkout';
 

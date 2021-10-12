@@ -4,7 +4,7 @@
     class="card m-3"
     style="text-decoration: none; color: inherit"
   >
-    <div class="row g-0">
+    <div class="row">
       <div class="col-md-4">
         <img
           :src="
@@ -13,7 +13,7 @@
               : `http://localhost:8000/storage/${restaurant.profile_image}`
           "
           class="card-img-top"
-          alt="restaurant.name"
+          :alt="restaurant.name"
         />
       </div>
       <div class="col-md-8">
@@ -46,13 +46,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h5, p {
+h5,
+p {
   color: #193540;
 }
 
 .card {
   border: none;
-  // border: 1px solid black;
   border-radius: 20px;
   background-color: whitesmoke;
 
@@ -62,9 +62,4 @@ h5, p {
     height: 200px;
   }
 }
-
-.card:hover{
-  // border: 2px solid yellow;
-}
-
 </style>
