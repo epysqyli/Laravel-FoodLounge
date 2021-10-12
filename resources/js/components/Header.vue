@@ -1,6 +1,6 @@
 <template>
   <header >
-      <nav class="navbar navbar-light bg-dark text-center
+      <nav class="navbar navbar-light text-center
       ">
               <div class="container-fluid">
                  <router-link
@@ -37,6 +37,7 @@ export default {
 <style lang="scss" scoped>
 header{
   position:relative;
+  background-color: rgb(238, 108, 94);
 }
 btn-sticky-left{
     background: #e9d758 none repeat scroll 0 0;
