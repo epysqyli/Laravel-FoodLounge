@@ -2,9 +2,7 @@
   <div class="container mx-auto">
     <div class="row">
       <div class="col-12 text-center p-5">
-        <h2 class="text-center mx-auto">
-          Bee Happy, Bee Healthy! Choose: 
-        </h2>
+        <h2 class="text-center mx-auto">Bee Happy, Bee Healthy! Choose:</h2>
       </div>
     </div>
 
@@ -27,7 +25,10 @@
           style="text-decoration: none; color: inherit"
           :to="{ name: 'categories', params: { names: queryChoices } }"
         >
-          <div class="d-block w-50 btn btn-outline-primary mx-auto mt-5" v-if="userChoices.length != 0">
+          <div
+            class="d-block w-50 btn btn-outline-primary mx-auto mt-5"
+            v-if="userChoices.length != 0"
+          >
             Go
           </div>
         </router-link>
@@ -38,6 +39,7 @@
 
 <script>
 import CategoryCard from "../components/CategoryCard.vue";
+import Categories from "../views/Categories.vue";
 
 export default {
   name: "Home",
