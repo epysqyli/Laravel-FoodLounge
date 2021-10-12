@@ -35,11 +35,11 @@
                                 <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Availability</label>
                                 <div class="col-md-4 col-form-label">
                                     <div>
-                                        <input type="radio" id="visible" name="visible" value="1" required>
+                                        <input type="radio" id="visible" name="visible" value="1"  {{ ($food->visible =="1")? "checked" : "" }} >
                                         <label for="visible">Accessible</label><br>
                                     </div>
                                     <div>
-                                        <input type="radio" id="nonvisible" name="visible" value="0">
+                                        <input type="radio" id="nonvisible" name="visible" value="0" {{ ($food->visible =="0")? "checked" : "" }}>
                                         <label for="nonvisible">Inaccessible</label><br>
                                     </div>
 
@@ -128,7 +128,7 @@
                                 <label for="image" class="col-md-4 col-form-label text-md-right">Image Food</label>
 
                                 <div class="col-md-6">
-                                    <input id="image" type="file" required
+                                    <input id="image" type="file" 
                                         class="d-block form-control-file @error('image') is-invalid
                                     @enderror"
                                         name="image" autocomplete="image" value="{{ old('image', $food->image) }}">
