@@ -58,12 +58,18 @@
             />
           </div>
 
+          <div class="form-group">
+            <div id="dropin-container"></div>
+          </div>
+
           <button
             type="submit"
             class="btn btn-primary w-50 mx-auto d-block my-2"
           >
             Pay!
           </button>
+
+          <input type="hidden" id="nonce" name="payment_method_nonce" />
         </form>
       </div>
 
@@ -116,15 +122,49 @@ export default {
     },
 
     addBtreeScript() {
-      let btreeScript = document.createElement('script');
-      btreeScript.setAttribute('src', "https://js.braintreegateway.com/web/dropin/1.31.2/js/dropin.min.js");
+      let btreeScript = document.createElement("script");
+      btreeScript.setAttribute(
+        "src",
+        "https://js.braintreegateway.com/web/dropin/1.31.2/js/dropin.min.js"
+      );
       document.head.appendChild(btreeScript);
-    }
+    },
+
+    createBtreeInstance: async () => {
+      const req = await fetch("http://localhost:8000/api/payment-token");
+      const token = await req.json();
+
+      // call braintree function
+      braintree.dropin
+        .create({
+          authorization: token.token,
+          container: document.getElementById("dropin-container"),
+        })
+        .then((dropinInstance) => {
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            dropinInstance
+              .requestPaymentMethod()
+              .then((payload) => {
+                document.getElementById("nonce").value = payload.nonce;
+                form.submit();
+              })
+              .catch((error) => {
+                throw error;
+              });
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
 
   mounted() {
     this.buildCart();
     this.addBtreeScript();
+    this.createBtreeInstance();
   },
 };
 </script>
