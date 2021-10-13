@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">Registrati come ristoratore</div>
+                    <div class="card-header">Aggiorna il tuo profilo</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('admin.users.update', $user->id) }}" enctype="multipart/form-data">

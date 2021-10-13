@@ -7,9 +7,12 @@
 <script>
 export default {
   name: "Main",
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  
+  main {
+    margin-bottom: 200px;
+    min-height: 50vh;
+  }
 </style> 

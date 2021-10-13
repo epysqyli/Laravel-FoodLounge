@@ -1,9 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from './views/Home';
-import Categories from './views/Categories';
-import Restaurant from './views/Restaurant';
-import Checkout from './views/Checkout';
+import Home from "./views/Home";
+import Restaurant from "./views/Restaurant";
+import Checkout from "./views/Checkout";
+import Categories from "./views/Categories";
+import PaymentResult from "./views/PaymentResult";
 
 Vue.use(VueRouter);
 
@@ -12,14 +13,16 @@ const router = new VueRouter({
     routes: [
         {
             path: "",
-            name: 'home',
+            name: "home",
             component: Home,
-         
-           children: [{
-            name: 'categories',
-            path: '/categories/:names',
-            component: Categories,
-          }],
+
+            children: [
+                {
+                    name: "categories",
+                    path: "/categories/:names",
+                    component: Categories,
+                },
+            ],
         },
         // {
         //     path: "/categories/:names",
@@ -32,11 +35,16 @@ const router = new VueRouter({
             component: Restaurant,
         },
         {
-            path: "/checkout/:cart",
+            path: "/checkout",
             name: "checkout",
             component: Checkout,
-        }
-    ]
+        },
+        {
+            path: "/payment-result",
+            name: "payment-result",
+            component: PaymentResult,
+        },
+    ],
 });
 
 export default router;

@@ -25,7 +25,7 @@
                             <div class="col-4 d-flex justify-content-around">
                                 <a class="btn btn-outline-dark d-block w-50"
                                     href="{{ route('admin.types.edit', $type->id) }}" class="link-dark">Edit Type</a>
-                                <form method="post" action={{ route('admin.types.destroy', $type->id) }}>
+                                <form method="post" class="post-delete" action={{ route('admin.types.destroy', $type->id) }}>
                                     @method('DELETE')
                                     @csrf
                                     <button type="submit" class="btn btn-danger">Delete</button>

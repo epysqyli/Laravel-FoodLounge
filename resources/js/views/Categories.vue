@@ -1,40 +1,48 @@
 <template>
-  <main>
-    <div class="container">
-      <div class="row">
-        <div
-          class="col-10 offset-1 col-sm-6 offset-sm-0 col-md-10 offset-md-1 col-lg-6 mx-auto ml-lg-0"
-          v-for="restaurant in restaurants"
-          :key="restaurant.id"
-        >
-          <RestaurantCard :restaurant="restaurant" />
-        </div>
-
-        
+  <div class="container">
+    <div class="row">
+      <div
+        class="
+          col-10
+          offset-1
+          col-sm-6
+          offset-sm-0
+          col-md-10
+          offset-md-1
+          col-lg-6
+          offset-lg-0
+          ml-lg-0
+        "
+        v-for="restaurant in restaurants"
+        :key="restaurant.id"
+      >
+        <RestaurantCard
+          :restaurant="restaurant"
+          :categoryName="getCategoryName(restaurant)"
+        />
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>
-import RestaurantCard from "../pages/RestaurantCard.vue";
+import RestaurantCard from "../components/RestaurantCard.vue";
 export default {
   name: "Categories",
   components: {
     RestaurantCard,
   },
 
+  props: {
+    userChoices: Array,
+    categories: Array,
+  },
+
   data() {
     return {
       apiUrl: "http://127.0.0.1:8000/api/categories/",
-      userChoices: [],
       restaurants: [],
     };
-  },
-
-  mounted() {
-    this.userChoices = this.$route.params.names.split("&");
-    this.fillRestaurants();
   },
 
   methods: {
@@ -48,17 +56,28 @@ export default {
     },
 
     fillRestaurants() {
+      this.restaurants = [];
       this.userChoices.forEach((choice) => this.getRestaurant(choice));
+    },
+
+    getCategoryName(restaurant) {
+      const catId = restaurant.pivot.category_id;
+      let cat = null;
+      this.categories.forEach((category) => {
+        if (category.id == catId) {
+          cat = category;
+        }
+      });
+      return cat.name;
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-
 main {
-      background-color: #4FB3E4;  
-      padding-top: 100px;
-      padding-bottom: 200px;
+  background-color: #4fb3e4;
+  padding-top: 100px;
+  padding-bottom: 200px;
 }
 </style>

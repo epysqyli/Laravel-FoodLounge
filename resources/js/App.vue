@@ -16,15 +16,10 @@ export default {
   components: {
     Header,
     Main,
-    Footer
+    Footer,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.app{
-  position:relative;
-  width: 100vw;
-  height: 100vh;
-}
 </style> 

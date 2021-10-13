@@ -30,9 +30,9 @@ class GuestController extends Controller
         }])->first();
         return response()->json($data);
     }
-    public function checkout(Food $food){
+    public function checkout(Food $food)
+    {
         $foods = Food::all();
         return response()->json(compact('foods'));
-
     }
 }
