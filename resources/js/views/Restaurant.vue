@@ -529,6 +529,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -590,12 +591,18 @@ td img {
   object-fit: cover;
   vertical-align: middle;
 }
-
 h2 {
   font-size: 40px;
   color: #ffd60a;
 }
 .card {
   border: none;
+  
 }
+
+.card-img{
+    height: 200px;
+    object-fit: cover;
+}
+
 </style>
