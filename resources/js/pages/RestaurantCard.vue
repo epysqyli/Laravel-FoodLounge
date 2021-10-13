@@ -63,8 +63,6 @@ h5, p {
   }
 }
 
-.card:hover{
-  // border: 2px solid yellow;
-}
+
 
 </style>
