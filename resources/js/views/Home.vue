@@ -14,7 +14,6 @@
         <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2" v-for="category in categories" :key="category.id">
           <CategoryCard :category="category" @toggleChoice="toggleChoice(category.slug)"/>
         </div>
-      </div>
 
       <div class="row">
         <div class="col-12 mt-4">
@@ -24,11 +23,16 @@
               <span>Go</span>
             </div>
           </router-link>
-        </div>
-      </div>
+        </div>        
+      </div>   
+        
+      
     </div>
 
+    
     <router-view></router-view>
+    
+    
   
   </div>
   <!-- end content -->
@@ -107,5 +111,6 @@ export default {
       color: #4FB3E4;
     }
   }
+  
 }
 </style>    

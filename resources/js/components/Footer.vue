@@ -37,7 +37,7 @@
       </div>
 
       <!-- lato inferiore -->
-      <div class="col-12 d-flex justify-content-center border-top text-white border-dark p-1">
+      <div class="col-12 d-flex justify-content-center border-top text-white border-dark">
           <p>Copyright Deliveboo &copy;2021</p>
       </div>
     </div>
@@ -57,7 +57,7 @@ footer {
   height: 150px;
   bottom:0;
   left: 0;
-  width: 100%;  
+  width: 100%;    
 
   // .column-boolean{
   //   img{
