@@ -37,6 +37,9 @@
         </div>
       </div>
     </div>
+
+    <router-view></router-view>
+  
   </div>
   <!-- end content -->
 </template>
@@ -55,7 +58,7 @@ export default {
       apiUrl: "http://127.0.0.1:8000/api/categories",
       categories: [],
       userChoices: [],
-      queryChoices: "",
+      queryChoices: {},
     };
   },
 
