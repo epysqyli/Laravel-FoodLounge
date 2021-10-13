@@ -30,13 +30,13 @@
 
           <div class="col-50">
             <h3>Payment</h3>
-            <label for="fname">Accepted Cards</label>
+            <!-- <label for="fname">Accepted Cards</label>
             <div class="icon-container">
               <i class="fa fa-cc-visa" style="color:navy;"></i>
               <i class="fa fa-cc-amex" style="color:blue;"></i>
               <i class="fa fa-cc-mastercard" style="color:red;"></i>
               <i class="fa fa-cc-discover" style="color:orange;"></i>
-            </div>
+            </div> -->
             <label for="cname">Name on Card</label>
             <input type="text" id="cname" name="cardname" placeholder="John More Doe">
             <label for="ccnum">Credit card number</label>
@@ -56,9 +56,9 @@
           </div>
           
         </div>
-        <label>
+        <!-- <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-        </label>
+        </label> -->
         <input type="submit" value="Continue to checkout" class="btn">
       </form>
     </div>
@@ -140,14 +140,14 @@ export default {
 
 input[type=text] {
   width: 100%;
-  margin-bottom: 20px;
-  padding: 12px;
+  margin-bottom: 5px;
+  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
 label {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   display: block;
 }
 

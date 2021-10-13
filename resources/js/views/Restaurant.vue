@@ -75,7 +75,6 @@
           </b-sidebar>
         </div> 
     </div> 
-  
   </div>
 </div>
 </template>

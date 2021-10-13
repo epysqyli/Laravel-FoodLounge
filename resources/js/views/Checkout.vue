@@ -1,12 +1,12 @@
 <template>
   <main>
-    <div class="container">
-         
+    <div class="content">
+      <div class="container">
         <div class="row">
           <CheckoutCard :cart="cart" />
         </div>
       </div>  
-    
+    </div>
   </main>
 </template>
 
@@ -27,5 +27,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.content{
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
 </style>
