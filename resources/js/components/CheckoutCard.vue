@@ -2,7 +2,12 @@
   <div class="container mx-auto my-3">
     <div class="row pt-3">
       <div class="col-8 border px-5 pt-3">
-        <form class="col-10 mx-auto">
+        <form
+          class="col-10 mx-auto"
+          method="post"
+          action="http://localhost:8000/api/check-payment"
+          id="payment-form"
+        >
           <div class="form-group">
             <label for="customer_name">First Name</label>
             <input
@@ -11,6 +16,7 @@
               id="customer_name"
               name="customer_name"
               placeholder="Enter first name"
+              required
             />
           </div>
 
@@ -22,6 +28,7 @@
               id="customer_surname"
               name="customer_surname"
               placeholder="Enter surname"
+              required
             />
           </div>
 
@@ -33,6 +40,7 @@
               id="customer_address"
               name="customer_address"
               placeholder="Enter delivery address"
+              required
             />
           </div>
 
@@ -44,6 +52,7 @@
               id="customer_email"
               name="customer_email"
               placeholder="Enter email address"
+              required
             />
           </div>
 
@@ -55,6 +64,7 @@
               id="phone_number"
               name="phone_number"
               placeholder="Enter phone number"
+              required
             />
           </div>
 
@@ -70,6 +80,13 @@
           </button>
 
           <input type="hidden" id="nonce" name="payment_method_nonce" />
+          <input
+            type="hidden"
+            id="user_id"
+            name="user_id"
+            :value="cart.items[0].user_id"
+          />
+          <input type="hidden" id="amount" name="amount" :value="cart.total" />
         </form>
       </div>
 
@@ -135,6 +152,7 @@ export default {
       const token = await req.json();
 
       // call braintree function
+      const form = document.getElementById('payment-form');
       braintree.dropin
         .create({
           authorization: token.token,

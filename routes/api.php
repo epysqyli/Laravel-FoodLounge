@@ -9,6 +9,7 @@ Route::get('/categories/{slug}', 'Api\GuestController@category');
 Route::get('/restaurants/{slug}', 'Api\GuestController@restaurant');
 
 Route::get('/payment-token', 'Api\PaymentController@getToken');
+Route::post('/check-payment', 'Api\PaymentController@checkPayment');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
