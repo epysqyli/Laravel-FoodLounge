@@ -1,20 +1,18 @@
 <template>
- <main>
+  <main>
     <router-view></router-view>
   </main>
 </template>
 
 <script>
-
-
 export default {
   name: "Main",
 }
 </script>
 
 <style lang="scss" scoped>
-main{
-  margin-bottom: 200px;
-}
+//  main{
+//    overflow-y: scroll;
+//  }
 
 </style> 
