@@ -157,6 +157,9 @@
                                     </button>
                                 </div>
                             </div>
+                            <a href="{{ Route('admin.foods.index', $food) }}" class="btn btn-secondary text-white">
+                                <span>Torna indietro</span>
+                            </a>
                         </form>
                     </div>
                 </div>

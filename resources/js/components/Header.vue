@@ -1,30 +1,18 @@
 <template>
   <header >
-      <nav class="navbar navbar-light text-center
-      ">
-              <div class="container-fluid">
-                 <router-link
-                          style="text-decoration: none; color: inherit; width: 50%; display: block"
-                          :to="{ name: 'home' }"
-                        >
-                <a class="navbar-brand"> <h1><i class="bi bi-egg-fried success"></i> FoodLounge</h1>
-                   </a>
-
-                </router-link>
-
-                <form class="d-flex">
-                 <b-button class="btn btn-secondary rounded" v-b-toggle.sidebar-right> <h1> <i class="bi bi-cart"></i></h1></b-button>
-                    
-                  <button class="btn btn-outline-secondary mr-5 " type="submit"> <a
-                        
-                        href="http://localhost:8000/api/user"
-                        class="link-dark"
-                        >Admin area</a ></button>
-                </form>
-              </div>
-</nav>
-    
-    
+    <nav class="navbar navbar-light text-center">
+      <div class="container-fluid">
+        <router-link style="text-decoration: none; color: inherit; width: 50%; display: block" :to="{ name: 'home' }">
+          <a class="navbar-brand"> <h1><i class="bi bi-egg-fried success"></i> FoodLounge</h1></a>
+        </router-link>
+        <form class="d-flex">
+          <b-button class="btn btn-secondary rounded" v-b-toggle.sidebar-right> <h1> <i class="bi bi-cart"></i></h1></b-button>
+          <button class="btn btn-outline-secondary mr-5" type="submit"> 
+            <a href="http://localhost:8000/api/user" class="text-light text-decoration-none">Admin area</a>
+          </button>
+        </form>
+      </div>
+    </nav>   
   </header>
 </template>
 

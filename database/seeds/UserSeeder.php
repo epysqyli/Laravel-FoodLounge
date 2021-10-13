@@ -257,7 +257,7 @@ class UserSeeder extends Seeder
         $user->description = 'Gustosi panini e patatine, insalate, sfiziosità e colazioni';
         $user->vat = rand(intval(11111111111),intval(99999999999));
         $user->slug = Str::slug($user->name);
-        $user->profile_image = "https://picsum.photos/300/300";
+        $user->profile_image = "https://www.myusa.it/wp-content/uploads/2019/06/migliori-fast-food-america.jpg";
         $user->cover_image = "https://static.ohga.it/wp-content/uploads/sites/24/2019/03/cibo-nei-fast-food-qualit%C3%A0-peggiorata.jpg";
         $user->save();
 
@@ -559,7 +559,7 @@ class UserSeeder extends Seeder
         $user->description = 'Da Vanilla Bakery potrai gustare tantissime ricette diverse';
         $user->vat = rand(intval(11111111111),intval(99999999999));
         $user->slug = Str::slug($user->name);
-        $user->profile_image = "https://lh3.googleusercontent.com/proxy/BTuqmMU6rz0rT5cyHJm8RfS6eQEQ87WTfItu5qsthj2-1mKUaVyz375XHc-DU6HzD9EqDD--H2Tz4hXAzzm2-GQOAgFIDJiqCHdT_IamoEaGKXxo5DTaJXLdrw1IObHynUNnJH6ZuA";
+        $user->profile_image = "https://media-cdn.tripadvisor.com/media/photo-s/1a/ac/a4/79/img-20200121-223653-largejpg.jpg";
         $user->cover_image = "https://www.oubruncher.com/photos1/3037_3.jpg";
         $user->save();
 
@@ -572,7 +572,7 @@ class UserSeeder extends Seeder
         $user->description = 'nasce con il desiderio di rivoluzionare il concetto di pasticceria';
         $user->vat = rand(intval(11111111111),intval(99999999999));
         $user->slug = Str::slug($user->name);
-        $user->profile_image = "https://lh3.googleusercontent.com/proxy/qH9f-uOz9zpQMMS0BmtIOmQDy0o5m7jVspliBCPNblHV5gFYIs_JwbnUewd65VBpcdSBa2TDVYulvCVHqvi1ahWGS1gkvtPFginoyk4aknz7yE3Qm2lu5S1kNHmm3Arsdl4DXpdUDraCSeurHoyYgjwjcpc";
+        $user->profile_image = "https://i2.wp.com/www.puntarellarossa.it/wp/wp-content/uploads/2015/10/cannoli-siciliani-850x570_6.jpg?fit=850%2C570&ssl=1";
         $user->cover_image = "https://www.lacannoleriagourmet.it/resources/images/homepage/slider/cannoli.jpg0";
         $user->save();
 

@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="container">
-      <div class="row py-5">
+      <div class="row">
         <div
           class="col-10 offset-1 col-sm-6 offset-sm-0 col-md-10 offset-md-1 col-lg-6 mx-auto ml-lg-0"
           v-for="restaurant in restaurants"
@@ -9,13 +9,15 @@
         >
           <RestaurantCard :restaurant="restaurant" />
         </div>
+
+        
       </div>
     </div>
   </main>
 </template>
 
 <script>
-import RestaurantCard from "../components/RestaurantCard.vue";
+import RestaurantCard from "../pages/RestaurantCard.vue";
 export default {
   name: "Categories",
   components: {
@@ -53,7 +55,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main{
-  background-color: #4FB3E4;
+
+main {
+      background-color: #4FB3E4;  
+      padding-top: 100px;
+      padding-bottom: 200px;
 }
 </style>
