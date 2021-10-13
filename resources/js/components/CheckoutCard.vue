@@ -114,10 +114,17 @@ export default {
       this.cart.items.forEach((item) => (sum += item.price * item.quantity));
       this.cart.total = sum;
     },
+
+    addBtreeScript() {
+      let btreeScript = document.createElement('script');
+      btreeScript.setAttribute('src', "https://js.braintreegateway.com/web/dropin/1.31.2/js/dropin.min.js");
+      document.head.appendChild(btreeScript);
+    }
   },
 
   mounted() {
     this.buildCart();
+    this.addBtreeScript();
   },
 };
 </script>
