@@ -147,7 +147,6 @@ export default {
   mounted() {
     this.getRestaurant();
     this.updateCartToMatchStorage();
-    // clean cart if on a different restaurant page
   },
 
   updated() {
@@ -173,8 +172,21 @@ export default {
     },
 
     addProduct(item) {
+      // clean up cart if foods from other restaurants are present
+      this.cleanUp(item);
+
       item.quantity = 1;
       this.addToStorage(item);
+    },
+
+    cleanUp(item) {
+      if (!!localStorage.length) {
+        const oldItem = JSON.parse(Object.values(localStorage)[0]);
+        if (oldItem.user_id != item.user_id) {
+          localStorage.clear();
+          this.updateCartToMatchStorage();
+        }
+      }
     },
 
     decrementQty(item) {
