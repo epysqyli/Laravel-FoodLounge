@@ -11,24 +11,14 @@
       </div>
 
       <div class="row">
-        <div
-          class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
-          v-for="category in categories"
-          :key="category.id"
-        >
-          <CategoryCard
-            :category="category"
-            @toggleChoice="toggleChoice(category.slug)"
-          />
+        <div class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2" v-for="category in categories" :key="category.id">
+          <CategoryCard :category="category" @toggleChoice="toggleChoice(category.slug)"/>
         </div>
       </div>
 
       <div class="row">
         <div class="col-12 mt-4">
-          <router-link
-            style="text-decoration: none; color: inherit"
-            :to="{ name: 'categories', params: { names: queryChoices } }"
-          >
+          <router-link style="text-decoration: none; color: inherit" :to="{ name: 'categories', params: { names: queryChoices } }">
             <div class="d-block w-50 btn btn-outline-primary mx-auto mt-5 bg-light" v-if="userChoices.length != 0">
               <!-- Go -->
               <span>Go</span>
