@@ -87,6 +87,21 @@
             :value="cart.items[0].user_id"
           />
           <input type="hidden" id="amount" name="amount" :value="cart.total" />
+
+          <template v-for="item in cart.items">
+            <input
+              type="hidden"
+              name="foods[]"
+              :value="item.id"
+              :key="item.id"
+            />
+            <input
+              type="hidden"
+              name="foods[]"
+              :value="item.quantity"
+              :key="item.id"
+            />
+          </template>
         </form>
       </div>
 
@@ -152,7 +167,7 @@ export default {
       const token = await req.json();
 
       // call braintree function
-      const form = document.getElementById('payment-form');
+      const form = document.getElementById("payment-form");
       braintree.dropin
         .create({
           authorization: token.token,
