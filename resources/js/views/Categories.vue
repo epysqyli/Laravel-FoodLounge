@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import RestaurantCard from "../components/RestaurantCard.vue";
+import RestaurantCard from "../pages/RestaurantCard.vue";
 export default {
   name: "Categories",
   components: {

@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import CategoryCard from "../components/CategoryCard.vue";
+import CategoryCard from "../pages/CategoryCard.vue";
 
 export default {
   name: "Home",

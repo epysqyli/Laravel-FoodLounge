@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import CheckoutCard from "../components/CheckoutCard.vue";
+import CheckoutCard from "../pages/CheckoutCard.vue";
 
 export default {
   name: "Categories",
