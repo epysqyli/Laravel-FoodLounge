@@ -5,10 +5,9 @@
 
         <!-- lato sx -->
         <div class="col-6 text-center">
-            <h2 class="logo">
-              <a href="https://www.boolean.careers"><img  style="height: 25px;" src="https://www.boolean.careers/images/misc/logo-small.png" alt=""></a>          
-              <i class="fas fa-utensils"></i>
-                Deliveboo
+            <h2>
+              <a href="https://www.boolean.careers"><img  style="height: 25px;" src="https://www.boolean.careers/images/misc/logo-small.png" alt=""></a>         
+              Deliveboo
             </h2>      
             <p class="text-light">Progetto conclusivo post <br>
               formazione <span><a class="text-light" href="https://www.boolean.careers">Boolean Carrers 2021</a></span> </p>            
@@ -39,8 +38,8 @@
       </div>
 
       <!-- lato inferiore -->
-      <div class="col-12 d-flex justify-content-center border-top border-white p-2">
-          <span>Copyright Deliveboo &copy;2021</span>
+      <div class="col-12 d-flex justify-content-center border-top text-white border-dark p-2">
+          <p>Copyright Deliveboo &copy;2021</p>
       </div>
     </div>
   </footer>
