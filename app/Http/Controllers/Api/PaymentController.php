@@ -25,6 +25,11 @@ class PaymentController extends Controller
                 'submitForSettlement' => True
             ]
         ]);
-        return response()->json(compact('res'));
+
+        // save order into the DB
+        
+        // redirect to some page that makes sense
+        // return response()->json(compact('res'));
+        return redirect('http://localhost:8000');
     }
 }

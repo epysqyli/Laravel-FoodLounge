@@ -33,7 +33,7 @@
           </div>
 
           <div class="form-group">
-            <label for="customer_address">Customer Address</label>
+            <label for="customer_address">Delivery Address</label>
             <input
               type="text"
               class="form-control"
@@ -45,7 +45,7 @@
           </div>
 
           <div class="form-group">
-            <label for="customer_email">Customer Address</label>
+            <label for="customer_email">Email Address</label>
             <input
               type="email"
               class="form-control"
