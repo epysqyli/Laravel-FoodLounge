@@ -33,7 +33,7 @@
     <router-view></router-view>
     
     
-  
+  </div>
   </div>
   <!-- end content -->
 </template>
@@ -96,21 +96,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content{
-  background-color: #4FB3E4;
+.content {
+  background-color: #4fb3e4;
   height: 100%;
   overflow: hidden;
   padding-bottom: 150px;
-  .btn{
-    &:hover{
+  .btn {
+    &:hover {
       box-shadow: 5px 10px 8px -6px black;
       background-color: hsl(10%, 10%, 80%);
       cursor: pointer;
     }
-    &:hover span{
-      color: #4FB3E4;
+    &:hover span {
+      color: #4fb3e4;
     }
   }
-  
 }
 </style>    
