@@ -9,6 +9,8 @@
         >
           <RestaurantCard :restaurant="restaurant" />
         </div>
+
+        
       </div>
     </div>
   </main>
@@ -54,8 +56,7 @@ export default {
 
 <style lang="scss" scoped>
 main{
-  background-color: #4FB3E4;
-  // background-color: red;
+  background-color: #4FB3E4;  
   padding-top: 100px;
   padding-bottom: 200px;
 }
