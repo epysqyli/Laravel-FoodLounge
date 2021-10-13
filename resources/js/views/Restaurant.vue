@@ -26,7 +26,7 @@
                 <tr v-for="(food,index) in foods" :key="index">
                   <th scope="row">1</th>
                   <td> <img
-                            class="w-100"
+                            class="card-img"
                             :src="
                               food.image[0] == 'h'
                                 ? food.image
@@ -166,13 +166,6 @@ export default {
 
 <style lang="scss" scoped>
 
-td img{
-  height: 100px;
-  width: 50px;
-    object-fit: cover;
-    vertical-align: middle;
-}
-
 h2 {
   font-size: 40px;
   color: #ffd60a;
@@ -180,4 +173,5 @@ h2 {
 .card {
   border: none;
 }
+
 </style>

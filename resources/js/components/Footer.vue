@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="container">
-      <div class="row pt-3">
+      <div class="row pt-2">
 
         <!-- lato sx -->
         <div class="col-6 text-center">
@@ -9,16 +9,15 @@
               <a href="https://www.boolean.careers"><img  style="height: 25px;" src="https://www.boolean.careers/images/misc/logo-small.png" alt=""></a>         
               Deliveboo
             </h2>      
-            <p class="text-light">Progetto conclusivo post <br>
-              formazione <span><a class="text-light" href="https://www.boolean.careers">Boolean Carrers 2021</a></span> </p>            
+            <p class="text-light">Progetto conclusivo post formazione <span><a class="text-light" href="https://www.boolean.careers">Boolean Carrers 2021</a></span> </p>            
         </div>        
           
         <!-- lato dx -->
-        <div class="col-6 ">
+        <div class="col-6 p-2">
           <div class="text-center">
             <h2>Powered by</h2>
           </div>            
-          <div class="d-flex justify-content-around pt-2">
+          <div class="d-flex justify-content-around">
             <ul style="list-style-type: none;">                    
               <li>
                   <a class="text-light 2rem" href="https://www.linkedin.com/in/elvis-pysqyli-542986105/"><i class="bi bi-linkedin mr-2 "></i>Elvis</a>                  

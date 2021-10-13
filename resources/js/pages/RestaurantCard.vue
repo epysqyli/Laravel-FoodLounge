@@ -69,11 +69,17 @@ h5, p {
   img {
     border-radius: 20px;
     object-fit: cover;
-    height: 200px;
+    height: 180px;
   }
 
-
+  .card-body{
+  height: 180px;
+  text-overflow: ellipsis;
+  overflow: scroll;
+  }
 }
+
+
 
 
 </style>

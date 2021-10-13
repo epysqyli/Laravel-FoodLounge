@@ -106,6 +106,7 @@ export default {
   background-color: #4FB3E4;
   height: 100%;
   overflow: hidden;
+  padding-bottom: 150px;
   .btn{
     &:hover{
       box-shadow: 5px 10px 8px -6px black;
