@@ -55,6 +55,7 @@ export default {
 footer {
   background-color: rgb(238, 108, 94);  
   position:fixed;
+  height: 150px;
   bottom:0;
   left: 0;
   width: 100%;  
