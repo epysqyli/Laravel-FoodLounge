@@ -18,7 +18,7 @@
           <div class="text-center">
             <h2>Powered by</h2>
           </div>            
-          <div class="d-flex justify-content-around">
+          <div class="d-flex justify-content-around pt-2">
             <ul style="list-style-type: none;">                    
               <li>
                   <a class="text-light 2rem" href="https://www.linkedin.com/in/elvis-pysqyli-542986105/"><i class="bi bi-linkedin mr-2 "></i>Elvis</a>                  
@@ -38,7 +38,7 @@
       </div>
 
       <!-- lato inferiore -->
-      <div class="col-12 d-flex justify-content-center border-top text-white border-dark p-2">
+      <div class="col-12 d-flex justify-content-center border-top text-white border-dark p-1">
           <p>Copyright Deliveboo &copy;2021</p>
       </div>
     </div>
@@ -64,5 +64,11 @@ footer {
   //     max-width: 20px;
   //   }
   // }
+  ul li{
+    display: inline-block;
+    a{
+      margin: 10px;
+    }
+  }
 }
 </style> 
