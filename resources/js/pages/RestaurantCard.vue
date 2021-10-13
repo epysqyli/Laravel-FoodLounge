@@ -31,7 +31,11 @@ export default {
 
   methods: {
     limitParagraph(text) {
+<<<<<<< HEAD
       return `${text.split(" ").slice(0, 30).join(" ")} ...`;
+=======
+      return `${text.split(" ").slice(0, 50).join(" ")} ...`;
+>>>>>>> refs/remotes/origin/master
     },
   },
 };
@@ -63,6 +67,7 @@ h5, p {
   }
 
   .card-body{
+<<<<<<< HEAD
     height: 180px;  
   }
 }
@@ -70,4 +75,15 @@ h5, p {
 
 
 
+=======
+    height: 180px;
+    width: 85%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    // padding: 10px;
+  } 
+}
+
+>>>>>>> refs/remotes/origin/master
 </style>
