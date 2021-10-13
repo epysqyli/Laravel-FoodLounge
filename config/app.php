@@ -229,4 +229,10 @@ return [
 
     ],
 
+    // Braintree env variables
+    'btree_env' => env('BTREE_ENV'),
+    'merchantId' => env('MERCHANT_ID'),
+    'publicKey' => env('PUBLIC_KEY'),
+    'privateKey' => env('PRIVATE_KEY'),
+
 ];
