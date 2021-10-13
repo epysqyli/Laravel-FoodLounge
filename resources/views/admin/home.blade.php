@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@dd($data);
-
 @section('content')
     <div class="container backend">
         <div class="row mx-1 pt-4 rounded border bg-light">

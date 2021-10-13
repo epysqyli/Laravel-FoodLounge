@@ -30,6 +30,6 @@ class PaymentController extends Controller
         
         // redirect to some page that makes sense
         // return response()->json(compact('res'));
-        return redirect('http://localhost:8000');
+        return redirect('http://localhost:8000/payment-result');
     }
 }
