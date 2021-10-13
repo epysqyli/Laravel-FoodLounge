@@ -667,7 +667,7 @@ class FoodSeeder extends Seeder
         $food->description = "La nostra descrizione";
         $food->ingredients = "Carne 100% bovina da allevamenti italiani, arricchita con cipolla a dadini, cetriolo, ketchup e senape. L’Hamburger, un panino semplice che non passa mai di moda.";
         $food->visible = true;
-        $food->image = "aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC8zYzk5ODMyMi04YmZiLTQwNDQtOTNkZC01NTNmNWJlMWRmYjguanBlZw";
+        $food->image = "https://www.spadellandia.it/upload/ricette/Big-hamburger-al-bacon_9906_.jpg";
         $food->save();
 
         // catgoria fast food 4 id 19
@@ -881,7 +881,7 @@ class FoodSeeder extends Seeder
         $food->description = 'Riso, Feta, Olive, Avocado, Fagioli Rossi, Mais, Pico De Gallo, Cavolo Cappuccio, Peperoni e Guacamole';
         $food->ingredients = 'Riso, Feta, Olive, Avocado, Fagioli Rossi, Mais, Pico De Gallo, Cavolo Cappuccio, Peperoni e Guacamole';
         $food->visible = 1;
-        $food->image = "https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC81Y2VhZDhlMi1jNTlkLTRiYjYtODFjNS1lYTUwYzc0ODk0ODMuanBlZw==0";
+        $food->image = "https://www.vegolosi.it/wp-content/uploads/2019/07/OK-Poke-bowl_2520_650.jpg";
         $food->additional_details = '...';
         $food->save();
 
@@ -1132,7 +1132,7 @@ class FoodSeeder extends Seeder
         $food->description = "In Croccante Impanatura Panko, con Salsa Curry Aromatica, con un Contorno di Riso e Insalata Mista.";
         $food->ingredients = "Impanatura panko, salsa curry aromatica, riso e insalata mista.";
         $food->visible = 1;
-        $food->image = '' ;
+        $food->image = 'https://images.japancentre.com/recipes/pics/301/main/301_Chicken_Katsu_Curry.jpg?1469573012' ;
         $food->additional_details = '...';
         $food->save();
 

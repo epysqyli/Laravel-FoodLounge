@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="container">
-      <div class="row">
+      <div class="row pt-3">
 
         <!-- lato sx -->
         <div class="col-6 text-center">
@@ -53,8 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  background-color: rgb(238, 108, 94);
-  padding: 30px;
+  background-color: rgb(238, 108, 94);  
   position:fixed;
   bottom:0;
   left: 0;
