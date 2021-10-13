@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-12 mt-3">
         <div class="card text-center border">
           <div class="card-header">{{ restaurant.name }}</div>
@@ -9,8 +9,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
+    <!-- Display foods -->
     <table class="table">
       <thead>
         <tr>
@@ -39,23 +40,23 @@
           <td>{{ food.name }}</td>
           <td class="d-flex justify-content-around align-items-center">
             <div
-              class="btn btn-outline-danger font-weight-bold px-3"
-              @click="decrementQty(food)"
+              class="btn btn-outline-danger font-weight-bold px-2"
+              @click="removeProduct(food)"
             >
-              -
+              Remove
             </div>
-            <div>{{ food.quantity }}</div>
             <div
-              class="btn btn-outline-primary font-weight-bold px-3"
-              @click="incrementQty(food)"
+              class="btn btn-outline-primary font-weight-bold px-4"
+              @click="addProduct(food)"
             >
-              +
+              Add
             </div>
           </td>
         </tr>
       </tbody>
     </table>
 
+    <!-- Cart -->
     <div class="row mt-4">
       <b-sidebar id="sidebar-right" title="Cart" right shadow>
         <div class="overflow-hidden">
@@ -73,10 +74,17 @@
                 <div>{{ item.name }}</div>
                 <div>{{ item.price }} &euro;</div>
                 <div
-                  class="btn btn-outline-danger"
-                  @click="removeFromCart(item)"
+                  class="btn btn-outline-danger font-weight-bold px-3"
+                  @click="decrementQty(item)"
                 >
-                  Remove
+                  -
+                </div>
+                <div>{{ item.quantity }}</div>
+                <div
+                  class="btn btn-outline-primary font-weight-bold px-3"
+                  @click="incrementQty(item)"
+                >
+                  +
                 </div>
               </div>
               <div
@@ -126,6 +134,7 @@ export default {
 
   mounted() {
     this.getRestaurant();
+    this.updateCartToMatchStorage();
   },
 
   updated() {
@@ -144,6 +153,15 @@ export default {
           });
         })
         .catch((error) => console.log(error));
+    },
+
+    removeProduct(item) {
+      this.removeFromStorage(item);
+    },
+
+    addProduct(item) {
+      item.quantity = 1;
+      this.addToStorage(item);
     },
 
     decrementQty(item) {
@@ -168,15 +186,24 @@ export default {
         localStorage.removeItem(item.name);
         localStorage.setItem(item.name, JSON.stringify(item));
       }
+      this.updateCartToMatchStorage();
     },
 
     removeFromStorage(item) {
       localStorage.removeItem(item.name);
+      this.updateCartToMatchStorage();
+    },
+
+    updateCartToMatchStorage() {
+      this.cart.items = [];
+      Object.keys(localStorage).forEach((key) => {
+        this.cart.items.push(JSON.parse(localStorage.getItem(key)));
+      });
     },
 
     getTotal() {
       let sum = null;
-      this.cart.items.forEach((item) => (sum += item.price));
+      this.cart.items.forEach((item) => (sum += item.price * item.quantity));
       return sum.toFixed(2);
     },
   },
