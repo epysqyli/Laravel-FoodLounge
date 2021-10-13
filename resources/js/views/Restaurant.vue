@@ -38,16 +38,26 @@
           </td>
           <td>{{ food.price }}</td>
           <td>{{ food.name }}</td>
-          <td class="d-flex justify-content-around align-items-center">
+          <td class="d-flex justify-content-center align-items-center">
             <div
-              class="btn btn-outline-danger font-weight-bold px-2"
+              class="btn btn-outline-danger font-weight-bold px-2 mr-2"
               @click="removeProduct(food)"
+              :class="
+                cart.items.find((el) => food.id === el.id)
+                  ? 'clickable'
+                  : 'notClickable'
+              "
             >
               Remove
             </div>
             <div
               class="btn btn-outline-primary font-weight-bold px-4"
               @click="addProduct(food)"
+              :class="
+                cart.items.find((el) => food.id === el.id)
+                  ? 'notClickable'
+                  : 'clickable'
+              "
             >
               Add
             </div>
@@ -129,6 +139,8 @@ export default {
         items: [],
         total: null,
       },
+      disabled: "disabled",
+      active: "active",
     };
   },
 
@@ -224,5 +236,14 @@ h2 {
 }
 .card {
   border: none;
+}
+
+.notClickable {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.clickable {
+  opacity: 1;
 }
 </style>

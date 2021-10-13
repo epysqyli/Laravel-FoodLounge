@@ -16,7 +16,7 @@
           </a>
         </router-link>
 
-        <form class="d-flex align-items-center">
+        <div class="d-flex align-items-center">
           <b-button class="btn btn-secondary rounded" v-b-toggle.sidebar-right>
             <h1><i class="bi bi-cart"></i></h1
           ></b-button>
@@ -24,7 +24,7 @@
           <a href="http://localhost:8000/api/user" class="d-block btn btn-outline-primary py-2 ml-2"
             >Admin area</a
           >
-        </form>
+        </div>
       </div>
     </nav>
   </header>
