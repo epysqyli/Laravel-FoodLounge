@@ -41,6 +41,9 @@
                                 </div>
                             </div>
                         </form>
+                        <a href="{{ Route('admin.types.index') }}" class="btn btn-secondary text-white">
+                            <span>Torna indietro</span>
+                        </a>
                     </div>
                 </div>
             </div>
