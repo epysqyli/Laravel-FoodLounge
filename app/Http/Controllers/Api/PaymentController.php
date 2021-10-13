@@ -20,6 +20,15 @@ class PaymentController extends Controller
         $res = $gateway->transaction()->sale([
             'amount' => $request->amount,
             'merchantAccountId' => 'randomId1234',
+            'customer' => [
+                'firstName' => $request->customer_name,
+                'lastName' => $request->customer_surname,
+                'email' => $request->customer_email,
+                'phone' => $request->phone_number,
+            ],
+            'billing' => [
+                'streetAddress' => $request->customer_address,
+            ],
             'paymentMethodNonce' => $request->payment_method_nonce,
             'options' => [
                 'submitForSettlement' => True
@@ -27,9 +36,8 @@ class PaymentController extends Controller
         ]);
 
         // save order into the DB
-        
-        // redirect to some page that makes sense
-        // return response()->json(compact('res'));
-        return redirect('http://localhost:8000/payment-result');
+
+        return response()->json(compact('res'));
+        // return redirect('http://localhost:8000/payment-result');
     }
 }
