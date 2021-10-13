@@ -147,6 +147,7 @@ export default {
   mounted() {
     this.getRestaurant();
     this.updateCartToMatchStorage();
+    // clean cart if different restaurants
   },
 
   updated() {
@@ -165,6 +166,8 @@ export default {
           });
         })
         .catch((error) => console.log(error));
+      // clean cart if different restaurant - implement better
+      this.clearStorage();
     },
 
     removeProduct(item) {
@@ -219,6 +222,17 @@ export default {
       let sum = null;
       this.cart.items.forEach((item) => (sum += item.price * item.quantity));
       return sum.toFixed(2);
+    },
+
+    // check
+    clearStorage() {
+      if (localStorage.length) {
+        const food = Object.values(localStorage)[0];
+        if (food.id != this.restaurant.id) {
+          localStorage.clear();
+          this.updateCartToMatchStorage();
+        }
+      }
     },
   },
 };
