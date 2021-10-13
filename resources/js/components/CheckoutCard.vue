@@ -129,18 +129,18 @@ export default {
 
   methods: {
     buildCart() {
-      // run on mounted()
+      this.cart.items = [];
+      Object.keys(localStorage).forEach((key) => {
+        this.cart.items.push(JSON.parse(localStorage.getItem(key)));
+      });
+      let sum = null;
+      this.cart.items.forEach((item) => (sum += item.price * item.quantity));
+      this.cart.total = sum;
     },
   },
 
   mounted() {
-    this.cart.items = [];
-    Object.keys(localStorage).forEach((key) => {
-      this.cart.items.push(JSON.parse(localStorage.getItem(key)));
-    });
-    let sum = null;
-    this.cart.items.forEach((item) => (sum += item.price * item.quantity));
-    this.cart.total = sum;
+    this.buildCart();
   },
 };
 </script>
