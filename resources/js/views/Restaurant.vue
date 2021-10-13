@@ -10,6 +10,7 @@
         </div>
       </div>
     </div>
+
     <table class="table">
       <thead>
         <tr>
@@ -20,44 +21,91 @@
           <th scope="col">Buy</th>
         </tr>
       </thead>
-      <tbody >
-        <tr v-for="(food,index) in foods" :key="index">
+      <tbody>
+        <tr v-for="(food, index) in foods" :key="index">
           <th scope="row">1</th>
-          <td> 
-            <img class="w-100" :src="food.image[0] == 'h'? food.image:`http://localhost:8000/storage/${food.image}`" :alt="food.name"/>
-          </td>        
-          <td>{{food.price}}</td>
-          <td>{{food.name}}</td>
-            <td>
-              <div class=" btn btn-success mx-auto w-2 mt-2" @click="addToCart(food)">
-                <h3>Add To Cart</h3>                    
-              </div>
-            </td>
+          <td>
+            <img
+              class="w-100"
+              :src="
+                food.image[0] == 'h'
+                  ? food.image
+                  : `http://localhost:8000/storage/${food.image}`
+              "
+              :alt="food.name"
+            />
+          </td>
+          <td>{{ food.price }}</td>
+          <td>{{ food.name }}</td>
+          <td class="d-flex justify-content-around align-items-center">
+            <div
+              class="btn btn-outline-danger font-weight-bold px-3"
+              @click="decrementQty(food)"
+            >
+              -
+            </div>
+            <div>{{ food.quantity }}</div>
+            <div
+              class="btn btn-outline-primary font-weight-bold px-3"
+              @click="incrementQty(food)"
+            >
+              +
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
-    <div class="row mt-4"> 
+
+    <div class="row mt-4">
       <b-sidebar id="sidebar-right" title="Cart" right shadow>
-        <div class=" overflow-hidden">
-          <div class=" mx-1 ">                      
-            <div class="container mx-auto border rounded" v-if="cart.items.length != 0" >
+        <div class="overflow-hidden">
+          <div class="mx-1">
+            <div
+              class="container mx-auto border rounded"
+              v-if="cart.items.length != 0"
+            >
               <h1><i class="bi bi-cart"></i></h1>
-              <div class="d-flex justify-content-between align-items-center my-1" v-for="item in cart.items" :key="item.id">
-                <div>{{ item.name }} </div>              
+              <div
+                class="d-flex justify-content-between align-items-center my-1"
+                v-for="item in cart.items"
+                :key="item.id"
+              >
+                <div>{{ item.name }}</div>
                 <div>{{ item.price }} &euro;</div>
-                <div class="btn btn-outline-danger" @click="removeFromCart(item)">Remove</div>
+                <div
+                  class="btn btn-outline-danger"
+                  @click="removeFromCart(item)"
+                >
+                  Remove
+                </div>
               </div>
-              <div class="d-flex justify-content-between align-items-center mt-3 mb-1 ">
+              <div
+                class="
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                  mt-3
+                  mb-1
+                "
+              >
                 <div>Totale: {{ cart.total }} &euro;</div>
-                  <router-link style="text-decoration: none; color: inherit; width: 50%; display: block" :to="{ name: 'checkout' }" > 
-                    <a class="navbar-brand">CheckOut</a>
-                  </router-link>              
+                <router-link
+                  style="
+                    text-decoration: none;
+                    color: inherit;
+                    width: 50%;
+                    display: block;
+                  "
+                  :to="{ name: 'checkout' }"
+                >
+                  <a class="navbar-brand">CheckOut</a>
+                </router-link>
               </div>
             </div>
           </div>
-        </div>                        
-      </b-sidebar>       
-    </div>   
+        </div>
+      </b-sidebar>
+    </div>
   </div>
 </template>
 
@@ -91,18 +139,39 @@ export default {
 
         .then((response) => {
           this.restaurant = response.data;
-          this.foods = this.restaurant.foods;
+          this.foods = this.restaurant.foods.map((food) => {
+            return { ...food, quantity: 0 };
+          });
         })
-        .catch();
+        .catch((error) => console.log(error));
+    },
+
+    decrementQty(item) {
+      if (item.quantity > 0) {
+        item.quantity--;
+      }
+
+      if (item.quantity == 0) {
+        this.removeFromCart(item);
+      }
+    },
+
+    incrementQty(item) {
+      item.quantity++;
+      this.addToCart(item);
     },
 
     addToCart(item) {
-      this.cart.items.push(item);
+      if (localStorage.getItem(item.name) === null) {
+        localStorage.setItem(item.name, JSON.stringify(item));
+      } else {
+        localStorage.removeItem(item.name);
+        localStorage.setItem(item.name, JSON.stringify(item));
+      }
     },
-    
 
     removeFromCart(item) {
-      this.cart.items.splice(this.cart.items.indexOf(item), 1);
+      localStorage.removeItem(item.name);
     },
 
     getTotal() {
@@ -115,12 +184,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-td img{
+td img {
   height: 100px;
   width: 50px;
-    object-fit: cover;
-    vertical-align: middle;
+  object-fit: cover;
+  vertical-align: middle;
 }
 
 h2 {
