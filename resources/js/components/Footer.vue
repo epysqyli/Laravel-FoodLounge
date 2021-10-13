@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="container">
-      <div class="row pt-2">
+      <div class="row pt-3">
 
         <!-- lato sx -->
         <div class="col-6 text-center">
@@ -13,7 +13,7 @@
         </div>        
           
         <!-- lato dx -->
-        <div class="col-6 p-2">
+        <div class="col-6">
           <div class="text-center">
             <h2>Powered by</h2>
           </div>            
@@ -37,7 +37,7 @@
       </div>
 
       <!-- lato inferiore -->
-      <div class="col-12 d-flex justify-content-center border-top text-white border-dark p-1">
+      <div class="col-12 d-flex justify-content-center border-top text-white border-dark">
           <p>Copyright Deliveboo &copy;2021</p>
       </div>
     </div>
@@ -57,7 +57,7 @@ footer {
   height: 150px;
   bottom:0;
   left: 0;
-  width: 100%;  
+  width: 100%;    
 
   // .column-boolean{
   //   img{
