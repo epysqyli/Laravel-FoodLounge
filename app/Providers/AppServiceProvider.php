@@ -15,11 +15,13 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $gateway = new Braintree\Gateway([
+        $gateway = new \Braintree\Gateway([
             'environment' => env('BTREE_ENV'),
             'merchantId' => env('MERCHANT_ID'),
             'publicKey' => env('PUBLIC_KEY'),
             'privateKey' => env('PRIVATE_KEY'),
         ]);
+
+        config(['braintree' => $gateway]);
     }
 }
