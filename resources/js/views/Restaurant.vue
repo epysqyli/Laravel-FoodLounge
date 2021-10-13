@@ -152,16 +152,16 @@ export default {
       }
 
       if (item.quantity == 0) {
-        this.removeFromCart(item);
+        this.removeFromStorage(item);
       }
     },
 
     incrementQty(item) {
       item.quantity++;
-      this.addToCart(item);
+      this.addToStorage(item);
     },
 
-    addToCart(item) {
+    addToStorage(item) {
       if (localStorage.getItem(item.name) === null) {
         localStorage.setItem(item.name, JSON.stringify(item));
       } else {
@@ -170,7 +170,7 @@ export default {
       }
     },
 
-    removeFromCart(item) {
+    removeFromStorage(item) {
       localStorage.removeItem(item.name);
     },
 
