@@ -11,15 +11,21 @@ const router = new VueRouter({
     mode: "history",
     routes: [
         {
-            path: "/",
-            name: "home",
+            path: "",
+            name: 'home',
             component: Home,
-        },
-        {
-            path: "/categories/:names",
-            name: "categories",
+         
+           children: [{
+            name: 'categories',
+            path: '/categories/:names',
             component: Categories,
+          }],
         },
+        // {
+        //     path: "/categories/:names",
+        //     name: "categories",
+        //     component: Categories,
+        // },
         {
             path: "/restaurants/:slug",
             name: "restaurants",
