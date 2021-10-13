@@ -179,6 +179,8 @@ export default {
     decrementQty(item) {
       if (item.quantity > 0) {
         item.quantity--;
+        // localstorage needs to be updated here too
+        this.addToStorage(item);
       }
 
       if (item.quantity == 0) {
