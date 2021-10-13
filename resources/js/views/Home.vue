@@ -15,7 +15,8 @@
           <CategoryCard :category="category" @toggleChoice="toggleChoice(category.slug)"/>
         </div>
 
-        <div class="col-12 mt-4 ">
+      <div class="row">
+        <div class="col-12 mt-4">
           <router-link style="text-decoration: none; color: inherit" :to="{ name: 'categories', params: { names: queryChoices } }">
             <div class="d-block w-50 btn btn-outline-primary mx-auto mt-5 bg-light" v-if="userChoices.length != 0">
               <!-- Go -->
@@ -97,8 +98,9 @@ export default {
 <style lang="scss" scoped>
 .content{
   background-color: #4FB3E4;
-  height: calc(100vh - 150px);
-  // overflow-y: scroll;  
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 150px;
   .btn{
     &:hover{
       box-shadow: 5px 10px 8px -6px black;

@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="container">
-      <div class="row pt-3">
+      <div class="row pt-2">
 
         <!-- lato sx -->
         <div class="col-6 text-center">
@@ -13,7 +13,7 @@
         </div>        
           
         <!-- lato dx -->
-        <div class="col-6">
+        <div class="col-6 p-2">
           <div class="text-center">
             <h2>Powered by</h2>
           </div>            

@@ -117,7 +117,6 @@ export default {
     addToCart(item) {
       this.cart.items.push(item);
     },
-    
 
     removeFromCart(item) {
       this.cart.items.splice(this.cart.items.indexOf(item), 1);
@@ -133,11 +132,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content{
-  background-color: #4FB3E4;
-  // background-color: red;
-  padding-top: 100px;
-  padding-bottom: 150px;
+td img {
+  height: 100px;
+  width: 50px;
+  object-fit: cover;
+  vertical-align: middle;
 }
 h2 {
   font-size: 40px;

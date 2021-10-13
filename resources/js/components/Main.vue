@@ -11,8 +11,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//  main{
-//    overflow-y: scroll;
-//  }
-
+  
 </style> 

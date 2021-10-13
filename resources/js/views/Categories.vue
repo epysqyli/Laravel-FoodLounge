@@ -58,6 +58,11 @@ export default {
 main{
   background-color: #4FB3E4;  
   padding-top: 100px;
+<<<<<<< HEAD
+  padding-bottom: 100px;
+  
+=======
   padding-bottom: 200px;
+>>>>>>> a8959434a89983ba74081e6e31a46f1d9ddc8a5b
 }
 </style>
