@@ -57,7 +57,7 @@ main{
   background-color: #4FB3E4;
   // background-color: red;
   padding-top: 100px;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
   
 }
 </style>
