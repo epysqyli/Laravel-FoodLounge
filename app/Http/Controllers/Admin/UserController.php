@@ -50,6 +50,8 @@ class UserController extends Controller
 
         $user->save();
 
+        $user->categories()->sync($request->categories);
+
         return redirect()->route('admin.home');
     }
 }
