@@ -88,7 +88,8 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  background-color: rgb(238, 108, 94);
+  background: rgb(231,111,81);
+  background: linear-gradient(87deg, rgba(231,111,81,1) 0%, rgba(233,196,106,1) 100%);
   // position: fixed;
   height: 150px;
   bottom: 0;

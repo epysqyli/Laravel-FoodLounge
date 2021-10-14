@@ -1,29 +1,31 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center p-5">
-        <img  src="/image/Scooter.png" alt="">
-        <h2 class="text-center mx-auto pt-2">Bee Happy, Bee Healthy! Choose:</h2>
-      </div>
-
-      <div class="row mb-5">
-        <div
-          class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
-          v-for="category in categories"
-          :key="category.id"
-        >
-          <CategoryCard
-            :category="category"
-            @toggleChoice="toggleChoice(category.slug)"
-          />
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center p-5">
+          <img  src="/image/Scooter.png" alt="">
+          <h2 class="text-center mx-auto pt-2">Bee Happy, Bee Healthy! Choose:</h2>
         </div>
-      </div>
 
-      <Categories
-        :userChoices="userChoices"
-        ref="categories"
-        :categories="categories"
-      />
+        <div class="row mb-5">
+          <div
+            class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
+            v-for="category in categories"
+            :key="category.id"
+          >
+            <CategoryCard
+              :category="category"
+              @toggleChoice="toggleChoice(category.slug)"
+            />
+          </div>
+        </div>
+
+        <Categories
+          :userChoices="userChoices"
+          ref="categories"
+          :categories="categories"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -87,11 +89,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  min-height: 45vh;
-  
-  img{
-    width: 10%;
+.content{
+  background-color: #EFFBF9;
+  .container {
+    min-height: 45vh;
+    
+    img{
+      width: 10%;
+    }
   }
 }
+
 </style>    
