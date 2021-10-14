@@ -41,7 +41,7 @@ export default {
 
   methods: {
     limitParagraph(text) {
-      return `${text.split(" ").slice(0, 30).join(" ")} ...`;
+      return `${text.split(" ").slice(0, 20).join(" ")} ...`;
     },
   },
 };
@@ -57,6 +57,9 @@ p {
   border: none;
   border-radius: 20px;
   background-color: whitesmoke;
+  height: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   img {
     border-radius: 20px;
