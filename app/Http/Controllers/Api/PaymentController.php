@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
-
+use App\Mail\GuestMail;
+use App\Mail\UserMail;
+use Illuminate\Support\Facades\Mail;
 class PaymentController extends Controller
 {
     public function getToken()
@@ -62,6 +64,8 @@ class PaymentController extends Controller
         foreach ($foodData as $id => $qty) {
             $order->foods()->attach([$id => ['food_units' => $qty]]);
         }
+
+        // send emails here with Mail::to('email@account.com')->send(new GuestMail || UserMail)
         
         return redirect('http://localhost:8000/payment-result');
     }
