@@ -60,5 +60,9 @@ export default {
   background-color: hsl(40, 65%, 50%);
   font-weight: bold;
   box-shadow: 0 2px 5px -2px black inset;
+
+  &:hover {
+    box-shadow: 0 2px 5px -2px black inset;
+  }
 }
 </style>
