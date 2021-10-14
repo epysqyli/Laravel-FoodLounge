@@ -2,7 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center p-5">
-        <h2 class="text-center mx-auto">Bee Happy, Bee Healthy! Choose:</h2>
+        <img  src="/image/Scooter.png" alt="">
+        <h2 class="text-center mx-auto pt-2">Bee Happy, Bee Healthy! Choose:</h2>
       </div>
 
       <div class="row mb-5">
@@ -88,5 +89,9 @@ export default {
 <style lang="scss" scoped>
 .container {
   min-height: 45vh;
+  
+  img{
+    width: 10%;
+  }
 }
 </style>    
