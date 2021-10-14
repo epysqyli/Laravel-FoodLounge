@@ -53,12 +53,12 @@ export default {
 
   &:active {
     box-shadow: 5px 8px 12px -6px black;
-    background-color: #e2b33c;
   }
 }
 
 .selected {
   background-color: hsl(40, 65%, 50%);
   font-weight: bold;
+  box-shadow: 0 2px 5px -2px black inset;
 }
 </style>

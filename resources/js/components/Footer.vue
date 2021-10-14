@@ -88,19 +88,16 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  background: rgb(231,111,81);
-  background: linear-gradient(87deg, rgba(231,111,81,1) 0%, rgba(233,196,106,1) 100%);
-  // position: fixed;
+  background: linear-gradient(
+    87deg,
+    rgba(231, 111, 81, 1) 0%,
+    rgba(233, 196, 106, 1) 100%
+  );
   height: 150px;
   bottom: 0;
   left: 0;
   width: 100%;
 
-  // .column-boolean{
-  //   img{
-  //     max-width: 20px;
-  //   }
-  // }
   ul li {
     display: inline-block;
     a {
