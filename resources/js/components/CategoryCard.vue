@@ -30,11 +30,9 @@ export default {
 <style lang="scss" scoped>
 .category {
   border-radius: 5px;
-  box-shadow: 3px 8px -6px black;
   background-color: whitesmoke;
+  box-shadow: 3px 6px 8px -6px black;
   transition: box-shadow 200ms ease-out;
-  // transition: background-color 250ms ease-out;
-
 
   img {
     border-top-left-radius: 5px;
