@@ -56,8 +56,8 @@ p {
 .card {
   border: none;
   border-radius: 20px;
-  background-color: whitesmoke;
-
+  background: rgb(231,111,81);
+  background: linear-gradient(87deg, rgba(231,111,81,1) 0%, rgba(233,196,106,1) 100%);
   img {
     border-radius: 20px;
     object-fit: cover;
