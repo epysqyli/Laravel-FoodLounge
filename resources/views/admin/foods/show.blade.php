@@ -8,11 +8,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-md-4">
                 <img class="rounded w-100"
                     src={{ $food->image[0] == 'h' ? $food->image : asset('storage/' . $food->image) }} alt="">
             </div>
-            <div class="col-8">
+            <div class="col-12 col-md-8 mt-3 mt-md-0">
                 <table class="table table-light table-striped">
                     <tr>
                         <th>Food Id
