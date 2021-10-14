@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div
         class="
@@ -75,7 +75,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container{
-  padding-bottom: 200px;
+.container-fluid {
+  padding-bottom: 275px;
 }
 </style>
