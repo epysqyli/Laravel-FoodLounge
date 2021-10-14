@@ -41,7 +41,7 @@ export default {
 
   methods: {
     limitParagraph(text) {
-      return `${text.split(" ").slice(0, 30).join(" ")} ...`;
+      return `${text.split(" ").slice(0, 10).join(" ")} ...`;
     },
   },
 };
@@ -61,7 +61,7 @@ p {
   img {
     border-radius: 20px;
     object-fit: cover;
-    height: 200px;
+    height: 220px;
   }
 }
 </style>
