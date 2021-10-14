@@ -8,7 +8,8 @@
                     <div class="card-header">Aggiorna il tuo profilo</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('admin.users.update', $user->id) }}" enctype="multipart/form-data" id="edit-user-form">
+                        <form method="POST" action="{{ route('admin.users.update', $user->id) }}"
+                            enctype="multipart/form-data" id="edit-user-form">
                             @csrf
                             @method('PATCH')
 
@@ -148,14 +149,19 @@
                                     <button type="submit" class="btn btn-primary">
                                         Aggiorna profilo
                                     </button>
-                                    <a class="d-block btn btn-danger w-50 mx-2" href={{ route('password.request') }}>Change password</a>
+                                    <a class="d-block btn btn-danger w-50 mx-2"
+                                        href={{ route('password.request') }}>Change password</a>
                                 </div>
                             </div>
                         </form>
 
-                        <a href="{{ Route('admin.home') }}" class="btn btn-secondary text-white">
-                            <span>Torna indietro</span>
-                        </a>
+                        <div class="row my-3">
+                            <div class="col-md-6 offset-md-4">
+                                <a href="{{ Route('admin.home') }}" class="btn btn-secondary text-white">
+                                    <span>Torna indietro</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
