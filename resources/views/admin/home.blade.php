@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container backend">
-        <div class="row mx-1 pt-4 rounded border bg-light">
+        <div class="row mx-1 pt-4 rounded bg-light">
             <div class="col-12 col-md-4">
                 <div class="row">
-                    <div class="col-8 offset-2">
+                    <div class="col-6 mx-auto col-md-10">
                         <img class="img-fluid w-100 mt-1 mb-2 rounded shadow-sm"
                             src={{ asset('storage/' . Auth::user()->profile_image) }} alt="">
                     </div>
@@ -35,7 +35,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-12 col-md-8 my-5 my-md-0">
+            <div class="col-12 col-md-8 my-5 my-md-1">
                 <img class="rounded shadow" src={{ asset('storage/' . Auth::user()->cover_image) }} alt="cover image"
                     style="width:100%">
                 <h1 class="title my-3">{{ Auth::user()->name }}</h1>
