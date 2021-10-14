@@ -3,7 +3,7 @@
 @section('content')
     <div class="container newplate">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-header text-uppercase alert-dark text-center"> Change Plate <div class="img">
                             <img src="{{ url('image/food.png') }}" alt="">
