@@ -58,6 +58,7 @@ export default {
 }
 
 .selected {
-  background-color: hsl(10%, 10%, 80%);
+  background-color: hsl(40, 65%, 50%);
+  font-weight: bold;
 }
 </style>
