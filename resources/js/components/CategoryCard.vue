@@ -30,8 +30,7 @@ export default {
 <style lang="scss" scoped>
 .category {
   border-radius: 5px;
-  background: rgb(231,111,81);
-  background: linear-gradient(87deg, rgba(231,111,81,1) 0%, rgba(233,196,106,1) 100%);
+  background-color: #e9c46a;
   box-shadow: 3px 6px 8px -6px black;
   transition: box-shadow 200ms ease-out;
 
@@ -48,13 +47,13 @@ export default {
 
   &:hover {
     box-shadow: 5px 10px 8px -6px black;
-    background-color: hsl(10%, 10%, 80%);
+    background-color: #e2b33c;
     cursor: pointer;
   }
 
   &:active {
     box-shadow: 5px 8px 12px -6px black;
-    background-color: hsl(10%, 10%, 50%);
+    background-color: #e2b33c;
   }
 }
 
