@@ -8,7 +8,7 @@
                     <div class="card-header">Aggiorna il tuo profilo</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('admin.users.update', $user->id) }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('admin.users.update', $user->id) }}" enctype="multipart/form-data" id="edit-user-form">
                             @csrf
                             @method('PATCH')
 
