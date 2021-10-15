@@ -7,66 +7,49 @@
           :alt="restaurant.name"
           class="image"
         />
-  
+
         <div class="middle">
           <div class="text text-uppercase">{{ restaurant.name }}</div>
         </div>
         <div class="address">
-          <div class=" text-uppercase">{{ restaurant.address }}</div>
+          <div class="text-uppercase">{{ restaurant.address }}</div>
         </div>
-
       </div>
     </div>
     <div class="row">
-    <div class="col-8 ">
-      <div class="row">
-        <div class="col p-5" v-for="(food, index) in foods" :key="index">
- <div class="card " >
-        <div class="card-body">
-            <img
-              class="rounded"
-              :src="
-                food.image[0] == 'h'
-                  ? food.image
-                  : `http://localhost:8000/storage/${food.image}`
-              "
-              :alt="food.name"
-            />
-          <div class="card-date">
-            <i class="bi bi-calendar3"></i>24 Mar 18:00 PM
+      <div class="col-8">
+        <div class="row">
+          <div class="col p-5" v-for="(food, index) in foods" :key="index">
+            <div class="card">
+              <div class="card-body">
+                <img
+                  class="rounded"
+                  :src="
+                    food.image[0] == 'h'
+                      ? food.image
+                      : `http://localhost:8000/storage/${food.image}`
+                  "
+                  :alt="food.name"
+                />
+                <div class="card-date">
+                  <i class="bi bi-calendar3"></i>24 Mar 18:00 PM
+                </div>
+                <p class="card-text">
+                  {{ food.name }}
+                </p>
+                <div><i class="bi bi-person"></i>Teacher:</div>
+                <br />
+                <div><i class="bi bi-cash"></i>Price: {{ food.price }}</div>
+                <a href="#" class="btn btn-primary"
+                  ><i class="bi bi-plus-lg"></i>Find More</a
+                >
+              </div>
+            </div>
           </div>
-          <p class="card-text">
-           {{ food.name }}
-          </p>
-          <div><i class="bi bi-person"></i>Teacher: </div>
-          <br />
-          <div><i class="bi bi-cash"></i>Price: {{ food.price }}</div>
-          <a href="#" class="btn btn-primary"
-            ><i class="bi bi-plus-lg"></i>Find More</a
-          >
         </div>
       </div>
-        </div>
-      </div>
-      
-      
-      
-      
-      
-      </div>
-    <div class="col-4 bg-secondary">
-      
-      
-      
-      
-      2 di 2
-      
-      
-      
-      
-      </div>
-  </div>
-    
+      <div class="col-4 bg-secondary">2 di 2</div>
+    </div>
 
     <!-- Display foods -->
     <table class="table">
@@ -296,45 +279,45 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-    margin: 20px;
+  margin: 20px;
+  border-radius: 25px;
+  min-width: 270px;
+  max-height: 300px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  .card-date {
+    margin-top: 20px;
+  }
+  p {
+  }
+  .btn {
+    margin-top: 20px;
+    height: 50px;
     border-radius: 25px;
-    min-width: 270px;
-    max-height: 300px;
+    vertical-align: middle;
+    padding: 16px 43px !important;
+    background-color: #e56768;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    .card-date {
-      margin-top: 20px;
-    }
-    p {
-
-    }
-    .btn {
-      margin-top: 20px;
-      height: 50px;
-      border-radius: 25px;
-      vertical-align: middle;
-      padding: 16px 43px !important;
-      background-color: #e56768;
-      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-      border: 0px;
-      &:hover {
-        background-color: #e9d758;
-      }
-    }
-    img {
-      height: 80px;
-      width: 100px;
-      transition: transform 0.8s;
-      &:hover {
-        transform: scale(1.1);
-      }
+    border: 0px;
+    &:hover {
+      background-color: #e9d758;
     }
   }
+  img {
+    height: 80px;
+    width: 100px;
+    transition: transform 0.8s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
 
 .container-fluid {
   .cover_image:hover .image {
     opacity: 0.8;
   }
-  .cover_image:hover .middle,.cover_image:hover .address {
+  .cover_image:hover .middle,
+  .cover_image:hover .address {
     opacity: 1;
   }
   .cover-image {
@@ -368,20 +351,17 @@ export default {
       -ms-transform: translate(-50%, -50%);
       text-align: center;
     }
-    .address{
-       transition: 0.5s ease;
-      opacity:0;
-      position:absolute;
+    .address {
+      transition: 0.5s ease;
+      opacity: 0;
+      position: absolute;
       text-align: center;
-      bottom:5px;
+      bottom: 5px;
       left: 10px;
       color: black;
       margin-left: 40px;
-     
     }
-   
   }
- 
 }
 td img {
   height: 100px;
