@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
+use App\User;
+use App\Mail\GuestMail;
+use App\Mail\UserMail;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -36,6 +40,7 @@ class PaymentController extends Controller
             ]
         ]);
 
+        // create and save order to DB
         $order = new Order();
 
         $order->user_id = $request->user_id;
@@ -50,9 +55,10 @@ class PaymentController extends Controller
 
         $order->save();
 
+        // get food items data to create order relation with foods
         $foodData = [];
         $l = count($request->foods);
-        
+
         for ($i = 0; $i < $l; $i++) {
             if ($i % 2 == 0) {
                 $foodData[$request->foods[$i]] = $request->foods[$i + 1];
@@ -62,7 +68,13 @@ class PaymentController extends Controller
         foreach ($foodData as $id => $qty) {
             $order->foods()->attach([$id => ['food_units' => $qty]]);
         }
-        
+
+        // send emails
+        Mail::to($order->customer_email)->send(new GuestMail($order));
+
+        $user = User::find($order->user_id);
+        Mail::to($user->email)->send(new userMail($order));
+
         return redirect('http://localhost:8000/payment-result');
     }
 }
