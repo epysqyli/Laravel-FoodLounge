@@ -41,6 +41,7 @@ header {
   position: relative;
   background: rgb(231,111,81);
   background: linear-gradient(87deg, rgba(231,111,81,1) 0%, rgba(233,196,106,1) 100%);
+  box-shadow: 3px 6px 8px -6px #264653;
 
 }
 
