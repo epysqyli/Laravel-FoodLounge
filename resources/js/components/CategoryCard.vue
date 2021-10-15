@@ -1,7 +1,7 @@
 <template>
   <div
     class="category d-flex align-items-center"
-    :class="category.selected ? on : ''"
+    :class="category.selected ? on : '' || jumpAnimation"
     @click="$emit('toggleChoice')"
   >
     <img :src="category.img" :alt="category.name" class="d-block w-25" />
@@ -22,8 +22,19 @@ export default {
   data() {
     return {
       on: "selected",
+      jumpAnimation: 'jump-animation'
     };
   },
+
+  methods: {
+    removeJumpAnimation() {
+      this.jumpAnimation = null;
+    }
+  },
+
+  mounted() {
+    setTimeout(this.removeJumpAnimation, 1000);
+  }
 };
 </script>
 
@@ -33,7 +44,6 @@ export default {
   background-color: #e9c46a;
   box-shadow: 3px 6px 8px -6px black;
   transition: box-shadow 200ms ease-out;
-  animation: myAnim 1s ease 0s 1 normal forwards;
 
   img {
     border-top-left-radius: 5px;
@@ -88,7 +98,11 @@ export default {
   }
 }
 
-@keyframes myAnim {
+.jump-animation {
+  animation: jumpAnimation 1s ease;
+}
+
+@keyframes jumpAnimation {
   0% {
     animation-timing-function: ease-in;
     opacity: 1;
