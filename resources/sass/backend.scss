@@ -41,8 +41,9 @@
     .cardrestaurant img {
         -o-object-fit: cover;
         object-fit: cover;
-    }
+    }    
 }
+
 
 // ADD NEW PLATE
 .newplate {
@@ -55,3 +56,17 @@
         }
     }
 }
+
+//Admin.Foods.Index
+.tagliatesto{
+    word-wrap: break-word;
+    .contenent-img-cover{
+        max-width: 400px;
+        margin-bottom: 50px;      
+        
+        .img_cover_admin_home{
+            max-width: 100%;        
+        }    
+    }
+}
+

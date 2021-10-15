@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">Aggiorna il tuo profilo</div>
+                    <div class="card-header text-center alert-dark text-uppercase">Aggiorna il tuo profilo</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('admin.users.update', $user->id) }}" enctype="multipart/form-data" id="edit-user-form">
@@ -143,12 +143,12 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4 d-flex">
+                            <div class="form-group row mb-4">
+                                <div class="col-md-6 offset-md-4 d-flex justify-content-between">
                                     <button type="submit" class="btn btn-primary">
-                                        Aggiorna profilo
+                                        Salva
                                     </button>
-                                    <a class="d-block btn btn-danger w-50 mx-2" href={{ route('password.request') }}>Change password</a>
+                                    <a class="d-block btn btn-danger " href={{ route('password.request') }}>Cambia password</a>
                                 </div>
                             </div>
                         </form>
