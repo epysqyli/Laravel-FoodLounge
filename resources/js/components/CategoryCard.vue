@@ -1,12 +1,16 @@
 <template>
-  <div
-    class="category d-flex align-items-center"
-    :class="category.selected ? on : ''"
-    @click="$emit('toggleChoice')"
-  >
-    <img :src="category.img" :alt="category.name" class="d-block w-25" />
-    <div class="name w-100 text-center">
-      {{ category.name }}
+  <div class="outer">
+    <div class="inner">
+      <div
+        class="category d-flex align-items-center"
+        :class="category.selected ? on : ''"
+        @click="$emit('toggleChoice')"
+      >
+        <img :src="category.img" :alt="category.name" class="d-block w-25" />
+        <div class="name w-100 text-center">
+          {{ category.name }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -33,6 +37,7 @@ export default {
   background-color: #e9c46a;
   box-shadow: 3px 6px 8px -6px black;
   transition: box-shadow 200ms ease-out;
+  cursor: pointer;
 
   img {
     border-top-left-radius: 5px;
@@ -48,7 +53,6 @@ export default {
   &:hover {
     box-shadow: 5px 10px 8px -6px black;
     background-color: #e2b33c;
-    cursor: pointer;
   }
 
   &:active {
@@ -57,12 +61,34 @@ export default {
 }
 
 .selected {
-  background-color: hsl(40, 65%, 50%);
-  font-weight: bold;
-  box-shadow: 0 2px 5px -2px black inset;
+  // background-color: hsl(40, 65%, 50%);
+  animation: pressed 100ms ease-out 1 alternate forwards;
+}
 
-  &:hover {
-    box-shadow: 0 2px 5px -2px black inset;
+@keyframes pressed {
+  0% {
+    box-shadow: 5px 10px 8px -6px black;
+    background-color: #e2b33c;
+  }
+  25% {
+    box-shadow: 2px 5px 4px -3px black;
+    background-color: #e2b33c;
+  }
+  50% {
+    box-shadow: 0px 0px 0px 0px black;
+    background-color: #e2b33c;
+  }
+  60% {
+    box-shadow: 0px 2px 3px 0 black inset;
+    background-color: #e2b33c;
+  }
+  80% {
+    box-shadow: 0px 3px 5px 0 black inset;
+    background-color: #e2b33c;
+  }
+  100% {
+    box-shadow: 0px 6px 8px 0px black inset;
+    background-color: #e2b33c;
   }
 }
 </style>
