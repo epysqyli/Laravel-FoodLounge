@@ -3,8 +3,10 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center p-5">
-          <img  src="/image/Scooter.png" alt="">
-          <h2 class="text-center mx-auto pt-2">Bee Happy, Bee Healthy! Choose:</h2>
+          <img src="/image/Scooter.png" alt="" />
+          <h2 class="text-center mx-auto pt-2">
+            Bee Happy, Bee Healthy! Choose:
+          </h2>
         </div>
 
         <div class="row mb-5">
@@ -89,15 +91,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content{
-  background-color: #EFFBF9;
+.content {
+  background-color: #effbf9;
   .container {
     min-height: 45vh;
-    
-    img{
+
+    img {
       width: 10%;
     }
   }
 }
-
 </style>    

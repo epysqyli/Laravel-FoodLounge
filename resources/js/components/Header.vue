@@ -17,11 +17,17 @@
         </router-link>
 
         <div class="d-flex align-items-center">
-          <b-button class="btn btn-secondary rounded" v-b-toggle.sidebar-right>
-            <h1><i class="bi bi-cart"></i></h1
-          ></b-button>
-
-          <a href="http://localhost:8000/api/user" class="d-block btn btn-outline-primary py-2 ml-2"
+          <div v-if="this.$route.path.split('/').includes('restaurants')">
+            <b-button
+              class="btn btn-secondary rounded"
+              v-b-toggle.sidebar-right
+            >
+              <h1><i class="bi bi-cart"></i></h1
+            ></b-button>
+          </div>
+          <a
+            href="http://localhost:8000/api/user"
+            class="d-block btn btn-outline-primary py-2 ml-2"
             >Admin area</a
           >
         </div>
@@ -39,10 +45,13 @@ export default {
 <style lang="scss" scoped>
 header {
   position: relative;
-  background: rgb(231,111,81);
-  background: linear-gradient(87deg, rgba(231,111,81,1) 0%, rgba(233,196,106,1) 100%);
+  background: rgb(231, 111, 81);
+  background: linear-gradient(
+    87deg,
+    rgba(231, 111, 81, 1) 0%,
+    rgba(233, 196, 106, 1) 100%
+  );
   box-shadow: 3px 6px 8px -6px #264653;
-
 }
 
 btn-sticky-left {
