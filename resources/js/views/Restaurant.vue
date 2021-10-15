@@ -304,9 +304,6 @@ export default {
     .card-date {
       margin-top: 20px;
     }
-    p {
-
-    }
     .btn {
       margin-top: 20px;
       height: 50px;
