@@ -7,7 +7,7 @@
           <h2 class="text-center mx-auto pt-2">Bee Happy, Bee Healthy! Choose:</h2>
         </div>
 
-        <div class="row mb-5">
+        <div class="row mb-5 d-flex justify-content-center">
           <div
             class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
             v-for="category in categories"

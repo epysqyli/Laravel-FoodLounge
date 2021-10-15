@@ -57,6 +57,7 @@ p {
   border: none;
   border-radius: 20px;
   background-color: #E9C46A;
+  animation: myAnim 2s ease 0s 1 normal forwards;
   img {
     border-radius: 20px;
     object-fit: cover;
@@ -67,6 +68,51 @@ p {
     // background-color: hsl(10%, 10%, 80%);
     background-color: #F4A666;
     cursor: pointer;
+    @keyframes myAnim {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 1;
+      transform: translateY(-45px);
+    }
+
+    24% {
+      opacity: 1;
+    }
+
+    40% {
+      animation-timing-function: ease-in;
+      transform: translateY(-24px);
+    }
+
+    65% {
+      animation-timing-function: ease-in;
+      transform: translateY(-12px);
+    }
+
+    82% {
+      animation-timing-function: ease-in;
+      transform: translateY(-6px);
+    }
+
+    93% {
+      animation-timing-function: ease-in;
+      transform: translateY(-4px);
+    }
+
+    25%,
+    55%,
+    75%,
+    87% {
+      animation-timing-function: ease-out;
+      transform: translateY(0px);
+    }
+
+    100% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
   }
 }
 </style>
