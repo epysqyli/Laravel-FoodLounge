@@ -1,17 +1,23 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 mt-3">
-        <div class="card text-center border">
-          <div class="card-header">
-            {{ restaurant.name }}
-          </div>
-          <div class="card-body">
-            <p class="card-text">{{ restaurant.description }}</p>
-          </div>
+  <div class="container-fluid">
+    <div class="row cover_image">
+      <div class="cover-image">
+        <img
+          :src="restaurant.cover_image"
+          :alt="restaurant.name"
+          class="image"
+        />
+        <div class="triangle-right"></div>
+        <div class="middle">
+          <div class="text text-uppercase">{{ restaurant.name }}</div>
         </div>
+        <div class="address">
+          <div class=" text-uppercase">{{ restaurant.address }}</div>
+        </div>
+
       </div>
     </div>
+    
 
     <!-- Display foods -->
     <table class="table">
@@ -29,7 +35,7 @@
           <th scope="row">1</th>
           <td>
             <img
-              class="w-100"
+              class=""
               :src="
                 food.image[0] == 'h'
                   ? food.image
@@ -240,6 +246,108 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.ml5 {
+  position: relative;
+  font-weight: 300;
+  font-size: 4.5em;
+  color: #402d2d;
+}
+
+.ml5 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+  line-height: 1em;
+}
+
+.ml5 .line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 3px;
+  width: 100%;
+  background-color: #402d2d;
+  transform-origin: 0.5 0;
+}
+
+.ml5 .ampersand {
+  font-family: Baskerville, serif;
+  font-style: italic;
+  font-weight: 400;
+  width: 1em;
+  margin-right: -0.1em;
+  margin-left: -0.1em;
+}
+
+.ml5 .letters {
+  display: inline-block;
+  opacity: 0;
+}
+
+.container-fluid {
+  .cover_image:hover .image {
+    opacity: 0.8;
+  }
+  .cover_image:hover .middle,.cover_image:hover .address {
+    opacity: 1;
+  }
+  .cover-image {
+    position: relative;
+    width: 100%;
+
+    .text {
+      background: rgb(0, 0, 0); /* Fallback color */
+      background: rgba(0, 0, 0, 0.9); /* Black background with 0.5 opacity */
+      color: #eb7b0c; /* Grey text */
+      font-size: 16px;
+      padding: 16px 32px;
+      animation: type 8s steps(60, end);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      opacity: 1;
+      transition: 0.5s ease;
+      backface-visibility: hidden;
+    }
+    .middle {
+      transition: 0.5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .address{
+       transition: 0.5s ease;
+      opacity:0;
+      position:absolute;
+      text-align: center;
+      bottom:5px;
+      left: 10px;
+      color: black;
+     
+    }
+     .triangle-right {
+    position:absolute;
+      top: 175px;
+      bottom: 0;
+      border-top: 25px solid transparent;
+      border-left: 50px solid rgba(0, 0, 0, 0.5) ;
+      border-bottom: 25px solid transparent;
+  
+}
+  }
+ 
+}
 td img {
   height: 100px;
   width: 50px;
