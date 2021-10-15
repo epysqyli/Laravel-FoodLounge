@@ -1,16 +1,12 @@
 <template>
-  <div class="outer">
-    <div class="inner">
-      <div
-        class="category d-flex align-items-center"
-        :class="category.selected ? on : ''"
-        @click="$emit('toggleChoice')"
-      >
-        <img :src="category.img" :alt="category.name" class="d-block w-25" />
-        <div class="name w-100 text-center">
-          {{ category.name }}
-        </div>
-      </div>
+  <div
+    class="category d-flex align-items-center"
+    :class="category.selected ? on : ''"
+    @click="$emit('toggleChoice')"
+  >
+    <img :src="category.img" :alt="category.name" class="d-block w-25" />
+    <div class="name w-100 text-center">
+      {{ category.name }}
     </div>
   </div>
 </template>
