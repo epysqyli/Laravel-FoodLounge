@@ -13,7 +13,8 @@ class OrderController extends Controller
 
     public function index(Order $order)
     {
-        $orders = Auth::user()->orders;
+        // $orders = Auth::user()->orders; // pagination not possible
+        $orders = User::where('id', Auth::user()->id)->first()->orders()->paginate(10);
         return view('admin.orders.index', compact('orders'));
     }
 
