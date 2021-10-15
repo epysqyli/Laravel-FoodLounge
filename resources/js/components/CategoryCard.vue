@@ -61,8 +61,8 @@ export default {
 }
 
 .selected {
-  // background-color: hsl(40, 65%, 50%);
-  animation: pressed 100ms ease-out 1 alternate forwards;
+  background-color: hsl(40, 65%, 50%);
+  animation: pressed 100ms ease-in 1 alternate forwards;
 }
 
 @keyframes pressed {
@@ -88,7 +88,7 @@ export default {
   }
   100% {
     box-shadow: 0px 2px 5px -2px black inset;
-    background-color: #e2b33c;
+    background-color: hsl(40, 65%, 50%);
   }
 }
 </style>
