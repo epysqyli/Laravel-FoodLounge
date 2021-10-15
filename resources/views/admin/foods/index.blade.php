@@ -139,8 +139,12 @@
             </div>
         </div>
 
-        <a href="{{ Route('admin.home') }}" class="btn btn-secondary text-white">
-            <span>Torna indietro</span>
-        </a> 
+        <div class="row">
+            <div class="col-10 offset-1 col-md-4 offset-md-8">
+                <a href="{{ Route('admin.foods.index') }}" class="d-block btn btn-secondary text-white">
+                    <span>Torna indietro</span>
+                </a>
+            </div>
+        </div>
     </div>
 @endsection
