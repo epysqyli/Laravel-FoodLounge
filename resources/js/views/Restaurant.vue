@@ -7,7 +7,7 @@
           :alt="restaurant.name"
           class="image"
         />
-        <div class="triangle-right"></div>
+  
         <div class="middle">
           <div class="text text-uppercase">{{ restaurant.name }}</div>
         </div>
@@ -17,6 +17,55 @@
 
       </div>
     </div>
+    <div class="row">
+    <div class="col-8 ">
+      <div class="row">
+        <div class="col p-5" v-for="(food, index) in foods" :key="index">
+ <div class="card " >
+        <div class="card-body">
+            <img
+              class="rounded"
+              :src="
+                food.image[0] == 'h'
+                  ? food.image
+                  : `http://localhost:8000/storage/${food.image}`
+              "
+              :alt="food.name"
+            />
+          <div class="card-date">
+            <i class="bi bi-calendar3"></i>24 Mar 18:00 PM
+          </div>
+          <p class="card-text">
+           {{ food.name }}
+          </p>
+          <div><i class="bi bi-person"></i>Teacher: </div>
+          <br />
+          <div><i class="bi bi-cash"></i>Price: {{ food.price }}</div>
+          <a href="#" class="btn btn-primary"
+            ><i class="bi bi-plus-lg"></i>Find More</a
+          >
+        </div>
+      </div>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      </div>
+    <div class="col-4 bg-secondary">
+      
+      
+      
+      
+      2 di 2
+      
+      
+      
+      
+      </div>
+  </div>
     
 
     <!-- Display foods -->
@@ -246,47 +295,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.ml5 {
-  position: relative;
-  font-weight: 300;
-  font-size: 4.5em;
-  color: #402d2d;
-}
+.card {
+    margin: 20px;
+    border-radius: 25px;
+    min-width: 270px;
+    max-height: 300px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    .card-date {
+      margin-top: 20px;
+    }
+    p {
 
-.ml5 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.1em;
-  padding-right: 0.05em;
-  padding-bottom: 0.15em;
-  line-height: 1em;
-}
-
-.ml5 .line {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  height: 3px;
-  width: 100%;
-  background-color: #402d2d;
-  transform-origin: 0.5 0;
-}
-
-.ml5 .ampersand {
-  font-family: Baskerville, serif;
-  font-style: italic;
-  font-weight: 400;
-  width: 1em;
-  margin-right: -0.1em;
-  margin-left: -0.1em;
-}
-
-.ml5 .letters {
-  display: inline-block;
-  opacity: 0;
-}
+    }
+    .btn {
+      margin-top: 20px;
+      height: 50px;
+      border-radius: 25px;
+      vertical-align: middle;
+      padding: 16px 43px !important;
+      background-color: #e56768;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+      border: 0px;
+      &:hover {
+        background-color: #e9d758;
+      }
+    }
+    img {
+      height: 80px;
+      width: 100px;
+      transition: transform 0.8s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
 
 .container-fluid {
   .cover_image:hover .image {
@@ -334,17 +376,10 @@ export default {
       bottom:5px;
       left: 10px;
       color: black;
+      margin-left: 40px;
      
     }
-     .triangle-right {
-    position:absolute;
-      top: 175px;
-      bottom: 0;
-      border-top: 25px solid transparent;
-      border-left: 50px solid rgba(0, 0, 0, 0.5) ;
-      border-bottom: 25px solid transparent;
-  
-}
+   
   }
  
 }
