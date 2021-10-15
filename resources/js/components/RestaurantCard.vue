@@ -58,7 +58,7 @@ p {
   border-radius: 5px;
   background-color: #e9c46a;
   box-shadow: 3px 5px 3px -5px #264653;
-  animation: myAnim 2s ease 0s 1 normal forwards;
+  animation: myAnim 1s ease-in 1 normal forwards;
   transition: box-shadow 200ms ease-out;
 
   img {
