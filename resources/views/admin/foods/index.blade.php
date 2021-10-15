@@ -112,7 +112,7 @@
                             <th>Nome</th>
                             <th>Prezzo</th>
                             <th>Disponibilà</th>
-                            <th>Dettagli</th>                            
+                            <th>Opzioni</th>                            
                         </tr>
                     </thead>
 
@@ -123,13 +123,13 @@
                                 <td>{{ $food->name }}</td>
                                 <td>{{ $food->price }} &euro;</td>
                                 <td>{{ $food->visible ? 'Sì' : 'No' }}</td>
-                                <td><a href="{{ route('admin.foods.show', $food->id) }}">Visualizza</a></td>
-                                <td><a href="{{ route('admin.foods.edit', $food->id) }}">Modifica</a></td>
-                                <td>
-                                    <form class="post-delete" action="{{ route('admin.foods.destroy', $food->id) }}" method="post">
+                                <td class="d-md-flex justify-content-around">
+                                <a class="d-block btn btn-primary w-100 mb-1 mb-md-0 ml-md-1" href="{{ route('admin.foods.show', $food->id) }}">Visualizza</a>
+                                <a class="d-block btn btn-info w-100 mb-1 mb-md-0 ml-md-1" href="{{ route('admin.foods.edit', $food->id) }}">Modifica</a>
+                                    <form class="d-block post-delete w-100 mb-1 mb-md-0 ml-md-1" action="{{ route('admin.foods.destroy', $food->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Elimina</button>
+                                        <button type="submit" class="d-block btn btn-danger w-100">Elimina</button>
                                     </form>
                                 </td>
                             </tr>
