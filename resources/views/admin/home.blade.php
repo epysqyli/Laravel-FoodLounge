@@ -17,25 +17,25 @@
                 </div> --}}
 
                 <div class="row">
-                    <a class="col-10 col-md-8 mx-auto mb-2 pt-2 pb-1 border rounded shadow bg-info text-white"
+                    <a class="col-7 col-md-8 mx-auto mb-2 pt-2 pb-1 border rounded shadow bg-info text-white"
                         href="{{ route('admin.foods.index', Auth::user()->id) }}">
                         <h5 class="text-center">Gestione prodotti</h5>
                     </a>
                 </div>
                 <div class="row">
-                    <a class="col-7 mx-auto my-2 pt-2 pb-1 border rounded shadow bg-info text-white"
+                    <a class="col-7 col-md-8 mx-auto my-2 pt-2 pb-1 border rounded shadow bg-info text-white"
                         href="{{ route('admin.types.index', Auth::user()->id) }}">
                         <h5 class="text-center">Gestione tipologie</h5>
                     </a>
                 </div>
                 <div class="row">
-                    <a class="col-7 mx-auto my-2 pt-2 pb-1 border rounded shadow bg-info text-white"
+                    <a class="col-7 col-md-8 mx-auto my-2 pt-2 pb-1 border rounded shadow bg-info text-white"
                         href="{{ route('admin.orders.index', Auth::user()->id) }}">
                         <h5 class="text-center">Gestionale ordini</h5>
                     </a>
                 </div>
                 <div class="row">
-                    <a class="col-7 mx-auto my-2 pt-2 pb-1 border rounded shadow bg-info text-white"
+                    <a class="col-7 col-md-8 mx-auto my-2 pt-2 pb-1 border rounded shadow bg-info text-white"
                         href="{{ route('admin.users.edit', Auth::user()->id) }}">
                         <h5 class="text-center">Modifica profilo</h5>
                     </a>
