@@ -5,7 +5,7 @@
     style="text-decoration: none; color: inherit"
   >
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 image-container">
         <img
           :src="
             restaurant.profile_image[0] == 'h'
@@ -15,6 +15,7 @@
           class="card-img-top"
           :alt="restaurant.name"
         />
+        <div class="category-name">{{ categoryName }}</div>
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -23,7 +24,6 @@
           <p class="card-text">
             {{ this.limitParagraph(restaurant.description) }}
           </p>
-          <p><strong>Category:</strong> {{ categoryName }}</p>
         </div>
       </div>
     </div>
@@ -65,6 +65,23 @@ p {
     border-radius: 5px;
     object-fit: cover;
     height: 220px;
+  }
+
+  .image-container {
+    position: relative;
+  }
+
+  .category-name {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background-color: #264653;
+    font-size: 0.85rem;
   }
 
   &:hover {
