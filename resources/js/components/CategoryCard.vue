@@ -61,7 +61,6 @@ export default {
 }
 
 .selected {
-  background-color: hsl(40, 65%, 50%);
   animation: pressed 100ms ease-in 1 alternate forwards;
 }
 
