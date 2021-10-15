@@ -3,8 +3,8 @@
     <div class="container">
       <div class="row pt-2">
         <!-- lato sx -->
-        <div class="col-6 text-center">
-          <h2>
+        <div class="col-12 col-md-6 text-center">
+          <h5>
             <a href="https://www.boolean.careers"
               ><img
                 style="height: 25px"
@@ -12,7 +12,7 @@
                 alt=""
             /></a>
             Deliveboo
-          </h2>
+          </h5>
           <p class="text-light">
             Progetto conclusivo post formazione
             <span
@@ -24,9 +24,9 @@
         </div>
 
         <!-- lato dx -->
-        <div class="col-6 p-2">
+        <div class="col-12 col-md-6 p-2">
           <div class="text-center">
-            <h2>Powered by</h2>
+            <h5>Powered by</h5>
           </div>
           <div class="d-flex justify-content-around">
             <ul style="list-style-type: none">
@@ -65,16 +65,8 @@
 
       <!-- lato inferiore -->
       <div
-        class="
-          col-12
-          d-flex
-          justify-content-center
-          border-top
-          text-white
-          border-dark
-        "
-      >
-        <p>Copyright Deliveboo &copy;2021</p>
+        class="col-12 d-flex justify-content-center border-top text-white border-dark">
+        <p class="p-2">Copyright Deliveboo &copy;2021</p>
       </div>
     </div>
   </footer>
