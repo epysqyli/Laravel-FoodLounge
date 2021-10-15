@@ -297,17 +297,29 @@ export default {
     padding: 16px 43px !important;
     background-color: #e56768;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    border: 0px;
-    &:hover {
-      background-color: #e9d758;
+    .card-date {
+      margin-top: 20px;
     }
-  }
-  img {
-    height: 80px;
-    width: 100px;
-    transition: transform 0.8s;
-    &:hover {
-      transform: scale(1.1);
+    .btn {
+      margin-top: 20px;
+      height: 50px;
+      border-radius: 25px;
+      vertical-align: middle;
+      padding: 16px 43px !important;
+      background-color: #e56768;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+      border: 0px;
+      &:hover {
+        background-color: #e9d758;
+      }
+    }
+    img {
+      height: 80px;
+      width: 100px;
+      transition: transform 0.8s;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 }

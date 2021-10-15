@@ -37,7 +37,7 @@ export default {
   background-color: #e9c46a;
   box-shadow: 3px 6px 8px -6px black;
   transition: box-shadow 200ms ease-out;
-  cursor: pointer;
+  animation: myAnim 2s ease 0s 1 normal forwards;
 
   img {
     border-top-left-radius: 5px;
@@ -53,6 +53,52 @@ export default {
   &:hover {
     box-shadow: 5px 10px 8px -6px black;
     background-color: #e2b33c;
+    cursor: pointer;
+    @keyframes myAnim {
+      0% {
+        animation-timing-function: ease-in;
+        opacity: 1;
+        transform: translateY(-45px);
+      }
+
+      24% {
+        opacity: 1;
+      }
+
+      40% {
+        animation-timing-function: ease-in;
+        transform: translateY(-24px);
+      }
+
+      65% {
+        animation-timing-function: ease-in;
+        transform: translateY(-12px);
+      }
+
+      82% {
+        animation-timing-function: ease-in;
+        transform: translateY(-6px);
+      }
+
+      93% {
+        animation-timing-function: ease-in;
+        transform: translateY(-4px);
+      }
+
+      25%,
+      55%,
+      75%,
+      87% {
+        animation-timing-function: ease-out;
+        transform: translateY(0px);
+      }
+
+      100% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
   }
 
   &:active {
