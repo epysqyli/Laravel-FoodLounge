@@ -56,12 +56,17 @@ p {
 .card {
   border: none;
   border-radius: 20px;
-  background: rgb(231,111,81);
-  background: linear-gradient(87deg, rgba(231,111,81,1) 0%, rgba(233,196,106,1) 100%);
+  background-color: #E9C46A;
   img {
     border-radius: 20px;
     object-fit: cover;
     height: 220px;
+  }
+  &:hover {
+    box-shadow: 3px 6px 8px -6px #264653;
+    // background-color: hsl(10%, 10%, 80%);
+    background-color: #F4A666;
+    cursor: pointer;
   }
 }
 </style>
