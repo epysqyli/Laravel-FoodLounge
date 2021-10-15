@@ -78,16 +78,16 @@ export default {
     box-shadow: 0px 0px 0px 0px black;
     background-color: #e2b33c;
   }
-  60% {
-    box-shadow: 0px 2px 3px 0 black inset;
+  65% {
+    box-shadow: 0px 1px 1px 0px black inset;
     background-color: #e2b33c;
   }
-  80% {
-    box-shadow: 0px 3px 5px 0 black inset;
+  83% {
+    box-shadow: 0px 2px 2px 1px black inset;
     background-color: #e2b33c;
   }
   100% {
-    box-shadow: 0px 6px 8px 0px black inset;
+    box-shadow: 0px 2px 5px -2px black inset;
     background-color: #e2b33c;
   }
 }
