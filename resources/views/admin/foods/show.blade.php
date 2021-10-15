@@ -7,12 +7,13 @@
                 <h1 class="mt-2 mb-5">{{ $food->name }}</h1>
             </div>
         </div>
+
         <div class="row mb-2">
-            <div class="col-4">
+            <div class="col-12 col-md-4">
                 <img class="rounded w-100"
                     src={{ $food->image[0] == 'h' ? $food->image : asset('storage/' . $food->image) }} alt="">
             </div>
-            <div class="col-8">
+            <div class="col-12 col-md-8">
                 <table class="table table-light table-striped">
                     <tr>
                         <th>Id Prodotto
@@ -49,15 +50,13 @@
                 </table>
             </div>
         </div>
-        <div class="row text-center">
-            <div class="col  ">
-                <a href="{{ Route('admin.foods.index') }}" class="btn btn-secondary text-white">
+
+        <div class="row">
+            <div class="col-10 offset-1 col-md-4 offset-md-8">
+                <a href="{{ Route('admin.foods.index') }}" class="d-block btn btn-secondary text-white">
                     <span>Torna indietro</span>
                 </a>
             </div>
-            
-
         </div>
-        
     </div>
 @endsection
