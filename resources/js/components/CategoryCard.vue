@@ -30,7 +30,8 @@ export default {
 <style lang="scss" scoped>
 .category {
   border-radius: 5px;
-  background-color: #E9C46A;
+  background-color: #e9c46a;
+  box-shadow: 3px 6px 8px -6px black;
   transition: box-shadow 200ms ease-out;
 
   img {
@@ -45,21 +46,23 @@ export default {
   }
 
   &:hover {
-    box-shadow: 3px 6px 8px -6px #264653;
-    // background-color: hsl(10%, 10%, 80%);
-    background-color: #F4A666;
+    box-shadow: 5px 10px 8px -6px black;
+    background-color: #e2b33c;
     cursor: pointer;
   }
 
   &:active {
     box-shadow: 5px 8px 12px -6px black;
-    // background-color: hsl(10%, 10%, 50%);
-    background-color: #F4A666;
   }
 }
 
 .selected {
-  // background-color: hsl(10%, 10%, 80%);
-  background-color: #F4A666;
+  background-color: hsl(40, 65%, 50%);
+  font-weight: bold;
+  box-shadow: 0 2px 5px -2px black inset;
+
+  &:hover {
+    box-shadow: 0 2px 5px -2px black inset;
+  }
 }
 </style>
