@@ -12,15 +12,15 @@ class UserMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $order;
+
     public function __construct(Order $order)
     {
         $this->order = $order;
-
     }
 
     public function build()
     {
-        $order = $this->order;
-        return $this->view('mails.userConfirmation');
+        return $this->from('delivebootest@gmail.com')->view('mails.userConfirmation');
     }
 }
