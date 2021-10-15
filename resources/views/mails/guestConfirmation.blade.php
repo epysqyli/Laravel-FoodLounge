@@ -18,7 +18,6 @@
                 <h3>Ciao {{ $order->customer_name }}, il tuo ordine sta arrivando!</h3>
                 <h3>L'indirizzo da te indicato: {{ $order->customer_address }}</h3>
 
-
                 <div class="row border rounded d-flex justify-content-around align-items-center py-2 my-2 bg-secondary text-white">
                     @foreach ($order->foods as $food)
                         <div class="col-6">{{ $food->name }}</div>
