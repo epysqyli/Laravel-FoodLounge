@@ -8,6 +8,7 @@ use App\Order;
 use App\Mail\GuestMail;
 use App\Mail\UserMail;
 use Illuminate\Support\Facades\Mail;
+
 class PaymentController extends Controller
 {
     public function getToken()
@@ -54,7 +55,7 @@ class PaymentController extends Controller
 
         $foodData = [];
         $l = count($request->foods);
-        
+
         for ($i = 0; $i < $l; $i++) {
             if ($i % 2 == 0) {
                 $foodData[$request->foods[$i]] = $request->foods[$i + 1];
@@ -65,8 +66,8 @@ class PaymentController extends Controller
             $order->foods()->attach([$id => ['food_units' => $qty]]);
         }
 
-        // send emails here with Mail::to('email@account.com')->send(new GuestMail || UserMail)
-        
+        Mail::to($order->customer_email)->send(new GuestMail($order));
+
         return redirect('http://localhost:8000/payment-result');
     }
 }
