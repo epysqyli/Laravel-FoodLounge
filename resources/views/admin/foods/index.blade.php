@@ -87,24 +87,29 @@
         <p>
             @if (session('updated'))
                 <div class="alert alert-success">
-                    {{session('updated')}}
-                </div>            
+                    {{ session('updated') }}
+                </div>
             @endif
             @if (session('delete'))
                 <div class="alert alert-success">
-                    {{session('delete')}}
+                    {{ session('delete') }}
                 </div>
             @endif
         </p>
         <div class="row mb-2">
-            <div class="col">
+            <div class="col-12 col-md-6">
                 <h1>Tutti i prodotti</h1>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <a class="btn btn-outline-dark mt-2 mb-5 text-uppercase"
-                            href="{{ route('admin.foods.create', Auth::user()->id) }}" class=" link-dark">aggiungi prodotto</a>
-                    </div>
-                </div>
+            </div>
+            <div class="col-12 col-md-4 offset-md-2">
+                <a class="d-block w-100 btn btn-outline-dark my-2" href="{{ route('admin.foods.create', Auth::user()->id) }}"
+                    class=" link-dark">Aggiungi
+                    prodotto</a>
+            </div>
+        </div>
+
+        {{-- table --}}
+        <div class="row">
+            <div class="col-12">
                 <table class="table table-light table-striped">
                     <thead>
                         <tr>
@@ -112,7 +117,7 @@
                             <th>Nome</th>
                             <th>Prezzo</th>
                             <th>Disponibilà</th>
-                            <th>Opzioni</th>                            
+                            <th>Opzioni</th>
                         </tr>
                     </thead>
 
@@ -124,9 +129,12 @@
                                 <td>{{ $food->price }} &euro;</td>
                                 <td>{{ $food->visible ? 'Sì' : 'No' }}</td>
                                 <td class="d-md-flex justify-content-around">
-                                <a class="d-block btn btn-primary w-100 mb-1 mb-md-0 ml-md-1" href="{{ route('admin.foods.show', $food->id) }}">Visualizza</a>
-                                <a class="d-block btn btn-info w-100 mb-1 mb-md-0 ml-md-1" href="{{ route('admin.foods.edit', $food->id) }}">Modifica</a>
-                                    <form class="d-block post-delete w-100 mb-1 mb-md-0 ml-md-1" action="{{ route('admin.foods.destroy', $food->id) }}" method="post">
+                                    <a class="d-block btn btn-primary w-100 mb-1 mb-md-0 ml-md-1"
+                                        href="{{ route('admin.foods.show', $food->id) }}">Visualizza</a>
+                                    <a class="d-block btn btn-info w-100 mb-1 mb-md-0 ml-md-1"
+                                        href="{{ route('admin.foods.edit', $food->id) }}">Modifica</a>
+                                    <form class="d-block post-delete w-100 mb-1 mb-md-0 ml-md-1"
+                                        action="{{ route('admin.foods.destroy', $food->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="d-block btn btn-danger w-100">Elimina</button>
@@ -140,7 +148,7 @@
         </div>
 
         <div class="row">
-            <div class="col-10 offset-1 col-md-4 offset-md-8">
+            <div class="col-12 col-md-4 offset-md-8">
                 <a href="{{ Route('admin.foods.index') }}" class="d-block btn btn-secondary text-white">
                     <span>Torna indietro</span>
                 </a>
