@@ -37,7 +37,7 @@ export default {
   background-color: #e9c46a;
   box-shadow: 3px 6px 8px -6px black;
   transition: box-shadow 200ms ease-out;
-  animation: myAnim 2s ease 0s 1 normal forwards;
+  animation: myAnim 1s ease 0s 1 normal forwards;
 
   img {
     border-top-left-radius: 5px;
@@ -54,6 +54,7 @@ export default {
     box-shadow: 5px 10px 8px -6px black;
     background-color: #e2b33c;
     cursor: pointer;
+
     @keyframes myAnim {
       0% {
         animation-timing-function: ease-in;

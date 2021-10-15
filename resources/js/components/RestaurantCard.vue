@@ -55,20 +55,25 @@ p {
 
 .card {
   border: none;
-  border-radius: 20px;
-  background-color: #E9C46A;
+  border-radius: 5px;
+  background-color: #e9c46a;
+  box-shadow: 3px 5px 3px -5px #264653;
   animation: myAnim 2s ease 0s 1 normal forwards;
+  transition: box-shadow 200ms ease-out;
+
   img {
-    border-radius: 20px;
+    border-radius: 5px;
     object-fit: cover;
     height: 220px;
   }
+
   &:hover {
-    box-shadow: 3px 6px 8px -6px #264653;
-    // background-color: hsl(10%, 10%, 80%);
-    background-color: #F4A666;
+    box-shadow: 6px 8px 5px -6px #264653;
+    background-color: #f4a666;
     cursor: pointer;
-    @keyframes myAnim {
+  }
+
+  @keyframes myAnim {
     0% {
       animation-timing-function: ease-in;
       opacity: 1;
@@ -112,7 +117,6 @@ p {
       opacity: 1;
       transform: translateY(0px);
     }
-  }
   }
 }
 </style>
