@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header text-uppercase alert-dark text-center"> Add New Plate <div class="img">
+                    <div class="card-header text-uppercase alert-dark text-center"> Aggiungi prodotto <div class="img">
                             <img src="{{ url('image/food.png') }}" alt="">
                         </div>
                     </div>
@@ -20,12 +20,12 @@
                             @if (count(Auth::user()->types) == 0)
                                 <div class="form-group row">
                                     <a class="col-md-6 offset-md-4 d-block border border-danger btn btn-outline-danger "
-                                        href={{ route('admin.types.create') }}>Add food types before creating foods</a>
+                                        href={{ route('admin.types.create') }}>Aggiungi le tipologie di cibo prima di continuare</a>
                                 </div>
                             @endif
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">Nome</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
@@ -41,17 +41,17 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Availability</label>
+                                <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Disponibilà</label>
                                 <div class="col-md-4 col-form-label">
                                     <div>
                                         <input type="radio" id="visible" name="visible" value="1"
                                             {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }} required>
-                                        <label for="visible">Accessible</label><br>
+                                        <label for="visible">Sì</label><br>
                                     </div>
                                     <div>
                                         <input type="radio" id="nonvisible" name="visible" value="0"
                                             {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}>
-                                        <label for="nonvisible">Inaccessible</label><br>
+                                        <label for="nonvisible">No</label><br>
                                     </div>
 
                                     @error('name')
@@ -64,7 +64,7 @@
 
                             <div class="form-group row">
                                 <label for="price"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Prezzo') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="price" type="number" step="0.01"
@@ -81,7 +81,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="ingredients" class="col-md-4 col-form-label text-md-right">Ingredients</label>
+                                <label for="ingredients" class="col-md-4 col-form-label text-md-right">Ingredienti</label>
 
                                 <div class="col-md-6">
                                     <input id="ingredients" type="text"
@@ -98,7 +98,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="type_id" class="col-md-4 col-form-label text-md-right">Type</label>
+                                <label for="type_id" class="col-md-4 col-form-label text-md-right">Tipologia</label>
 
                                 <div class="col-md-6">
                                     <select id="type"
@@ -106,7 +106,7 @@
                                     @enderror"
                                         name="type_id" autocomplete="type_id"
                                         {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }} required>
-                                        <option value="">Choose your types</option>
+                                        <option value="">Scegli la tua tipologia</option>
                                         @foreach ($types as $type)
                                             <option value={{ $type->id }} @if ($type->id == old('type'))
                                                 selected
@@ -122,7 +122,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
+                                <label for="description" class="col-md-4 col-form-label text-md-right">Descrizione</label>
 
                                 <div class="col-md-6">
                                     <textarea id="description" type="text" value="{{ old('description') }}"
@@ -141,7 +141,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="image" class="col-md-4 col-form-label text-md-right">Image Food</label>
+                                <label for="image" class="col-md-4 col-form-label text-md-right">Immagine prodotto</label>
 
                                 <div class="col-md-6">
                                     <input id="image" type="file"
@@ -158,8 +158,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="additional_details" class="col-md-4 col-form-label text-md-right">Additional
-                                    Details</label>
+                                <label for="additional_details" class="col-md-4 col-form-label text-md-right">Dettagli addizionali</label>
 
                                 <div class="col-md-6">
                                     <textarea id="additional_details" type="text" value="{{ old('additional_details') }}"
@@ -168,21 +167,19 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0">
+                            <div class="form-group row mb-2">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary"
                                         {{ count(Auth::user()->types) == 0 ? 'disabled' : '' }}>
-                                        Add plates
+                                        Aggiungi
                                     </button>
                                 </div>
-                            </div>
-
-                            
+                            </div>                            
                         </form>
+
                         <a href="{{ Route('admin.foods.index') }}" class="btn btn-secondary text-white">
                             <span>Torna indietro</span>
-                        </a>
-                        
+                        </a>                        
                     </div>
                     
                 </div>

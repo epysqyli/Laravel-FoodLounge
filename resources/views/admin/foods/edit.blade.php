@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header text-uppercase alert-dark text-center"> Change Plate <div class="img">
+                    <div class="card-header text-uppercase alert-dark text-center"> Modifica dati <div class="img">
                             <img src="{{ url('image/food.png') }}" alt="">
                         </div>
                     </div>
@@ -17,7 +17,7 @@
                             @method('PATCH')
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">Nome</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
@@ -32,15 +32,15 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Availability</label>
+                                <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Disponibilà</label>
                                 <div class="col-md-4 col-form-label">
                                     <div>
                                         <input type="radio" id="visible" name="visible" value="1" {{ ($food->visible=="1")? "checked" : "" }} required>
-                                        <label for="visible">Accessible</label><br>
+                                        <label for="visible">Sì</label><br>
                                     </div>
                                     <div>
                                         <input type="radio" id="nonvisible" name="visible" value="0" {{ ($food->visible=="0")? "checked" : "" }}>
-                                        <label for="nonvisible">Inaccessible</label><br>
+                                        <label for="nonvisible">No</label><br>
                                     </div>
 
                                     @error('name')
@@ -52,7 +52,7 @@
                             </div>
 
                              <div class="form-group row">
-                                <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
+                                <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Prezzo') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="price" type="number" step="0.01"
@@ -68,7 +68,7 @@
                             </div> 
 
                             <div class="form-group row">
-                                <label for="ingredients" class="col-md-4 col-form-label text-md-right">Ingredients</label>
+                                <label for="ingredients" class="col-md-4 col-form-label text-md-right">Ingredienti</label>
 
                                 <div class="col-md-6">
                                     <input id="ingredients" type="text"
@@ -84,12 +84,12 @@
                             </div>
 
                              <div class="form-group row">
-                                <label for="type_id" class="col-md-4 col-form-label text-md-right">Type</label>
+                                <label for="type_id" class="col-md-4 col-form-label text-md-right">Tipologia</label>
 
                                 <div class="col-md-6">
                                     <select id="type" class="form-control @error('type') is-invalid @enderror"
                                     name="type_id" autocomplete="type_id" required>
-                                        <option value="">Choose your types</option>
+                                        <option value="">Scegli la tipologia</option>
                                         @foreach ($types as $type)
                                             <option value={{ $type->id }} 
                                                 @if ($type->id == old('type_id', $food->type_id)) selected                                                    
@@ -106,7 +106,7 @@
                             </div> 
 
                             <div class="form-group row">
-                                <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
+                                <label for="description" class="col-md-4 col-form-label text-md-right">Descrizione</label>
 
                                 <div class="col-md-6">
                                     <textarea id="description" type="text"
@@ -124,7 +124,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="image" class="col-md-4 col-form-label text-md-right">Image Food</label>
+                                <label for="image" class="col-md-4 col-form-label text-md-right">Immagine del prodotto</label>
 
                                 <div class="col-md-6">
                                     <input id="image" type="file" 
@@ -140,8 +140,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="additional_details" class="col-md-4 col-form-label text-md-right">Additional
-                                    Details</label>
+                                <label for="additional_details" class="col-md-4 col-form-label text-md-right">Dettagli addizionali</label>
 
                                 <div class="col-md-6">
                                     <textarea id="additional_details" type="text"
@@ -150,10 +149,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0">
+                            <div class="form-group row mb-2">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Add plates
+                                       Aggiungi
                                     </button>
                                 </div>
                             </div>

@@ -15,33 +15,33 @@
             <div class="col-12 col-md-8 mt-3 mt-md-0">
                 <table class="table table-light table-striped">
                     <tr>
-                        <th>Food Id
+                        <th>Id Prodotto
                         <th>
                         <td>{{ $food->id }}</td>
                     </tr>
                     <tr>
-                        <th>Food type
+                        <th>Tipologia prodotto
                         <th>
-                        <td>{{ $food->type ? $food->type->name : 'not assigned to any category' }}</td>
+                        <td>{{ $food->type ? $food->type->name : 'Nessuna categoria assegnata' }}</td>
                     </tr>
                     <tr>
-                        <th>Price
+                        <th>Prezzo
                         <th>
                         <td>{{ $food->price }} &euro;</td>
                     </tr>
                     <tr>
-                        <th>Description
+                        <th>Descrizione
                         <th>
                         <td>{{ $food->description }}</td>
                     </tr>
                     <tr>
-                        <th>Visible
+                        <th>Disponibilà
                         <th>
-                        <td>{{ $food->visible ? 'Yes' : 'No' }}</td>
+                        <td>{{ $food->visible ? 'Sì' : 'No' }}</td>
                     </tr>
                     @if ($food->additional_details)
                         <tr>
-                            <th>Additional Details
+                            <th>Dettagli addizionali
                             <th>
                             <td>{{ $food->additional_details }}</td>
                         </tr>
@@ -49,5 +49,9 @@
                 </table>
             </div>
         </div>
+
+        <a href="{{ Route('admin.foods.index') }}" class="btn btn-secondary text-white">
+            <span>Torna indietro</span>
+        </a>
     </div>
 @endsection

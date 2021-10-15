@@ -52,6 +52,19 @@
   height: 20px;
 }
 
+.tagliatesto {
+  word-wrap: break-word;
+}
+
+.tagliatesto .contenent-img-cover {
+  max-width: 400px;
+  margin-bottom: 50px;
+}
+
+.tagliatesto .contenent-img-cover .img_cover_admin_home {
+  max-width: 100%;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

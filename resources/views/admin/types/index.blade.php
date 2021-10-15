@@ -2,18 +2,7 @@
 
 @section('content')
 
-    @if (count(Auth::user()->types) < 3)
-        <div class="row">
-            <div class="col-12">
-                <a class="btn btn-outline-dark mt-2 mb-4 d-block mx-auto w-25" href="{{ route('admin.types.create') }}"
-                    class="link-dark">Add Types</a>
-            </div>
-        </div>
-    @endif
-
     <div class="container">
-        <div id="accordion">
-            @foreach ($types as $type)
 
                 <div class="card my-3">
                     <div class="card-header" id="{{ $type->name . 'heading' }}">
@@ -35,9 +24,25 @@
                                 </form>
                             </div>
                         </div>
+                        <div class="col-8 d-flex justify-content-end">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a class="btn btn-outline-dark"
+                                    href="{{ route('admin.types.edit', $type->id) }}" class="link-dark">Modifica</a>
+                                </div>
+
+                                <div class="col-6">
+                                    <form method="post" class="post-delete" action={{ route('admin.types.destroy', $type->id) }}>
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class=" btn btn-danger">Elimina</button>
+                                    </form>
+                                </div>                                   
+                            </div>                                
+                        </div>                        
                     </div>
 
-                    <div id="{{ $type->name . 'collapse' }}" class="collapse show"
+                    <div id="{{ $type->name . 'collapse' }}" class="col collapse show"
                         aria-labelledby="{{ $type->name . 'heading' }}" data-parent="#accordion">
                         <div class="card-body">
                             <ul class="list-group">
@@ -49,8 +54,11 @@
                         </div>
                     </div>
                 </div>
-
             @endforeach
         </div>
+
+        <a href="{{ Route('admin.home') }}" class="btn btn-secondary text-white mt-2">
+            <span>Torna indietro</span>
+        </a>
     </div>
 @endsection

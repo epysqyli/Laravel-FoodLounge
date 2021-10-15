@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header alert-dark text-center">Update category name<div class="img">
+                    <div class="card-header alert-dark text-center">Modifica categoria prodotto<div class="img">
                         </div>
                     </div>
 
@@ -16,7 +16,7 @@
                             @method('PUT')
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">Category Name</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">Nome categoria prodotto</label>
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
                                         name="types[]" value="{{ old('name', $type->name) }}" autocomplete="name" required autofocus>
@@ -29,10 +29,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0">
+                            <div class="form-group row mb-2 justify-content-center">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Update category
+                                        Salva
                                     </button>
                                 </div>
                             </div>
