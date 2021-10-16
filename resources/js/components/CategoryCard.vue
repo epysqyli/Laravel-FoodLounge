@@ -98,7 +98,7 @@ export default {
     background-color: #e2b33c;
   }
   100% {
-    box-shadow: 0px 2px 5px -2px black inset;
+    box-shadow: 2px 4px 5px -4px black inset;
     background-color: hsl(40, 65%, 50%);
   }
 }
