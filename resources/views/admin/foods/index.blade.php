@@ -113,7 +113,6 @@
                 <table class="table table-light table-striped">
                     <thead>
                         <tr>
-                            <th>Id Prodotto</th>
                             <th>Nome</th>
                             <th>Prezzo</th>
                             <th>Disponibilà</th>
@@ -124,7 +123,6 @@
                     <tbody>
                         @foreach ($foods as $food)
                             <tr>
-                                <td>{{ $food->id }}</td>
                                 <td>{{ $food->name }}</td>
                                 <td>{{ $food->price }} &euro;</td>
                                 <td>{{ $food->visible ? 'Sì' : 'No' }}</td>

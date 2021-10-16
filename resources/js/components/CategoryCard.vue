@@ -100,7 +100,6 @@ export default {
   100% {
     box-shadow: 0px 2px 5px -2px black inset;
     background-color: hsl(40, 65%, 50%);
-    // background-color: #f4a666;
   }
 }
 

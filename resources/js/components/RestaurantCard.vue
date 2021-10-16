@@ -80,7 +80,7 @@ p {
     position: absolute;
     bottom: 0;
     right: 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -10%);
     color: white;
     padding: 5px 10px;
     border-radius: 10px;
