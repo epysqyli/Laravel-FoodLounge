@@ -22,23 +22,38 @@ export default {
   data() {
     return {
       orderedItems: [],
+      orderDetails: null,
     };
   },
 
   methods: {
     buildCart() {
       Object.keys(localStorage).forEach((key) => {
-        this.orderedItems.push(JSON.parse(localStorage.getItem(key)));
+        if (key !== "customer_email") {
+          this.orderedItems.push(JSON.parse(localStorage.getItem(key)));
+        }
       });
     },
 
     clearStorage() {
       localStorage.clear();
     },
+
+    getOrder() {
+      axios
+        .get(
+          `http://localhost:8000/api/orders/${localStorage.getItem(
+            "customer_email"
+          )}`
+        )
+        .then((data) => (this.orderDetails = data))
+        .catch((error) => console.log(error));
+    },
   },
 
   mounted() {
     this.buildCart();
+    this.getOrder();
     this.clearStorage();
   },
 };

@@ -52,6 +52,7 @@
               id="customer_email"
               name="customer_email"
               placeholder="Enter email address"
+              v-model="customer_email"
               required
             />
           </div>
@@ -135,6 +136,7 @@ export default {
   name: "Checkout",
   data() {
     return {
+      customer_email: "",
       cart: {
         items: [],
         total: null,
@@ -198,6 +200,12 @@ export default {
     this.buildCart();
     this.addBtreeScript();
     this.createBtreeInstance();
+  },
+
+  watch: {
+    customer_email: function () {
+      localStorage.setItem('customer_email', this.customer_email);
+    },
   },
 };
 </script>
