@@ -46,7 +46,7 @@ export default {
             "customer_email"
           )}`
         )
-        .then((data) => (this.orderDetails = data))
+        .then((resp) => (this.orderDetails = resp.data))
         .catch((error) => console.log(error));
     },
   },
