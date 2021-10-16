@@ -51,7 +51,7 @@ export default {
         .get(`${this.apiUrl}${choice}`)
         .then((response) => {
           response.data.forEach((item) => {
-            if (!this.restaurants.find((entry) => entry.slug == item.slug)) {
+            if (!this.restaurants.find((entry) => entry.id == item.id)) {
               this.restaurants.push(item);
             }
           });
