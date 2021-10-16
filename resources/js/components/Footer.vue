@@ -17,7 +17,7 @@
             Progetto conclusivo post formazione
             <span
               ><a class="text-light" href="https://www.boolean.careers"
-                >Boolean Carrers 2021</a
+                >Boolean Careers 2021</a
               ></span
             >
           </p>

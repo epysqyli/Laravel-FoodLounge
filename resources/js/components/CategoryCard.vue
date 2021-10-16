@@ -69,7 +69,7 @@ export default {
 }
 
 .selected {
-  animation: pressed 100ms ease-in 1 alternate forwards;
+  animation: pressed 50ms ease-in 1 alternate forwards;
 }
 
 .deselected {
