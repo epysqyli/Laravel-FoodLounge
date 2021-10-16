@@ -37,12 +37,15 @@ export default {
   props: {
     restaurant: Object,
     categoryName: String,
-    // display all categories for a given restaurant
   },
 
   methods: {
     limitParagraph(text) {
-      return `${text.split(" ").slice(0, 10).join(" ")} ...`;
+      if (text.split(" ").length < 16) {
+        return text;
+      } else {
+        return `${text.split(" ").slice(0, 15).join(" ")} ...`;
+      }
     },
   },
 };
@@ -89,6 +92,8 @@ p {
   &:hover {
     box-shadow: 6px 8px 5px -6px #264653;
     background-color: #f4a666;
+    // test color
+    // background-color: hsl(40, 65%, 50%);
     cursor: pointer;
   }
 
