@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\User;
 use App\Food;
-
+use App\Order;
 class GuestController extends Controller
 {
     public function categories()
@@ -30,9 +30,15 @@ class GuestController extends Controller
         }])->first();
         return response()->json($data);
     }
+
     public function checkout(Food $food)
     {
         $foods = Food::all();
         return response()->json(compact('foods'));
+    }
+
+    public function getOrder($customer_email) {
+        $order = Order::where('customer_email', $customer_email)->orderBy('id', 'DESC')->first();
+        return response()->json(compact($order));
     }
 }

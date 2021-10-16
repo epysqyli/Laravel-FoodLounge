@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-center my-5 py-2">Success!</h1>
+    <h1 class="text-center my-5 py-2">Ordine confermato!</h1>
     <div class="row">
       <div class="col-10 offset-1">
         <div class="text-center h3 mx-auto">Riepilogo ordine da inserire</div>
