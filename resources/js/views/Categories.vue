@@ -50,7 +50,11 @@ export default {
       axios
         .get(`${this.apiUrl}${choice}`)
         .then((response) => {
-          response.data.forEach((item) => this.restaurants.push(item));
+          response.data.forEach((item) => {
+            if (!this.restaurants.find((entry) => entry.slug == item.slug)) {
+              this.restaurants.push(item);
+            }
+          });
         })
         .catch((error) => console.log(error));
     },
@@ -75,7 +79,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container{
+.container {
   padding-top: 50px;
   padding-bottom: 200px;
 }

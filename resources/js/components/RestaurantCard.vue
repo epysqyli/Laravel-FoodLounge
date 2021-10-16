@@ -37,6 +37,7 @@ export default {
   props: {
     restaurant: Object,
     categoryName: String,
+    // display all categories for a given restaurant
   },
 
   methods: {
@@ -57,6 +58,7 @@ p {
   border: none;
   border-radius: 5px;
   background-color: #e9c46a;
+  // background-color: #f7eaca; lighter color test
   box-shadow: 3px 5px 3px -5px #264653;
   animation: myAnim 1s ease-in 1 normal forwards;
   transition: box-shadow 200ms ease-out;
