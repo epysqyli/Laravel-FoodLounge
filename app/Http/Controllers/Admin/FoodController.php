@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Food;
 use App\Type;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -13,7 +14,7 @@ class FoodController extends Controller
 {
     public function index()
     {
-        $foods = Auth::user()->foods;
+        $foods = User::where('id', Auth::user()->id)->first()->foods()->paginate(10);
         return view('admin.foods.index', compact('foods'));
     }
 

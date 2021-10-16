@@ -101,8 +101,8 @@
                 <h1>Tutti i prodotti</h1>
             </div>
             <div class="col-12 col-md-4 offset-md-2">
-                <a class="d-block w-100 btn btn-outline-dark my-2" href="{{ route('admin.foods.create', Auth::user()->id) }}"
-                    class=" link-dark">Aggiungi
+                <a class="d-block w-100 btn btn-outline-dark my-2"
+                    href="{{ route('admin.foods.create', Auth::user()->id) }}" class=" link-dark">Aggiungi
                     prodotto</a>
             </div>
         </div>
@@ -152,6 +152,12 @@
                 <a href="{{ Route('admin.foods.index') }}" class="d-block btn btn-secondary text-white">
                     <span>Torna indietro</span>
                 </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                {{ $foods->links() }}
             </div>
         </div>
     </div>
