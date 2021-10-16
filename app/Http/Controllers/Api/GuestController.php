@@ -39,6 +39,6 @@ class GuestController extends Controller
 
     public function getOrder($customer_email) {
         $order = Order::where('customer_email', $customer_email)->orderBy('id', 'DESC')->first();
-        return response()->json(compact($order));
+        return response()->json($order);
     }
 }
