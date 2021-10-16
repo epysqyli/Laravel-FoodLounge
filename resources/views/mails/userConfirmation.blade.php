@@ -15,7 +15,6 @@
         <div class="row">
             <div class="col-10 mx-auto">
                 <h1 class="mt-3 text-center">Ordine Confermato!</h1>
-                <h3>{{  }}</h3>
                 <h3>L'indirizzo a cui spedire: {{ $order->customer_address }}</h3>
 
                 <div
