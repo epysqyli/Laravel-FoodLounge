@@ -15,7 +15,6 @@
           class="card-img-top"
           :alt="restaurant.name"
         />
-        <div class="category-name">{{ categoryName }}</div>
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -25,6 +24,7 @@
             {{ this.limitParagraph(restaurant.description) }}
           </p>
         </div>
+        <div class="category-name">{{ categoryName }}</div>
       </div>
     </div>
   </router-link>
@@ -75,8 +75,8 @@ p {
 
   .category-name {
     position: absolute;
-    top: 10%;
-    left: 50%;
+    bottom: 0;
+    right: 0;
     transform: translate(-50%, -50%);
     color: white;
     padding: 5px 10px;
