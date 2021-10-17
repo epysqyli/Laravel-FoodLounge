@@ -4,7 +4,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <div class="container">
-        <h1 class="text-center mb-4">Statistiche Ordini - Ultimi 3 mesi</h1>
+        <h1 class="text-center mt-2 mb-4">Statistiche Ordini - Ultimi 3 mesi</h1>
         <div>
             <canvas id="chart"></canvas>
         </div>
@@ -44,6 +44,10 @@
                     below: 'rgba(0, 150, 150, 0.25)'
                 },
                 borderColor: 'crimson',
+                pointBackgroundColor: 'crimson',
+                pointRadius: 5,
+                pointHoverRadius: 8,
+                pointHoverBorderColor: 'black',
                 tension: 0.5,
             }, {
                 label: 'Fatturato',
@@ -51,6 +55,10 @@
                 data: {{ json_encode($monthlyRevenue) }},
                 fill: true,
                 derColor: 'cornflowerblue',
+                pointBackgroundColor: 'cornflowerblue',
+                pointRadius: 5,
+                pointHoverRadius: 8,
+                pointHoverBorderColor: 'black',
                 tension: 0.5
             }]
         };
