@@ -11,7 +11,6 @@
     </div>
 
     <script>
-        // months should be the actual last 3
         const months = {
             1: 'Gennaio',
             2: 'Febbraio',
@@ -34,7 +33,7 @@
         ];
 
         const data = {
-            labels: labels,
+            labels,
             datasets: [{
                 label: 'Numero Ordini',
                 yAxisID: 'orders',
@@ -58,7 +57,7 @@
 
         const config = {
             type: 'line',
-            data: data,
+            data,
             options: {
                 scales: {
                     orders: {
@@ -78,7 +77,7 @@
             }
         };
 
-        var myChart = new Chart(
+        const myChart = new Chart(
             document.getElementById('chart'),
             config
         );
