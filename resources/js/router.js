@@ -39,11 +39,6 @@ const router = new VueRouter({
             name: "payment-result",
             component: PaymentResult,
         },
-        {
-            path: "/chart-test",
-            name: "chart-test",
-            component: () => import("./views/chartTest"),
-        },
     ],
 });
 
