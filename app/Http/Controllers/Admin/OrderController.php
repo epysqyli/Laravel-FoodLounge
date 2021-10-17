@@ -49,6 +49,7 @@ class OrderController extends Controller
     }
 
     public function displayStats() {
-        return view('admin.orders.statistics');
+        $test = [0, 10, 20, 30, 25, 22, 28];
+        return view('admin.orders.statistics', compact("test"));
     }
 }
