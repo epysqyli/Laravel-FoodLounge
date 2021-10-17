@@ -4,8 +4,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <div class="container">
+        <h1 class="text-center mb-4">Statistiche Ordini - Ultimi 3 mesi</h1>
         <div>
-            <canvas id="ordersPerMonth"></canvas>
+            <canvas id="chart"></canvas>
         </div>
     </div>
 
@@ -19,7 +20,7 @@
             5: 'Maggio',
             6: 'Giugno',
             7: 'Luglio',
-            8: 'Agostop',
+            8: 'Agosto',
             9: 'Settembre',
             10: 'Ottobre',
             11: 'Novembre',
@@ -27,9 +28,9 @@
         }
 
         const labels = [
-            'Month 1',
-            'Month 2',
-            'Month 3',
+            months[{{ json_encode($months) }}[0]],
+            months[{{ json_encode($months) }}[1]],
+            months[{{ json_encode($months) }}[2]],
         ];
 
         const data = {
@@ -73,7 +74,7 @@
         };
 
         var myChart = new Chart(
-            document.getElementById('ordersPerMonth'),
+            document.getElementById('chart'),
             config
         );
     </script>
