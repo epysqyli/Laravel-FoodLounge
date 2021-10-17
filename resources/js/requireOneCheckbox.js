@@ -1,4 +1,7 @@
 (() => {
+    if (!document.getElementById("edit-user-form")) {
+        return;
+    }
     const form = document.getElementById("edit-user-form");
     const checkboxes = form.querySelectorAll("input[type=checkbox]");
     const checkboxLength = checkboxes.length;
