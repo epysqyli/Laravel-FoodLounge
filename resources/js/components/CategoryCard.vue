@@ -61,6 +61,10 @@ export default {
     box-shadow: 5px 10px 8px -6px black;
     background-color: #e2b33c;
     cursor: pointer;
+    
+    .name {
+      color: black;
+    }
   } 
 
   &:active {
