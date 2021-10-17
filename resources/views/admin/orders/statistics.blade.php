@@ -47,11 +47,11 @@
                 borderColor: 'crimson',
                 tension: 0.5,
             }, {
-                label: 'Fatturato - EUR',
+                label: 'Fatturato',
                 yAxisID: 'revenue',
                 data: {{ json_encode($monthlyRevenue) }},
                 fill: true,
-                borderColor: 'cornflowerblue',
+                derColor: 'cornflowerblue',
                 tension: 0.5
             }]
         };
@@ -68,6 +68,11 @@
                     revenue: {
                         type: 'linear',
                         position: 'right',
+                        ticks: {
+                            callback: function(value, index, values) {
+                                return value + ' €';
+                            }
+                        }
                     }
                 }
             }
