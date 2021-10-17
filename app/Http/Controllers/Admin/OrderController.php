@@ -48,8 +48,27 @@ class OrderController extends Controller
         //
     }
 
-    public function displayStats() {
-        $test = [0, 10, 20, 30, 25, 22, 28];
-        return view('admin.orders.statistics', compact("test"));
+    public function displayStats()
+    {
+        // get monthly orders for the last 3 months
+        // get monthly revenue for the last 3 months
+
+        $latestMonth = Auth::user()->orders->first()->created_at->month;
+        $ordersCount = [];
+        $monthlyRevenue = [];
+
+        for ($i = 0; $i < 3; $i++) {
+            $orders = User::where('id', Auth::user()->id)->first()->orders()->whereMonth('created_at', $latestMonth - $i)->get();
+            array_unshift($ordersCount, count($orders));
+            
+            $monthlyAmount = 0;
+            foreach ($orders as $order) {
+                $monthlyAmount += $order->amount;
+            }
+
+            array_unshift($monthlyRevenue, $monthlyAmount);
+        }
+
+        return view('admin.orders.statistics', compact("ordersCount", "monthlyRevenue"));
     }
 }

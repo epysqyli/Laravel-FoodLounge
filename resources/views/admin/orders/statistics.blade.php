@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-{{-- @dd($test); --}}
-
 @section('content')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -12,13 +10,26 @@
     </div>
 
     <script>
+        // months should be the actual last 3
+        const months = {
+            1: 'Gennaio',
+            2: 'Febbraio',
+            3: 'Marzo',
+            4: 'Aprile',
+            5: 'Maggio',
+            6: 'Giugno',
+            7: 'Luglio',
+            8: 'Agostop',
+            9: 'Settembre',
+            10: 'Ottobre',
+            11: 'Novembre',
+            12: 'Dicembre',
+        }
+
         const labels = [
             'Month 1',
             'Month 2',
             'Month 3',
-            'Month 4',
-            'Month 5',
-            'Month 6',
         ];
 
         const data = {
@@ -26,22 +37,20 @@
             datasets: [{
                 label: 'Numero Ordini',
                 yAxisID: 'orders',
-                data: {{ json_encode($test) }},
+                data: {{ json_encode($ordersCount) }},
                 fill: {
-                    target: 'origin',
-                    above: 'rgba(255, 0, 0, 0.25)',
-                    below: 'rgba(0, 0, 255, 0.25)'
+                    target: '1',
+                    above: 'rgba(150, 150, 0, 0.25)',
+                    below: 'rgba(0, 150, 150, 0.25)'
                 },
+                borderColor: 'crimson',
                 tension: 0.5,
             }, {
-                label: 'Fatturato',
+                label: 'Fatturato - EUR',
                 yAxisID: 'revenue',
-                data: [3000, 2000, 9000, 4500, 5550, 6250],
-                fill: {
-                    target: 'origin',
-                    above: 'rgba(0, 0, 255, 0.25)',
-                    below: 'rgba(255, 0, 0, 0.25)',
-                },
+                data: {{ json_encode($monthlyRevenue) }},
+                fill: true,
+                borderColor: 'cornflowerblue',
                 tension: 0.5
             }]
         };
@@ -58,10 +67,6 @@
                     revenue: {
                         type: 'linear',
                         position: 'right',
-                        ticks: {
-                            max: 1,
-                            min: 0
-                        }
                     }
                 }
             }
