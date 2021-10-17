@@ -42,7 +42,7 @@ export default {
 <style lang="scss" scoped>
 .category {
   border-radius: 5px;
-  background-color: #e9c46a;
+  background-color: #3a6b7e;
   box-shadow: 3px 6px 8px -6px black;
   transition: box-shadow 200ms ease-out;
 
@@ -53,7 +53,7 @@ export default {
 
   .name {
     font-size: 1.2rem;
-    color: black;
+    color: white;
     text-decoration: none;
   }
 
@@ -61,7 +61,7 @@ export default {
     box-shadow: 5px 10px 8px -6px black;
     background-color: #e2b33c;
     cursor: pointer;
-  }
+  } 
 
   &:active {
     box-shadow: 5px 8px 12px -6px black;
