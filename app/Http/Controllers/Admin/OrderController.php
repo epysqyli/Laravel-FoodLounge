@@ -48,7 +48,7 @@ class OrderController extends Controller
         //
     }
 
-    public function statistics() {
+    public function displayStats() {
         return view('admin.orders.statistics');
     }
 }
