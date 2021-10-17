@@ -24,11 +24,6 @@ const router = new VueRouter({
                 },
             ],
         },
-        // {
-        //     path: "/categories/:names",
-        //     name: "categories",
-        //     component: Categories,
-        // },
         {
             path: "/restaurants/:slug",
             name: "restaurants",
@@ -44,9 +39,12 @@ const router = new VueRouter({
             name: "payment-result",
             component: PaymentResult,
         },
+        {
+            path: "/chart-test",
+            name: "chart-test",
+            component: () => import("./views/chartTest"),
+        },
     ],
 });
-
-
 
 export default router;

@@ -65,8 +65,16 @@
 
       <!-- lato inferiore -->
       <div
-        class="col-12 d-flex justify-content-center border-top text-white border-dark">
-        <p class="p-2">Copyright Deliveboo &copy;2021</p>
+        class="
+          col-12
+          d-flex
+          justify-content-center
+          border-top
+          text-white
+          border-dark
+        "
+      >
+        <p class="py-4">Copyright Deliveboo &copy; 2021</p>
       </div>
     </div>
   </footer>
@@ -80,20 +88,12 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  background: rgb(231,111,81);
-  background: linear-gradient(87deg, rgba(231,111,81,1) 0%, rgba(233,196,106,1) 100%);
-  // position: fixed;
-  height: 150px;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding-bottom: 300px;
+  background: linear-gradient(
+    87deg,
+    rgba(231, 111, 81, 1) 0%,
+    rgba(233, 196, 106, 1) 100%
+  );
 
-  // .column-boolean{
-  //   img{
-  //     max-width: 20px;
-  //   }
-  // }
   ul li {
     display: inline-block;
     a {
