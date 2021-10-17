@@ -61,7 +61,7 @@ p {
   border: none;
   border-radius: 5px;
   background-color: #e9c46a;
-  // background-color: #f7eaca; lighter color test
+  // background-color: #f7eaca;
   box-shadow: 3px 5px 3px -5px #264653;
   animation: myAnim 1s ease-in 1 normal forwards;
   transition: box-shadow 200ms ease-out;
@@ -78,9 +78,8 @@ p {
 
   .category-name {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    transform: translate(-50%, -50%);
+    top: 2%;
+    left: 10%;
     color: white;
     padding: 5px 10px;
     border-radius: 10px;
