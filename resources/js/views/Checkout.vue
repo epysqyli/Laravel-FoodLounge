@@ -201,7 +201,7 @@ export default {
 
   watch: {
     customer_email: function () {
-      localStorage.setItem('customer_email', this.customer_email);
+      localStorage.setItem("customer_email", this.customer_email);
     },
   },
 };
