@@ -18,8 +18,10 @@
                 class="btn btn-secondary rounded"
                 v-b-toggle.sidebar-right
               >
-                <h1><i class="bi bi-cart"></i></h1
-              ></b-button>
+                <div>
+                  <font-awesome-icon icon="shopping-cart" />
+                </div>
+              </b-button>
             </div>
           </div>
         </div>
@@ -37,7 +39,6 @@ export default {
 <style lang="scss" scoped>
 header {
   position: relative;
-  background: rgb(231, 111, 81);
   background: linear-gradient(
     87deg,
     rgba(231, 111, 81, 1) 0%,
