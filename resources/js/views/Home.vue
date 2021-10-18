@@ -119,8 +119,12 @@ export default {
   0% {
     transform: translateX(-200%);
   }
+  80% {
+    transform: rotateZ(3deg);
+  }
   100% {
     transform: translateX(0%);
+    transform: rotateZ(0deg);
   }
 }
 
