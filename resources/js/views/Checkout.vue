@@ -1,9 +1,9 @@
 <template>
-  <div class="container mx-auto my-3">
+  <div class="container mx-auto my-sm-3">
     <div class="row pt-3 shadow rounded form">
       <div class="col-12 col-md-8 px-5 pt-3">
         <form
-          class="col-10 mx-auto"
+          class="col-12 col-md-10 mx-auto"
           method="post"
           action="http://localhost:8000/api/check-payment"
           id="payment-form"
