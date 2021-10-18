@@ -1,38 +1,38 @@
 <template>
   <header>
-    <nav class="navbar navbar-light text-center">
-      <div class="container-fluid">
-        <router-link
-          style="
-            text-decoration: none;
-            color: inherit;
-            width: 50%;
-            display: block;
-          "
-          :to="{ name: 'home' }"
-        >
-          <a class="navbar-brand">
-            <h1><i class="bi bi-egg-fried success"></i> FoodLounge</h1>
-          </a>
-        </router-link>
-
-        <div class="d-flex align-items-center">
-          <div v-if="this.$route.path.split('/').includes('restaurants')">
-            <b-button
-              class="btn btn-secondary rounded"
-              v-b-toggle.sidebar-right
-            >
-              <h1><i class="bi bi-cart"></i></h1
-            ></b-button>
-          </div>
-          <a
-            href="http://localhost:8000/api/user"
-            class="d-block btn btn-outline-primary py-2 ml-2"
-            >Admin area</a
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between align-items-center py-2 px-md-5">
+          <router-link
+            style="
+              text-decoration: none;
+              color: black;
+              width: 50%;
+              display: block;
+            "
+            :to="{ name: 'home' }"
           >
+            <h1><i class="bi bi-egg-fried success"></i> FoodLounge</h1>
+          </router-link>
+
+          <div class="d-flex align-items-center">
+            <div v-if="this.$route.path.split('/').includes('restaurants')">
+              <b-button
+                class="btn btn-secondary rounded"
+                v-b-toggle.sidebar-right
+              >
+                <h1><i class="bi bi-cart"></i></h1
+              ></b-button>
+            </div>
+            <a
+              href="http://localhost:8000/api/user"
+              class="d-block btn btn-outline-primary py-2 ml-2"
+              >Accesso Ristoratori</a
+            >
+          </div>
         </div>
       </div>
-    </nav>
+    </div>
   </header>
 </template>
 
