@@ -97,7 +97,13 @@ p {
 
     img {
       height: 250px;
-      filter: saturate(110%)
+      filter: saturate(110%);
+    }
+
+    .category-name {
+      color: #264653;
+      background-color: white;
+      border: 2px solid #264653;
     }
   }
 
