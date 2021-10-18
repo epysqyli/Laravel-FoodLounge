@@ -10,8 +10,8 @@
               alt="delivery-scooter"
             />
           </div>
-          <h2 class="text-center mx-auto pt-2">
-            Be Happy. Be Healthy! Choose
+          <h2 class="text-center mx-auto mt-5">
+            Non sai cosa mangiare? Scegli tra le nostre proposte!
           </h2>
         </div>
       </div>
