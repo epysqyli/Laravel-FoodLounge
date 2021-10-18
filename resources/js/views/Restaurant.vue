@@ -22,7 +22,7 @@
           <div class="col p-5" v-for="(food, index) in foods" :key="index">
             <div class="card">
               <div class="card-body">
-                <img
+                <!-- <img
                   class="rounded"
                   :src="
                     food.image[0] == 'h'
@@ -30,7 +30,7 @@
                       : `http://localhost:8000/storage/${food.image}`
                   "
                   :alt="food.name"
-                />
+                /> -->
                 <div class="card-date">
                   <i class="bi bi-calendar3"></i>24 Mar 18:00 PM
                 </div>
@@ -347,7 +347,7 @@ export default {
 
     img {
       width: 100%;
-      height: 200px;
+      height: 20px;
       object-fit: cover;
       opacity: 1;
       transition: 0.5s ease;
@@ -376,7 +376,7 @@ export default {
   }
 }
 td img {
-  height: 100px;
+  height: 10px;
   width: 50px;
   object-fit: cover;
   vertical-align: middle;
