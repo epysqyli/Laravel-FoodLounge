@@ -56,15 +56,18 @@
 @section('content')
 
     <div class="container">
+        <h1>Riepilogo tipologie</h1>
+
         {{-- bottone aggiungi tipologia --}}
-        @if (count(Auth::user()->types) < 3)
-            <div class="row">
-                <div class="col-12">
-                    <a class="btn btn-outline-dark mt-2 mb-4 d-block mx-auto w-25" href="{{ route('admin.types.create') }}"
-                        class="link-dark">Aggiungi tipologia</a>
-                </div>
-            </div>
-        @endif
+        <div class="row">
+            @if (count(Auth::user()->types) < 3)            
+                <div class="col-12 text-center">
+                    <a class="btn btn-outline-dark link-dark mt-2 mb-4 w-25" href="{{ route('admin.types.create') }}"
+                        >Aggiungi tipologia</a>
+                </div>            
+            @endif
+        </div>
+        
 
         <div id="accordion">
             @foreach ($types as $type)

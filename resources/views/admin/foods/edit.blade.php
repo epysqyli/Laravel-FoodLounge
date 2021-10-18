@@ -32,7 +32,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Disponibilà</label>
+                                <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Visibile</label>
                                 <div class="col-md-4 col-form-label">
                                     <div>
                                         <input type="radio" id="visible" name="visible" value="1" {{ ($food->visible=="1")? "checked" : "" }} required>
