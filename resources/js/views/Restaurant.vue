@@ -13,7 +13,7 @@
         <tr v-for="(food, index) in foods" :key="index">
           <td>
             <img
-              class="w-25"
+              class="w-50"
               :src="
                 food.image[0] == 'h'
                   ? food.image
