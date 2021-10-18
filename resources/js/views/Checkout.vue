@@ -77,7 +77,7 @@
             type="submit"
             class="btn btn-primary w-50 mx-auto d-block my-4 my-md-2"
           >
-            Pay!
+            Paga Ordine!
           </button>
 
           <input type="hidden" id="nonce" name="payment_method_nonce" />
@@ -120,11 +120,8 @@
           <span class="price">{{ item.price }} &euro;</span>
         </div>
         <hr />
-        <p>
-          Totale
-          <span
-            ><b>{{ cart.total }} &euro;</b></span
-          >
+        <p class="text-right">
+          Totale: <b>{{ cart.total }} &euro;</b>
         </p>
       </div>
     </div>
