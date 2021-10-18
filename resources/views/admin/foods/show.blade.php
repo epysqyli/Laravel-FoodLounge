@@ -53,7 +53,7 @@
 
         <div class="row">
             <div class="col-12 col-md-4 offset-md-8">
-                <a href="{{ Route('admin.foods.index') }}" class="d-block btn btn-secondary text-white">
+                <a href="{{ url()->previous() }}" class="d-block btn btn-secondary text-white">
                     <span>Torna indietro</span>
                 </a>
             </div>
