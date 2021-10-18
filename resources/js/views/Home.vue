@@ -21,7 +21,7 @@
             />
           </div>
         </div>
-        <h2 class="text-center mx-auto mt-5">
+        <h2 class="text-center mx-auto mt-5 welcome-title">
           Non sai cosa mangiare? Scegli tra le nostre proposte!
         </h2>
       </div>
@@ -108,15 +108,28 @@ export default {
 
 <style lang="scss" scoped>
 .welcome {
-  animation: slide-in 750ms cubic-bezier(0.18, 0.89, 0.32, 1.28) 1 forwards;
+  animation: slide-in-left 750ms cubic-bezier(0.18, 0.89, 0.32, 1.28) 1 forwards;
 }
 
-@keyframes slide-in {
+.welcome-title {
+  animation: appear 750ms cubic-bezier(0.18, 0.89, 0.32, 1.28) 1 forwards;
+}
+
+@keyframes slide-in-left {
   0% {
     transform: translateX(-200%);
   }
   100% {
     transform: translateX(0%);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>    

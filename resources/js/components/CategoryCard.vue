@@ -1,7 +1,7 @@
 <template>
   <div
     class="category d-flex align-items-center"
-    :class="category.selected ? on : '' || jumpAnimation"
+    :class="category.selected ? on : '' || scaleAnimation"
     @click="$emit('toggleChoice')"
   >
     <img :src="category.img" :alt="category.name" class="d-block w-25" />
@@ -22,18 +22,18 @@ export default {
   data() {
     return {
       on: "selected",
-      jumpAnimation: "jump-animation",
+      scaleAnimation: "scale-animation",
     };
   },
 
   methods: {
-    removeJumpAnimation() {
-      this.jumpAnimation = null;
+    removeScaleAnimation() {
+      this.scaleAnimation = null;
     },
   },
 
   mounted() {
-    setTimeout(this.removeJumpAnimation, 1000);
+    setTimeout(this.removeScaleAnimation, 1000);
   },
 };
 </script>
@@ -60,11 +60,11 @@ export default {
     box-shadow: 5px 10px 8px -6px black;
     background-color: #e2b33c;
     cursor: pointer;
-    
+
     .name {
       color: black;
     }
-  } 
+  }
 
   &:active {
     box-shadow: 5px 8px 12px -6px black;
@@ -102,53 +102,19 @@ export default {
   }
 }
 
-.jump-animation {
-  animation: jumpAnimation 1s ease-in 1 forwards;
+.scale-animation {
+  animation: scale 750ms ease 1;
 }
 
-@keyframes jumpAnimation {
+@keyframes scale {
   0% {
-    animation-timing-function: ease-in;
-    opacity: 1;
-    transform: translateY(-45px);
+    transform: scale(1, 1);
   }
-
-  24% {
-    opacity: 1;
+  50% {
+    transform: scale(1.03, 1.03);
   }
-
-  40% {
-    animation-timing-function: ease-in;
-    transform: translateY(-24px);
-  }
-
-  65% {
-    animation-timing-function: ease-in;
-    transform: translateY(-12px);
-  }
-
-  82% {
-    animation-timing-function: ease-in;
-    transform: translateY(-6px);
-  }
-
-  93% {
-    animation-timing-function: ease-in;
-    transform: translateY(-4px);
-  }
-
-  25%,
-  55%,
-  75%,
-  87% {
-    animation-timing-function: ease-out;
-    transform: translateY(0px);
-  }
-
   100% {
-    animation-timing-function: ease-out;
-    opacity: 1;
-    transform: translateY(0px);
+    transform: scale(1, 1);
   }
 }
 </style>
