@@ -80,7 +80,8 @@ p {
   .category-name {
     position: absolute;
     top: 2%;
-    left: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     color: white;
     padding: 5px 10px;
     border-radius: 10px;
