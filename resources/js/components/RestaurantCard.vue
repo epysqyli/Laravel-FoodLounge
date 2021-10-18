@@ -88,6 +88,7 @@ p {
     border: 2px solid white;
     background-color: #264653;
     font-size: 0.85rem;
+    text-align: center;
   }
 
   &:hover {

@@ -15,14 +15,6 @@ const router = new VueRouter({
             path: "",
             name: "home",
             component: Home,
-
-            children: [
-                {
-                    name: "categories",
-                    path: "/categories/:names",
-                    component: Categories,
-                },
-            ],
         },
         {
             path: "/restaurants/:slug",

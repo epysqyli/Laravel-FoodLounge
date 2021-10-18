@@ -92,7 +92,7 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  background-color: #effbf9;
+  // background-color: #effbf9;
   .container {
     min-height: 45vh;
 
