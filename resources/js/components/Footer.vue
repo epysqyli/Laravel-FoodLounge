@@ -23,7 +23,7 @@
           </p>
           <a
             href="http://localhost:8000/api/user"
-            class="d-block py-2 ml-2 align-self-right text-white"
+            class="d-block py-2 ml-2 align-self-right admin"
             >Accesso Ristoratori</a
           >
         </div>
@@ -103,6 +103,16 @@ footer {
     display: inline-block;
     a {
       margin: 10px;
+    }
+  }
+
+  .admin {
+    color: #3a6b7e;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      color: white;
     }
   }
 }
