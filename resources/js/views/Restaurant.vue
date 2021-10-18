@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid restaurant">
     <div class="row cover_image">
       <div class="cover-image">
         <img
@@ -16,12 +16,31 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-5">
       <div class="col-8">
-        <div class="row">
-          <div class="col p-5" v-for="(food, index) in foods" :key="index">
-            <div class="card">
+        <div class="row g-5 justify-content-center">
+          <div class="p-2" v-for="(food, index) in foods" :key="index">
+            <div class="cardFood">
               <div class="card-body">
+                 <div
+                  class="btn-group rounded"
+                  role="group"
+                  aria-label="Basic outlined example"
+                >
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary"
+                    @click="addProduct(food)"
+                  >+
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary"
+                    @click="removeProduct(food)"
+                  >-
+                  </button>
+                </div>
                 <img
                   class="rounded"
                   :src="
@@ -31,295 +50,242 @@
                   "
                   :alt="food.name"
                 />
-                <div class="card-date">
-                  <i class="bi bi-calendar3"></i>24 Mar 18:00 PM
-                </div>
+
                 <p class="card-text">
                   {{ food.name }}
                 </p>
-                <div><i class="bi bi-person"></i>Teacher:</div>
-                <br />
-                <div><i class="bi bi-cash"></i>Price: {{ food.price }}</div>
-                <a href="#" class="btn btn-primary"
-                  ><i class="bi bi-plus-lg"></i>Find More</a
-                >
+
+                <div>
+                  <i class="bi bi-cash"></i> / Price:
+                  {{ food.price }}
+                </div>
+               
               </div>
+              <!-- <div
+                            class="
+                                btn btn-outline-danger
+                                font-weight-bold
+                                px-2
+                                mr-2
+                            "
+                            @click="removeProduct(food)"
+                            :class="
+                                cart.items.find((el) => food.id === el.id)
+                                    ? 'clickable'
+                                    : 'notClickable'
+                            "
+                        >
+                            Remove
+                        </div> -->
             </div>
           </div>
         </div>
       </div>
-      <div class="col-4 bg-secondary">2 di 2</div>
-    </div>
-
-    <!-- Display foods -->
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Image</th>
-          <th scope="col">Price</th>
-          <th scope="col">Name</th>
-          <th scope="col">Buy</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(food, index) in foods" :key="index">
-          <th scope="row">1</th>
-          <td>
-            <img
-              class=""
-              :src="
-                food.image[0] == 'h'
-                  ? food.image
-                  : `http://localhost:8000/storage/${food.image}`
-              "
-              :alt="food.name"
-            />
-          </td>
-          <td>{{ food.price }}</td>
-          <td>{{ food.name }}</td>
-          <td class="d-flex justify-content-center align-items-center">
-            <div
-              class="btn btn-outline-danger font-weight-bold px-2 mr-2"
-              @click="removeProduct(food)"
-              :class="
-                cart.items.find((el) => food.id === el.id)
-                  ? 'clickable'
-                  : 'notClickable'
-              "
-            >
-              Remove
-            </div>
-            <div
-              class="btn btn-outline-primary font-weight-bold px-4"
-              @click="addProduct(food)"
-              :class="
-                cart.items.find((el) => food.id === el.id)
-                  ? 'notClickable'
-                  : 'clickable'
-              "
-            >
-              Add
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- Cart -->
-    <div class="row mt-4">
-      <b-sidebar id="sidebar-right" title="Cart" right shadow>
-        <div class="overflow-hidden">
-          <div class="mx-1">
-            <div
-              class="container mx-auto border rounded"
-              v-if="cart.items.length != 0"
-            >
-              <h1><i class="bi bi-cart"></i></h1>
-              <div
-                class="d-flex justify-content-between align-items-center my-1"
-                v-for="item in cart.items"
-                :key="item.id"
-              >
-                <div>{{ item.name }}</div>
-                <div>{{ item.price }} &euro;</div>
+    
+    <div class="col-4">
+      
+      <div class="card cardCart border-success mb-3" style="max-width: 18rem">
+        <div class="card-header">
+          <i class="bi bi-cart"> Cart </i>
+        </div>
+        <div
+          class="card-body text-success"
+          v-for="item in cart.items"
+          :key="item.id"
+        >
+          <div class="card-text">
+            <div class="row">
+              <div class="col-8">{{ item.name }} / {{ item.price }} &euro;</div>
+              <div class="col-4">
                 <div
-                  class="btn btn-outline-danger font-weight-bold px-3"
-                  @click="decrementQty(item)"
+                  class="btn-group"
+                  role="group"
+                  aria-label="Basic outlined example"
                 >
-                  -
-                </div>
-                <div>{{ item.quantity }}</div>
-                <div
-                  class="btn btn-outline-primary font-weight-bold px-3"
-                  @click="incrementQty(item)"
-                >
-                  +
+                  <button
+                    type="button"
+                    class="btn-outline-primary"
+                    @click="decrementQty(item)"
+                  >
+                    -
+                  </button>
+                  <button type="button" class="btn-outline-primary">
+                    {{ item.quantity }}
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-outline-primary"
+                    @click="incrementQty(item)"
+                  >
+                    +
+                  </button>
                 </div>
               </div>
-              <div
-                class="
-                  d-flex
-                  justify-content-between
-                  align-items-center
-                  mt-3
-                  mb-1
-                "
-              >
-                <div>Totale: {{ cart.total }} &euro;</div>
-                <router-link
-                  style="
-                    text-decoration: none;
-                    color: inherit;
-                    width: 50%;
-                    display: block;
-                  "
-                  :to="{ name: 'checkout' }"
-                >
-                  <a class="navbar-brand">CheckOut</a>
-                </router-link>
-              </div>
             </div>
+           
           </div>
         </div>
-      </b-sidebar>
+      </div>
+    </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Restaurant",
-  data() {
-    return {
-      apiUrl: "http://127.0.0.1:8000/api/restaurants/",
-      restaurant: {},
-      foods: null,
-      cart: {
-        items: [],
-        total: null,
-      },
-      disabled: "disabled",
-      active: "active",
-    };
-  },
-
-  mounted() {
-    this.getRestaurant();
-    this.updateCartToMatchStorage();
-  },
-
-  updated() {
-    if (this.cart.items.length != 0) this.cart.total = this.getTotal();
-  },
-
-  methods: {
-    getRestaurant() {
-      axios
-        .get(this.apiUrl + this.$route.params.slug)
-
-        .then((response) => {
-          this.restaurant = response.data;
-          this.foods = this.restaurant.foods.map((food) => {
-            return { ...food, quantity: 0 };
-          });
-        })
-        .catch((error) => console.log(error));
+    name: "Restaurant",
+    data() {
+        return {
+          myToggle: false,
+            apiUrl: "http://127.0.0.1:8000/api/restaurants/",
+            restaurant: {},
+            foods: null,
+            cart: {
+                items: [],
+                total: null,
+            },
+            disabled: "disabled",
+            active: "active",
+        };
     },
 
-    removeProduct(item) {
-      this.removeFromStorage(item);
+    mounted() {
+        this.getRestaurant();
+        this.updateCartToMatchStorage();
     },
 
-    addProduct(item) {
-      // clean up cart if foods from other restaurants are present
-      this.cleanUp(item);
-
-      item.quantity = 1;
-      this.addToStorage(item);
+    updated() {
+        if (this.cart.items.length != 0) this.cart.total = this.getTotal();
     },
 
-    cleanUp(item) {
-      if (!!localStorage.length) {
-        const oldItem = JSON.parse(Object.values(localStorage)[0]);
-        if (oldItem.user_id != item.user_id) {
-          localStorage.clear();
-          this.updateCartToMatchStorage();
-        }
-      }
-    },
+    methods: {
+        getRestaurant() {
+            axios
+                .get(this.apiUrl + this.$route.params.slug)
 
-    decrementQty(item) {
-      if (item.quantity > 0) {
-        item.quantity--;
-        // localstorage needs to be updated here too
-        this.addToStorage(item);
-      }
+                .then((response) => {
+                    this.restaurant = response.data;
+                    this.foods = this.restaurant.foods.map((food) => {
+                        return { ...food, quantity: 0 };
+                    });
+                })
+                .catch((error) => console.log(error));
+        },
 
-      if (item.quantity == 0) {
-        this.removeFromStorage(item);
-      }
-    },
+        removeProduct(item) {
+            this.removeFromStorage(item);
+        },
 
-    incrementQty(item) {
-      item.quantity++;
-      this.addToStorage(item);
-    },
+        addProduct(item) {
+      
+            // clean up cart if foods from other restaurants are present
+            this.cleanUp(item);
 
-    addToStorage(item) {
-      if (localStorage.getItem(item.name) === null) {
-        localStorage.setItem(item.name, JSON.stringify(item));
-      } else {
-        localStorage.removeItem(item.name);
-        localStorage.setItem(item.name, JSON.stringify(item));
-      }
-      this.updateCartToMatchStorage();
-    },
+            item.quantity = 1;
+            this.addToStorage(item);
+        },
 
-    removeFromStorage(item) {
-      localStorage.removeItem(item.name);
-      this.updateCartToMatchStorage();
-    },
+        cleanUp(item) {
+            if (!localStorage.length) {
+                const oldItem = JSON.parse(Object.values(localStorage)[0]);
+                if (oldItem.user_id != item.user_id) {
+                    localStorage.clear();
+                    this.updateCartToMatchStorage();
+                }
+            }
+        },
 
-    updateCartToMatchStorage() {
-      this.cart.items = [];
-      Object.keys(localStorage).forEach((key) => {
-        this.cart.items.push(JSON.parse(localStorage.getItem(key)));
-      });
-    },
+        decrementQty(item) {
+            if (item.quantity > 0) {
+                item.quantity--;
+                // localstorage needs to be updated here too
+                this.addToStorage(item);
+            }
 
-    getTotal() {
-      let sum = null;
-      this.cart.items.forEach((item) => (sum += item.price * item.quantity));
-      return sum.toFixed(2);
+            if (item.quantity == 0) {
+                this.removeFromStorage(item);
+            }
+        },
+
+        incrementQty(item) {
+            item.quantity++;
+            this.addToStorage(item);
+        },
+
+        addToStorage(item) {
+            if (localStorage.getItem(item.name) === null) {
+                localStorage.setItem(item.name, JSON.stringify(item));
+            } else {
+                localStorage.removeItem(item.name);
+                localStorage.setItem(item.name, JSON.stringify(item));
+            }
+            this.updateCartToMatchStorage();
+        },
+
+        removeFromStorage(item) {
+            localStorage.removeItem(item.name);
+            this.updateCartToMatchStorage();
+        },
+
+        updateCartToMatchStorage() {
+            this.cart.items = [];
+            Object.keys(localStorage).forEach((key) => {
+                this.cart.items.push(JSON.parse(localStorage.getItem(key)));
+            });
+        },
+
+        getTotal() {
+            let sum = null;
+            this.cart.items.forEach(
+                (item) => (sum += item.price * item.quantity)
+            );
+            return sum.toFixed(2);
+        },
     },
-  },
 };
 </script>
 
 <style lang="scss" scoped>
-.card {
-  margin: 20px;
+.restaurant {
+  min-height: 700px;
+}
+
+.cardFood {
+  position: relative;
+  text-align: center;
+  margin: 10px;
   border-radius: 25px;
-  min-width: 270px;
+  width: 250px;
+  line-height: 35px;
   max-height: 300px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   .card-date {
     margin-top: 20px;
   }
-  p {
-  }
-  .btn {
-    margin-top: 20px;
-    height: 50px;
+  .btn-group{
+    justify-content: center;
+    position: absolute;
+    left:25px;
+    top: -30px;
+    height: 40px;
     border-radius: 25px;
     vertical-align: middle;
-    padding: 16px 43px !important;
-    background-color: #e56768;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    .card-date {
-      margin-top: 20px;
-    }
-    .btn {
-      margin-top: 20px;
-      height: 50px;
-      border-radius: 25px;
-      vertical-align: middle;
-      padding: 16px 43px !important;
-      background-color: #e56768;
-      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-      border: 0px;
-      &:hover {
-        background-color: #e9d758;
-      }
-    }
-    img {
-      height: 80px;
-      width: 100px;
-      transition: transform 0.8s;
-      &:hover {
-        transform: scale(1.1);
-      }
+    
+        background-color: #e56768;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        border: 0px;
+        &:hover {
+            background-color: #e9d758;
+  }
+  }
+  
+  img {
+    height: 40%;
+    width: 80%;
+    margin: auto;
+    transition: transform 0.8s;
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }
@@ -396,5 +362,11 @@ h2 {
 
 .clickable {
   opacity: 1;
+}
+
+.cardCart {
+  min-height: 100%;
+  min-width: 100%;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 </style>

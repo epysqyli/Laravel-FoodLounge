@@ -6,7 +6,11 @@ import Checkout from "./views/Checkout";
 import Categories from "./views/Categories";
 import PaymentResult from "./views/PaymentResult";
 
+
+
 Vue.use(VueRouter);
+
+
 
 const router = new VueRouter({
     mode: "history",
@@ -16,13 +20,13 @@ const router = new VueRouter({
             name: "home",
             component: Home,
 
-            children: [
-                {
-                    name: "categories",
-                    path: "/categories/:names",
-                    component: Categories,
-                },
-            ],
+            // children: [
+            //     {
+            //         name: "categories",
+            //         path: "/categories/:names",
+            //         component: Categories,
+            //     },
+            // ],
         },
         {
             path: "/restaurants/:slug",

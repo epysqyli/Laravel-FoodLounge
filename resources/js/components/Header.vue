@@ -18,12 +18,7 @@
 
         <div class="d-flex align-items-center">
           <div v-if="this.$route.path.split('/').includes('restaurants')">
-            <b-button
-              class="btn btn-secondary rounded"
-              v-b-toggle.sidebar-right
-            >
-              <h1><i class="bi bi-cart"></i></h1
-            ></b-button>
+           
           </div>
           <a
             href="http://localhost:8000/api/user"
