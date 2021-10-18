@@ -103,7 +103,7 @@ export default {
 
 @keyframes slide-in {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-200%);
   }
   100% {
     transform: translateX(0%);
