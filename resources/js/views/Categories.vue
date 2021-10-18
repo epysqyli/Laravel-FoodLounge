@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" :class="restaurants.length == 0 ? hidden : visible">
     <div class="row">
       <div
         class="
@@ -42,6 +42,8 @@ export default {
     return {
       apiUrl: "http://127.0.0.1:8000/api/categories/",
       restaurants: [],
+      hidden: "hidden",
+      visible: "visible",
     };
   },
 
@@ -82,5 +84,13 @@ export default {
 .container {
   padding-top: 50px;
   padding-bottom: 100px;
+
+  .hidden {
+    display: none;
+  }
+
+  .visibie {
+    display: block;
+  }
 }
 </style>
