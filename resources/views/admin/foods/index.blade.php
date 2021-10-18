@@ -110,12 +110,12 @@
         {{-- table --}}
         <div class="row">
             <div class="col-12">
-                <table class="table table-light table-striped">
+                <table class="table table-light table-striped ">
                     <thead>
                         <tr>
                             <th>Nome</th>
                             <th>Prezzo</th>
-                            <th>Disponibilà</th>
+                            <th>Visibile</th>
                             <th>Opzioni</th>
                         </tr>
                     </thead>
@@ -147,7 +147,7 @@
 
         <div class="row">
             <div class="col-12 col-md-4 offset-md-8">
-                <a href="{{ Route('admin.foods.index') }}" class="d-block btn btn-secondary text-white">
+                <a href="{{ url()->previous() }}" class="d-block btn btn-secondary text-white">
                     <span>Torna indietro</span>
                 </a>
             </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto my-3">
-    <div class="row pt-3">
-      <div class="col-8 border px-5 pt-3">
+    <div class="row pt-3 shadow rounded">
+      <div class="col-12 col-md-8 px-5 pt-3">
         <form
           class="col-10 mx-auto"
           method="post"
@@ -9,62 +9,62 @@
           id="payment-form"
         >
           <div class="form-group">
-            <label for="customer_name">First Name</label>
+            <label for="customer_name">Nome</label>
             <input
               type="text"
               class="form-control"
               id="customer_name"
               name="customer_name"
-              placeholder="Enter first name"
+              placeholder="Inserisci il tuo nome"
               required
             />
           </div>
 
           <div class="form-group">
-            <label for="customer_surname">Customer Surname</label>
+            <label for="customer_surname">Cognome</label>
             <input
               type="text"
               class="form-control"
               id="customer_surname"
               name="customer_surname"
-              placeholder="Enter surname"
+              placeholder="Inserisci il tuo cognome"
               required
             />
           </div>
 
           <div class="form-group">
-            <label for="customer_address">Delivery Address</label>
+            <label for="customer_address">Indirizzo di consegna</label>
             <input
               type="text"
               class="form-control"
               id="customer_address"
               name="customer_address"
-              placeholder="Enter delivery address"
+              placeholder="Inserisci il tuo indirizzo di consegna"
               required
             />
           </div>
 
           <div class="form-group">
-            <label for="customer_email">Email Address</label>
+            <label for="customer_email">Indirizzo email</label>
             <input
               type="email"
               class="form-control"
               id="customer_email"
               name="customer_email"
-              placeholder="Enter email address"
+              placeholder="Inserisci l'email"
               v-model="customer_email"
               required
             />
           </div>
 
           <div class="form-group">
-            <label for="phone_number">Phone Number</label>
+            <label for="phone_number">Numero di telefono</label>
             <input
               type="text"
               class="form-control"
               id="phone_number"
               name="phone_number"
-              placeholder="Enter phone number"
+              placeholder="Inserisci il numero di telefono"
               required
             />
           </div>
@@ -75,9 +75,9 @@
 
           <button
             type="submit"
-            class="btn btn-primary w-50 mx-auto d-block my-2"
+            class="btn btn-primary w-50 mx-auto d-block my-4 my-md-2"
           >
-            Pay!
+            Paga Ordine!
           </button>
 
           <input type="hidden" id="nonce" name="payment_method_nonce" />
@@ -107,8 +107,8 @@
       </div>
 
       <!-- Side cart -->
-      <div class="col-4 border px-5 pt-3">
-        <h4 class="text-center mb-3">Cart</h4>
+      <div class="col-12 col-md-4 px-5 pt-3 mt-3 mt-md-0">
+        <h4 class="text-center mb-3">Carrello</h4>
         <div
           class="d-flex justify-content-between align-items-center my-2"
           v-for="item in cart.items"
@@ -120,11 +120,8 @@
           <span class="price">{{ item.price }} &euro;</span>
         </div>
         <hr />
-        <p>
-          Total
-          <span
-            ><b>{{ cart.total }} &euro;</b></span
-          >
+        <p class="text-right">
+          Totale: <b>{{ cart.total }} &euro;</b>
         </p>
       </div>
     </div>

@@ -8,6 +8,13 @@
         <div>
             <canvas id="chart"></canvas>
         </div>
+        <div class="row mt-5">
+            <div class="col-12 col-md-4 offset-md-8">
+                <a href="{{ url()->previous() }}" class="d-block btn btn-secondary text-white">
+                    <span>Torna indietro</span>
+                </a>
+            </div>
+        </div>
     </div>
 
     <script>

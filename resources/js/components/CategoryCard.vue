@@ -1,7 +1,7 @@
 <template>
   <div
     class="category d-flex align-items-center"
-    :class="category.selected ? on : '' || jumpAnimation"
+    :class="category.selected ? on : '' || scaleAnimation"
     @click="$emit('toggleChoice')"
   >
     <img :src="category.img" :alt="category.name" class="d-block w-25" />
@@ -22,19 +22,18 @@ export default {
   data() {
     return {
       on: "selected",
-      off: "deselected",
-      jumpAnimation: "jump-animation",
+      scaleAnimation: "scale-animation",
     };
   },
 
   methods: {
-    removeJumpAnimation() {
-      this.jumpAnimation = null;
+    removeScaleAnimation() {
+      this.scaleAnimation = null;
     },
   },
 
   mounted() {
-    setTimeout(this.removeJumpAnimation, 1000);
+    setTimeout(this.removeScaleAnimation, 1000);
   },
 };
 </script>
@@ -61,11 +60,11 @@ export default {
     box-shadow: 5px 10px 8px -6px black;
     background-color: #e2b33c;
     cursor: pointer;
-    
+
     .name {
       color: black;
     }
-  } 
+  }
 
   &:active {
     box-shadow: 5px 8px 12px -6px black;
@@ -74,10 +73,6 @@ export default {
 
 .selected {
   animation: pressed 50ms ease-in 1 alternate forwards;
-}
-
-.deselected {
-  animation: unpressed 1000ms ease-out 1 alternate forwards;
 }
 
 @keyframes pressed {
@@ -107,81 +102,19 @@ export default {
   }
 }
 
-// still to setup
-@keyframes unpressed {
+.scale-animation {
+  animation: scale 750ms ease 1;
+}
+
+@keyframes scale {
   0% {
-    box-shadow: 0px 2px 5px -2px black inset;
-    background-color: hsl(40, 65%, 50%);
-  }
-  25% {
-    box-shadow: 0px 2px 2px 1px black inset;
-    background-color: #e2b33c;
+    transform: scale(1, 1);
   }
   50% {
-    box-shadow: 0px 1px 1px 0px black inset;
-    background-color: #e2b33c;
-  }
-  65% {
-    box-shadow: 0px 0px 0px 0px black;
-    background-color: #e2b33c;
-  }
-  83% {
-    box-shadow: 2px 5px 4px -3px black;
-    background-color: #e2b33c;
+    transform: scale(1.03, 1.03);
   }
   100% {
-    background-color: #e9c46a;
-    box-shadow: 3px 6px 8px -6px black;
-  }
-}
-
-.jump-animation {
-  animation: jumpAnimation 1s ease-in 1 forwards;
-}
-
-@keyframes jumpAnimation {
-  0% {
-    animation-timing-function: ease-in;
-    opacity: 1;
-    transform: translateY(-45px);
-  }
-
-  24% {
-    opacity: 1;
-  }
-
-  40% {
-    animation-timing-function: ease-in;
-    transform: translateY(-24px);
-  }
-
-  65% {
-    animation-timing-function: ease-in;
-    transform: translateY(-12px);
-  }
-
-  82% {
-    animation-timing-function: ease-in;
-    transform: translateY(-6px);
-  }
-
-  93% {
-    animation-timing-function: ease-in;
-    transform: translateY(-4px);
-  }
-
-  25%,
-  55%,
-  75%,
-  87% {
-    animation-timing-function: ease-out;
-    transform: translateY(0px);
-  }
-
-  100% {
-    animation-timing-function: ease-out;
-    opacity: 1;
-    transform: translateY(0px);
+    transform: scale(1, 1);
   }
 }
 </style>

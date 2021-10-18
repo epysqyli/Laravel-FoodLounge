@@ -36,9 +36,9 @@
                         <td>{{ $food->description }}</td>
                     </tr>
                     <tr>
-                        <th>Disponibilà
+                        <th>Visibile
                         <th>
-                        <td>{{ $food->visible ? 'Yes' : 'No' }}</td>
+                        <td>{{ $food->visible ? 'Sì' : 'No' }}</td>
                     </tr>
                     @if ($food->additional_details)
                         <tr>
@@ -53,7 +53,7 @@
 
         <div class="row">
             <div class="col-12 col-md-4 offset-md-8">
-                <a href="{{ Route('admin.foods.index') }}" class="d-block btn btn-secondary text-white">
+                <a href="{{ url()->previous() }}" class="d-block btn btn-secondary text-white">
                     <span>Torna indietro</span>
                 </a>
             </div>

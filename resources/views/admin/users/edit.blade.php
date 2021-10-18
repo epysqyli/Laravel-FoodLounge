@@ -143,23 +143,27 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4 d-flex">
+                            <div class="form-group row mb-2 ">
+                                <div class="col-md-6 offset-md-4 d-flex justify-content-between ">
                                     <button type="submit" class="btn btn-primary">
                                         Aggiorna profilo
                                     </button>
-                                    <a class="d-block btn btn-danger w-50 mx-2" href={{ route('password.request') }}>Change password</a>
+                                    <a class=" btn btn-danger" href={{ route('password.request') }}>Change password</a>
                                 </div>
                             </div>
-                        </form>
 
-                        <a href="{{ Route('admin.home') }}" class="btn btn-secondary text-white">
-                            <span>Torna indietro</span>
-                        </a>
+                            <div class="form-group row">                                
+                                <div class="col-md-6 offset-md-4 d-flex justify-content-end">
+                                    <a href="{{ Route('admin.home') }}" class="btn btn-secondary text-white">
+                                        <span>Torna indietro</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </form>                        
                     </div>
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
-
 @endsection

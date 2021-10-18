@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="container">
+    <div class="container pt-3">
       <div class="row pt-2">
         <!-- lato sx -->
         <div class="col-12 col-md-6 text-center">
@@ -21,6 +21,11 @@
               ></span
             >
           </p>
+          <a
+            href="http://localhost:8000/api/user"
+            class="d-block py-2 ml-2 align-self-right admin"
+            >Accesso Ristoratori</a
+          >
         </div>
 
         <!-- lato dx -->
@@ -98,6 +103,16 @@ footer {
     display: inline-block;
     a {
       margin: 10px;
+    }
+  }
+
+  .admin {
+    color: #3a6b7e;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      color: white;
     }
   }
 }

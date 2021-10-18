@@ -5,7 +5,7 @@
     style="text-decoration: none; color: inherit"
   >
     <div class="row">
-      <div class="col-md-4 image-container">
+      <div class="col-sm-4 image-container">
         <img
           :src="
             restaurant.profile_image[0] == 'h'
@@ -17,7 +17,7 @@
         />
         <div class="category-name">{{ categoryName }}</div>
       </div>
-      <div class="col-md-8">
+      <div class="col-sm-8">
         <div class="card-body">
           <h5 class="card-title">{{ restaurant.name }}</h5>
           <p>{{ restaurant.address }}</p>
@@ -74,28 +74,37 @@ p {
     border-radius: 5px;
     object-fit: cover;
     height: 220px;
-    transition: all 300ms ease-out;
+    transition: all 150ms ease-out;
   }
 
   .category-name {
     position: absolute;
     top: 2%;
-    left: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     color: white;
     padding: 5px 10px;
     border-radius: 10px;
     border: 2px solid white;
     background-color: #264653;
     font-size: 0.85rem;
+    text-align: center;
   }
 
   &:hover {
     box-shadow: 6px 8px 5px -6px #264653;
-    background-color: #f4a666;
+    // background-color: #f4a666;
     cursor: pointer;
 
     img {
-      height: 230px;
+      height: 250px;
+      filter: saturate(110%);
+    }
+
+    .category-name {
+      color: #264653;
+      background-color: white;
+      border: 2px solid #264653;
     }
   }
 

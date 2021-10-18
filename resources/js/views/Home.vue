@@ -1,33 +1,49 @@
 <template>
-  <div class="content">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center p-5">
-          <img src="/image/Scooter.png" alt="" />
-          <h2 class="text-center mx-auto pt-2">
-            Bee Happy, Bee Healthy! Choose:
-          </h2>
-        </div>
-
-        <div class="row mb-5 d-flex justify-content-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center p-5">
+        <div class="row">
           <div
-            class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
-            v-for="category in categories"
-            :key="category.id"
+            class="
+              welcome
+              col-8
+              offset-2
+              col-md-6
+              offset-md-3
+              col-lg-4
+              offset-lg-4
+            "
           >
-            <CategoryCard
-              :category="category"
-              @toggleChoice="toggleChoice(category.slug)"
+            <img
+              class="d-block w-100 mx-auto"
+              src="/image/Scooter.png"
+              alt="delivery-scooter"
             />
           </div>
         </div>
-
-        <Categories
-          :userChoices="userChoices"
-          ref="categories"
-          :categories="categories"
-        />
+        <h2 class="text-center mx-auto mt-5 welcome-title">
+          Non sai cosa mangiare? Scegli tra le nostre proposte!
+        </h2>
       </div>
+
+      <div class="row mb-5 d-flex justify-content-center">
+        <div
+          class="col-8 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
+          v-for="category in categories"
+          :key="category.id"
+        >
+          <CategoryCard
+            :category="category"
+            @toggleChoice="toggleChoice(category.slug)"
+          />
+        </div>
+      </div>
+
+      <Categories
+        :userChoices="userChoices"
+        ref="categories"
+        :categories="categories"
+      />
     </div>
   </div>
 </template>
@@ -91,14 +107,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content {
-  background-color: #effbf9;
-  .container {
-    min-height: 45vh;
+.welcome {
+  animation: slide-in-left 750ms cubic-bezier(0.18, 0.89, 0.32, 1.28) 1 forwards;
+}
 
-    img {
-      width: 10%;
-    }
+.welcome-title {
+  animation: appear 750ms cubic-bezier(0.18, 0.89, 0.32, 1.28) 1 forwards;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-200%);
+  }
+  80% {
+    transform: rotateZ(3deg);
+  }
+  100% {
+    transform: translateX(0%);
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>    

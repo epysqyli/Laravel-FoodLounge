@@ -1,33 +1,23 @@
 <template>
   <header>
-    <nav class="navbar navbar-light text-center">
-      <div class="container-fluid">
-        <router-link
-          style="
-            text-decoration: none;
-            color: inherit;
-            width: 50%;
-            display: block;
-          "
-          :to="{ name: 'home' }"
-        >
-          <a class="navbar-brand">
-            <h1><i class="bi bi-egg-fried success"></i> FoodLounge</h1>
-          </a>
-        </router-link>
+    <div class="container-fluid">
+      <div class="row py-2">
+        <div class="col-10 col-md-8">
+          <router-link
+            style="text-decoration: none; color: black; display: block"
+            :to="{ name: 'home' }"
+          >
+            <h2><i class="bi bi-egg-fried success"></i> FoodLounge</h2>
+          </router-link>
+        </div>
 
         <div class="d-flex align-items-center">
           <div v-if="this.$route.path.split('/').includes('restaurants')">
            
           </div>
-          <a
-            href="http://localhost:8000/api/user"
-            class="d-block btn btn-outline-primary py-2 ml-2"
-            >Admin area</a
-          >
         </div>
       </div>
-    </nav>
+    </div>
   </header>
 </template>
 
@@ -40,13 +30,12 @@ export default {
 <style lang="scss" scoped>
 header {
   position: relative;
-  background: rgb(231, 111, 81);
   background: linear-gradient(
     87deg,
     rgba(231, 111, 81, 1) 0%,
     rgba(233, 196, 106, 1) 100%
   );
-  box-shadow: 3px 6px 8px -6px #264653;
+  box-shadow: 1px 2px 6px 0 #264653;
 }
 
 btn-sticky-left {
