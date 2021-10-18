@@ -11,7 +11,7 @@
             />
           </div>
           <h2 class="text-center mx-auto pt-2">
-            Bee Happy, Bee Healthy! Choose:
+            Be Happy. Be Healthy! Choose
           </h2>
         </div>
       </div>
@@ -97,11 +97,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  min-height: 45vh;
+.welcome {
+  animation: slide-in 1000ms cubic-bezier(0.18, 0.89, 0.32, 1.28) 1 forwards;
+}
 
-  img {
-    width: 10%;
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 </style>    
