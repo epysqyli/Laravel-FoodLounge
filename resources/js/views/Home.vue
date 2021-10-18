@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center p-5">
-          <img src="/image/Scooter.png" alt="" />
+          <img src="/image/Scooter.png" alt="delivery-scooter" />
           <h2 class="text-center mx-auto pt-2">
             Bee Happy, Bee Healthy! Choose:
           </h2>

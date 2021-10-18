@@ -11,7 +11,7 @@
           </router-link>
         </div>
 
-        <div class="col-4">
+        <div class="col-2 col-md-4">
           <div class="d-flex justify-content-end">
             <div v-if="this.$route.path.split('/').includes('restaurants')">
               <b-button
