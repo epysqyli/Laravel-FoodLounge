@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto my-3">
-    <div class="row pt-3 shadow rounded">
+    <div class="row pt-3 shadow rounded form">
       <div class="col-12 col-md-8 px-5 pt-3">
         <form
           class="col-10 mx-auto"
@@ -107,8 +107,8 @@
       </div>
 
       <!-- Side cart -->
-      <div class="col-12 col-md-4 px-5 pt-3 mt-3 mt-md-0">
-        <h4 class="text-center mb-3">Carrello</h4>
+      <div class="col-12 col-md-4 px-5 pt-3 mt-3 mt-md-0 cart">
+        <h4 class="text-center mb-5">Carrello</h4>
         <div
           class="d-flex justify-content-between align-items-center my-2"
           v-for="item in cart.items"
@@ -121,7 +121,7 @@
         </div>
         <hr />
         <p class="text-right">
-          Totale: <b>{{ cart.total }} &euro;</b>
+          <b>{{ cart.total }} &euro;</b>
         </p>
       </div>
     </div>
@@ -208,4 +208,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.form,
+.cart {
+  background-color: #b9d4df;
+}
 </style>
