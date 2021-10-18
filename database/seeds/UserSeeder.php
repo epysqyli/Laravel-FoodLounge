@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
         $user->description = 'Hekfanchai ti porta alla scoperta della tipica cucina hongkonghese con tante proposte deliziose!';
         $user->vat = rand(intval(11111111111),intval(99999999999));
         $user->slug = Str::slug($user->name);
-        $user->profile_image = "https://www.lagazzettadelmezzogiorno.it/resizer/495/300/true/1593243295286.jpg--potenza__assembramento_a_tavola__multati_e_chiuso_ristorante_cinese.jpg?1593243295000";
+        $user->profile_image = "https://www.puntarellarossa.it/wp/wp-content/uploads/2020/01/cinese-500x500_c.jpg";
         $user->cover_image = "https://static.cookist.it/wp-content/uploads/sites/21/2020/02/cucina-cinese-migliori-ristoranti-in-italia.jpg";
         $user->save();
 
@@ -559,8 +559,8 @@ class UserSeeder extends Seeder
         $user->description = 'Da Vanilla Bakery potrai gustare tantissime ricette diverse';
         $user->vat = rand(intval(11111111111),intval(99999999999));
         $user->slug = Str::slug($user->name);
-        $user->profile_image = "https://media-cdn.tripadvisor.com/media/photo-s/1a/ac/a4/79/img-20200121-223653-largejpg.jpg";
-        $user->cover_image = "https://www.oubruncher.com/photos1/3037_3.jpg";
+        $user->profile_image = "https://scontent-mxp1-1.xx.fbcdn.net/v/t31.18172-8/820789_600824393265352_970666477_o.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=8IObi6rTYScAX8djaom&_nc_ht=scontent-mxp1-1.xx&oh=397de7d381afd0f32666d04906305890&oe=617B43C6";
+        $user->cover_image = "https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-9/142900653_4227937423887346_8978081091341652927_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=a26aad&_nc_ohc=DFBfC-Zs0rIAX8LYD16&_nc_ht=scontent-mxp1-";
         $user->save();
 
         // user 42 _ pasticceria ok
@@ -571,9 +571,9 @@ class UserSeeder extends Seeder
         $user->address = 'Via Vetere 7, Milano - 20123';
         $user->description = 'nasce con il desiderio di rivoluzionare il concetto di pasticceria';
         $user->vat = rand(intval(11111111111),intval(99999999999));
-        $user->slug = Str::slug($user->name);
-        $user->profile_image = "https://i2.wp.com/www.puntarellarossa.it/wp/wp-content/uploads/2015/10/cannoli-siciliani-850x570_6.jpg?fit=850%2C570&ssl=1";
-        $user->cover_image = "https://www.lacannoleriagourmet.it/resources/images/homepage/slider/cannoli.jpg0";
+        $user->slug = Str::slug($user->name);   
+        $user->profile_image = "https://www.pasticceriagiulio.com/wp-content/uploads/2019/10/CFDBB281-4E60-4F23-9083-15DEC213C30D.jpeg";
+        $user->cover_image = "https://www.lacannoleriagourmet.it/resources/images/homepage/slider/cannoli.jpg";
         $user->save();
 
         // user 43 _ pasticceria ok 
