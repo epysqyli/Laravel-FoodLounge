@@ -37,15 +37,17 @@
                                     </button>
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6 offset-md-4 col-lg-3 offset-lg-7">
+                                    <a href="{{ Route('admin.types.index') }}" class="btn btn-secondary text-white d-block">
+                                        <span>Torna indietro</span>
+                                    </a>
+                                </div>                 
+                            </div>
                         </form> 
 
-                        <div class="row">
-                            <div class="col-12 col-md-4 offset-md-8">
-                                <a href="{{ Route('admin.types.index') }}" class="btn btn-secondary text-white">
-                                    <span>Torna indietro</span>
-                                </a>
-                            </div>                 
-                        </div>
+                        
                                                                      
                     </div>                   
                 </div>

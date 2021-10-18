@@ -176,14 +176,15 @@
                                 </div>
                             </div>
 
-                            
-                        </form>
-                        <a href="{{ Route('admin.foods.index') }}" class="btn btn-secondary text-white">
-                            <span>Torna indietro</span>
-                        </a>
-                        
-                    </div>
-                    
+                            <div class="row">
+                                <div class="col-12 col-md-4 offset-md-8">
+                                    <a href="{{ Route('admin.foods.index') }}" class="d-block btn btn-secondary text-white">
+                                        <span>Torna indietro</span>
+                                    </a>
+                                </div>
+                            </div>                            
+                        </form>                     
+                    </div>                    
                 </div>
             </div>
         </div>

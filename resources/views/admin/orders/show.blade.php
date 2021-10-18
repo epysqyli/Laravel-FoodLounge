@@ -81,8 +81,8 @@
         </table>
 
         <div class="row">
-            <div class="col-12 col-md-4 offset-md-8">
-                <a href="{{ url()->previous() }}" class="d-block btn btn-secondary text-white">
+            <div class="col-12 col-sm-4 offset-sm-8">
+                <a href="{{ Route('admin.orders.index') }}" class="d-block btn btn-secondary text-white">
                     <span>Torna indietro</span>
                 </a>
             </div>
