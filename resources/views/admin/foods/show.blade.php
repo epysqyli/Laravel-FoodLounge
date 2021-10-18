@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="mt-2 mb-5">{{ $food->name }}</h1>
+                <h1 class="mt-2 mb-5 text-capitalize">{{ $food->name }}</h1>
             </div>
         </div>
 

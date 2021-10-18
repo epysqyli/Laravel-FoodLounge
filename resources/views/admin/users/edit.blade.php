@@ -148,7 +148,7 @@
                                     <button type="submit" class="btn btn-primary">
                                         Aggiorna profilo
                                     </button>
-                                    <a class=" btn btn-danger" href={{ route('password.request') }}>Change password</a>
+                                    <a class=" btn btn-danger" href={{ route('password.request') }}>Cambia password</a>
                                 </div>
                             </div>
 
