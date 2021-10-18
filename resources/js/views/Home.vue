@@ -98,7 +98,7 @@ export default {
 
 <style lang="scss" scoped>
 .welcome {
-  animation: slide-in 1000ms cubic-bezier(0.18, 0.89, 0.32, 1.28) 1 forwards;
+  animation: slide-in 750ms cubic-bezier(0.18, 0.89, 0.32, 1.28) 1 forwards;
 }
 
 @keyframes slide-in {
