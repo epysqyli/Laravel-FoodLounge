@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="mt-2 mb-5">{{ $food->name }}</h1>
+                <h1 class="mt-2 mb-5 text-capitalize">{{ $food->name }}</h1>
             </div>
         </div>
 
@@ -53,7 +53,7 @@
 
         <div class="row">
             <div class="col-12 col-md-4 offset-md-8">
-                <a href="{{ Route('admin.foods.index') }}" class="d-block btn btn-secondary text-white">
+                <a href="{{ url()->previous() }}" class="d-block btn btn-secondary text-white">
                     <span>Torna indietro</span>
                 </a>
             </div>
