@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="container">
+    <div class="container pt-3">
       <div class="row pt-2">
         <!-- lato sx -->
         <div class="col-12 col-md-6 text-center">

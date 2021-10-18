@@ -1,33 +1,39 @@
 <template>
-  <div class="content">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center p-5">
-          <img src="/image/Scooter.png" alt="delivery-scooter" />
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center p-5">
+        <div class="row">
+          <div class="welcome col-8 offset-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+            <img
+              class="d-block w-100 mx-auto"
+              src="/image/Scooter.png"
+              alt="delivery-scooter"
+            />
+          </div>
           <h2 class="text-center mx-auto pt-2">
             Bee Happy, Bee Healthy! Choose:
           </h2>
         </div>
-
-        <div class="row mb-5 d-flex justify-content-center">
-          <div
-            class="col-8 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
-            v-for="category in categories"
-            :key="category.id"
-          >
-            <CategoryCard
-              :category="category"
-              @toggleChoice="toggleChoice(category.slug)"
-            />
-          </div>
-        </div>
-
-        <Categories
-          :userChoices="userChoices"
-          ref="categories"
-          :categories="categories"
-        />
       </div>
+
+      <div class="row mb-5 d-flex justify-content-center">
+        <div
+          class="col-8 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
+          v-for="category in categories"
+          :key="category.id"
+        >
+          <CategoryCard
+            :category="category"
+            @toggleChoice="toggleChoice(category.slug)"
+          />
+        </div>
+      </div>
+
+      <Categories
+        :userChoices="userChoices"
+        ref="categories"
+        :categories="categories"
+      />
     </div>
   </div>
 </template>
@@ -91,14 +97,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content {
-  // background-color: #effbf9;
-  .container {
-    min-height: 45vh;
+.container {
+  min-height: 45vh;
 
-    img {
-      width: 10%;
-    }
+  img {
+    width: 10%;
   }
 }
 </style>    
