@@ -2,13 +2,14 @@
 
 @section('content')
     <div class="container-md">
-        <h1>Orders</h1>
+        <h1>Riepilogo ordini</h1>
         <table class="table table-light table-striped">
-            <thead>
+            <thead class="">
                 <tr>
-                    <th scope="col">Order Value</th>
-                    <th scope="col">Order Time</th>
-                    <th scope="col">Address</th>
+                    <th scope="col my-2">Importo</th>
+                    <th scope="col">Data & Ora</th>
+                    <th scope="col my-2">Indirizzo</th>
+                    <th scope="col my-2">Dettagli</th>
                 </tr>
             </thead>
 
@@ -18,7 +19,7 @@
                         <td>{{ $order->amount }} &euro;</td>
                         <td>{{ $order->created_at }}</td>
                         <td>{{ $order->customer_address }}</td>
-                        <td><a href="{{ route('admin.orders.show', $order->id) }}">Check Details</a></td>
+                        <td><a href="{{ route('admin.orders.show', $order->id) }}">Visualizza</a></td>
                     </tr>
                 @endforeach
             </tbody>

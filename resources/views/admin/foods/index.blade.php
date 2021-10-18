@@ -115,7 +115,7 @@
                         <tr>
                             <th>Nome</th>
                             <th>Prezzo</th>
-                            <th>Disponibilità</th>
+                            <th>Visibile</th>
                             <th>Opzioni</th>
                         </tr>
                     </thead>

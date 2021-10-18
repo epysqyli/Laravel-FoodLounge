@@ -55,28 +55,32 @@
 
 @section('content')
 
-    @if (count(Auth::user()->types) < 3)
-        <div class="row">
-            <div class="col-12">
-                <a class="btn btn-outline-dark mt-2 mb-4 d-block mx-auto w-25" href="{{ route('admin.types.create') }}"
-                    class="link-dark">Aggiungi tipologia</a>
-            </div>
-        </div>
-    @endif
-
     <div class="container">
+        <h1>Riepilogo tipologie</h1>
+
+        {{-- bottone aggiungi tipologia --}}
+        <div class="row">
+            @if (count(Auth::user()->types) < 3)            
+                <div class="col-12 text-center">
+                    <a class="btn btn-outline-dark link-dark mt-2 mb-4 w-25" href="{{ route('admin.types.create') }}"
+                        >Aggiungi tipologia</a>
+                </div>            
+            @endif
+        </div>
+        
+
         <div id="accordion">
             @foreach ($types as $type)
-
                 <div class="card my-3">
+                    {{-- layout contenitore --}}
                     <div class="card-header" id="{{ $type->name . 'heading' }}">
-                        <div class="mb-0 d-flex justify-content-between">
-                            <div class="py-2" data-target="#{{ $type->name . 'collapse' }}" aria-expanded="true"
+                        <div class="row">
+                            <div class="col-6 py-2" data-target="#{{ $type->name . 'collapse' }}" aria-expanded="true"
                                 aria-controls="{{ $type->name . 'collapse' }}">
                                 {{ $type->name }}
                             </div>
-                            <div class="col-4 d-flex justify-content-around">
-                                <a class="btn btn-outline-dark d-block w-50"
+                            <div class="col-6  d-flex justify-content-end">
+                                <a class="btn btn-outline-dark mx-2"
                                     href="{{ route('admin.types.edit', $type->id) }}" class="link-dark">Modifica</a>
                                 <form method="post" class="post-delete" action={{ route('admin.types.destroy', $type->id) }}>
                                     @method('DELETE')
@@ -87,6 +91,7 @@
                         </div>
                     </div>
 
+                    {{-- "tabella" interna --}}
                     <div id="{{ $type->name . 'collapse' }}" class="collapse show"
                         aria-labelledby="{{ $type->name . 'heading' }}" data-parent="#accordion">
                         <div class="card-body">
@@ -99,10 +104,10 @@
                         </div>
                     </div>
                 </div>
-
             @endforeach
         </div>
 
+        {{-- bottone torna indietro --}}
         <div class="row">
             <div class="col-12 col-md-4 offset-md-8">
                 <a href="{{ Route('admin.home') }}" class="d-block btn btn-secondary text-white">

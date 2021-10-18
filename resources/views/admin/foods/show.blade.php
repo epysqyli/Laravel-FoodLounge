@@ -36,9 +36,9 @@
                         <td>{{ $food->description }}</td>
                     </tr>
                     <tr>
-                        <th>Disponibilà
+                        <th>Visibile
                         <th>
-                        <td>{{ $food->visible ? 'Yes' : 'No' }}</td>
+                        <td>{{ $food->visible ? 'Sì' : 'No' }}</td>
                     </tr>
                     @if ($food->additional_details)
                         <tr>

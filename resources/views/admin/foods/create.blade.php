@@ -41,7 +41,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Disponibilà</label>
+                                <label class="col-md-3 offset-md-1 text-md-right pt-md-1" for="visible">Visibile</label>
                                 <div class="col-md-4 col-form-label">
                                     <div>
                                         <input type="radio" id="visible" name="visible" value="1"
@@ -64,7 +64,7 @@
 
                             <div class="form-group row">
                                 <label for="price"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Prezzo') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="price" type="number" step="0.01"
