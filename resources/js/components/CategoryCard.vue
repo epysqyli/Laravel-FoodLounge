@@ -22,7 +22,6 @@ export default {
   data() {
     return {
       on: "selected",
-      off: "deselected",
       jumpAnimation: "jump-animation",
     };
   },
@@ -76,10 +75,6 @@ export default {
   animation: pressed 50ms ease-in 1 alternate forwards;
 }
 
-.deselected {
-  animation: unpressed 1000ms ease-out 1 alternate forwards;
-}
-
 @keyframes pressed {
   0% {
     box-shadow: 5px 10px 8px -6px black;
@@ -104,34 +99,6 @@ export default {
   100% {
     box-shadow: 2px 4px 5px -4px black inset;
     background-color: hsl(40, 65%, 50%);
-  }
-}
-
-// still to setup
-@keyframes unpressed {
-  0% {
-    box-shadow: 0px 2px 5px -2px black inset;
-    background-color: hsl(40, 65%, 50%);
-  }
-  25% {
-    box-shadow: 0px 2px 2px 1px black inset;
-    background-color: #e2b33c;
-  }
-  50% {
-    box-shadow: 0px 1px 1px 0px black inset;
-    background-color: #e2b33c;
-  }
-  65% {
-    box-shadow: 0px 0px 0px 0px black;
-    background-color: #e2b33c;
-  }
-  83% {
-    box-shadow: 2px 5px 4px -3px black;
-    background-color: #e2b33c;
-  }
-  100% {
-    background-color: #e9c46a;
-    box-shadow: 3px 6px 8px -6px black;
   }
 }
 

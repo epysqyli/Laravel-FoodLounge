@@ -3,17 +3,27 @@
     <div class="row">
       <div class="col-12 text-center p-5">
         <div class="row">
-          <div class="welcome col-8 offset-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+          <div
+            class="
+              welcome
+              col-8
+              offset-2
+              col-md-6
+              offset-md-3
+              col-lg-4
+              offset-lg-4
+            "
+          >
             <img
               class="d-block w-100 mx-auto"
               src="/image/Scooter.png"
               alt="delivery-scooter"
             />
           </div>
-          <h2 class="text-center mx-auto mt-5">
-            Non sai cosa mangiare? Scegli tra le nostre proposte!
-          </h2>
         </div>
+        <h2 class="text-center mx-auto mt-5">
+          Non sai cosa mangiare? Scegli tra le nostre proposte!
+        </h2>
       </div>
 
       <div class="row mb-5 d-flex justify-content-center">
