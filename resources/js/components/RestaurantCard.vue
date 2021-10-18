@@ -5,7 +5,7 @@
     style="text-decoration: none; color: inherit"
   >
     <div class="row">
-      <div class="col-md-4 image-container">
+      <div class="col-sm-4 image-container">
         <img
           :src="
             restaurant.profile_image[0] == 'h'
@@ -17,7 +17,7 @@
         />
         <div class="category-name">{{ categoryName }}</div>
       </div>
-      <div class="col-md-8">
+      <div class="col-sm-8">
         <div class="card-body">
           <h5 class="card-title">{{ restaurant.name }}</h5>
           <p>{{ restaurant.address }}</p>

@@ -5,7 +5,7 @@
         class="
           col-10
           offset-1
-          col-sm-6
+          col-sm-12
           offset-sm-0
           col-md-10
           offset-md-1

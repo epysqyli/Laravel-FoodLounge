@@ -11,7 +11,7 @@
 
         <div class="row mb-5 d-flex justify-content-center">
           <div
-            class="col-10 offset-1 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
+            class="col-8 offset-sm-0 col-sm-6 col-md-4 col-lg-3 my-2"
             v-for="category in categories"
             :key="category.id"
           >
