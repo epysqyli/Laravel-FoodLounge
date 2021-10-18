@@ -21,6 +21,11 @@
               ></span
             >
           </p>
+          <a
+            href="http://localhost:8000/api/user"
+            class="d-block py-2 ml-2 align-self-right text-white"
+            >Accesso Ristoratori</a
+          >
         </div>
 
         <!-- lato dx -->
