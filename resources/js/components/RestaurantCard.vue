@@ -74,7 +74,7 @@ p {
     border-radius: 5px;
     object-fit: cover;
     height: 220px;
-    transition: all 300ms ease-out;
+    transition: all 150ms ease-out;
   }
 
   .category-name {
@@ -91,11 +91,12 @@ p {
 
   &:hover {
     box-shadow: 6px 8px 5px -6px #264653;
-    background-color: #f4a666;
+    // background-color: #f4a666;
     cursor: pointer;
 
     img {
-      height: 230px;
+      height: 250px;
+      filter: saturate(110%)
     }
   }
 
