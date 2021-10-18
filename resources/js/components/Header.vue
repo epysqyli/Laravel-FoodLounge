@@ -44,7 +44,7 @@ header {
     rgba(231, 111, 81, 1) 0%,
     rgba(233, 196, 106, 1) 100%
   );
-  box-shadow: 3px 6px 8px -6px #264653;
+  box-shadow: 1px 2px 6px 0 #264653;
 }
 
 btn-sticky-left {
