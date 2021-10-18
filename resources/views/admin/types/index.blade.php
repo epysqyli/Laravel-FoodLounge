@@ -59,7 +59,7 @@
         <div class="row">
             <div class="col-12">
                 <a class="btn btn-outline-dark mt-2 mb-4 d-block mx-auto w-25" href="{{ route('admin.types.create') }}"
-                    class="link-dark">Add Types</a>
+                    class="link-dark">Aggiungi tipologia</a>
             </div>
         </div>
     @endif
@@ -77,11 +77,11 @@
                             </div>
                             <div class="col-4 d-flex justify-content-around">
                                 <a class="btn btn-outline-dark d-block w-50"
-                                    href="{{ route('admin.types.edit', $type->id) }}" class="link-dark">Edit Type</a>
+                                    href="{{ route('admin.types.edit', $type->id) }}" class="link-dark">Modifica</a>
                                 <form method="post" class="post-delete" action={{ route('admin.types.destroy', $type->id) }}>
                                     @method('DELETE')
                                     @csrf
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-danger">Elimina</button>
                                 </form>
                             </div>
                         </div>
@@ -101,6 +101,14 @@
                 </div>
 
             @endforeach
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-4 offset-md-8">
+                <a href="{{ Route('admin.home') }}" class="d-block btn btn-secondary text-white">
+                    <span>Torna indietro</span>
+                </a>
+            </div>
         </div>
     </div>
 @endsection
