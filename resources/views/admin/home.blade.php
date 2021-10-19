@@ -42,13 +42,13 @@
             </div>
 
             {{-- lato img cover e riepilogo dati --}}
-            <div class="col-12 col-md-8">
-                <img class="img-fluid rounded shadow-sm" src={{ asset('storage/' . Auth::user()->cover_image) }}
+            <div class="col-12 col-md-8 alert-dark rounded">
+                <img class="img-fluid rounded shadow-sm mt-2" src={{ asset('storage/' . Auth::user()->cover_image) }}
                     alt="cover image">
 
-                <div class="row mt-5 shadow alert-dark">
+                <div class="row mt-5 rounded">
                     <div class="col-10 offset-1 offset-md-0 col-md-4">
-                        <img class="img w-100 d-block rounded shadow-sm"
+                        <img class="img w-100 d-block rounded shadow-sm mt-3"
                             src={{ asset('storage/' . Auth::user()->profile_image) }} alt="cover image">
                     </div>
                     <div class="col-12 col-md-8">
