@@ -26,7 +26,7 @@
                 <div class="row">
                     <a class="col-10 offset-1 offset-sm-0 col-md-8 mx-auto my-2 pt-2 pb-1 border rounded shadow bg-info text-white"
                         href="{{ route('admin.orders.statistics') }}">
-                        <h5 class="text-center">Statistiche Ordini</h5>
+                        <h5 class="text-center">Statistiche ordini</h5>
                     </a>
                 </div>
                 <div class="row">

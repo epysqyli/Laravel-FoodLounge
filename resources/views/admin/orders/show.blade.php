@@ -4,13 +4,13 @@
 
 @section('content')
     <div class="container-md">
-        <h2>Food items details</h2>
+        <h2>Dettagli del contenuto</h2>
         <table class="table table-light table-striped">
             <thead>
-                <tr>
-                    <th><strong>Food Name</strong></th>
-                    <th><strong>Food Units</strong></th>
-                    <th><strong>Food Id</strong></th>
+                <tr >
+                    <th><strong>Nome</strong></th>
+                    <th><strong>Quantità</strong></th>
+                    <th><strong>Id prodotto</strong></th>
                     <th><strong></strong></th>
                 </tr>
             </thead>
@@ -20,69 +20,69 @@
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->pivot->food_units }}</td>
                         <td>{{ $item->id }}</td>
-                        <td><a href="{{ route('admin.foods.show', $item->id) }}">Go to food page</a></td>
+                        <td><a href="{{ route('admin.foods.show', $item->id) }}">Visualizza</a></td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
 
-        <h2>All details</h2>
+        <h2>Tutti i dettagli</h2>
         <table class="table table-light table-striped">
             <tr>
-                <th>Order ID
+                <th>Id ordine
                 <th>
                 <td>{{ $order->id }}</td>
             </tr>
             <tr>
-                <th>User ID
+                <th>Id utente
                 <th>
                 <td>{{ $order->user_id }}</td>
             </tr>
             <tr>
-                <th>Amount
+                <th>Importo
                 <th>
                 <td>{{ $order->amount }} &euro;</td>
             </tr>
             <tr>
-                <th>Customer
+                <th>Cliente
                 <th>
                 <td>{{ $order->customer_name }} {{ $order->customer_surname }}</td>
             </tr>
             <tr>
-                <th>Customer Address
+                <th>Indirizzo consegna
                 <th>
                 <td>{{ $order->customer_address }}</td>
             </tr>
             <tr>
-                <th>Customer Email
+                <th>Email cliente
                 <th>
                 <td>{{ $order->customer_email }}</td>
             </tr>
             <tr>
-                <th>Customer Phone
+                <th>Telefono cliente
                 <th>
                 <td>{{ $order->phone_number }}</td>
             </tr>
             <tr>
-                <th>Transaction ID
+                <th>Id transazione
                 <th>
                 <td>{{ $order->transaction_id }}</td>
             </tr>
             <tr>
-                <th>Transaction Status
+                <th>Stato transazione
                 <th>
                 <td>{{ $order->transaction_status }}</td>
             </tr>
             <tr>
-              <th>Order Creation Date
+              <th>Data creazione ordine
               <th>
               <td>{{ $order->created_at }}</td>
           </tr>
         </table>
 
         <div class="row">
-            <div class="col-12 col-md-4 offset-md-8">
-                <a href="{{ url()->previous() }}" class="d-block btn btn-secondary text-white">
+            <div class="col-12 col-sm-4 offset-sm-8">
+                <a href="{{ Route('admin.orders.index') }}" class="d-block btn btn-secondary text-white">
                     <span>Torna indietro</span>
                 </a>
             </div>
