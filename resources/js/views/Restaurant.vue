@@ -38,9 +38,9 @@
                 />
 
     <h3> {{ food.name }}</h3>
-    <p class="small"> <i class="bi bi-cash"></i> / Prezzo:
-                  {{ food.price }}</p>
-    <div class="dimmer"></div>
+    
+    <div class="dimmer"><p class="small"> <i class="bi bi-cash"></i> / Prezzo:
+                  {{ food.price }}</p></div>
     <div class="go-corner" @click="addProduct(food)" >
       <div class="go-arrow" >
         →
@@ -403,12 +403,16 @@ color: white;
   font-size:3em;
   margin-top: -4px;
   margin-right: -4px;
-  color: white;
+  color: #356980;
   font-family: courier, sans;
 }
 .navbar-brand{
   position:absolute;
   bottom: 0;
   right:10px;
+}
+.dimmer{
+  width: 100%;
+  height:20%;
 }
 </style>
