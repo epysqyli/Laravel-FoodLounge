@@ -20,7 +20,7 @@
                             @if (count(Auth::user()->types) == 0)
                                 <div class="form-group row">
                                     <a class="col-md-6 offset-md-4 d-block border border-danger btn btn-outline-danger "
-                                        href={{ route('admin.types.create') }}>Aggiungi una tipologia di prodotto prima di continuare</a>
+                                        href={{ route('admin.types.create') }}>Aggiungi le tipologie di prodotti prima di continuare</a>
                                 </div>
                             @endif
 

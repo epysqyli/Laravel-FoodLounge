@@ -23,12 +23,16 @@
                         <h5 class="text-center">Gestione ordini</h5>
                     </a>
                 </div>
-                <div class="row">
-                    <a class="col-10 offset-1 offset-sm-0 col-md-8 mx-auto my-2 pt-2 pb-1 border rounded shadow bg-info text-white"
-                        href="{{ route('admin.orders.statistics') }}">
-                        <h5 class="text-center">Statistiche ordini</h5>
-                    </a>
-                </div>
+
+                @if (!$emptyOrders)
+                    <div class="row">
+                        <a class="col-10 offset-1 offset-sm-0 col-md-8 mx-auto my-2 pt-2 pb-1 border rounded shadow bg-info text-white"
+                            href="{{ route('admin.orders.statistics') }}">
+                            <h5 class="text-center">Statistiche ordini</h5>
+                        </a>
+                    </div>
+                @endif
+
                 <div class="row">
                     <a class="col-10 offset-1 offset-sm-0 col-md-8 mx-auto my-2 pt-2 pb-1 border rounded shadow bg-info text-white"
                         href="{{ route('admin.users.edit', Auth::user()->id) }}">
@@ -44,8 +48,8 @@
 
                 <div class="row mt-5 shadow alert-dark">
                     <div class="col-10 offset-1 offset-md-0 col-md-4">
-                        <img class="img w-100 d-block rounded shadow-sm" src={{ asset('storage/' . Auth::user()->profile_image) }}
-                            alt="cover image">
+                        <img class="img w-100 d-block rounded shadow-sm"
+                            src={{ asset('storage/' . Auth::user()->profile_image) }} alt="cover image">
                     </div>
                     <div class="col-12 col-md-8">
                         <div class="col rounded">
