@@ -18,30 +18,16 @@
     </div>
     <div class="row mt-5">
       <div class="col-8">
-        <div class="row g-5 justify-content-center">
-          <div class="p-2" v-for="(food, index) in foods" :key="index">
-            <div class="cardFood">
-              <div class="card-body">
-                 <div
-                  class="btn-group rounded"
-                  role="group"
-                  aria-label="Basic outlined example"
-                >
-                  <button
-                    type="button"
-                    class="btn btn-outline-primary"
-                    @click="addProduct(food)"
-                  >+
-                  </button>
-
-                  <button
-                    type="button"
-                    class="btn btn-outline-primary"
-                    @click="removeProduct(food)"
-                  >-
-                  </button>
-                </div>
-                <img
+          <div class="row g-5 justify-content-center">
+          
+         <div class="p-2" v-for="(food, index) in foods" :key="index">
+           <div class="col" >
+        <a class="card4"          :class="
+                cart.items.find((el) => food.id === el.id)
+                  ? 'notClickable'
+                  : 'clickable'
+              " >
+    <img
                   class="rounded"
                   :src="
                     food.image[0] == 'h'
@@ -51,45 +37,31 @@
                   :alt="food.name"
                 />
 
-                <p class="card-text">
-                  {{ food.name }}
-                </p>
-
-                <div>
-                  <i class="bi bi-cash"></i> / Price:
-                  {{ food.price }}
-                </div>
-               
-              </div>
-              <!-- <div
-                            class="
-                                btn btn-outline-danger
-                                font-weight-bold
-                                px-2
-                                mr-2
-                            "
-                            @click="removeProduct(food)"
-                            :class="
-                                cart.items.find((el) => food.id === el.id)
-                                    ? 'clickable'
-                                    : 'notClickable'
-                            "
-                        >
-                            Remove
-                        </div> -->
-            </div>
-          </div>
-        </div>
+    <h3> {{ food.name }}</h3>
+    <p class="small"> <i class="bi bi-cash"></i> / Prezzo:
+                  {{ food.price }}</p>
+    <div class="dimmer"></div>
+    <div class="go-corner" @click="addProduct(food)" >
+      <div class="go-arrow" >
+        →
       </div>
+    </div>
+  </a>
+  </div>
+  </div>
+  </div>
+  
+</div>
+        
     
     <div class="col-4">
       
-      <div class="card cardCart border-success mb-3" style="max-width: 18rem">
+      <div class="card cardCart border-success mb-3"  style="max-width: 18rem">
         <div class="card-header">
-          <i class="bi bi-cart"> Cart </i>
+          <i class="bi bi-cart"> Carrello </i>
         </div>
         <div
-          class="card-body text-success"
+          class="card-body "
           v-for="item in cart.items"
           :key="item.id"
         >
@@ -104,144 +76,151 @@
                 >
                   <button
                     type="button"
-                    class="btn-outline-primary"
+                    class="btn-outline-success"
                     @click="decrementQty(item)"
                   >
                     -
                   </button>
-                  <button type="button" class="btn-outline-primary">
+                  <button type="button" class="btn-outline-dark disabled">
                     {{ item.quantity }}
                   </button>
                   <button
                     type="button"
-                    class="btn-outline-primary"
+                    class="btn-outline-success"
                     @click="incrementQty(item)"
                   >
                     +
                   </button>
                 </div>
               </div>
+            
             </div>
            
           </div>
         </div>
+         <router-link
+                  style="
+                    text-decoration: none;
+                    color: #356980;
+                    width: 50%;
+                    display: block;
+                  "
+                  :to="{ name: 'checkout' }"
+                >
+                  <a class="navbar-brand">Pagamento</a>
+           </router-link>
       </div>
     </div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
-    name: "Restaurant",
-    data() {
-        return {
-          myToggle: false,
-            apiUrl: "http://127.0.0.1:8000/api/restaurants/",
-            restaurant: {},
-            foods: null,
-            cart: {
-                items: [],
-                total: null,
-            },
-            disabled: "disabled",
-            active: "active",
-        };
+  name: "Restaurant",
+  data() {
+    return {
+      apiUrl: "http://127.0.0.1:8000/api/restaurants/",
+      restaurant: {},
+      foods: null,
+      cart: {
+        items: [],
+        total: null,
+      },
+      disabled: "disabled",
+      active: "active",
+    };
+  },
+
+  mounted() {
+    this.getRestaurant();
+    this.updateCartToMatchStorage();
+  },
+
+  updated() {
+    if (this.cart.items.length != 0) this.cart.total = this.getTotal();
+  },
+
+  methods: {
+    getRestaurant() {
+      axios
+        .get(this.apiUrl + this.$route.params.slug)
+
+        .then((response) => {
+          this.restaurant = response.data;
+          this.foods = this.restaurant.foods.map((food) => {
+            return { ...food, quantity: 0 };
+          });
+        })
+        .catch((error) => console.log(error));
     },
 
-    mounted() {
-        this.getRestaurant();
-        this.updateCartToMatchStorage();
+    removeProduct(item) {
+      this.removeFromStorage(item);
     },
 
-    updated() {
-        if (this.cart.items.length != 0) this.cart.total = this.getTotal();
+    addProduct(item) {
+      // clean up cart if foods from other restaurants are present
+      this.cleanUp(item);
+
+      item.quantity = 1;
+      this.addToStorage(item);
     },
 
-    methods: {
-        getRestaurant() {
-            axios
-                .get(this.apiUrl + this.$route.params.slug)
-
-                .then((response) => {
-                    this.restaurant = response.data;
-                    this.foods = this.restaurant.foods.map((food) => {
-                        return { ...food, quantity: 0 };
-                    });
-                })
-                .catch((error) => console.log(error));
-        },
-
-        removeProduct(item) {
-            this.removeFromStorage(item);
-        },
-
-        addProduct(item) {
-      
-            // clean up cart if foods from other restaurants are present
-            this.cleanUp(item);
-
-            item.quantity = 1;
-            this.addToStorage(item);
-        },
-
-        cleanUp(item) {
-            if (!localStorage.length) {
-                const oldItem = JSON.parse(Object.values(localStorage)[0]);
-                if (oldItem.user_id != item.user_id) {
-                    localStorage.clear();
-                    this.updateCartToMatchStorage();
-                }
-            }
-        },
-
-        decrementQty(item) {
-            if (item.quantity > 0) {
-                item.quantity--;
-                // localstorage needs to be updated here too
-                this.addToStorage(item);
-            }
-
-            if (item.quantity == 0) {
-                this.removeFromStorage(item);
-            }
-        },
-
-        incrementQty(item) {
-            item.quantity++;
-            this.addToStorage(item);
-        },
-
-        addToStorage(item) {
-            if (localStorage.getItem(item.name) === null) {
-                localStorage.setItem(item.name, JSON.stringify(item));
-            } else {
-                localStorage.removeItem(item.name);
-                localStorage.setItem(item.name, JSON.stringify(item));
-            }
-            this.updateCartToMatchStorage();
-        },
-
-        removeFromStorage(item) {
-            localStorage.removeItem(item.name);
-            this.updateCartToMatchStorage();
-        },
-
-        updateCartToMatchStorage() {
-            this.cart.items = [];
-            Object.keys(localStorage).forEach((key) => {
-                this.cart.items.push(JSON.parse(localStorage.getItem(key)));
-            });
-        },
-
-        getTotal() {
-            let sum = null;
-            this.cart.items.forEach(
-                (item) => (sum += item.price * item.quantity)
-            );
-            return sum.toFixed(2);
-        },
+    cleanUp(item) {
+      if (!!localStorage.length) {
+        const oldItem = JSON.parse(Object.values(localStorage)[0]);
+        if (oldItem.user_id != item.user_id) {
+          localStorage.clear();
+          this.updateCartToMatchStorage();
+        }
+      }
     },
+
+    decrementQty(item) {
+      if (item.quantity > 0) {
+        item.quantity--;
+        // localstorage needs to be updated here too
+        this.addToStorage(item);
+      }
+
+      if (item.quantity == 0) {
+        this.removeFromStorage(item);
+      }
+    },
+
+    incrementQty(item) {
+      item.quantity++;
+      this.addToStorage(item);
+    },
+
+    addToStorage(item) {
+      if (localStorage.getItem(item.name) === null) {
+        localStorage.setItem(item.name, JSON.stringify(item));
+      } else {
+        localStorage.removeItem(item.name);
+        localStorage.setItem(item.name, JSON.stringify(item));
+      }
+      this.updateCartToMatchStorage();
+    },
+
+    removeFromStorage(item) {
+      localStorage.removeItem(item.name);
+      this.updateCartToMatchStorage();
+    },
+
+    updateCartToMatchStorage() {
+      this.cart.items = [];
+      Object.keys(localStorage).forEach((key) => {
+        this.cart.items.push(JSON.parse(localStorage.getItem(key)));
+      });
+    },
+
+    getTotal() {
+      let sum = null;
+      this.cart.items.forEach((item) => (sum += item.price * item.quantity));
+      return sum.toFixed(2);
+    },
+  },
 };
 </script>
 
@@ -250,46 +229,10 @@ export default {
   min-height: 700px;
 }
 
-.cardFood {
-  position: relative;
-  text-align: center;
-  margin: 10px;
-  border-radius: 25px;
-  width: 250px;
-  line-height: 35px;
-  max-height: 300px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  .card-date {
-    margin-top: 20px;
-  }
-  .btn-group{
-    justify-content: center;
-    position: absolute;
-    left:25px;
-    top: -30px;
-    height: 40px;
-    border-radius: 25px;
-    vertical-align: middle;
-    
-        background-color: #e56768;
-        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-        border: 0px;
-        &:hover {
-            background-color: #e9d758;
-  }
-  }
-  
-  img {
-    height: 40%;
-    width: 80%;
-    margin: auto;
-    transition: transform 0.8s;
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-}
 
+.cover_image{
+     box-shadow: 1px 2px 6px 0 #264653;
+}
 .container-fluid {
   .cover_image:hover .image {
     opacity: 0.8;
@@ -365,8 +308,106 @@ h2 {
 }
 
 .cardCart {
+color: #356980;
   min-height: 100%;
   min-width: 100%;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  background-color: #E9C46B;
+  .card-header{
+background-color:#356980;
+color: white;
+  }
+}
+
+
+
+//--------------------CARD-4-----------------------
+
+
+.card4 {
+  display: block;
+  top: 0px;
+  position: relative;
+  max-width: 262px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 32px 24px;
+  margin: 12px;
+  text-decoration: none;
+  overflow: hidden;
+  border: 1px solid #cccccc;
+   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+   img {
+    height: 40%;
+    width: 80%;
+    margin: auto;
+    transition: transform 0.8s;
+    &:hover {
+      transform: scale(1.1);
+           filter: saturate(110%);
+    }
+  }
+  
+  .go-corner {
+    background-color: #356980;
+    height: 100%;
+    width: 16px;
+    padding-right: 9px;
+    border-radius: 0;
+    transform: skew(6deg);
+    margin-right: -36px;
+    align-items: start;
+    background-image: linear-gradient(-45deg, #9a7947 1%, #dc8f2a 100%);
+  }
+  
+  .go-arrow {
+    transform: skew(-6deg);
+    margin-left: -2px;
+    margin-top: 9px;
+    opacity: 0;
+  }
+
+  &:hover {
+    border: 1px solid #d38520;
+    
+  }
+  
+  h3 {margin-top: 8px;}
+}
+
+.card4:hover {
+  .go-corner {
+    margin-right: -12px;
+    cursor: pointer;
+  }
+  .go-arrow {
+    opacity: 1;
+  }
+}
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background-color: #c59615;
+  border-radius: 0 4px 0 32px;
+  transition: all 0.3s ease-out;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+}
+.navbar-brand{
+  position:absolute;
+  bottom: 0;
+  right:10px;
 }
 </style>
