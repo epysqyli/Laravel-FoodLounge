@@ -61,11 +61,11 @@
           <i class="bi bi-cart"> Carrello </i>
         </div>
         <div
-          class="card-body "
-          v-for="item in cart.items"
-          :key="item.id"
+          class="card-body"
+         
         >
-          <div class="card-text">
+          <div class="card-text p-5"   v-for="item in cart.items"
+          :key="item.id">
             <div class="row">
               <div class="col-8">{{ item.name }} / {{ item.price }} &euro;</div>
               <div class="col-4">
@@ -393,13 +393,14 @@ color: white;
   height: 32px;
   overflow: hidden;
   top: 0;
-  right: 0;
+  right: 20px;
   background-color: #c59615;
   border-radius: 0 4px 0 32px;
   transition: all 0.3s ease-out;
 }
 
 .go-arrow {
+  font-size:3em;
   margin-top: -4px;
   margin-right: -4px;
   color: white;
