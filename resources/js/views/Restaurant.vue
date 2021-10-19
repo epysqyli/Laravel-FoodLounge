@@ -30,7 +30,7 @@
                     : 'clickable'
                 "
               >
-                <div class="badge">Hot</div>
+                <div class="badge">Tybe</div>
                 <div class="product-tumb">
                   <img
                     class="rounded"
@@ -49,15 +49,16 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Vero, possimus nostrum!
                   </p>
-                  <div class="product-bottom-details">
-                    <div class="product-price">
-                      <small><i class="bi bi-cash"></i></small>{{ food.price }}
-                    </div>
-                    <div class="product-links">
-                      <i class="fa fa-shopping-cart"></i>
-                    </div>
+                  <div class="product-bottom-details ">
+                     
+                   
                   </div>
                 </div>
+               <div class="product-price ">
+                      <div class="mb-5">
+                      <i class="bi bi-cash "></i> / {{ food.price }}
+                      </div>
+                    </div>
               </div>
             </div>
           </div>
@@ -65,7 +66,7 @@
       </div>
 
       <div class="col-12 col-md-4 col-xxl-5 mb-5 mb-md-2">
-        <div class="card cardCart border-success mb-3" style="max-width: 18rem">
+        <div class="card cardCart border-success mb-3 align-items-center" style="max-width: 18rem">
           <div class="card-header text-center justify-content-center p-2">
             <i class="bi bi-cart"> Carrello </i>
           </div>
@@ -82,76 +83,40 @@
                 </thead>
                 <tbody >
                   <tr v-for="item in cart.items" :key="item.id">
-                    <th scope="row">1</th>
+                    <th scope="row">{{item.id}}</th>
                     <td>{{ item.name }}</td>
                     <td>{{ item.price }}</td>
-                    <td> <div
-                                        class="btn-group"
-                                        role="group"
-                                        aria-label="Basic outlined example"
-                                    >
+                    <td> 
                                         <button
                                             type="button"
-                                            class="btn-outline-success"
+                                            class="btn-dark btnCart rounded-circle mr-2"
                                             @click="decrementQty(item)"
                                         >
                                             -
                                         </button>
                                         <button
+                                        
                                             type="button"
-                                            class="btn-outline-dark disabled"
+                                            class="btn-outline-dark btnCart rounded-circle disabled "
                                         >
                                             {{ item.quantity }}
                                         </button>
                                         <button
                                             type="button"
-                                            class="btn-outline-success"
+                                            class="btn-dark btnCart rounded-circle ml-2"
                                             @click="incrementQty(item)"
                                         >
                                             +
                                         </button>
-                                    </div></td>
+                                   </td>
                   </tr>
               
                 </tbody>
               </table>
-              <!-- <div class="row">
-                                <div class="col-8">
-                                    {{ item.name }} / {{ item.price }} &euro;
-                                </div>
-                                <div class="col-4">
-                                    <div
-                                        class="btn-group"
-                                        role="group"
-                                        aria-label="Basic outlined example"
-                                    >
-                                        <button
-                                            type="button"
-                                            class="btn-outline-success"
-                                            @click="decrementQty(item)"
-                                        >
-                                            -
-                                        </button>
-                                        <button
-                                            type="button"
-                                            class="btn-outline-dark disabled"
-                                        >
-                                            {{ item.quantity }}
-                                        </button>
-                                        <button
-                                            type="button"
-                                            class="btn-outline-success"
-                                            @click="incrementQty(item)"
-                                        >
-                                            +
-                                        </button>
-                                    </div>
-                                </div>
-                                <hr class="text-black" />
-                            </div> -->
+             
             </div>
           </div>
-          <router-link
+          <router-link class="text-center"
             style="
               text-decoration: none;
               color: #356980;
@@ -160,7 +125,7 @@
             "
             :to="{ name: 'checkout' }"
           >
-            <a class="navbar-brand">Pagamento</a>
+           <button class="btn text-center   ">Pagamento</button>
           </router-link>
         </div>
       </div>
@@ -278,6 +243,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+// CONTAINER CSS + GENERAL SETTINGS
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+
 .restaurant {
   min-height: 700px;
 }
@@ -365,28 +348,25 @@ h2 {
   min-width: 100%;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   background-color: #e9c46b;
+  .btn{
+    background-color: white;
+    border: 2px solid green;
+    &:hover{
+      background-color: #356980;
+    }
+  }
+  .btnCart{
+    width:20px
+  }
   .card-header {
     height: 3em;
-    background-color: #356980;
+    background-color: #E87553;
     color: white;
   }
 }
 
-// LAST CARD
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+// SINGLE FOOD CARD
 
-body {
-  font-family: "Roboto", sans-serif;
-}
-a {
-  text-decoration: none;
-}
 .product-card {
   width: 300px;
   height: 350px;
@@ -397,6 +377,13 @@ a {
   cursor: pointer;
   &:hover {
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+     .badge{
+      top:5px;
+    }
+    .product-tumb img{
+    height:200px;
+    margin-bottom: 50px;
+    }
   }
 }
 
@@ -410,6 +397,8 @@ a {
   background: red;
   color: #fff;
   padding: 3px 10px;
+ 
+
 }
 
 .product-tumb {
@@ -421,12 +410,14 @@ a {
 }
 
 .product-tumb img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
+  
 }
 
 .product-details {
-  padding: 10px;
+  padding:5px;
 }
 
 .product-catagory {
@@ -471,6 +462,10 @@ a {
 }
 
 .product-price {
+  position:absolute;
+  
+  bottom:-50px;
+  left:20px;
   font-size: 18px;
   color: #fbb72c;
   font-weight: 600;
