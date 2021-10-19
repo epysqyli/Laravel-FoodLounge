@@ -3,7 +3,6 @@ import VueRouter from "vue-router";
 import Home from "./views/Home";
 import Restaurant from "./views/Restaurant";
 import Checkout from "./views/Checkout";
-import Categories from "./views/Categories";
 import PaymentResult from "./views/PaymentResult";
 
 
@@ -19,14 +18,6 @@ const router = new VueRouter({
             path: "",
             name: "home",
             component: Home,
-
-            // children: [
-            //     {
-            //         name: "categories",
-            //         path: "/categories/:names",
-            //         component: Categories,
-            //     },
-            // ],
         },
         {
             path: "/restaurants/:slug",

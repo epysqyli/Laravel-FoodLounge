@@ -24,49 +24,66 @@
                         v-for="(food, index) in foods"
                         :key="index"
                     >
-                    
                         <div class="col">
-                          
-                            <a  @click="addProduct(food)"
-                                class="card4"
-                                :class="
-                                    cart.items.find((el) => food.id === el.id)
-                                        ? 'notClickable'
-                                        : 'clickable'
-                                "
-                            >
-                             <img
-                                    class="rounded"
-                                    :src="
-                                        food.image[0] == 'h'
-                                            ? food.image
-                                            : `http://localhost:8000/storage/${food.image}`
-                                    "
-                                    :alt="food.name"
-                                />
-                               
-
-                                <h3>{{ food.name }}</h3>
-
-                                <div class="dimmer">
-                                    <p class="small">
-                                        <i class="bi bi-cash"></i> / Prezzo:
-                                        {{ food.price }}
-                                    </p>
+                            <div class="product-card" :class="
+                                        cart.items.find(
+                                            (el) => food.id === el.id
+                                        )
+                                            ? 'notClickable'
+                                            : 'clickable'
+                                    ">
+                                <div class="badge">Hot</div>
+                                <div class="product-tumb">
+                                    <img
+                                        class="rounded"
+                                        :src="
+                                            food.image[0] == 'h'
+                                                ? food.image
+                                                : `http://localhost:8000/storage/${food.image}`
+                                        "
+                                        :alt="food.name"
+                                    />
                                 </div>
                                 <div
-                                    class="go-corner"
-                                   
-                                >
+                                    class="product-details"
                                     
+                                >
+                                    <span class="product-catagory">{{
+                                        food.name
+                                    }}</span>
+                                    <h4><a href="">Women leather bag</a></h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Vero, possimus
+                                        nostrum!
+                                    </p>
+                                    <div class="product-bottom-details">
+                                        <div class="product-price">
+                                            <small
+                                                ><i
+                                                    class="bi bi-cash"
+                                                ></i></small
+                                            >{{ food.price }}
+                                        </div>
+                                        <div class="product-links">
+                                            <a href=""
+                                                ><i class="fa fa-heart"></i
+                                            ></a>
+                                            <a href="" @click="addProduct(food)"
+                                                ><i
+                                                    class="fa fa-shopping-cart"
+                                                ></i
+                                            ></a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-12 col-md-4 col-xxl-5 mb-5 mb-md-2 ">
+            <div class="col-12 col-md-4 col-xxl-5 mb-5 mb-md-2">
                 <div
                     class="card cardCart border-success mb-3"
                     style="max-width: 18rem"
@@ -76,7 +93,7 @@
                     </div>
                     <div class="card-body">
                         <div
-                            class="card-text "
+                            class="card-text"
                             v-for="item in cart.items"
                             :key="item.id"
                         >
@@ -112,7 +129,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <hr class="text-black">
+                                <hr class="text-black" />
                             </div>
                         </div>
                     </div>
@@ -343,91 +360,135 @@ h2 {
     }
 }
 
-//--------------------CARD-4-----------------------
 
-.card4 {
-    display: block;
-    top: 0px;
-    height: 300px;
-    position: relative;
-    width: 262px;
-    background-color: #ffffff;
-    border-radius: 4px;
-    padding: 32px 24px;
-    margin: 12px;
+
+
+
+// LAST CARD
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+*
+{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body
+{
+    font-family: 'Roboto', sans-serif;
+}
+a
+{
     text-decoration: none;
-    overflow: hidden;
-    border: 1px solid #cccccc;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    cursor: pointer;
-    img {
-        height: 100px;
-        width: 267px;
-      
-        transition: transform 0.8s;
-        &:hover {
-            // transform: scale(1.1);
-            filter: saturate(110%);
-        }
-    }
-
-    .go-corner {
-        background-color: #356980;
-        height: 100%;
-        width: 16px;
-        padding-right: 9px;
-        border-radius: 0;
-        transform: skew(6deg);
-        margin-right: -36px;
-        align-items: start;
-        background-image: linear-gradient(-45deg, #9a7947 1%, #dc8f2a 100%);
-    }
-
-    .go-arrow {
-        transform: skew(-6deg);
-        margin-left: -2px;
-        margin-top: 9px;
-        opacity: 0;
-    }
-
-    &:hover {
-        border: 1px solid #d38520;
-    }
-
-    h3 {
-        margin-top: 8px;
-    }
+}
+.product-card {
+    width: 300px;
+    height: 550px;
+    position: relative;
+    box-shadow: 0 2px 7px #dfdfdf;
+    margin: 20px auto;
+    background: #fafafa;
 }
 
-.card4:hover {
-    .go-corner {
-      width: 30px;
-        margin-right: -12px;
-        cursor: pointer;
-    }
-    .go-arrow {
-        opacity: 1;
-    }
+.badge {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    background: red;
+    color: #fff;
+    padding: 3px 10px;
 }
-.go-corner {
+
+.product-tumb {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    width: 40px;
-    height: 32px;
-    overflow: hidden;
-    top: 0;
-    right: 20px;
-    background-color: #c59615;
-    border-radius: 0 4px 0 32px;
-    transition: all 0.3s ease-out;
+    height: 300px;
+    background: #f0f0f0;
 }
 
+.product-tumb img {
+    width: 100%;
+    height: 100%;
+}
 
-.navbar-brand {
-    position: absolute;
-    bottom: 0;
-    right: 10px;
+.product-details {
+    padding: 30px;
+}
+
+.product-catagory {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 18px;
+}
+
+.product-details h4 a {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    color: #363636;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.product-details h4 a:hover {
+    color: #fbb72c;
+}
+
+.product-details p {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 18px;
+    color: #999;
+}
+
+.product-bottom-details {
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.product-bottom-details div {
+    float: left;
+    width: 50%;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #fbb72c;
+    font-weight: 600;
+}
+
+.product-price small {
+    font-size: 80%;
+    font-weight: 400;
+    text-decoration: line-through;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.product-links {
+    text-align: right;
+}
+
+.product-links a {
+    display: inline-block;
+    margin-left: 5px;
+    color: #e1e1e1;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.product-links a:hover {
+    color: #fbb72c;
 }
 </style>
