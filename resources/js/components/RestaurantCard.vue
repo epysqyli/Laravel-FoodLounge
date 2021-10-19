@@ -83,12 +83,13 @@ p {
     left: 50%;
     transform: translateX(-50%);
     color: white;
-    padding: 5px 10px;
-    border-radius: 10px;
+    padding: 2px 10px;
+    border-radius: 5px;
     border: 2px solid white;
     background-color: #264653;
     font-size: 0.85rem;
     text-align: center;
+    opacity: 0.95;
   }
 
   &:hover {
@@ -105,6 +106,7 @@ p {
       color: #264653;
       background-color: white;
       border: 2px solid #264653;
+      opacity: 1;
     }
   }
 
