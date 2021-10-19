@@ -25,7 +25,7 @@
                         :key="index"
                     >
                         <div class="col">
-                            <div class="product-card" :class="
+                            <div class="product-card" @click="addProduct(food)" :class="
                                         cart.items.find(
                                             (el) => food.id === el.id
                                         )
@@ -51,7 +51,7 @@
                                     <span class="product-catagory">{{
                                         food.name
                                     }}</span>
-                                    <h4><a href="">Women leather bag</a></h4>
+                                    <h4>{{food.name}}</h4>
                                     <p>
                                         Lorem ipsum dolor sit amet, consectetur
                                         adipisicing elit. Vero, possimus
@@ -59,21 +59,17 @@
                                     </p>
                                     <div class="product-bottom-details">
                                         <div class="product-price">
-                                            <small
+                                            <small  
                                                 ><i
                                                     class="bi bi-cash"
                                                 ></i></small
-                                            >{{ food.price }}
+                                            >{{ food.price }} 
                                         </div>
                                         <div class="product-links">
-                                            <a href=""
-                                                ><i class="fa fa-heart"></i
-                                            ></a>
-                                            <a href="" @click="addProduct(food)"
-                                                ><i
+                                          <i
                                                     class="fa fa-shopping-cart"
-                                                ></i
-                                            ></a>
+                                                ></i>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -88,12 +84,12 @@
                     class="card cardCart border-success mb-3"
                     style="max-width: 18rem"
                 >
-                    <div class="card-header">
+                    <div class="card-header text-center justify-content-center p-2">
                         <i class="bi bi-cart"> Carrello </i>
                     </div>
                     <div class="card-body">
                         <div
-                            class="card-text"
+                            class="card-text "
                             v-for="item in cart.items"
                             :key="item.id"
                         >
@@ -355,6 +351,7 @@ h2 {
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
     background-color: #e9c46b;
     .card-header {
+      height:3em;
         background-color: #356980;
         color: white;
     }
@@ -385,11 +382,15 @@ a
 }
 .product-card {
     width: 300px;
-    height: 550px;
+    height: 350px;
     position: relative;
     box-shadow: 0 2px 7px #dfdfdf;
     margin: 20px auto;
     background: #fafafa;
+    cursor: pointer;
+    &:hover {
+           box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+      }
 }
 
 .badge {
@@ -408,17 +409,20 @@ a
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
+    height: 150px;
     background: #f0f0f0;
 }
 
 .product-tumb img {
     width: 100%;
     height: 100%;
+
+      
+     
 }
 
 .product-details {
-    padding: 30px;
+    padding:10px;
 }
 
 .product-catagory {
