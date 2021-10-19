@@ -10,7 +10,7 @@
     </div>
 
     <div class="row">
-      <div class="col-10 offset-1 col-md-4 offset-md-4 mt-5">
+      <div class="col-10 offset-1 col-md-6 offset-md-3 mt-5">
         <div class="table">
           <tr>
             <th>Totale Ordine</th>
