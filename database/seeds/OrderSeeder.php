@@ -13,7 +13,7 @@ class OrderSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             $order = new Order();
-            
+
             $order->user_id = rand(1, 10);
             $order->amount = $faker->randomFloat(2, 1, 999);
             $order->customer_name = $faker->firstname();

@@ -10,6 +10,7 @@ class HomeController extends Controller
 {
     public function index(User $user)
     {
-        return view("admin.home", compact('user'));
+        $emptyOrders = empty($user->orders->all());
+        return view("admin.home", compact('user', 'emptyOrders'));
     }
 }
