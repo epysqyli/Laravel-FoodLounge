@@ -81,7 +81,7 @@
                 <tbody>
                   <tr v-for="item in cart.items" :key="item.id">
                     <td>{{ item.name }}</td>
-                    <td>{{ item.price }}</td>
+                    <td>{{ item.price }} &euro;</td>
                     <td class="d-flex justify-content-around">
                       <div @click="decrementQty(item)">
                         <font-awesome-icon
@@ -352,6 +352,18 @@ a {
 
 .cart-name {
   font-size: 1.25rem;
+}
+
+.cart-qty-button {
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:active {
+    color: white;
+  }
 }
 
 // SINGLE FOOD CARD
