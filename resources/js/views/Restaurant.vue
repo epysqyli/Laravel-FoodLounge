@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid restaurant">
+  <div class="container-fluid">
     <div class="row cover_image">
       <div class="cover-image">
         <img
@@ -17,10 +17,10 @@
       </div>
     </div>
 
-    <div class="row mt-5 mb-5 g-5 justify-content-center">
-      <div class="col-12 col-md-8 col-xxl-6">
+    <div class="row mt-5 mb-5">
+      <div class="col-12 col-md-6 col-lg-8 col-xxl-6">
         <div class="row">
-          <div class="col mb-2" v-for="(food, index) in foods" :key="index">
+          <div class="col mb-3" v-for="(food, index) in foods" :key="index">
             <div
               class="product-card"
               @click="addProduct(food)"
@@ -62,7 +62,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-4 col-xxl-6">
+      <div class="col-12 col-md-6 col-lg-4 col-xxl-6">
         <div class="card cardCart mb-3 shadow">
           <div
             class="
@@ -324,8 +324,7 @@ a {
 .cardCart {
   position: relative;
   color: #356980;
-  min-height: 100%;
-  // min-width: 100%;
+  min-height: 40%;
 
   background-color: #e9c46b;
 
