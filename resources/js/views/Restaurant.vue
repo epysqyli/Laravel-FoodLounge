@@ -16,117 +16,106 @@
         </div>
       </div>
     </div>
-    <div class="row mt-5">
-      <div class="col-12 col-md-8 col-xxl-7">
-        <div class="row g-5 justify-content-center">
-          <div class="p-2" v-for="(food, index) in foods" :key="index">
-            <div class="col">
-              <div
-                class="product-card"
-                @click="addProduct(food)"
-                :class="
-                  cart.items.find((el) => food.id === el.id)
-                    ? 'notClickable'
-                    : 'clickable'
-                "
-              >
-                <div class="badge">Tybe</div>
-                <div class="product-tumb">
-                  <img
-                    class="rounded"
-                    :src="
-                      food.image[0] == 'h'
-                        ? food.image
-                        : `http://localhost:8000/storage/${food.image}`
-                    "
-                    :alt="food.name"
-                  />
+    <div class="row mt-5 mb-5 g-5 justify-content-center">
+      <div class="col-12 col-md-8 col-xxl-6">
+        <div class="row">
+          <div class="col mb-2" v-for="(food, index) in foods" :key="index">
+            <div
+              class="product-card"
+              @click="addProduct(food)"
+              :class="
+                cart.items.find((el) => food.id === el.id)
+                  ? 'notClickable'
+                  : 'clickable'
+              "
+            >
+              <div class="badge">{{ food.type.name }}</div>
+              <div class="product-tumb">
+                <img
+                  class="rounded"
+                  :src="
+                    food.image[0] == 'h'
+                      ? food.image
+                      : `http://localhost:8000/storage/${food.image}`
+                  "
+                  :alt="food.name"
+                />
+              </div>
+              <div class="product-details">
+                <span class="product-catagory">{{ food.name }}</span>
+                <h4>{{ food.name }}</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Vero, possimus nostrum!
+                </p>
+                <div class="product-bottom-details"></div>
+              </div>
+              <div class="product-price">
+                <div class="mb-5">
+                  <i class="bi bi-cash"></i> /
+                  {{ food.price }}
                 </div>
-                <div class="product-details">
-                  <span class="product-catagory">{{ food.name }}</span>
-                  <h4>{{ food.name }}</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Vero, possimus nostrum!
-                  </p>
-                  <div class="product-bottom-details ">
-                     
-                   
-                  </div>
-                </div>
-               <div class="product-price ">
-                      <div class="mb-5">
-                      <i class="bi bi-cash "></i> / {{ food.price }}
-                      </div>
-                    </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-4 col-xxl-5 mb-5 mb-md-2">
-        <div class="card cardCart border-success mb-3 align-items-center" style="max-width: 18rem">
+      <div class="col-12 col-sm-12 col-md-3 col-xxl-6">
+        <div class="card cardCart border-success mb-3 shadow-lg" style="max-width: 18rem">
           <div class="card-header text-center justify-content-center p-2">
             <i class="bi bi-cart"> Carrello </i>
           </div>
           <div class="card-body">
-            <div class="card-text" >
+            <div class="card-text">
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">N.O</th>
                     <th scope="col">Nome Piatto</th>
                     <th scope="col">Prezzo</th>
                     <th scope="col">Quantità</th>
                   </tr>
                 </thead>
-                <tbody >
+                <tbody>
                   <tr v-for="item in cart.items" :key="item.id">
-                    <th scope="row">{{item.id}}</th>
                     <td>{{ item.name }}</td>
                     <td>{{ item.price }}</td>
-                    <td> 
-                                        <button
-                                            type="button"
-                                            class="btn-dark btnCart rounded-circle mr-2"
-                                            @click="decrementQty(item)"
-                                        >
-                                            -
-                                        </button>
-                                        <button
-                                        
-                                            type="button"
-                                            class="btn-outline-dark btnCart rounded-circle disabled "
-                                        >
-                                            {{ item.quantity }}
-                                        </button>
-                                        <button
-                                            type="button"
-                                            class="btn-dark btnCart rounded-circle ml-2"
-                                            @click="incrementQty(item)"
-                                        >
-                                            +
-                                        </button>
-                                   </td>
+                    <td class="d-flex justify-content-around">
+                      <div @click="decrementQty(item)">
+                        <font-awesome-icon icon="minus-circle" />
+                      </div>
+                      <div>
+                        {{ item.quantity }}
+                      </div>
+                      <div @click="incrementQty(item)">
+                        <font-awesome-icon icon="plus-circle" />
+                      </div>
+                    </td>
                   </tr>
-              
                 </tbody>
               </table>
-             
             </div>
           </div>
-          <router-link class="text-center"
-            style="
-              text-decoration: none;
-              color: #356980;
-              width: 50%;
-              display: block;
-            "
-            :to="{ name: 'checkout' }"
+          <button
+            class="btn"
+            data-bs-placement="top"
+            title="Sei Sicuro ?"
+            data-bs-toggle="tooltip"
           >
-           <button class="btn text-center   ">Pagamento</button>
-          </router-link>
+            <router-link
+              class="text-center linkText"
+              @click="showMsgBoxOne"
+              style="
+                text-decoration: none;
+                color: #356980;
+                width: 100%;
+                display: block;
+              "
+              :to="{ name: 'checkout' }"
+            > <a> CHECKOUT</a>
+              
+            </router-link>
+          </button>
         </div>
       </div>
     </div>
@@ -243,7 +232,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 // CONTAINER CSS + GENERAL SETTINGS
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
 * {
@@ -259,7 +247,6 @@ body {
 a {
   text-decoration: none;
 }
-
 
 .restaurant {
   min-height: 700px;
@@ -343,24 +330,34 @@ h2 {
 }
 
 .cardCart {
+  position: relative;
   color: #356980;
   min-height: 100%;
   min-width: 100%;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+
   background-color: #e9c46b;
-  .btn{
-    background-color: white;
-    border: 2px solid green;
-    &:hover{
+  .btn {
+    background-color: #e8a05f;
+    box-shadow: 2px 2px 7px #dfdfdf;
+    color: black;
+    padding: 2px;
+    a{
+      color:white;
+    }
+    &:hover {
       background-color: #356980;
+      
+      a{
+        color:black;
+      }
     }
   }
-  .btnCart{
-    width:20px
+  .btnCart {
+    width: 20px;
   }
   .card-header {
     height: 3em;
-    background-color: #E87553;
+    background-color: #e87553;
     color: white;
   }
 }
@@ -368,21 +365,20 @@ h2 {
 // SINGLE FOOD CARD
 
 .product-card {
-  width: 300px;
+  width: 250px;
   height: 350px;
   position: relative;
   box-shadow: 0 2px 7px #dfdfdf;
-  margin: 20px auto;
+
   background: #fafafa;
   cursor: pointer;
   &:hover {
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-     .badge{
-      top:5px;
-    }
-    .product-tumb img{
-    height:200px;
-    margin-bottom: 50px;
+
+    .product-tumb img {
+      height: 160px;
+
+      width: 110%;
     }
   }
 }
@@ -397,27 +393,24 @@ h2 {
   background: red;
   color: #fff;
   padding: 3px 10px;
- 
-
 }
 
 .product-tumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 150px;
+
   background: #f0f0f0;
+  overflow: hidden;
 }
 
 .product-tumb img {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  
+  transition: all 150ms ease-out;
 }
 
 .product-details {
-  padding:5px;
+  padding: 5px;
 }
 
 .product-catagory {
@@ -462,10 +455,10 @@ h2 {
 }
 
 .product-price {
-  position:absolute;
-  
-  bottom:-50px;
-  left:20px;
+  position: absolute;
+
+  bottom: -50px;
+  left: 20px;
   font-size: 18px;
   color: #fbb72c;
   font-weight: 600;
