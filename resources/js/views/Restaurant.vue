@@ -62,12 +62,20 @@
         </div>
       </div>
 
-      <div class="col-12 col-sm-12 col-md-3 col-xxl-6">
-        <div class="card cardCart mb-3 shadow-lg" style="max-width: 18rem">
-          <div class="card-header d-flex align-items-center justify-content-between">
+      <div class="col-12 col-md-4 col-xxl-6">
+        <div class="card cardCart mb-3 shadow">
+          <div
+            class="
+              card-header
+              d-flex
+              align-items-center
+              justify-content-between
+            "
+          >
             <h3 class="pt-2">Carrello</h3>
-            <font-awesome-icon icon="shopping-cart" size='2x' />
+            <font-awesome-icon icon="shopping-cart" size="2x" />
           </div>
+
           <div class="card-body">
             <div class="card-text">
               <table class="table">
@@ -78,6 +86,7 @@
                     <th scope="col">Quantità</th>
                   </tr>
                 </thead>
+
                 <tbody>
                   <tr v-for="item in cart.items" :key="item.id">
                     <td>{{ item.name }}</td>
@@ -104,12 +113,8 @@
               </table>
             </div>
           </div>
-          <button
-            class="btn"
-            data-bs-placement="top"
-            title="Sei Sicuro ?"
-            data-bs-toggle="tooltip"
-          >
+
+          <button class="btn">
             <router-link
               class="text-center linkText"
               @click="showMsgBoxOne"
@@ -320,7 +325,7 @@ a {
   position: relative;
   color: #356980;
   min-height: 100%;
-  min-width: 100%;
+  // min-width: 100%;
 
   background-color: #e9c46b;
 
