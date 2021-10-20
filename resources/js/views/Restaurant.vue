@@ -18,7 +18,7 @@
     </div>
 
     <div class="row mt-5 mb-5">
-      <div class="col-12 col-md-6 col-lg-8 col-xxl-6">
+      <div class="col-12 col-md-7 col-lg-8 col-xxl-6">
         <div class="row">
           <div class="col mb-3" v-for="(food, index) in foods" :key="index">
             <div
@@ -62,7 +62,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4 col-xxl-6">
+      <div class="col-12 col-md-5 col-lg-4 col-xxl-6">
         <div class="card cardCart mb-3 shadow">
           <div
             class="
