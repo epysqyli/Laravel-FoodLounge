@@ -16,6 +16,7 @@
         </div>
       </div>
     </div>
+
     <div class="row mt-5 mb-5 g-5 justify-content-center">
       <div class="col-12 col-md-8 col-xxl-6">
         <div class="row">
@@ -62,9 +63,10 @@
       </div>
 
       <div class="col-12 col-sm-12 col-md-3 col-xxl-6">
-        <div class="card cardCart border-success mb-3 shadow-lg" style="max-width: 18rem">
-          <div class="card-header text-center justify-content-center p-2">
-            <i class="bi bi-cart"> Carrello </i>
+        <div class="card cardCart mb-3 shadow-lg" style="max-width: 18rem">
+          <div class="card-header d-flex align-items-center justify-content-between">
+            <h3 class="pt-2">Carrello</h3>
+            <font-awesome-icon icon="shopping-cart" size='2x' />
           </div>
           <div class="card-body">
             <div class="card-text">
@@ -82,13 +84,19 @@
                     <td>{{ item.price }}</td>
                     <td class="d-flex justify-content-around">
                       <div @click="decrementQty(item)">
-                        <font-awesome-icon icon="minus-circle" />
+                        <font-awesome-icon
+                          icon="minus-circle"
+                          class="cart-qty-button"
+                        />
                       </div>
                       <div>
                         {{ item.quantity }}
                       </div>
                       <div @click="incrementQty(item)">
-                        <font-awesome-icon icon="plus-circle" />
+                        <font-awesome-icon
+                          icon="plus-circle"
+                          class="cart-qty-button"
+                        />
                       </div>
                     </td>
                   </tr>
@@ -112,8 +120,8 @@
                 display: block;
               "
               :to="{ name: 'checkout' }"
-            > <a> CHECKOUT</a>
-              
+            >
+              <a>CHECKOUT</a>
             </router-link>
           </button>
         </div>
@@ -121,6 +129,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: "Restaurant",
@@ -232,37 +241,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// CONTAINER CSS + GENERAL SETTINGS
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: "Roboto", sans-serif;
 }
+
 a {
   text-decoration: none;
-}
-
-.restaurant {
-  min-height: 700px;
 }
 
 .cover_image {
   box-shadow: 1px 2px 6px 0 #264653;
 }
+
 .container-fluid {
   .cover_image:hover .image {
     opacity: 0.8;
   }
+
   .cover_image:hover .middle,
   .cover_image:hover .address {
     opacity: 1;
   }
+
   .cover-image {
     position: relative;
     width: 100%;
@@ -306,19 +306,6 @@ a {
     }
   }
 }
-td img {
-  height: 100px;
-  width: 50px;
-  object-fit: cover;
-  vertical-align: middle;
-}
-h2 {
-  font-size: 40px;
-  color: #ffd60a;
-}
-.card {
-  border: none;
-}
 
 .notClickable {
   opacity: 0.25;
@@ -336,30 +323,35 @@ h2 {
   min-width: 100%;
 
   background-color: #e9c46b;
+
   .btn {
     background-color: #e8a05f;
     box-shadow: 2px 2px 7px #dfdfdf;
     color: black;
     padding: 2px;
-    a{
-      color:white;
+
+    a {
+      color: white;
     }
+
     &:hover {
       background-color: #356980;
-      
-      a{
-        color:black;
+
+      a {
+        color: white;
       }
     }
   }
-  .btnCart {
-    width: 20px;
-  }
+
   .card-header {
     height: 3em;
     background-color: #e87553;
     color: white;
   }
+}
+
+.cart-name {
+  font-size: 1.25rem;
 }
 
 // SINGLE FOOD CARD
