@@ -79,11 +79,7 @@
             <h3 class="pt-2">Carrello</h3>
             <font-awesome-icon icon="shopping-cart" size="2x" />
           </div>
-<<<<<<< HEAD
-          
-=======
 
->>>>>>> 2aa1fef4d24dfa4ed0f9d6f717718e2ffafed864
           <div class="card-body">
             <div class="card-text">
               <table class="table">
@@ -119,7 +115,6 @@
                   </tr>
                 </tbody>
               </table>
-              <div class="sum">Totale: {{ cart.total }} &euro;</div>
             </div>
           </div>
 
@@ -135,7 +130,9 @@
               :to="{ name: 'checkout' }"
             >
               <a>CHECKOUT</a>
-              <div class="text-white">{{ cart.total ? cart.total : '0' }} &euro;</div>
+              <div class="text-white">
+                {{ cart.total ? cart.total : "0" }} &euro;
+              </div>
             </router-link>
           </button>
         </div>
@@ -267,12 +264,6 @@ a {
 
 .restaurant {
   min-height: 700px;
-}
-.sum{
-  color: black;
-  position:absolute;
-  bottom:25px;
-  right: 5px;
 }
 
 .cover_image {
