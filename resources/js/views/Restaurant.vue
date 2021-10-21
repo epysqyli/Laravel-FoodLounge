@@ -120,8 +120,7 @@
 
           <button class="btn">
             <router-link
-              class="text-center linkText"
-              @click="showMsgBoxOne"
+              class="text-center linkText d-flex justify-content-around"
               style="
                 text-decoration: none;
                 color: #356980;
@@ -131,6 +130,9 @@
               :to="{ name: 'checkout' }"
             >
               <a>CHECKOUT</a>
+              <div v-if="cart.total">
+                <div class="text-white">{{ cart.total }} &euro;</div>
+              </div>
             </router-link>
           </button>
         </div>
