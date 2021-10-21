@@ -130,9 +130,7 @@
               :to="{ name: 'checkout' }"
             >
               <a>CHECKOUT</a>
-              <div v-if="cart.total">
-                <div class="text-white">{{ cart.total }} &euro;</div>
-              </div>
+              <div class="text-white">{{ cart.total ? cart.total : '0' }} &euro;</div>
             </router-link>
           </button>
         </div>
@@ -165,6 +163,7 @@ export default {
 
   updated() {
     if (this.cart.items.length != 0) this.cart.total = this.getTotal();
+    if (this.cart.items.length == 0) this.cart.total = 0;
   },
 
   methods: {
@@ -243,7 +242,7 @@ export default {
     },
 
     getTotal() {
-      let sum = null;
+      let sum = 0;
       this.cart.items.forEach((item) => (sum += item.price * item.quantity));
       return sum.toFixed(2);
     },
