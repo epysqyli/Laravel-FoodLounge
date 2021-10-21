@@ -66,6 +66,7 @@
           <div class="card-header text-center justify-content-center p-2">
             <i class="bi bi-cart"> Carrello </i>
           </div>
+          
           <div class="card-body">
             <div class="card-text">
               <table class="table">
@@ -94,6 +95,7 @@
                   </tr>
                 </tbody>
               </table>
+              <div class="sum">Totale: {{ cart.total }} &euro;</div>
             </div>
           </div>
           <button
@@ -250,6 +252,12 @@ a {
 
 .restaurant {
   min-height: 700px;
+}
+.sum{
+  color: black;
+  position:absolute;
+  bottom:25px;
+  right: 5px;
 }
 
 .cover_image {
