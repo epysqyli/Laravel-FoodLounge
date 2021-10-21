@@ -50,10 +50,8 @@
                 <span class="product-catagory">{{ food.name }}</span>
                 <h4>{{ food.name }}</h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Vero, possimus nostrum!
+                  {{ food.ingredients }}
                 </p>
-                <div class="product-bottom-details"></div>
               </div>
               <div class="product-price">
                 <div class="mb-5">
@@ -435,7 +433,7 @@ a {
 
 .product-catagory {
   display: block;
-  font-size: 12px;
+  font-size: 8px;
   font-weight: 700;
   text-transform: uppercase;
   color: #ccc;
@@ -461,17 +459,6 @@ a {
   line-height: 22px;
   margin-bottom: 18px;
   color: #999;
-}
-
-.product-bottom-details {
-  overflow: hidden;
-  border-top: 1px solid #eee;
-  padding-top: 20px;
-}
-
-.product-bottom-details div {
-  float: left;
-  width: 50%;
 }
 
 .product-price {
