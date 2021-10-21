@@ -132,7 +132,7 @@
               :to="{ name: 'checkout' }"
             >
               <a>CHECKOUT</a>
-              <div class="text-white">Totale:{{ cart.total ? cart.total : '0' }} &euro;</div>
+              <div class="text-white">Totale: {{ cart.total ? cart.total : '0' }} &euro;</div>
             </router-link>
           </button>
         </div>
