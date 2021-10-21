@@ -3,7 +3,11 @@
     <div class="row cover_image">
       <div class="cover-image">
         <img
-          :src="restaurant.cover_image"
+          :src="
+            restaurant.cover_image[0] == 'h'
+              ? restaurant.cover_image
+              : `http://localhost:8000/storage/${restaurant.cover_image}`
+          "
           :alt="restaurant.name"
           class="image"
         />
