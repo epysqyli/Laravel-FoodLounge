@@ -26,7 +26,7 @@ class GuestController extends Controller
     public function restaurant($slug)
     {
         $data = User::where('slug', $slug)->with(['foods' => function ($query) {
-            $query->where('visible', '1')->with('type');
+            $query->where('visible', '1')->with(['type']);
         }])->first();
         return response()->json($data);
     }
