@@ -1,6 +1,6 @@
 # Boolean Final Project
 
-Fake Food Develiry App
+Fake Food Delivery App
 
 Backend: PHP 7 / Laravel
 
