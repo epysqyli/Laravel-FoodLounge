@@ -6,6 +6,6 @@ Backend: PHP 7 / Laravel
 
 FrontEnd: Vue.js
 
-Integration on Braintree sandbox environment
+Integration of Braintree sandbox environment
 
 Chart.js for admin stats
